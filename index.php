@@ -7,10 +7,14 @@
 <body>
 	<!-- animal or human? -->
 	<div id="avatarOptions">
-		Is your character an animal?<input type="checkbox" id="notHuman" name="species" value="animal">
+		Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
 	</div>
 		<button id="next" onclick="nextOptions()">Next</button>
-	<script>	
+	<input type="radio" name="animal" value="wolf">Wolf<br>
+	<input type="radio" name="animal" value="ant">Ant<br><input type="radio" name="animal" value="bee">Bee<br>
+	<input type="radio" name="animal" value="blackbird">Blackbird<br>
+	<input type="radio" name="animal" va<input type="radio" name="animal" value="bird">Bird<br><input type="radio" name="animal" vallue="falcon">Falcon<br><input type="radio" name="animal" value="sun">Sun<br><input type="radio" name="animal" value="salamander">Salamander<br><input type="radio" name="animal" value="yinyang">Yin-Yang<br><input type="radio" name="animal" value="cat">Cat<br><input type="radio" name="animal" value="bat">Bat<br><input type="radio" name="animal" value="spir<input type="radio" name="animal" value="bird">Bird<br><input type="radio" name="animal" value="spiral">Spiral<br><input type="radio" name="animal" value="mosquito">Mosquito<br><input type="radio" name="animal" value="daisy">Daisy<br><input type="radio" name="animal" value="rainbow">Rainbow<br><input type="radio" name="animal" value="moon">Moon<br><input type="radio" name="animal" value="snake">Snake<br><input type="radio" name="animal" value="blackDragon">Black Dragon<br><input type="radio" name="animal" value="waterDragon">Water Dragon<br><input type="radio" name="animal" value="butterfly">Butterfly<br><input type="radio" name="animal" value="bear">Bear<br><input type="radio" name="animal" value="wingFeathers">Wing Feathers<br><input type="radio" name="animal" value="deer">Deer<br><input type="radio" name="animal" value="rabbit">Rabbit<br><input type="radio" name="animal" value="tiger">Tiger<br><input type="radio" name="animal" value="frog">Frog<br><input type="radio" name="animal" value="dog">Dog<br><input type="radio" name="animal" value="triangle">Triangle<br><input type="radio" name="animal" value="square">Square<br><input type="radio" name="animal" value="fox">Fox<br>
+	<script>
 		$("#top1").hide();
 		$("#bottom1").hide();
 		$("#hat1").hide();
@@ -26,6 +30,8 @@
 				document.getElementById("avatarOptions").setAttribute("class", "human");
 			}
 			else {
+				//insert animal section here
+				avatarOptions.innerHTML = '<input type="radio" name="animal" value="wolf">Wolf<br><input type="radio" name="animal" value="ant">Ant<br><input type="radio" name="animal" value="bee">Bee<br><input type="radio" name="animal" value="blackbird">Blackbird<br><input type="radio" name="animal" va<input type="radio" name="animal" value="bird">Bird<br>lue="falcon">Falcon<br><input type="radio" name="animal" value="sun">Sun<br><input type="radio" name="animal" value="salamander">Salamander<br><input type="radio" name="animal" value="yinyang">Yin-Yang<br><input type="radio" name="animal" value="cat">Cat<br><input type="radio" name="animal" value="bat">Bat<br><input type="radio" name="animal" value="spir<input type="radio" name="animal" value="bird">Bird<br>al">Spiral<br><input type="radio" name="animal" value="mosquito">Mosquito<br><input type="radio" name="animal" value="daisy">Daisy<br><input type="radio" name="animal" value="rainbow">Rainbow<br><input type="radio" name="animal" value="moon">Moon<br><input type="radio" name="animal" value="snake">Snake<br><input type="radio" name="animal" value="blackDragon">Black Dragon<br><input type="radio" name="animal" value="wate<input type="radio" name="animal" value="bird">Bird<br>rDragon">Water Dragon<br><input type="radio" name="animal" value="butterfly">Butterfly<br><input type="radio" name="animal" value="bear">Bear<br><input type="radio" name="animal" value="wingFeathers">Wing Feathers<br><input type="radio" name="animal" value="hillWithClouds">Hill with Clouds<br><input type="radio" name="animal" value="deer">Deer<br><input type="radio" name="animal" value="rabbit">Rabbit<br><input type="radio" name="animal" value="chineseTiger">Chinese Tiger<br><input type="radio" name="animal" value="frog<input type="radio" name="animal" value="bird">Bird<br>">Frog<br><input type="radio" name="animal" value="pug">Pug<br><input type="radio" name="animal" value="triangleUp">Triangle Upwards<br><input type="radio" name="animal" value="triangleDown">Triangle Downwards<br><input type="radio" name="animal" value="square">Square<br><input type="radio" name="animal" value="fox">Fox<br><script>';
 				document.getElementById("avatarOptions").setAttribute("class", "animal");
 			}
 			if(document.getElementById("check").getAttribute("value")=="human1")

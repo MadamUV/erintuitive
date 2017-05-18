@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{6B673042-422F-90EA-5460-4F96DCE47F0A}",
+	"Category": "",
+	"Description": "",
+<<<<<<< HEAD
+	"Plugins": [
+		{
+			"Name": "VaRestPlugin",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/offers/e47be161e7a24e928560290abd5dcc4f"
+=======
+	"Modules": [
+		{
+			"Name": "TVMArena",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+>>>>>>> f7e988bf135290687cfb759afbb42cea1011c89f
+		}
+	]
+}
