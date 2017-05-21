@@ -450,11 +450,11 @@
 			ev.preventDefault();
 			var data = ev.dataTransfer.getData("taskItem");
 			var element = document.getElementById(data);
-			document.getElementById("itemPreview").appendChild(element);
 			element.setAttribute("width","500");
 			element.setAttribute("height", "500");
 			ev.target.appendChild(element);
 			element.removeAttribute('id');
+			document.getElementById("itemPreview").innerHTML = "<font size='20'>Randomize the colors until you are satisfied!</font><br><button id='random'>Randomize</button>";
 		}
 	</script>
 	<!--
