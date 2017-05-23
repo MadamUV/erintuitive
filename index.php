@@ -96,7 +96,7 @@
 				//itemPreview.innerHTML = animalDivs;
 				document.getElementById("avatarOptions").setAttribute("class", "animal");
 			}
-			if(document.getElementById("check").getAttribute("value")=="human"){
+			if(avatarOptions.getAttribute("class")=="human"){
 				avatarOptions.innerHTML = '<input type="checkbox" id="top" name="top" value="top">I want to wear a top<br><input type="checkbox" id="bottom" name="bottom" value="bottom">I want to wear a bottom<br><input type="checkbox" id="hat" name="hat" value="hat">I want to wear headgear<br><input type="checkbox" id="gloves" name="gloves" value="gloves">I want to wear gloves<br><input type="checkbox" id="ears" name="ears" value="ears">I want to wear special ears or earrings<br><input type="checkbox" id="necklace" name="necklace" value="necklace">I want to wear neckwear<br><input type="checkbox" id="shoes" name="shoes" value="shoes">I want to wear shoes<br><input type="checkbox" id="eyewear" name="eyewear" value="eyewear">I want eyewear<br><div id="top1">Top color<input type="color" name="topColor" value="#ff0000"><br></div><div id="bottom1">Bottom color<input type="color" name="bottomColor" value="#ff0000"><br></div><div id="hat1">Hat color<input type="color" name="hatColor" value="#ff0000"><br></div><div id="gloves1">Glove color<input type="color" name="gloveColor" value="#ff0000"><br></div><div id="ears1">Custom ears/earring color<input type="color" name="necklaceColor" value="#ff0000"><br></div><div id="necklace1">Necklace color<input type="color" name="necklaceColor" value="#ff0000"><br></div><div id="shoes1">Shoe color<input type="color" name="shoeColor" value="#ff0000"><br></div><div id="eyewear1">Eyewear color<input type="color" name="eyewearColor" value="#ff0000"><br></div><div id="robe1">Robe/dress color<input type="color" name="robeColor" value="#ff0000"><br></div>';
 				//<option value="shirtStripe1">Choose a shirt stripe</option><option value="shirtStripe2">Choose a second shirt stripe</option><option value="bottomStripe1">Choose a pants/skirt stripe color</option><option value="bottomStripe2">Choose another pants/skirt stripe color</option>
 			}
@@ -452,13 +452,16 @@
 			var element = document.getElementById(data);
 			element.setAttribute("width","500");
 			element.setAttribute("height", "500");
+			element.setAttribute("class", "swap");
+			var src = element.getAttribute("src");
+			src = src.substring(0, src.length-4);
+			document.getElementById("buttons").innerHTML = '<form action="randomizer.php" method="get"><input type="hidden" name="image" value="'+src+'"><input type="submit" value="next"></form>';
 			ev.target.appendChild(element);
 			element.removeAttribute('id');
-			document.getElementById("itemPreview").innerHTML = "<font size='20'>Randomize the colors until you are satisfied!</font><br><button id='random'>Randomize</button>";
 		}
 	</script>
 	<!--
-
+document.getElementById("itemPreview").innerHTML = "<font size='20'>Randomize the colors until you are satisfied!</font><br><button id='random'>Randomize</button>";
 
 <img ondragstart="drag(event)" draggable="true" id="drag1" src="img_logo.gif" draggable="true"
 ondragstart="drag(event)" width="336" height="69"> -->
