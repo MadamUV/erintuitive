@@ -10,7 +10,7 @@ if(isset($_GET['image'])){
 	$img = "svg/".substr($img, 4).".svg";
 	$handle = fopen($img, "r");
 	$contents = fread($handle, filesize($img));
-	echo '<br><svg width="660" height="660" id="outerSVG">'.$contents.'</svg>';
+	echo $contents;
 	fclose($handle);
 }
 ?>
@@ -23,6 +23,7 @@ if(isset($_GET['image'])){
 	}
 </style>
 <script>
+	$("#animalObject").children("svg").eq(0).width("460").height("460");
 	var revert = document.getElementById("animalObject").innerHTML;
 	function reverting(){
 		document.getElementById("animalObject").innerHTML = revert;
