@@ -453,8 +453,8 @@
 			ev.preventDefault();
 			var data = ev.dataTransfer.getData("taskItem");
 			var element = document.getElementById(data);
-			element.setAttribute("width","500");
-			element.setAttribute("height", "500");
+			element.setAttribute("width","280");
+			element.setAttribute("height", "280");
 			element.setAttribute("class", "swap");
 			var src = element.getAttribute("src");
 			src = src.substring(0, src.length-4);
@@ -462,7 +462,7 @@
 			ev.target.appendChild(element);
 			element.removeAttribute('id');
 		}
-		$('img').draggable();
+		$("img").draggable();
 		/*
 		function clicked(this){
 			var src = (this).getAttribute("src");
