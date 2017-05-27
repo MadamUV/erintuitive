@@ -1,5 +1,5 @@
 <script src="js/jquery.js"></script>
-<span><font style="font-size: 23px;">Randomize the colors until you are satisfied!</font><br>
+<span><font style="font-size: 23px;">Randomize the colors until it's perfect!</font><br>
 <button id='random' onclick="clicked()">Randomize</button>
 <button id='random' onclick="reverting()">Don't like the result? Revert</button>
 </span>
