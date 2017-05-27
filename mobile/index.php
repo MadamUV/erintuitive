@@ -19,6 +19,7 @@
 			</td>
 			<td>
 				<div id="result" width="500px" class="glide">
+				Large Previews:<br>
 				<div class="glide__arrows">
 					<button class="glide__arrow prev" data-glide-dir="<">prev</button>
 					<button class="glide__arrow next" data-glide-dir=">">next</button>
@@ -29,6 +30,9 @@
 				</div>
 				<div class="glide__bullets"></div>
 				</div>
+			</td>
+			<td id="myChoice">
+				
 			</td>
 		</tr>
 	</table>
@@ -46,12 +50,13 @@
 		}
 		#buttons {
 			position: fixed;
-			top: 444px;
-			left: 40%;
+			top: 435px;
+			left: 600px;
 		}
 		#result {
 			vertical-align: text-top;
-			width: 540px;
+			width: 300px;
+			padding-left: 5px;
 			border-width: 5px;
 			border-style: solid;
 		}
@@ -179,7 +184,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("bird2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bird1.svg" alt="first bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird2.svg" alt="second bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird3.svg" alt="third bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird4.svg" alt="fourth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird5.svg" alt="fifth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird6.svg" alt="sixth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird7.svg" alt="seventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird8.svg" alt="eighth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird9.svg" alt="ninth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird10.svg" alt="tenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/blackbird1.svg" alt="eleventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/blackbird2.svg" alt="twelfth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/blackbird3.svg" alt="thirteenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/falcon1.svg" alt="fourteenth bird"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bird1.svg" alt="first bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird2.svg" alt="second bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird3.svg" alt="third bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird4.svg" alt="fourth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird5.svg" alt="fifth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird6.svg" alt="sixth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird7.svg" alt="seventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird8.svg" alt="eighth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird9.svg" alt="ninth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird10.svg" alt="tenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird11.svg" alt="eleventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird12.svg" alt="twelfth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird13.svg" alt="thirteenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird14.svg" alt="fourteenth bird"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -427,20 +432,22 @@
 			if(document.getElementById("yinyang2").checked == true){
 				track.innerHTML = '<li class="glide__slide"><img id="yinyang" width="280" height="280" src="../svg/yinyang.svg" alt="yin yang"></li>';
 				slider = $("#result").glide({
-					type: "carousel", 
+					type: "carousel" 
 				});
 				avatarOptions.setAttribute("class", "animal1");
 				avatarOptions.innerHTML = "";
 				transferData();
 			}
 		}
-		function transferData(){	
-			var current = slider.index();
-			var src = $("img").eq(current).attr("src");
-			src = src.substr(3, src.length-7);
-			//document.getElementById("choose").innerHTML = src.toString();
-			document.getElementById("buttons").innerHTML = "Choose this!<br><form action='../randomizer.php' method='get'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Ok choose this!'></form>";
-		}
+		function transferData(){    
+            var index = $("img").length - 4;
+			var newIndex = Math.floor(Math.random()*index);
+			var src = $("img").eq(newIndex).attr("src");
+			//selection on next page
+            src = src.substr(3, src.length-7);
+            //document.getElementById("choose").innerHTML = src.toString();
+            document.getElementById("buttons").innerHTML = "Choose random selection (you can change your selection on the nesst page.)<br><form action='../randomizer.php' method='get'><input type='hidden' name='num' value ='"+index.toString()+"'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Randomize!'></form>";
+        }
 	</script>
 	<div id="choose"></div>
 </body>

@@ -6,14 +6,38 @@
 <div id="animalObject" height="800" width="800">
 <?php
 if(isset($_GET['image'])){
-	$img = $_GET['image'];
+	$img0 = $_GET['image'];
+	$img = $img0;
 	$img = "svg/".substr($img, 4).".svg";
 	$handle = fopen($img, "r");
 	$contents = fread($handle, filesize($img));
 	echo $contents;
 	fclose($handle);
+	if(isset($_GET['num'])){
+		$num = $_GET['num'];
+		if((int)substr($img0, count($img0)-3)==0){
+			$currentNumberAsString = substr($img0, count($img0)-2);
+			$restOfString = substr($img0, 0, count($img0)-2);
+		}
+		else {
+			$currentNumberAsString = substr($img0, count($img0)-3);
+			$restOfString = substr($img0, 0, count($img0)-3);
+		}
+		if((int)$currentNumberAsString+1 > $num){
+			$img2 = $restOfString."1";
+		}
+		else {
+			$img2 = $restOfString."".(string)((int)$currentNumberAsString+1);
+		}
+	}
 }
 ?>
+</div>
+<form action="randomizer.php" method="get">
+<input type="hidden" name="num" value="<?php echo $num; ?>">
+<input type="hidden" name="image" value="<?php echo $img2; ?>">
+<input type="submit" id="buttons" value="Next image" name="submit">
+</form>
 </div>
 <style>
 	span {
@@ -23,7 +47,7 @@ if(isset($_GET['image'])){
 	}
 </style>
 <script>
-	$("#animalObject").children("svg").eq(0).width("460").height("460");
+	$("#animalObject").children("svg").eq(0).width("440").height("440");
 	var revert = document.getElementById("animalObject").innerHTML;
 	function reverting(){
 		document.getElementById("animalObject").innerHTML = revert;
