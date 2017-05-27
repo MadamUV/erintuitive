@@ -300,7 +300,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var itemPreview = document.getElementById("itemPreview");
 			if(document.getElementById("moon2").checked == true){
-				document.getElementById("itemPreview").innerHTML = '<img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon1.svg" alt="first moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon2.svg" alt="second moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon3.svg" alt="third moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon4.svg" alt="fourth moon">';
+				document.getElementById("itemPreview").innerHTML = '<img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon1.svg" alt="first moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon2.svg" alt="second moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon3.svg" alt="third moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon4.svg" alt="fourth moon"><img onclick="clicked(this)" ondragstart="drag(event)" draggable="true" width="80" height="80" src="svg/moon5.svg" alt="fifth moon">';
 				return true;
 			}
 			else {
