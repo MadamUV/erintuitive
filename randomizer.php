@@ -56,6 +56,44 @@ if(isset($_GET['image'])){
 	function reverting(){
 		document.getElementById("animalObject").innerHTML = revert;
 	}
+	function darken(){
+		var rand1 = randomColor();
+		var randStroke1 = rand1;
+		var strokeSplit = randStroke1.split("");
+		for(j=1; j<strokeSplit.length; j++){
+			if (strokeSplit[j]=="F") {
+				strokeSplit[j]="D";
+			}
+			else if (strokeSplit[j]=="E") {
+				strokeSplit[j]="C";
+			}
+			else if (strokeSplit[j]=="D") {
+				strokeSplit[j]="B";
+			}
+			else if (strokeSplit[j]=="C") {
+				strokeSplit[j]="A";
+			}
+			else if (strokeSplit[j]=="B") {
+				strokeSplit[j]="9";
+			}else if (strokeSplit[j]=="A") {
+				strokeSplit[j]="8";
+			}
+			else if (strokeSplit[j]=="9") {
+				strokeSplit[j]="7";
+			}
+			else if (strokeSplit[j]=="2") {
+				strokeSplit[j]="1";
+			}
+			else if (strokeSplit[j]=="3") {
+				strokeSplit[j]="1";
+			}
+			else if (strokeSplit[j]=="0") {
+				strokeSplit[j]="1";
+			}
+		}
+		randStroke1 = strokeSplit.join(""); 
+		return [rand1, randStroke1];
+	}
 	function clicked(){
 		/*var arr6 = document.getElementsByTagName("rect");
 		var arr5 = arr6.concat(document.getElementsByTagName("circle"));
@@ -65,23 +103,118 @@ if(isset($_GET['image'])){
 		var arr = arr2.concat(document.getElementsByTagName("pattern"));
 		*/
 		//$("circle, ellipse").attr("style", "fill:"+randomColor());
-		$("polygon").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
-		//$("path").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
-		var length = $("#animalObject").find("path").length;
-		if(length > 2){
-			for(i=0; i<length-3; i++){
-				$rand1 = randomColor();
-				$randStroke1 = randomColor();
-				$("#animalObject").find("path").eq(i).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
-				$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
-				$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
+		var d = new Date();
+		var time = d.getTime();
+		if(time%2==0){
+			$("polygon").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
+			//$("path").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
+			var length = $("#animalObject").find("path").length;
+			if(length > 2){
+				for(i=0; i<length-3; i++){
+					$rand1 = randomColor();
+					$randStroke1 = randomColor();
+					$("#animalObject").find("path").eq(i).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
+					$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
+					$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
+				}
 			}
+			else {
+				$("path").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
+			}
+			$("pattern").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
+			$("rect").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
 		}
 		else {
-			$("path").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
+			var length = $("#animalObject").find("path").length;
+			var rand1 = darken()[0];
+			var randStroke1 = darken()[1];
+			if(length > 2){
+				for(i=0; i<length-3; i++){
+					if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+					}
+					else {
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+randStroke1);
+					}
+					$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+				}
+			} 
+			else if (length > 3){
+				for(i=0; i<length-4; i++){
+					if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr("style")==$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")==$("#animalObject").find("path").eq(i+4).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+3).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+						$("#animalObject").find("path").eq(i+4).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+5).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+					}
+					else if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr("style")==$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")!=$("#animalObject").find("path").eq(i+4).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+3).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+						$("#animalObject").find("path").eq(i+4).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+					}
+				}
+			}
+			else if (length > 5){
+				for(i=0; i<length-6; i++){
+					if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr( "style")==$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")==$("#animalObject").find("path").eq(i+4).attr("style") &&
+					$("#animalObject").find("path").eq(i+4).attr("style")==$("#animalObject").find("path").eq(i+5).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+3).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+						$("#animalObject").find("path").eq(i+4).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+5).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+					}
+					else if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr("style")==$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")==$("#animalObject").find("path").eq(i+4).attr("style") &&
+					$("#animalObject").find("path").eq(i+4).attr("style")!=$("#animalObject").find("path").eq(i+5).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+3).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+						$("#animalObject").find("path").eq(i+4).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+					}
+					else if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr("style")==$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")!=$("#animalObject").find("path").eq(i+4).attr("style") &&
+					$("#animalObject").find("path").eq(i+4).attr("style")!=$("#animalObject").find("path").eq(i+5).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+3).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1);
+					}
+					else if($("#animalObject").find("path").eq(i).attr("style")==$("#animalObject").find("path").eq(i+1).attr("style") &&
+					$("#animalObject").find("path").eq(i+1).attr("style")==$("#animalObject").find("path").eq(i+2).attr("style") &&
+					$("#animalObject").find("path").eq(i+2).attr("style")!=$("#animalObject").find("path").eq(i+3).attr("style") &&
+					$("#animalObject").find("path").eq(i+3).attr("style")!=$("#animalObject").find("path").eq(i+4).attr("style") &&
+					$("#animalObject").find("path").eq(i+4).attr("style")!=$("#animalObject").find("path").eq(i+5).attr("style")){
+						$("#animalObject").find("path").eq(i).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+						$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+randStroke1+";stroke-width:"+(Math.floor(Math.random()*2)+1).toString()+";fill:"+rand1); 
+					}
+				}
+			}
+			var lastNum = $("#animalObject").find("path").length-1;
+			$("#animalObject").find("path").eq(lastNum).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
 		}
-		$("pattern").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
-		$("rect").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
 		/*while(arr.length > 0){
 			for (i=0; i<arr.length; i++){
 				var temp = [arr[i]];
