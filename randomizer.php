@@ -2,6 +2,7 @@
 <span><font style="font-size: 23px;">Randomize the colors until it's perfect!</font><br>
 <button id='random' onclick="clicked()">Randomize</button>
 <button id='random' onclick="reverting()">Don't like the result? Revert</button>
+<br><a href="index.php" alt="index page">Start over</a>
 </span>
 <div id="animalObject" height="800" width="800">
 <?php
