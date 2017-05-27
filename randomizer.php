@@ -30,6 +30,10 @@ if(isset($_GET['image'])){
 			$img2 = $restOfString."".(string)((int)$currentNumberAsString+1);
 		}
 	}
+	else {
+		$num = "";
+		
+	}
 }
 ?>
 </div>
@@ -61,16 +65,16 @@ if(isset($_GET['image'])){
 		var arr = arr2.concat(document.getElementsByTagName("pattern"));
 		*/
 		//$("circle, ellipse").attr("style", "fill:"+randomColor());
-		$("polygon").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*5)+1).toString()+";fill:"+randomColor());
+		$("polygon").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
 		//$("path").attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*9)+1).toString()+";fill:"+randomColor());
 		var length = $("#animalObject").find("path").length;
 		if(length > 2){
 			for(i=0; i<length-3; i++){
 				$rand1 = randomColor();
 				$randStroke1 = randomColor();
-				$("#animalObject").find("path").eq(i).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*5)+1).toString()+";fill:"+$rand1); 
-				$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*5)+1).toString()+";fill:"+randomColor());
-				$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*5)+1).toString()+";fill:"+$rand1); 
+				$("#animalObject").find("path").eq(i).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
+				$("#animalObject").find("path").eq(i+1).attr("style", "stroke:"+randomColor()+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+randomColor());
+				$("#animalObject").find("path").eq(i+2).attr("style", "stroke:"+$randStroke1+";stroke-width:"+(Math.floor(Math.random()*4)+1).toString()+";fill:"+$rand1); 
 			}
 		}
 		else {

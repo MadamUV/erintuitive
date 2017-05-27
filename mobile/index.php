@@ -440,7 +440,7 @@
 			}
 		}
 		function transferData(){    
-            var index = $("img").length - 4;
+            var index = $("img").length - 4);
 			var newIndex = Math.floor(Math.random()*index);
 			var src = $("img").eq(newIndex).attr("src");
 			//selection on next page

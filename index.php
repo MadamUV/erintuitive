@@ -450,19 +450,20 @@
 		}
 
 		function drop(ev) {
-			if(document.getElementById("result").innerHTML == ""){
-				ev.preventDefault();
-				var data = ev.dataTransfer.getData("taskItem");
-				var element = document.getElementById(data);
-				element.setAttribute("width","280");
-				element.setAttribute("height", "280");
-				element.setAttribute("class", "swap");
-				var src = element.getAttribute("src");
-				src = src.substring(0, src.length-4);
-				document.getElementById("buttons").innerHTML = '<form action="randomizer.php" method="get"><input type="hidden" name="image" value="'+src+'"><input type="submit" value="next"></form>';
-				ev.target.appendChild(element);
-				element.removeAttribute('id');
-			}
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("taskItem");
+			var element = document.getElementById(data);
+			element.setAttribute("width","280");
+			element.setAttribute("height", "280");
+			element.setAttribute("class", "swap");
+			var src = element.getAttribute("src");
+			src = src.substring(0, src.length-4);
+			var indexToString = ($("img").length - 4).toString();
+			document.getElementById("buttons").innerHTML = '<form action="randomizer.php" method="get"><input type="hidden" name="image" value="'+src+'"><input type="hidden" name="num" value="'+indexToString+'"><input type="submit" value="next"></form>';
+			ev.target.appendChild(element);
+			element.removeAttribute('id');
+			document.getElementById("itemPreview").innerHTML = "Now you have your animal, please click next.<br>You can always start over.";
+			document.getElementById("avatarOptions").innerHTML = "";
 		}
 		$("img").draggable();
 		/*
