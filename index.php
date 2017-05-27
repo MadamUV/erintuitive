@@ -458,7 +458,7 @@
 			element.setAttribute("class", "swap");
 			var src = element.getAttribute("src");
 			src = src.substring(0, src.length-4);
-			var indexToString = ($("img").length - 4).toString();
+			var indexToString = ($("img").length).toString();
 			document.getElementById("buttons").innerHTML = '<form action="randomizer.php" method="get"><input type="hidden" name="image" value="'+src+'"><input type="hidden" name="num" value="'+indexToString+'"><input type="submit" value="next"></form>';
 			ev.target.appendChild(element);
 			element.removeAttribute('id');
