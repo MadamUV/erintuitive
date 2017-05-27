@@ -450,7 +450,7 @@
 		}
 
 		function drop(ev) {
-			if(document.getElementById("result").innerHTML = ""){
+			if(document.getElementById("result").innerHTML == ""){
 				ev.preventDefault();
 				var data = ev.dataTransfer.getData("taskItem");
 				var element = document.getElementById(data);
