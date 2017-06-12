@@ -1,0 +1,23 @@
+{
+  "name": "erintuitive-readings",
+  "version": "1.0.0",
+  "description": "This is a virtual world for people interested in Erintuitive's personality readings and to meet new people interested in readings.",
+  "main": "index.php",
+  "scripts": {
+    "test": "testing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://masterer@bitbucket.org/masterer/psychic_site.git"
+  },
+  "keywords": [
+    "psychic",
+    "intuitive",
+    "readings",
+    "virtual",
+    "social"
+  ],
+  "author": "Erin M Masterson",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/masterer/psychic_site#readme"
+}

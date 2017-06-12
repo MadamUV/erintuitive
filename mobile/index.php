@@ -82,7 +82,7 @@
 		function backOptions() {
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
-			if (avatarOptions.getAttribute("class")=="human" || avatarOptions.getAttribute("class")=="animal"){
+			if (avatarOptions.getAttribute("class")=="animal"){
 				avatarOptions.innerHTML = 'Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">';
 				track.innerHTML = "";
 			}
@@ -95,9 +95,6 @@
 				slider_api = slider.data("glide_api");
 				slider_api.destroy();
 				document.getElementById("buttons").innerHTML = '<button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>'; 
-			}
-			else if (avatarOptions.getAttribute("class")=="human1"){
-				avatarOptions.innerHTML = '<input type="radio" name="gender" value="male"> Male<br><input type="radio" name="gender" value="female"> Female<br><input type="radio" name="gender" value="other"> Other<br>Skin color<input type="color" name="skinColor" value="#ff0000"><br>Hair color<input type="color" name="hairColor" value="#ff0000"><br>Eye color<input type="color" name="eyeColor" value="#ff0000"><br></div>';
 			}
 		}
 		function nextOptions() {
