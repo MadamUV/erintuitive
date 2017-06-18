@@ -148,7 +148,12 @@
 			skins[i].setAttribute("fill", skinTone);
 		}
 		function backOptions() {
-			
+			if(avatarOptions.getAttribute("class")=="skinStep"){
+				avatarOptions.innerHTML = "Please choose your gender.";
+				itemPreview.innerHTML = '<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
+				relativeContainer.innerHTML = "";
+				avatarOptions.setAttribute("class", "init");
+			}
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
