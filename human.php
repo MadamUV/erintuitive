@@ -131,6 +131,7 @@
 	</style>
 	<script>
 		//https://apps.facebook.com/erintuitive
+		var theGender = '';
 		var relativeContainer = document.getElementById("relativeContainer");
 		var itemPreview = document.getElementById("itemPreview");
 		var avatarOptions = document.getElementById("avatarOptions");
@@ -167,15 +168,18 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="skinStep"){
 				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
-				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 10px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
+				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
-				//itemPreview.style.paddingTop = "400px";
+				//itemPreview.style.paddingTop = "100px";
 				var humanEyes = document.getElementsByClassName("eyes");
 				for (i=0; i<humanEyes.length; i++) {
-					humanEyes[i].style.marginTop = "-100px";
+					humanEyes[i].style.marginTop = "-270px";
 				}
 				avatarOptions.setAttribute("class", "eyesStep");
 				previous = relativeContainer.innerHTML;
+			}
+			else if(avatarOptions.getAttribute("class")=="eyesStep"){
+				
 			}
 		}
 		function makeSkinColor() {
@@ -187,10 +191,12 @@
 		function man() {
 			var man = document.getElementById("buttonMan");
 			relativeContainer.innerHTML = man.innerHTML;
+			theGender = 'male';
 		}
 		function woman() {
 			var woman = document.getElementById("buttonWoman");
 			relativeContainer.innerHTML = woman.innerHTML;
+			theGender = 'female';
 		}
 		//window.location.replace(url);
 	</script>
