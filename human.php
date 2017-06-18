@@ -144,6 +144,7 @@
 		var time = d.getTime();
 		var randomNum = time % 28;
 		var skinTone = skinColors[randomNum];
+		var previous = '';
 		for (i=0; i<skins.length; i++){
 			skins[i].setAttribute("fill", skinTone);
 		}
@@ -162,17 +163,19 @@
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				avatarOptions.setAttribute("class", "skinStep");
+				previous = relativeContainer.innerHTML;
 			}
 			else if(avatarOptions.getAttribute("class")=="skinStep"){
-				avatarOptions.innerHTML = "Choose eyes.";
-				itemPreview.innerHTML = '<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>';
+				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
+				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 10px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
-				itemPreview.style.paddingTop = "300px";
+				//itemPreview.style.paddingTop = "400px";
 				var humanEyes = document.getElementsByClassName("eyes");
 				for (i=0; i<humanEyes.length; i++) {
-					humanEyes[i].style.marginTop = "-300px";
+					humanEyes[i].style.marginTop = "-100px";
 				}
 				avatarOptions.setAttribute("class", "eyesStep");
+				previous = relativeContainer.innerHTML;
 			}
 		}
 		function makeSkinColor() {
