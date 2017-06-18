@@ -157,6 +157,7 @@
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
+				avatarOptions.innerHTML = "Choose skin color.";
 				itemPreview.innerHTML = '<div><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
