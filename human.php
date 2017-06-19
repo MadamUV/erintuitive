@@ -58,7 +58,7 @@
 	<title>Erintuitive's Psychic Place</title>
 </head>
 <body>
-	<table width="750px">
+	<table width="580px">
 	<td>
 		<tr>
 			<td width="10%">
