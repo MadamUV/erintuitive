@@ -145,17 +145,26 @@
 		for (i=0; i<skins.length; i++){
 			skins[i].setAttribute("fill", skinTone);
 		}
+		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
 				avatarOptions.innerHTML = "Please choose your gender.";
 				itemPreview.innerHTML = '<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
 				relativeContainer.innerHTML = "";
 				avatarOptions.setAttribute("class", "init");
-				relativeContainer.innerHTML = previous;
+				relativeContainer.innerHTML = '';
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
-				
+				avatarOptions.innerHTML = "Choose skin color.";
+				itemPreview.innerHTML = '<div><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
+				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
+				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				relativeContainer.innerHTML = previous;
+				for (i=0; i<skins.length; i++){
+					skins[i].setAttribute("fill", updateSkin);
+				}
+				avatarOptions.setAttribute("class", "skinStep");
+				
 			}
 		}
 		function nextOptions() {
@@ -168,6 +177,7 @@
 				previous = relativeContainer.innerHTML;
 			}
 			else if(avatarOptions.getAttribute("class")=="skinStep"){
+				$("#buttons").hide();
 				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
 				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
@@ -181,8 +191,9 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
 				avatarOptions.innerHTML = "Now for eye color!";
-				itemPreview.innerHTML = '<div><label for="color1">Color 1</label> <input id="color2" type="text" name="color1" value="#333399" onchange="makeEyeColor()"/></div>';
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
+				
 				avatarOptions.setAttribute("class", "mouthStep");
 				previousEyes = relativeContainer.innerHTML;
 			}
@@ -194,87 +205,97 @@
 			}
 		}
 		function makeEyeColor() {
-			var theEyes = document.getElementsByClassName("irises");
-			for (i=0; i<theEyes.length; i++){
-				var eyeColor = document.getElementById("color1").getAttribute("value");
-				theEyes[i].setAttribute("fill", eyeColor);
-			}
+			var eyeColor = document.getElementById("color2").getAttribute("value");
+			$(".irises").attr("fill", eyeColor);
 		}
 		function man() {
 			var man = document.getElementById("buttonMan");
 			relativeContainer.innerHTML = man.innerHTML;
 			theGender = 'male';
+			$("#buttons").show();
 		}
 		function woman() {
 			var woman = document.getElementById("buttonWoman");
 			relativeContainer.innerHTML = woman.innerHTML;
 			theGender = 'female';
+			$("#buttons").show();
 		}
 		function buttonEyes1(){
 			var buttonEyes1 = document.getElementById("buttonEyes1");
 			relativeContainer.innerHTML = previous+buttonEyes1.innerHTML;
 			$("#relativeContainer .eyes1").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes2(){
 			var buttonEyes2 = document.getElementById("buttonEyes2");
 			relativeContainer.innerHTML = previous+buttonEyes2.innerHTML;
 			$("#relativeContainer .eyes2").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes3(){
 			var buttonEyes3 = document.getElementById("buttonEyes3");
 			relativeContainer.innerHTML = previous+buttonEyes3.innerHTML;
 			$("#relativeContainer .eyes3").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes4(){
 			var buttonEyes4 = document.getElementById("buttonEyes4");
 			relativeContainer.innerHTML = previous+buttonEyes4.innerHTML;
 			$("#relativeContainer .eyes4").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes5(){
 			var buttonEyes5 = document.getElementById("buttonEyes5");
 			relativeContainer.innerHTML = previous+buttonEyes5.innerHTML;
 			$("#relativeContainer .eyes5").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes6(){
 			var buttonEyes6 = document.getElementById("buttonEyes6");
 			relativeContainer.innerHTML = previous+buttonEyes6.innerHTML;
 			$("#relativeContainer .eyes6").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes7(){
 			var buttonEyes7 = document.getElementById("buttonEyes7");
 			relativeContainer.innerHTML = previous+buttonEyes7.innerHTML;
 			$("#relativeContainer .eyes7").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes8(){
 			var buttonEyes8 = document.getElementById("buttonEyes8");
 			relativeContainer.innerHTML = previous+buttonEyes8.innerHTML;
 			$("#relativeContainer .eyes8").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes9(){
 			var buttonEyes9 = document.getElementById("buttonEyes9");
 			relativeContainer.innerHTML = previous+buttonEyes9.innerHTML;
 			$("#relativeContainer .eyes9").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes10(){
 			var buttonEyes10 = document.getElementById("buttonEyes10");
 			relativeContainer.innerHTML = previous+buttonEyes10.innerHTML;
 			$("#relativeContainer .eyes10").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		function buttonEyes11(){
 			var buttonEyes11 = document.getElementById("buttonEyes11");
 			relativeContainer.innerHTML = previous+buttonEyes11.innerHTML;
 			$("#relativeContainer .eyes11").css({'margin-left':'-43%'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			$("#buttons").show();
 		}
 		//window.location.replace(url);
 	</script>
