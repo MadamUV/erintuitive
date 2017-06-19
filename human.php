@@ -151,6 +151,8 @@
 				avatarOptions.innerHTML = "Please choose your gender.";
 				itemPreview.innerHTML = '<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
 				relativeContainer.innerHTML = "";
+				itemPreview.style.paddingLeft = "100px";
+				itemPreview.style.paddingTop = "40px";
 				avatarOptions.setAttribute("class", "init");
 				relativeContainer.innerHTML = '';
 			}
@@ -160,11 +162,21 @@
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				relativeContainer.innerHTML = previous;
-				for (i=0; i<skins.length; i++){
+				/*for (i=0; i<skins.length; i++){
 					skins[i].setAttribute("fill", updateSkin);
-				}
+				}*/
 				avatarOptions.setAttribute("class", "skinStep");
-				
+			}
+			else if(avatarOptions.getAttribute("class")=="mouthStep"){
+				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
+				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
+				itemPreview.style.padding = "0px";
+				//itemPreview.style.paddingTop = "100px";
+				var humanEyes = document.getElementsByClassName("eyes");
+				for (i=0; i<humanEyes.length; i++) {
+					humanEyes[i].style.marginTop = "-270px";
+				}
+				avatarOptions.setAttribute("class", "eyesStep");
 			}
 		}
 		function nextOptions() {
