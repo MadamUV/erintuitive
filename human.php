@@ -66,7 +66,7 @@
 					Please choose your gender.
 				</div>
 			</td>
-			<td id="itemPreview" width="40%">
+			<td id="itemPreview" width="30%">
 				<button id="buttonMan" onclick="man()">
 					<?php echo $man; ?>
 				</button>
@@ -109,7 +109,7 @@
 			border-width: 5px;
 			border-style: solid;
 			position: relative;
-			padding-left: 90px;
+			padding-left: 20px;
 		}
 		#avatarOptions {
 			height: 450px;
