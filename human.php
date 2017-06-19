@@ -207,6 +207,7 @@
 		function makeEyeColor() {
 			var eyeColor = document.getElementById("color2").getAttribute("value");
 			$(".irises").attr("fill", eyeColor);
+			$(".irises").css({'fill':eyeColor});
 		}
 		function man() {
 			var man = document.getElementById("buttonMan");
