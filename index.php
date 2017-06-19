@@ -437,8 +437,8 @@
 			//selection on next page
             src = src.substr(3, src.length-7);
             //document.getElementById("choose").innerHTML = src.toString();
-            document.getElementById("buttons").innerHTML = "Choose random selection (you can change your selection on the nesst page.)<br><form action='../randomizer.php' method='get'><input type='hidden' name='num' value ='"+index.toString()+"'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Randomize!'></form>";
-			document.getElementById("buttons").style.top = "400px";
+            document.getElementById("buttons").innerHTML = "Choose random selection (you can change your selection on the next page.)<br><form action='../randomizer.php' method='get'><input type='hidden' name='num' value ='"+index.toString()+"'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Randomize!'></form>";
+			document.getElementById("buttons").style.top = "360px";
 		}
 	</script>
 	<div id="choose"></div>
