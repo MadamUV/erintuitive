@@ -149,6 +149,7 @@
 		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
+				$("#buttons").hide();
 				avatarOptions.innerHTML = "Please choose your gender.";
 				itemPreview.innerHTML = '<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
 				relativeContainer.innerHTML = "";
@@ -159,7 +160,7 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
 				avatarOptions.innerHTML = "Choose skin color.";
-				itemPreview.innerHTML = '<div><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				relativeContainer.innerHTML = previous;
@@ -169,10 +170,12 @@
 				avatarOptions.setAttribute("class", "skinStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
+				$("#buttons").hide();
 				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
 				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
 				//itemPreview.style.paddingTop = "100px";
+				relativeContainer.innerHTML = previous;
 				var humanEyes = document.getElementsByClassName("eyes");
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
@@ -183,13 +186,14 @@
 				avatarOptions.innerHTML = "Now for eye color!";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
+				relativeContainer.innerHTML = previousEyes;
 				avatarOptions.setAttribute("class", "mouthStep");
 			}
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
 				avatarOptions.innerHTML = "Choose skin color.";
-				itemPreview.innerHTML = '<div><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				avatarOptions.setAttribute("class", "skinStep");
@@ -204,16 +208,15 @@
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
 				}
-				avatarOptions.setAttribute("class", "eyesStep");
 				previous = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
 				avatarOptions.innerHTML = "Now for eye color!";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
-				
-				avatarOptions.setAttribute("class", "mouthStep");
 				previousEyes = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "mouthStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
 				$("#buttons").hide();
@@ -224,8 +227,12 @@
 				for (i=0; i<humanMouth.length; i++) {
 					humanMouth[i].style.marginTop = "-305px";
 				}
+				previousMouth = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "mouthStep2");
-				previousEyes = relativeContainer.innerHTML;
+			}
+			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
+				avatarOptions.innerHTML = "If your mouth selection contains a beard, moustache, or lipstick you may re-color it here.";
+				
 			}
 		}
 		function makeSkinColor() {
