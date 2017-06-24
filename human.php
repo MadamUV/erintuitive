@@ -179,6 +179,12 @@
 				}
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
+			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
+				avatarOptions.innerHTML = "Now for eye color!";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
+				$('#color2').colorPicker();
+				avatarOptions.setAttribute("class", "mouthStep");
+			}
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
