@@ -46,8 +46,50 @@
 	$mouth14 = '<button id="mouth14" onclick="buttonMouth14()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path d="M 236.844 637.436 C 236.902 637.651 241.392 635.541 243.416 635.513 C 243.416 636.2 244.674 636.32 245.872 637.817 C 246.715 635.334 248.658 635.18 249.219 635.18 C 249.723 635.798 254.852 637.305 254.852 637.651 C 262.991 637.651 253.312 640.591 250.447 644.16 C 246.615 644.16 244.72 644.112 241.561 644.112 C 239.941 644.112 237.444 641.864 237.444 641.522 C 236.819 640.237 234.195 640.527 234.195 638.268 C 233.898 637.651 233.527 637.865 233.23 637.865 L 236.844 637.436 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(165, 165, 165);"/> <path d="M 237.304 637.796 C 237.358 637.991 241.535 636.076 243.417 636.051 C 243.417 636.674 244.59 636.783 245.702 638.141 C 246.489 635.888 248.294 635.749 248.818 635.749 C 249.286 636.309 254.058 637.677 254.058 637.991 C 261.629 637.991 252.624 640.659 249.959 643.897 C 246.395 643.897 244.632 643.853 241.693 643.853 C 240.184 643.853 237.863 641.814 237.863 641.503 C 237.282 640.337 234.839 640.6 234.839 638.551 C 234.563 637.991 234.217 638.185 233.941 638.185 L 237.304 637.796 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(241, 14, 135);"/></svg></button>';
 	$mouth15 = '<button id="mouth15" onclick="buttonMouth15()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path d="M 240.141 637.436 C 240.175 637.651 242.768 635.541 243.937 635.513 C 243.937 636.2 244.664 636.32 245.356 637.817 C 245.843 635.334 246.965 635.18 247.289 635.18 C 247.58 635.798 250.543 637.305 250.543 637.651 C 255.243 637.651 249.653 640.591 247.998 644.16 C 245.785 644.16 244.691 644.112 242.866 644.112 C 241.93 644.112 240.488 641.864 240.488 641.522 C 240.127 640.237 238.611 640.527 238.611 638.268 C 238.44 637.651 238.225 637.865 238.054 637.865 L 240.141 637.436 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(165, 165, 165);"/> <path d="M 240.407 637.796 C 240.438 637.991 242.851 636.076 243.938 636.051 C 243.938 636.674 244.615 636.783 245.258 638.141 C 245.712 635.888 246.755 635.749 247.057 635.749 C 247.328 636.309 250.084 637.677 250.084 637.991 C 254.457 637.991 249.256 640.659 247.716 643.897 C 245.658 643.897 244.64 643.853 242.942 643.853 C 242.071 643.853 240.73 641.814 240.73 641.503 C 240.394 640.337 238.983 640.6 238.983 638.551 C 238.824 637.991 238.624 638.185 238.465 638.185 L 240.407 637.796 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(241, 109, 14);"/></svg></button>';
 	//style="z-index:3;"
-	$hair1 = '<button id="hair1" onclick="buttonHair1()"></button>';
-	$hair2 = '<button id="hair1" onclick="buttonHair2()"></button>';
+	$handleStart = "svg/human/humanBody/hair_kit/hair";
+	$hairArr = array();
+	for($i=1; $i<=36; $i++){
+		$str = (string)$i;
+		$string = file_get_contents($handleStart.$str.".svg");
+		$theHair = '<button id="hair'.$str.'" onclick="buttonHair'.$str.'()">'.$string.'</button>';
+		array_push($hairArr, $theHair);
+	}
+	/*$hair1 = '<button id="hair1" onclick="buttonHair1()">'.file_get_contents($handleStart."hair1.svg").'</button>';
+	$hair2 = '<button id="hair2" onclick="buttonHair2()">'.file_get_contents($handleStart."hair2.svg").'</button>';
+	$hair3 = '<button id="hair3" onclick="buttonHair3()">'.file_get_contents($handleStart."hair3.svg").'</button>';
+	$hair4 = '<button id="hair4" onclick="buttonHair4()">'.file_get_contents($handleStart."hair4.svg").'</button>';
+	$hair5 = '<button id="hair5" onclick="buttonHair5()">'.file_get_contents($handleStart."hair5.svg").'</button>';
+	$hair6 = '<button id="hair6" onclick="buttonHair6()">'.file_get_contents($handleStart."hair6.svg").'</button>';
+	$hair7 = '<button id="hair7" onclick="buttonHair7()">'.file_get_contents($handleStart."hair7.svg").'</button>';
+	$hair8 = '<button id="hair8" onclick="buttonHair8()">'.file_get_contents($handleStart."hair8.svg").'</button>';
+	$hair9 = '<button id="hair9" onclick="buttonHair9()">'.file_get_contents($handleStart."hair9.svg").'</button>';
+	$hair10 = '<button id="hair10" onclick="buttonHair10()">'.file_get_contents($handleStart."hair10.svg").'</button>';
+	$hair11 = '<button id="hair11" onclick="buttonHair11()">'.file_get_contents($handleStart."hair11.svg").'</button>';
+	$hair12 = '<button id="hair12" onclick="buttonHair12()">'.file_get_contents($handleStart."hair12.svg").'</button>';
+	$hair13 = '<button id="hair13" onclick="buttonHair13()">'.file_get_contents($handleStart."hair13.svg").'</button>';
+	$hair14 = '<button id="hair14" onclick="buttonHair14()">'.file_get_contents($handleStart."hair14.svg").'</button>';
+	$hair15 = '<button id="hair15" onclick="buttonHair15()">'.file_get_contents($handleStart."hair15.svg").'</button>';
+	$hair16 = '<button id="hair16" onclick="buttonHair16()">'.file_get_contents($handleStart."hair16.svg").'</button>';
+	$hair17 = '<button id="hair17" onclick="buttonHair17()">'.file_get_contents($handleStart."hair17.svg").'</button>';
+	$hair18 = '<button id="hair18" onclick="buttonHair17()">'.file_get_contents($handleStart."hair17.svg").'</button>';
+	$hair19 = '<button id="hair19" onclick="buttonHair19()">'.file_get_contents($handleStart."hair19.svg").'</button>';
+	$hair20 = '<button id="hair20" onclick="buttonHair20()">'.file_get_contents($handleStart."hair20.svg").'</button>';
+	$hair21 = '<button id="hair21" onclick="buttonHair21()">'.file_get_contents($handleStart."hair21.svg").'</button>';
+	$hair22 = '<button id="hair22" onclick="buttonHair22()">'.file_get_contents($handleStart."hair22.svg").'</button>';
+	$hair23 = '<button id="hair23" onclick="buttonHair23()">'.file_get_contents($handleStart."hair23.svg").'</button>';
+	$hair24 = '<button id="hair24" onclick="buttonHair24()">'.file_get_contents($handleStart."hair24.svg").'</button>';
+	$hair25 = '<button id="hair25" onclick="buttonHair25()">'.file_get_contents($handleStart."hair25.svg").'</button>';
+	$hair26 = '<button id="hair26" onclick="buttonHair26()">'.file_get_contents($handleStart."hair26.svg").'</button>';
+	$hair27 = '<button id="hair27" onclick="buttonHair27()">'.file_get_contents($handleStart."hair27.svg").'</button>';
+	$hair28 = '<button id="hair28" onclick="buttonHair28()">'.file_get_contents($handleStart."hair28.svg").'</button>';
+	$hair29 = '<button id="hair29" onclick="buttonHair29()">'.file_get_contents($handleStart."hair29.svg").'</button>';
+	$hair30 = '<button id="hair30" onclick="buttonHair30()">'.file_get_contents($handleStart."hair30.svg").'</button>';
+	$hair31 = '<button id="hair31" onclick="buttonHair31()">'.file_get_contents($handleStart."hair31.svg").'</button>';
+	$hair32 = '<button id="hair32" onclick="buttonHair32()">'.file_get_contents($handleStart."hair32.svg").'</button>';
+	$hair33 = '<button id="hair33 onclick="buttonHair33()">'.file_get_contents($handleStart."hair33.svg").'</button>';
+	$hair34 = '<button id="hair34" onclick="buttonHair34()">'.file_get_contents($handleStart."hair34.svg").'</button>';
+	$hair35 = '<button id="hair35 onclick="buttonHair35()">'.file_get_contents($handleStart."hair35.svg").'</button>';
+	$hair36 = '<button id="hair36" onclick="buttonHair36()">'.file_get_contents($handleStart."hair36.svg").'</button>';*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -148,17 +190,19 @@
 		for (i=0; i<skins.length; i++){
 			skins[i].setAttribute("fill", skinTone);
 		}
+		var previousOriginal = itemPreview.innerHTML;
 		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
 				$("#buttons").hide();
 				avatarOptions.innerHTML = "Please choose your gender.";
-				itemPreview.innerHTML = '<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
+				itemPreview.innerHTML = previousOriginal;
+				//'<button id="buttonMan" onclick="man()"><?php echo $man; ?></button><button id="buttonWoman" onclick="woman()"><?php echo $woman; ?></button>';
 				relativeContainer.innerHTML = "";
 				itemPreview.style.paddingLeft = "50px";
-				itemPreview.style.paddingTop = "50px";
-				avatarOptions.setAttribute("class", "init");
+				itemPreview.style.paddingTop = "30px";
 				relativeContainer.innerHTML = '';
+				avatarOptions.setAttribute("class", "init");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
 				avatarOptions.innerHTML = "Choose skin color.";
@@ -166,13 +210,12 @@
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
 				relativeContainer.innerHTML = previous;
-				/*for (i=0; i<skins.length; i++){
+				for (i=0; i<skins.length; i++){
 					skins[i].setAttribute("fill", updateSkin);
-				}*/
+				}
 				avatarOptions.setAttribute("class", "skinStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
-				$("#buttons").hide();
 				avatarOptions.innerHTML = "Choose eyes and customize<br>their color in the next step.";
 				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
@@ -185,11 +228,20 @@
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
-				avatarOptions.innerHTML = "Now for mouth color!";
-				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
-				$('#color2').colorPicker();
+				avatarOptions.innerHTML = "Mouth time.<br>You can change<br>beard color later.";
+				itemPreview.innerHTML = '<div id="mouthsContainer" style="position: absolute; top: 270px;">'+'<?php echo $mouth1; echo $mouth2; echo $mouth3; echo $mouth4; echo $mouth5; echo $mouth6; echo $mouth7; echo $mouth8; echo $mouth9; echo $mouth10; echo $mouth11; echo $mouth12; echo $mouth13; echo $mouth14; echo $mouth15; ?>'+'</div>';
+				itemPreview.style.padding = "0px";
+				var humanMouth = document.getElementsByClassName("mouth");
+				for (i=0; i<humanMouth.length; i++) {
+					humanMouth[i].style.marginTop = "-305px";
+				}
 				relativeContainer.innerHTML = previousEyes;
 				avatarOptions.setAttribute("class", "mouthStep");
+			}
+			else if(avatarOptions.getAttribute("class")=="hairStep"){
+				$("#buttons").hide();
+				
+				avatarOptions.setAttribute("class", "mouthStep2");
 			}
 		}
 		function nextOptions() {
@@ -210,14 +262,14 @@
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
 				}
-				previous = relativeContainer.innerHTML;
+				//previous = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
 				avatarOptions.innerHTML = "Now for eye color!";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
-				previousEyes = relativeContainer.innerHTML;
+				//previousEyes = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "mouthStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
@@ -229,15 +281,28 @@
 				for (i=0; i<humanMouth.length; i++) {
 					humanMouth[i].style.marginTop = "-305px";
 				}
-				previousMouth = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "mouthStep2");
+				//previousMouth = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "mouthStep");
 			}
+			//these are alternating relative to the nextoptions function
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
 				avatarOptions.innerHTML = "If your mouth selection contains a beard, moustache, or lipstick you may re-color it here.";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color3" type="text" name="color3" value="#333399" onchange="makeMouthColor()"/></div>';
 				$('#color3').colorPicker();
-				previousMouth = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "mouthStep3");
+				//previousMouth = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "hairStep");
+			}
+			else if(avatarOptions.getAttribute("class")=="hairStep"){
+				avatarOptions.innerHTML = "Add some hair!";
+				itemPreview.innerHTML = '<div id="hairsContainer" style="position: absolute; top: 270px;">'+'<? foreach($hairArr as $value){ echo $value; } ?>'+'</div>';
+				var humanHair = $("#itemPreview svg");
+				for (i=0; i<humanHair.length; i++) {
+					humanHair[i].style.margin = '20px';
+				}
+				/*itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
+				$('#color4').colorPicker();*/
+				//previousMouth = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "topStep");
 			}
 		}
 		function makeSkinColor() {
@@ -378,6 +443,7 @@
 			$("#relativeContainer").append($("#buttonEyes1").html());
 			$("#relativeContainer .eyes1").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes2(){
@@ -385,6 +451,7 @@
 			$("#relativeContainer").append($("#buttonEyes2").html());
 			$("#relativeContainer .eyes2").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes3(){
@@ -392,6 +459,7 @@
 			$("#relativeContainer").append($("#buttonEyes3").html());
 			$("#relativeContainer .eyes3").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes4(){
@@ -399,6 +467,7 @@
 			$("#relativeContainer").append($("#buttonEyes4").html());
 			$("#relativeContainer .eyes4").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes5(){
@@ -406,6 +475,7 @@
 			$("#relativeContainer").append($("#buttonEyes5").html());
 			$("#relativeContainer .eyes5").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes6(){
@@ -413,6 +483,7 @@
 			$("#relativeContainer").append($("#buttonEyes6").html());
 			$("#relativeContainer .eyes6").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes7(){
@@ -420,6 +491,7 @@
 			$("#relativeContainer").append($("#buttonEyes7").html());
 			$("#relativeContainer .eyes7").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes8(){
@@ -427,6 +499,7 @@
 			$("#relativeContainer").append($("#buttonEyes8").html());
 			$("#relativeContainer .eyes8").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes9(){
@@ -434,6 +507,7 @@
 			$("#relativeContainer").append($("#buttonEyes9").html());
 			$("#relativeContainer .eyes9").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes10(){
@@ -441,6 +515,7 @@
 			$("#relativeContainer").append($("#buttonEyes10").html());
 			$("#relativeContainer .eyes10").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		function buttonEyes11(){
@@ -448,6 +523,7 @@
 			$("#relativeContainer").append($("#buttonEyes11").html());
 			$("#relativeContainer .eyes11").css({'position':'absolute', 'top':'0', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
+			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
 		}
 		
