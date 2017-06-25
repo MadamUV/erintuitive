@@ -202,6 +202,7 @@
 				itemPreview.style.paddingLeft = "50px";
 				itemPreview.style.paddingTop = "30px";
 				relativeContainer.innerHTML = '';
+				updateSkin = $("#man .skin").attr("fill");
 				avatarOptions.setAttribute("class", "init");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
