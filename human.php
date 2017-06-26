@@ -43,8 +43,8 @@
 	$mouth11 = '<button id="mouth11" onclick="buttonMouth11()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path class="beard" id="path2166" style="fill:#3aa59b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 260.243 638.793 C 258.021 638.499 255.016 636.779 253.461 636.273 C 251.907 635.767 247.793 635.393 245.451 635.393 C 243.378 635.393 236.918 635.166 234.462 637.153 C 233.451 637.966 232.115 638.326 231.02 638.793 C 230.682 638.939 230.332 639.246 230.569 639.579 C 232.06 641.646 234.735 641.379 236.626 639.993 C 237.173 641.086 238.158 641.873 239.48 641.793 C 240.094 641.753 240.763 641.446 241.24 641.006 C 241.616 641.513 242.295 642.06 242.998 642.06 C 243.746 642.06 244.925 641.739 245.451 641.179 C 245.681 640.939 245.548 640.913 245.803 641.179 C 246.332 641.739 247.089 642.179 248.142 642.113 C 248.602 642.1 249.647 641.513 250.021 641.006 C 250.498 641.446 251.167 641.753 251.782 641.793 C 253.102 641.873 254.089 641.086 254.636 639.993 C 256.526 641.379 259.201 641.646 260.693 639.579 C 260.928 639.246 260.61 638.793 260.243 638.793"/> <path class="beard" id="path2168" style="fill:#3aa59b;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 251.94 649.366 C 251.94 649.366 246.621 646.966 244.165 646.966 C 241.412 646.966 237.211 648.899 237.211 648.899 C 233.236 650.366 233.587 654.633 234.172 656.739 C 234.927 659.446 238.264 665.913 238.264 665.913 L 240.602 661.233 C 240.602 661.233 241.36 665.739 241.537 666.086 C 241.66 666.326 243.392 663.846 244.415 662.339 C 245.397 663.793 247.363 666.646 247.493 666.379 C 247.67 666.033 248.428 661.526 248.428 661.526 L 250.766 666.206 C 250.766 666.206 254.105 659.739 254.857 657.033 C 255.443 654.926 255.683 650.833 251.94 649.366"/></svg></button>';
 	$mouth12 = '<button id="mouth12" onclick="buttonMouth12()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path class="beard" id="path2022" style="fill:#4f3724;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 258.349 643.259 L 258.349 643.246 L 258.36 643.246 Z M 259.974 643.272 C 260.068 639.499 254.161 636.286 246.784 636.112 C 246.382 636.099 237.776 635.552 233.448 639.312 C 232.198 640.406 230.721 642.219 231.985 643.872 C 232.844 644.993 234.044 644.219 234.986 643.326 C 235.065 643.539 235.169 643.739 235.318 643.912 L 235.37 643.952 C 235.434 644.112 235.565 644.232 235.737 644.299 C 236.456 644.552 237.049 644.792 237.792 644.339 L 238.104 644.206 C 238.489 644.086 238.857 643.859 239.193 643.646 C 239.477 643.459 239.761 643.393 240.04 643.352 L 240.265 643.552 C 241.057 644.646 241.805 645.219 243.07 644.446 C 243.417 644.232 245.018 641.672 245.63 643.006 C 245.945 643.672 246.51 644.166 247.117 644.552 C 247.396 644.726 247.94 644.619 248.196 644.472 C 248.401 644.352 248.601 644.152 248.729 643.952 C 249.336 642.952 250.554 643.539 251.27 644.166 C 251.833 644.659 253.284 645.179 253.797 644.299 C 254.245 643.539 254.31 643.232 255.294 643.926 C 256.005 644.433 256.458 644.779 257.31 644.886 C 257.604 644.926 257.862 644.926 258.098 644.912 C 258.36 644.912 258.62 644.872 258.882 644.752 C 259.286 644.593 259.552 644.272 259.701 643.899 C 259.742 643.979 259.966 643.566 259.974 643.272"/> <path class="beard" id="path2024" style="fill:#4f3724;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 254.802 643.099 C 254.768 642.459 254.704 641.846 254.589 641.246 L 253.284 641.246 C 253.456 642.059 253.557 642.912 253.557 643.806 C 253.554 649.232 250.13 653.566 245.841 654.246 C 241.19 654.006 237.338 649.472 237.336 643.726 C 237.336 642.832 237.437 641.979 237.609 641.166 L 236.305 641.166 C 236.193 641.766 236.128 642.393 236.094 643.019 C 234.909 646.326 233.598 650.379 235.208 653.619 C 235.653 654.526 236.482 654.859 237.316 654.806 C 237.253 655.766 237.39 656.752 237.758 657.726 C 238.256 659.046 239.625 660.552 241.18 660.246 C 241.576 660.166 241.906 660.019 242.19 659.832 C 242.598 660.699 243.169 662.339 245.393 662.472 C 246.904 662.552 248.081 661.246 248.701 659.912 C 248.989 660.099 249.318 660.246 249.716 660.326 C 251.27 660.632 252.641 659.112 253.136 657.806 C 253.502 656.832 253.641 655.846 253.581 654.886 C 254.412 654.926 255.24 654.606 255.688 653.699 C 257.294 650.459 255.985 646.406 254.802 643.099"/></svg></button>';
 	$mouth13 = '<button id="mouth13" onclick="buttonMouth13()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path class="beard" id="path2060" style="fill:#7a3e1a;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 259.824 632.605 C 259.121 631.605 257.508 631.459 256.41 631.645 C 254.754 631.938 252.656 632.845 249.741 632.552 C 247.166 632.285 246.412 630.552 245.336 631.085 L 245.15 631.192 C 245.01 631.245 244.896 631.325 244.793 631.419 C 244.69 631.325 244.576 631.245 244.434 631.192 L 244.249 631.085 C 243.173 630.552 242.418 632.285 239.844 632.552 C 236.928 632.845 234.83 631.938 233.173 631.645 C 232.078 631.459 230.462 631.605 229.76 632.605 C 229.392 633.125 229.22 634.019 229.233 634.552 C 229.188 637.392 232.277 638.672 234.824 638.725 C 235.905 638.738 237.325 638.538 238.733 638.005 C 242.15 636.898 244.05 635.165 244.793 633.712 C 245.536 635.165 247.434 636.898 250.852 638.005 C 252.26 638.538 253.678 638.738 254.76 638.725 C 257.308 638.672 260.396 637.392 260.352 634.552 C 260.364 634.019 260.193 633.125 259.824 632.605"/> <path class="beard" id="path2062" style="fill:#7a3e1a;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 258.214 641.765 L 258.173 641.712 L 258.306 641.725 Z M 258.149 661.552 L 258.068 661.605 Z M 211.093 637.032 L 211.092 637.019 L 211.093 637.019 Z M 274.601 638.898 C 274.797 638.765 275.016 638.685 275.251 638.619 C 275.031 638.712 274.817 638.805 274.601 638.898 Z M 282.51 631.019 C 282.43 631.338 282.357 631.645 282.285 631.965 C 281.912 632.738 281.706 633.605 281.589 634.512 C 281.446 634.898 281.278 635.272 281.07 635.632 C 279.798 637.885 277.996 637.259 275.96 637.112 C 273.997 636.952 272.941 639.765 271.198 638.459 C 269.969 637.525 268.853 637.805 267.834 638.819 C 266.732 639.912 266.196 639.765 264.664 639.459 C 264.168 639.352 263.578 639.205 263.11 639.538 C 262.549 639.938 262.16 640.445 261.709 640.752 C 261.3 640.845 260.898 640.925 260.497 641.032 C 260.21 640.978 259.89 640.885 259.496 640.672 C 258.662 640.219 257.952 640.045 257.014 640.152 C 255.834 640.285 255.149 641.912 253.752 640.952 C 253.016 640.459 252.309 640.005 251.39 640.005 C 250.79 640.005 249.981 640.459 249.558 640.859 C 247.909 642.405 246.122 643.005 243.865 642.938 C 242.121 642.872 240.75 641.738 239.293 641.125 C 237.834 639.338 236.136 641.925 234.156 640.898 C 233.28 640.459 232.51 639.072 231.362 639.112 C 230.674 639.125 230.666 639.138 229.99 639.338 C 226.376 640.485 227.48 639.552 225.305 638.525 C 224.465 638.138 223.993 638.058 223.094 638.378 C 221.814 638.832 221.901 640.285 219.741 638.485 C 219.23 638.058 219.061 637.925 218.5 637.592 C 217.752 637.152 216.898 637.312 216.12 637.512 C 212.706 638.405 211.457 636.085 210.988 633.338 L 210.94 633.338 C 210.922 633.472 210.908 633.605 210.892 633.738 L 210.726 633.792 C 210.025 638.525 210.844 643.712 211.978 648.325 C 212.58 650.778 214.586 654.205 217.029 652.699 C 217.249 654.938 218.12 656.725 220.236 658.058 C 221.506 658.845 222.35 658.498 222.962 657.752 C 223.2 659.192 223.948 660.419 225.658 660.952 C 227.674 661.592 228.982 660.965 229.832 659.565 C 230.42 661.138 231.598 662.338 233.39 662.859 C 235.125 663.352 236.318 662.978 236.892 661.792 C 237.661 662.832 238.709 663.498 240.184 663.472 C 241.238 663.459 242.048 663.032 242.546 662.338 C 243.238 663.152 244.321 663.672 245.354 664.032 C 246.842 664.552 247.861 663.672 248.432 662.512 C 249.224 663.578 250.53 664.178 251.976 663.845 C 253.15 663.578 253.498 662.592 253.57 661.552 L 253.582 661.538 C 254.517 662.498 256.101 663.085 257.369 663.058 C 259.18 663.032 259.996 661.632 260.334 660.072 C 260.894 660.898 262.245 661.365 263.29 661.272 C 264.862 661.152 265.776 659.672 266.292 658.178 C 266.765 658.832 267.461 659.259 268.428 659.005 C 269.969 658.632 270.601 657.538 270.845 656.219 C 271.464 656.619 272.293 656.578 273.278 656.165 C 275.21 655.338 275.732 653.645 275.916 651.845 C 276.474 652.512 277.269 652.712 278.506 652.005 C 280.195 651.045 280.215 648.019 280.188 646.005 C 280.356 646.045 280.554 645.978 280.679 645.859 C 281.409 645.778 282.143 645.298 282.43 644.352 C 282.923 642.712 282.93 641.005 282.861 639.298 C 282.782 637.298 283.058 635.165 282.857 633.165 C 282.914 632.512 282.945 631.819 283.004 631.085 C 283.024 630.792 282.581 630.752 282.51 631.019"/></svg></button>';
-	$mouth14 = '<button id="mouth14" onclick="buttonMouth14()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path d="M 236.844 637.436 C 236.902 637.651 241.392 635.541 243.416 635.513 C 243.416 636.2 244.674 636.32 245.872 637.817 C 246.715 635.334 248.658 635.18 249.219 635.18 C 249.723 635.798 254.852 637.305 254.852 637.651 C 262.991 637.651 253.312 640.591 250.447 644.16 C 246.615 644.16 244.72 644.112 241.561 644.112 C 239.941 644.112 237.444 641.864 237.444 641.522 C 236.819 640.237 234.195 640.527 234.195 638.268 C 233.898 637.651 233.527 637.865 233.23 637.865 L 236.844 637.436 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(165, 165, 165);"/> <path d="M 237.304 637.796 C 237.358 637.991 241.535 636.076 243.417 636.051 C 243.417 636.674 244.59 636.783 245.702 638.141 C 246.489 635.888 248.294 635.749 248.818 635.749 C 249.286 636.309 254.058 637.677 254.058 637.991 C 261.629 637.991 252.624 640.659 249.959 643.897 C 246.395 643.897 244.632 643.853 241.693 643.853 C 240.184 643.853 237.863 641.814 237.863 641.503 C 237.282 640.337 234.839 640.6 234.839 638.551 C 234.563 637.991 234.217 638.185 233.941 638.185 L 237.304 637.796 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(241, 14, 135);"/></svg></button>';
-	$mouth15 = '<button id="mouth15" onclick="buttonMouth15()"><svg class="mouth" style="z-index:3;" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs> <path class="skin" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;"/> </defs> <path d="M 240.141 637.436 C 240.175 637.651 242.768 635.541 243.937 635.513 C 243.937 636.2 244.664 636.32 245.356 637.817 C 245.843 635.334 246.965 635.18 247.289 635.18 C 247.58 635.798 250.543 637.305 250.543 637.651 C 255.243 637.651 249.653 640.591 247.998 644.16 C 245.785 644.16 244.691 644.112 242.866 644.112 C 241.93 644.112 240.488 641.864 240.488 641.522 C 240.127 640.237 238.611 640.527 238.611 638.268 C 238.44 637.651 238.225 637.865 238.054 637.865 L 240.141 637.436 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(165, 165, 165);"/> <path d="M 240.407 637.796 C 240.438 637.991 242.851 636.076 243.938 636.051 C 243.938 636.674 244.615 636.783 245.258 638.141 C 245.712 635.888 246.755 635.749 247.057 635.749 C 247.328 636.309 250.084 637.677 250.084 637.991 C 254.457 637.991 249.256 640.659 247.716 643.897 C 245.658 643.897 244.64 643.853 242.942 643.853 C 242.071 643.853 240.73 641.814 240.73 641.503 C 240.394 640.337 238.983 640.6 238.983 638.551 C 238.824 637.991 238.624 638.185 238.465 638.185 L 240.407 637.796 Z" style="stroke-opacity: 0; stroke-width: 0; stroke: rgb(255, 132, 0); fill: rgb(241, 109, 14);"/></svg></button>';
+	$mouth14 = '<button id="mouth14" onclick="buttonMouth14()">'.file_get_contents("svg/human/humanBody/mouth/mouth14_2.svg").'</button>';
+	$mouth15 = '<button id="mouth15" onclick="buttonMouth15()">'.file_get_contents("svg/human/humanBody/mouth/mouth15_2.svg").'</button>';
 	//style="z-index:3;"
 	$handleStart = "svg/human/humanBody/hair_kit/hair";
 	$hairArr = array();
@@ -170,7 +170,9 @@
 	<script>
 		//https://apps.facebook.com/erintuitive
 		var theGender = '';
-		var updateSkin = '';
+		var updateEyes = '';
+		var updateBeard = '';
+		var updateLips = '';
 		var relativeContainer = document.getElementById("relativeContainer");
 		var itemPreview = document.getElementById("itemPreview");
 		var avatarOptions = document.getElementById("avatarOptions");
@@ -191,6 +193,7 @@
 			skins[i].setAttribute("fill", skinTone);
 		}
 		var previousOriginal = itemPreview.innerHTML;
+		var updateSkin = skinTone;
 		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
@@ -214,6 +217,7 @@
 				for (i=0; i<skins.length; i++){
 					skins[i].setAttribute("fill", updateSkin);
 				}
+				updateSkin = $("#relativeContainer .skin").attr("fill");
 				avatarOptions.setAttribute("class", "skinStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
@@ -221,11 +225,13 @@
 				itemPreview.innerHTML = '<div id="eyesContainer" style="position: absolute; top: 270px;">'+'<?php echo $eyes1; echo $eyes2; echo $eyes3; echo $eyes4; echo $eyes5; echo $eyes6; echo $eyes7; echo $eyes8; echo $eyes9; echo $eyes10; echo $eyes11; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
 				//itemPreview.style.paddingTop = "100px";
-				relativeContainer.innerHTML = previous;
+				relativeContainer.innerHTML = previousEyes;
 				var humanEyes = document.getElementsByClassName("eyes");
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
 				}
+				updateSkin = $("#relativeContainer .skin").attr("fill");
+				updateEyes = $("#relativeContainer .irises").attr("fill");
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
@@ -237,6 +243,10 @@
 					humanMouth[i].style.marginTop = "-305px";
 				}
 				relativeContainer.innerHTML = previousEyes;
+				updateSkin = $("#relativeContainer .skin").attr("fill");
+				updateEyes = $("#relativeContainer .irises").attr("fill");
+				updateBeard = $("#relativeContainer .beard").attr("fill");
+				updateLips = $("#relativeContainer .lips").attr("fill");
 				avatarOptions.setAttribute("class", "mouthStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep"){
@@ -251,8 +261,8 @@
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
 				$('#color1').colorPicker({colors: ["FFFFFF", "FAEBD7", "FFEFD5", "FFDEAD", "FFDAB9", "FFC0CB", "FFB6C1", "FFE4B5", "F5F5DC", "F0E68C", "D2B48C", "FA8072", "DAA520", "CD853F", "E9967A", "CD5C5C", "FF0000", "8B0000", "D2691E", "A52A2A", "000000", "808080", "800080", "E6E6FA", "0000FF", "FFFF00", "00FF00", "FFA500"]});
-				avatarOptions.setAttribute("class", "skinStep");
 				previous = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "skinStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="skinStep"){
 				$("#buttons").hide();
@@ -283,7 +293,7 @@
 					humanMouth[i].style.marginTop = "-305px";
 				}
 				//previousMouth = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "mouthStep");
+				avatarOptions.setAttribute("class", "mouthStep2");
 			}
 			//these are alternating relative to the nextoptions function
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
@@ -313,14 +323,16 @@
 			}
 		}
 		function makeEyeColor() {
-			var eyeColor = document.getElementById("color2").getAttribute("value");
-			$(".irises").attr("fill", eyeColor);
-			$(".irises").css({'fill':eyeColor});
+			updateEyes = document.getElementById("color2").getAttribute("value");
+			$(".irises").attr("fill", updateEyes);
+			$(".irises").css({'fill':updateEyes});
 		}
 		function makeMouthColor() {
-			var mouthColor = document.getElementById("color3").getAttribute("value");
-			$("#relativeContainer .beard").attr("fill", mouthColor);
-			$("#relativeContainer .beard").css({'fill':mouthColor});
+			updateBeard = document.getElementById("color3").getAttribute("value");
+			$("#relativeContainer .beard").attr("fill", updateBeard);
+			$("#relativeContainer .beard").css({'fill':updateBeard});
+			$("#relativeContainer .lips").attr("fill", updateBeard);
+			$("#relativeContainer .lips").css({'fill':updateBeard});
 		}
 		function man() {
 			var man = document.getElementById("buttonMan");
