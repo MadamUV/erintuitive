@@ -273,7 +273,7 @@
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
 				}
-				//previous = relativeContainer.innerHTML;
+				previous = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
