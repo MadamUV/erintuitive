@@ -96,7 +96,10 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/touch_punch.js"></script>
+	<script src="js/glide.js"></script>
 	<script src="js/jquery.colorPicker.js"></script>
+	<link rel="stylesheet" href="css/glide.core.css">
+    <link rel="stylesheet" href="css/glide.theme.css">
 	<link rel="stylesheet" href="css/colorPicker.css" type="text/css" />
 	<title>Erintuitive's Psychic Place</title>
 </head>
@@ -153,6 +156,7 @@
 			border-style: solid;
 			position: relative;
 			padding-left: 50px;
+			height: 420px;
 		}
 		#avatarOptions {
 			height: 450px;
@@ -168,6 +172,17 @@
 	</style>
 	<script>
 		//https://apps.facebook.com/erintuitive
+		function shuffle(array) {
+			var rand, index = -1,
+				length = array.length,
+				result = Array(length);
+			while (++index < length) {
+				rand = Math.floor(Math.random() * (index + 1));
+				result[index] = result[rand];
+				result[rand] = array[index];
+			}
+			return result;
+		}
 		var theGender = '';
 		var updateEyes = '';
 		var updateBeard = '';
@@ -304,12 +319,54 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep"){
 				avatarOptions.innerHTML = "Add some hair!";
-				itemPreview.innerHTML = '<button id="hair1" onclick="buttonHair1()"><img src="svg/human/humanBody/hair_kit/hair1.svg" alt="hair1"></button>';
-				for (i=2; i<=36; i++){
-					var j = i.toString();
-					itemPreview.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img src="svg/human/humanBody/hair_kit/hair'+j+'.svg" alt="hair'+j+'"></button>';
+				itemPreview.innerHTML = '<div id="onTrack"></div>';
+				var track = document.getElementById("onTrack");
+				//track.style.marginTop = "-40px";
+				track.innerHTML += '<div id="hairs1">';
+				for(i=0; i<4; i++){
+					for(k=1; k<=3; k++){
+						var d = i*4+k;
+						var j = d.toString();
+						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:5px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+					}
+					if(d!=34 && d % 12 == 0){
+						track.innerHTML += '</div><br><div id="hairs'+i+'">';
+					}
+					else if(d!=34 && d % 3 == 0 && d % 12 != 0){
+						track.innerHTML += '<br>';
+					}
+					else if (d==34){
+						track.innerHTML += '</div>';
+					}
 				}
+				/*for(i=1; i<=3; i++){
+					var j = i.toString();
+					
+				}
+				track.innerHTML += '</div><div id="hairs2">';
+				for(i=4; i<=6; i++){
+					var j = i.toString();
+					track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:5px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+				}
+				track.innerHTML += '</div><div id="hairs3">';
+				track.innerHTML += '<br>';
+				for(i=7; i<=9; i++){
+					var j = i.toString();
+					track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:5px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+				}
+				track.innerHTML += '<br>';
+				for(i=28; i<=36; i++){
+					var j = i.toString();
+					track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:5px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+				}
+				var slide = slider = $("#itemHair").glide({
+					type: "carousel" 
+				});
+				itemPreview.style.height = "450px";
+				itemPreview.style.width = "450px";
+				itemPreview.style.overflow = "hidden";
 				//; echo $hair2; echo $hair3; echo $hair4; echo $hair5; echo $hair6; echo $hair7; echo $hair8; echo $hair9; echo $hair10; echo $hair11; echo $hair12; echo $hair13; echo $hair14; echo $hair15; echo $hair16; echo $hair17; echo $hair18; echo $hair19; echo $hair20; echo $hair21; echo $hair22; echo $hair23; echo $hair24; echo $hair25; echo $hair26; echo $hair27; echo $hair8; echo $hair9; echo $hair10; ?>";
+				*/
 				var humanHair = $("#itemPreview svg");
 				for (i=0; i<humanHair.length; i++) {
 					humanHair[i].style.margin = '20px';

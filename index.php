@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery-ui.js"></script>
-	<script src="../js/glide.js"></script>
-	<link rel="stylesheet" href="../css/glide.core.css">
-    <link rel="stylesheet" href="../css/glide.theme.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/glide.js"></script>
+	<link rel="stylesheet" href="css/glide.core.css">
+    <link rel="stylesheet" href="css/glide.theme.css">
 	<title>Erintuitive's Psychic Place</title>
 </head>
 <body>
@@ -120,7 +120,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("wolf2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/wolf1.svg" alt="first wolf"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf2.svg" alt="second wolf"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf3.svg" alt="third wolf"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf4.svg" alt="fourth wolf"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf5.svg" alt="fifth wolf"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf6.svg" alt="sixth wolf"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/wolf7.svg" alt="seventh wolf"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/wolf1.svg" alt="first wolf"></li><li class="glide__slide"><img  width="280" height="280" src="svg/wolf2.svg" alt="second wolf"></li><li class="glide__slide"><img  width="280" height="280" src="svg/wolf3.svg" alt="third wolf"></li><li class="glide__slide"><img  width="280" height="280" src="svg/wolf4.svg" alt="fourth wolf"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/wolf5.svg" alt="fifth wolf"></li><li class="glide__slide"><img  width="280" height="280" src="svg/wolf6.svg" alt="sixth wolf"></li><li class="glide__slide"><img  width="280" height="280" src="svg/wolf7.svg" alt="seventh wolf"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -131,7 +131,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("ant2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/ant1.svg" alt="first ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant2.svg" alt="second ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant3.svg" alt="third ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant4.svg" alt="fourth ant"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/ant5.svg" alt="fifth ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant6.svg" alt="sixth ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant7.svg" alt="seventh ant"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/ant8.svg" alt="eighth ant"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/ant1.svg" alt="first ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant2.svg" alt="second ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant3.svg" alt="third ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant4.svg" alt="fourth ant"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/ant5.svg" alt="fifth ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant6.svg" alt="sixth ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant7.svg" alt="seventh ant"></li><li class="glide__slide"><img  width="280" height="280" src="svg/ant8.svg" alt="eighth ant"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -142,7 +142,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("bee2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bee1.svg" alt="first bee"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bee2.svg" alt="second bee"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bee3.svg" alt="third bee"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bee4.svg" alt="fourth bee"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bee5.svg" alt="fifth bee"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bee6.svg" alt="sixth bee"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bee7.svg" alt="seventh bee"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/bee1.svg" alt="first bee"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bee2.svg" alt="second bee"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bee3.svg" alt="third bee"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bee4.svg" alt="fourth bee"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bee5.svg" alt="fifth bee"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bee6.svg" alt="sixth bee"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bee7.svg" alt="seventh bee"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -153,7 +153,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("bat2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bat1.svg" alt="first bat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bat2.svg" alt="second bat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bat3.svg" alt="third bat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bat4.svg" alt="fourth bat"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bat5.svg" alt="fifth bat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bat6.svg" alt="sixth bat"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/bat1.svg" alt="first bat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bat2.svg" alt="second bat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bat3.svg" alt="third bat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bat4.svg" alt="fourth bat"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bat5.svg" alt="fifth bat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bat6.svg" alt="sixth bat"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -164,7 +164,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("bear2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bear1.svg" alt="first  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear2.svg" alt="second  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear3.svg" alt="third  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear4.svg" alt="fourth  bear"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bear5.svg" alt="fifth  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear6.svg" alt="sixth  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear7.svg" alt="seventh  bear"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bear8.svg" alt="eighth  bear"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bear9.svg" alt="ninth  bear"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/bear1.svg" alt="first  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear2.svg" alt="second  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear3.svg" alt="third  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear4.svg" alt="fourth  bear"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bear5.svg" alt="fifth  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear6.svg" alt="sixth  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear7.svg" alt="seventh  bear"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bear8.svg" alt="eighth  bear"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bear9.svg" alt="ninth  bear"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -175,7 +175,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("bird2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/bird1.svg" alt="first bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird2.svg" alt="second bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird3.svg" alt="third bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird4.svg" alt="fourth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird5.svg" alt="fifth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird6.svg" alt="sixth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird7.svg" alt="seventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird8.svg" alt="eighth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird9.svg" alt="ninth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird10.svg" alt="tenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird11.svg" alt="eleventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird12.svg" alt="twelfth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/bird13.svg" alt="thirteenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/bird14.svg" alt="fourteenth bird"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/bird1.svg" alt="first bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird2.svg" alt="second bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird3.svg" alt="third bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird4.svg" alt="fourth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bird5.svg" alt="fifth bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird6.svg" alt="sixth bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird7.svg" alt="seventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird8.svg" alt="eighth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bird9.svg" alt="ninth bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird10.svg" alt="tenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird11.svg" alt="eleventh bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird12.svg" alt="twelfth bird"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/bird13.svg" alt="thirteenth bird"></li><li class="glide__slide"><img  width="280" height="280" src="svg/bird14.svg" alt="fourteenth bird"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -186,7 +186,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("blackDragon2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/blackDragon1.svg" alt="first blackDragon"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/blackDragon1.svg" alt="first blackDragon"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -197,7 +197,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("waterDragon2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/waterDragon1.svg" alt="first waterDragon"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/waterDragon1.svg" alt="first waterDragon"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -208,7 +208,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("cat2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/cat1.svg" alt="first cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat2.svg" alt="second cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat3.svg" alt="third cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat4.svg" alt="fourth cat"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/cat5.svg" alt="fifth cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat6.svg" alt="sixth cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat7.svg" alt="seventh cat"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/cat8.svg" alt="eighth cat"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/cat9.svg" alt="ninth cat"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/cat1.svg" alt="first cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat2.svg" alt="second cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat3.svg" alt="third cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat4.svg" alt="fourth cat"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/cat5.svg" alt="fifth cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat6.svg" alt="sixth cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat7.svg" alt="seventh cat"></li><li class="glide__slide"><img  width="280" height="280" src="svg/cat8.svg" alt="eighth cat"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/cat9.svg" alt="ninth cat"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -219,7 +219,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("daisy2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/daisy1.svg" alt="first daisy"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/daisy2.svg" alt="second daisy"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/daisy3.svg" alt="third daisy"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/daisy1.svg" alt="first daisy"></li><li class="glide__slide"><img  width="280" height="280" src="svg/daisy2.svg" alt="second daisy"></li><li class="glide__slide"><img  width="280" height="280" src="svg/daisy3.svg" alt="third daisy"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -230,7 +230,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("butterfly2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly1.svg" alt="first butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly2.svg" alt="second butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly3.svg" alt="third butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly4.svg" alt="fourth butterfly"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly5.svg" alt="fifth butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly6.svg" alt="sixth butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/butterfly7.svg" alt="seventh butterfly"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/butterfly1.svg" alt="first butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly2.svg" alt="second butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly3.svg" alt="third butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly4.svg" alt="fourth butterfly"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly5.svg" alt="fifth butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly6.svg" alt="sixth butterfly"></li><li class="glide__slide"><img  width="280" height="280" src="svg/butterfly7.svg" alt="seventh butterfly"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -241,7 +241,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("deer2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/deer1.svg" alt="first deer"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/deer2.svg" alt="second deer"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/deer3.svg" alt="third deer"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/deer4.svg" alt="fourth deer"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/deer1.svg" alt="first deer"></li><li class="glide__slide"><img  width="280" height="280" src="svg/deer2.svg" alt="second deer"></li><li class="glide__slide"><img  width="280" height="280" src="svg/deer3.svg" alt="third deer"></li><li class="glide__slide"><img  width="280" height="280" src="svg/deer4.svg" alt="fourth deer"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -252,7 +252,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("dog2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/dog1.svg" alt="first dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog2.svg" alt="second dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog3.svg" alt="third dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog4.svg" alt="fourth dog"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/dog5.svg" alt="fifth dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog6.svg" alt="sixth dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog7.svg" alt="seventh dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog8.svg" alt="eighth dog"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/dog9.svg" alt="ninth dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog10.svg" alt="tenth dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog11.svg" alt="eleventh dog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/dog12.svg" alt="twelfth dog"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/dog1.svg" alt="first dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog2.svg" alt="second dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog3.svg" alt="third dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog4.svg" alt="fourth dog"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/dog5.svg" alt="fifth dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog6.svg" alt="sixth dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog7.svg" alt="seventh dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog8.svg" alt="eighth dog"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/dog9.svg" alt="ninth dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog10.svg" alt="tenth dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog11.svg" alt="eleventh dog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/dog12.svg" alt="twelfth dog"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -263,7 +263,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("wingFeathers2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/feathers1.svg" alt="first  feathers"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/feathers2.svg" alt="second  feathers"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/feathers1.svg" alt="first  feathers"></li><li class="glide__slide"><img  width="280" height="280" src="svg/feathers2.svg" alt="second  feathers"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -274,7 +274,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("frog2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/frog1.svg" alt="first frog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/frog2.svg" alt="second frog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/frog3.svg" alt="third frog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/frog4.svg" alt="fourth frog"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/frog5.svg" alt="fifth frog"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/frog6.svg" alt="sixth frog"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/frog1.svg" alt="first frog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/frog2.svg" alt="second frog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/frog3.svg" alt="third frog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/frog4.svg" alt="fourth frog"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/frog5.svg" alt="fifth frog"></li><li class="glide__slide"><img  width="280" height="280" src="svg/frog6.svg" alt="sixth frog"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -285,7 +285,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("fox2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/fox1.svg" alt="first fox"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/fox2.svg" alt="second fox"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/fox3.svg" alt="third fox"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/fox4.svg" alt="fourth fox"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/fox5.svg" alt="fifth fox"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/fox6.svg" alt="sixth fox"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/fox1.svg" alt="first fox"></li><li class="glide__slide"><img  width="280" height="280" src="svg/fox2.svg" alt="second fox"></li><li class="glide__slide"><img  width="280" height="280" src="svg/fox3.svg" alt="third fox"></li><li class="glide__slide"><img  width="280" height="280" src="svg/fox4.svg" alt="fourth fox"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/fox5.svg" alt="fifth fox"></li><li class="glide__slide"><img  width="280" height="280" src="svg/fox6.svg" alt="sixth fox"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -296,7 +296,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("moon2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/moon1.svg" alt="first moon"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/moon2.svg" alt="second moon"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/moon3.svg" alt="third moon"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/moon4.svg" alt="fourth moon"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/moon1.svg" alt="first moon"></li><li class="glide__slide"><img  width="280" height="280" src="svg/moon2.svg" alt="second moon"></li><li class="glide__slide"><img  width="280" height="280" src="svg/moon3.svg" alt="third moon"></li><li class="glide__slide"><img  width="280" height="280" src="svg/moon4.svg" alt="fourth moon"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -307,7 +307,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("mosquito2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/mosquito1.svg" alt="first mosquito"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/mosquito2.svg" alt="second mosquito"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/mosquito3.svg" alt="third mosquito"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/mosquito1.svg" alt="first mosquito"></li><li class="glide__slide"><img  width="280" height="280" src="svg/mosquito2.svg" alt="second mosquito"></li><li class="glide__slide"><img  width="280" height="280" src="svg/mosquito3.svg" alt="third mosquito"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -318,7 +318,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("rabbit2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit1.svg" alt="first rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit2.svg" alt="second rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit3.svg" alt="third rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit4.svg" alt="fourth rabbit"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit5.svg" alt="fifth rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit6.svg" alt="sixth rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rabbit7.svg" alt="seventh rabbit"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/rabbit1.svg" alt="first rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit2.svg" alt="second rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit3.svg" alt="third rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit4.svg" alt="fourth rabbit"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit5.svg" alt="fifth rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit6.svg" alt="sixth rabbit"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rabbit7.svg" alt="seventh rabbit"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -329,7 +329,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("rainbow2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/rainbow1.svg" alt="first rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rainbow2.svg" alt="second rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rainbow3.svg" alt="third rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/rainbow4.svg" alt="fourth rainbow"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/rainbow1.svg" alt="first rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rainbow2.svg" alt="second rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rainbow3.svg" alt="third rainbow"></li><li class="glide__slide"><img  width="280" height="280" src="svg/rainbow4.svg" alt="fourth rainbow"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -340,7 +340,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("salamander2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/salamander1.svg" alt="first salamander"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/salamander2.svg" alt="second salamander"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/salamander3.svg" alt="third salamander"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/salamander1.svg" alt="first salamander"></li><li class="glide__slide"><img  width="280" height="280" src="svg/salamander2.svg" alt="second salamander"></li><li class="glide__slide"><img  width="280" height="280" src="svg/salamander3.svg" alt="third salamander"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -351,7 +351,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("snake2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/snake1.svg" alt="first snake"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/snake2.svg" alt="second snake"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/snake3.svg" alt="third snake"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/snake4.svg" alt="fourth snake"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/snake5.svg" alt="fifth snake"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/snake1.svg" alt="first snake"></li><li class="glide__slide"><img  width="280" height="280" src="svg/snake2.svg" alt="second snake"></li><li class="glide__slide"><img  width="280" height="280" src="svg/snake3.svg" alt="third snake"></li><li class="glide__slide"><img  width="280" height="280" src="svg/snake4.svg" alt="fourth snake"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/snake5.svg" alt="fifth snake"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -364,7 +364,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("spiral2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/spiral1.svg" alt="first spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral2.svg" alt="second spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral3.svg" alt="third spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral4.svg" alt="fourth spiral"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral5.svg" alt="fifth spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral6.svg" alt="sixth spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral7.svg" alt="seventh spiral"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral8.svg" alt="eighth spiral"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/spiral9.svg" alt="ninth spiral"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/spiral1.svg" alt="first spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral2.svg" alt="second spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral3.svg" alt="third spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral4.svg" alt="fourth spiral"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/spiral5.svg" alt="fifth spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral6.svg" alt="sixth spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral7.svg" alt="seventh spiral"></li><li class="glide__slide"><img  width="280" height="280" src="svg/spiral8.svg" alt="eighth spiral"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/spiral9.svg" alt="ninth spiral"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -375,7 +375,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("square2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/square1.svg" alt="first square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square2.svg" alt="second square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square3.svg" alt="third square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square4.svg" alt="fourth square"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/square5.svg" alt="fifth square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square6.svg" alt="sixth square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square7.svg" alt="seventh square"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/square8.svg" alt="eighth square"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/square1.svg" alt="first square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square2.svg" alt="second square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square3.svg" alt="third square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square4.svg" alt="fourth square"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/square5.svg" alt="fifth square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square6.svg" alt="sixth square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square7.svg" alt="seventh square"></li><li class="glide__slide"><img  width="280" height="280" src="svg/square8.svg" alt="eighth square"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -386,7 +386,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("sun2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/sun1.svg" alt="first sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun2.svg" alt="second sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun3.svg" alt="third sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun4.svg" alt="fourth sun"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/sun5.svg" alt="fifth sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun6.svg" alt="sixth sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun7.svg" alt="seventh sun"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/sun8.svg" alt="eighth sun"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/sun9.svg" alt="ninth sun"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/sun1.svg" alt="first sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun2.svg" alt="second sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun3.svg" alt="third sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun4.svg" alt="fourth sun"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/sun5.svg" alt="fifth sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun6.svg" alt="sixth sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun7.svg" alt="seventh sun"></li><li class="glide__slide"><img  width="280" height="280" src="svg/sun8.svg" alt="eighth sun"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/sun9.svg" alt="ninth sun"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -397,7 +397,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("tiger2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/tiger1.svg" alt="first tiger"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger2.svg" alt="second tiger"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger3.svg" alt="third tiger"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger4.svg" alt="fourth tiger"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger5.svg" alt="fifth tiger"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger6.svg" alt="sixth tiger"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/tiger7.svg" alt="seventh tiger"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/tiger1.svg" alt="first tiger"></li><li class="glide__slide"><img  width="280" height="280" src="svg/tiger2.svg" alt="second tiger"></li><li class="glide__slide"><img  width="280" height="280" src="svg/tiger3.svg" alt="third tiger"></li><li class="glide__slide"><img  width="280" height="280" src="svg/tiger4.svg" alt="fourth tiger"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/tiger5.svg" alt="fifth tiger"></li><li class="glide__slide"><img  width="280" height="280" src="svg/tiger6.svg" alt="sixth tiger"></li><li class="glide__slide"><img  width="280" height="280" src="svg/tiger7.svg" alt="seventh tiger"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -408,7 +408,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("triangle2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="../svg/triangle1.svg" alt="first triangle"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/triangle2.svg" alt="second triangle"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/triangle3.svg" alt="third triangle"></li><li class="glide__slide"><img  width="280" height="280" src="../svg/triangle4.svg" alt="fourth triangle"></li><br><li class="glide__slide"><img  width="280" height="280" src="../svg/triangle5.svg" alt="fifth triangle"></li><li class="glide__slide"><img width="280" height="280" src="../svg/triangle6.svg" alt="sixth triangle"></li>';
+				track.innerHTML = '<li class="glide__slide"><img  width="280" height="280" src="svg/triangle1.svg" alt="first triangle"></li><li class="glide__slide"><img  width="280" height="280" src="svg/triangle2.svg" alt="second triangle"></li><li class="glide__slide"><img  width="280" height="280" src="svg/triangle3.svg" alt="third triangle"></li><li class="glide__slide"><img  width="280" height="280" src="svg/triangle4.svg" alt="fourth triangle"></li><br><li class="glide__slide"><img  width="280" height="280" src="svg/triangle5.svg" alt="fifth triangle"></li><li class="glide__slide"><img width="280" height="280" src="svg/triangle6.svg" alt="sixth triangle"></li>';
 				slider = $("#result").glide({
 					type: "carousel"
 				});
@@ -421,7 +421,7 @@
 			var avatarOptions = document.getElementById("avatarOptions");
 			var track = document.getElementById("onTrack");
 			if(document.getElementById("yinyang2").checked == true){
-				track.innerHTML = '<li class="glide__slide"><img id="yinyang" width="280" height="280" src="../svg/yinyang.svg" alt="yin yang"></li>';
+				track.innerHTML = '<li class="glide__slide"><img id="yinyang" width="280" height="280" src="svg/yinyang.svg" alt="yin yang"></li>';
 				slider = $("#result").glide({
 					type: "carousel" 
 				});
@@ -437,7 +437,7 @@
 			//selection on next page
             src = src.substr(3, src.length-7);
             //document.getElementById("choose").innerHTML = src.toString();
-            document.getElementById("buttons").innerHTML = "Choose random selection (you can change your selection on the next page.)<br><form action='../randomizer.php' method='get'><input type='hidden' name='num' value ='"+index.toString()+"'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Randomize!'></form>";
+            document.getElementById("buttons").innerHTML = "Choose random selection (you can change your selection on the next page.)<br><form action='randomizer.php' method='get'><input type='hidden' name='num' value ='"+index.toString()+"'><input type='hidden' name='image' value ='"+src+"'><input id='mySubmit' type='submit' name='submit' value='Randomize!'></form>";
 			document.getElementById("buttons").style.top = "360px";
 		}
 	</script>

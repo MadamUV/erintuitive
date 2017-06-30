@@ -9,7 +9,7 @@
 if(isset($_GET['image'])){
 	$img0 = $_GET['image'];
 	$img = $img0;
-	$img = "svg/".substr($img, 4).".svg";
+	$img = "svg/".substr($img, 1).".svg";
 	$handle = fopen($img, "r");
 	$contents = fread($handle, filesize($img));
 	echo $contents;
