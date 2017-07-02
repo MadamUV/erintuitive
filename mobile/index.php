@@ -50,7 +50,7 @@
 		}
 		#buttons {
 			position: fixed;
-			top: 435px;
+			top: 395px;
 			left: 600px;
 		}
 		#result {
