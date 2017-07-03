@@ -189,6 +189,7 @@
 		var updateBeard = '';
 		var updateLips = '';
 		var updateHair = '';
+		var updateHairStreak = '';
 		var relativeContainer = document.getElementById("relativeContainer");
 		var itemPreview = document.getElementById("itemPreview");
 		var avatarOptions = document.getElementById("avatarOptions");
@@ -206,6 +207,7 @@
 		var previousEyes = '';
 		var previousMouth = '';
 		var previousHair = '';
+		var previousHairStreak = '';
 		for (i=0; i<skins.length; i++){
 			skins[i].setAttribute("fill", skinTone);
 		}
@@ -347,7 +349,21 @@
 				/*itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
 				$('#color4').colorPicker();*/
 				//previousMouth = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "topStep");
+				avatarOptions.setAttribute("class", "hairStep2");
+			}
+			else if(avatarOptions.getAttribute("class")=="hairStep2"){
+				avatarOptions.innerHTML = "Change hair color.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color4">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
+				$('#color4').colorPicker();
+				previousHair = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "hairStep3");
+			}
+			else if(avatarOptions.getAttribute("class")=="hairStep3"){
+				avatarOptions.innerHTML = "Change hair streak color.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color5">Color 1</label> <input id="color5" type="text" name="color5" value="#333399" onchange="makeHairStreakColor()"/></div>';
+				$('#color5').colorPicker();
+				previousHairStreak = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "undiesStep1");
 			}
 		}
 		function makeSkinColor() {
@@ -370,6 +386,20 @@
 			$("#relativeContainer .lips").attr("fill", updateBeard);
 			$("#relativeContainer .lips").css({'fill':updateBeard});
 			previousMouth = relativeContainer.innerHTML;
+		}
+		function makeHairColor() {
+			updateHair = document.getElementById("color4").getAttribute("value");
+			$("#relativeContainer .hair").attr('fill', updateHair);
+			$("#relativeContainer .hairStreaks").attr('fill', updateHair);
+			$("#relativeContainer .hair").css({'fill': updateHair});
+			$("#relativeContainer .hairStreaks").css({'fill': updateHair});
+			previousHair = relativeContainer.innerHTML;
+		}
+		function makeHairStreakColor() {
+			updateHairStreak = document.getElementById("color5").getAttribute("value");
+			$(".hairStreaks").css({'fill':document.getElementById("color5").getAttribute("value")});
+			$(".hairStreaks").attr('fill', updateHairStreak);
+			previousHairStreak = relativeContainer.innerHTML;
 		}
 		function man() {
 			var man = document.getElementById("buttonMan");
@@ -750,7 +780,7 @@
 		}
 		function buttonHair24(){
 			relativeContainer.innerHTML = previousMouth;
-			$("#relativeContainer").append('<svg class="hair" width="90.7197036743164" height="68.4666748046875" viewBox="23.9344 1925.09 90.7197 68.4667" xmlns="http://www.w3.org/2000/svg"><path class="hair" id="path2214" style="fill:#987a44;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 111.821 1955.813 L 96.678 1953.254 L 104.999 1931.453 L 87.982 1945.933 L 87.605 1929.56 L 74.54 1942.147 L 69.823 1925.094 L 61.67 1942.467 L 51.323 1929.573 L 49.419 1947.68 L 32.053 1942.227 L 39.157 1956.72 C 38.834 1956.96 38.519 1957.214 38.211 1957.48 L 27.451 1954.92 L 32.589 1963.614 C 23.934 1976.094 26.727 1991.6 26.727 1991.6 L 29.217 1986.134 L 30.572 1991.387 L 34.842 1985.653 L 38.843 1991.267 C 41.425 1973.36 54.21 1968.747 54.21 1968.747 L 62.672 1981.867 L 66.342 1971.027 L 74.008 1982.44 L 76.783 1969.04 L 90.375 1982.067 L 87.516 1970.08 C 92.821 1973.92 97.368 1980.693 98.007 1992.667 L 102.27 1987.24 L 106.266 1993.16 L 107.862 1987.987 L 110.094 1993.56 C 110.094 1993.56 114.654 1973.68 101.516 1960.187 L 111.821 1955.813"/><polygon points="48.194 1956.25 36.981 1945.037 50.459 1950.644 52.184 1935.01 61.672 1948.487 69.651 1932.853 71.592 1948.595 87.226 1931.775 84.207 1951.614 102.213 1938.029 84.099 1963.906 71.052 1959.269 58.114 1963.906 49.38 1959.377 48.949 1959.054" style="stroke: black; stroke-width: 1px; stroke-opacity: 0; fill: rgb(152, 122, 68);"/></svg>');
+			$("#relativeContainer").append('<svg class="hair" width="90.7197036743164" height="68.4666748046875" viewBox="23.9344 1925.09 90.7197 68.4667" xmlns="http://www.w3.org/2000/svg"><path class="hair" id="path2214" style="fill:#987a44;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 111.821 1955.813 L 96.678 1953.254 L 104.999 1931.453 L 87.982 1945.933 L 87.605 1929.56 L 74.54 1942.147 L 69.823 1925.094 L 61.67 1942.467 L 51.323 1929.573 L 49.419 1947.68 L 32.053 1942.227 L 39.157 1956.72 C 38.834 1956.96 38.519 1957.214 38.211 1957.48 L 27.451 1954.92 L 32.589 1963.614 C 23.934 1976.094 26.727 1991.6 26.727 1991.6 L 29.217 1986.134 L 30.572 1991.387 L 34.842 1985.653 L 38.843 1991.267 C 41.425 1973.36 54.21 1968.747 54.21 1968.747 L 62.672 1981.867 L 66.342 1971.027 L 74.008 1982.44 L 76.783 1969.04 L 90.375 1982.067 L 87.516 1970.08 C 92.821 1973.92 97.368 1980.693 98.007 1992.667 L 102.27 1987.24 L 106.266 1993.16 L 107.862 1987.987 L 110.094 1993.56 C 110.094 1993.56 114.654 1973.68 101.516 1960.187 L 111.821 1955.813"/><polygon class="hairStreaks" points="48.194 1956.25 36.981 1945.037 50.459 1950.644 52.184 1935.01 61.672 1948.487 69.651 1932.853 71.592 1948.595 87.226 1931.775 84.207 1951.614 102.213 1938.029 84.099 1963.906 71.052 1959.269 58.114 1963.906 49.38 1959.377 48.949 1959.054" style="stroke: black; stroke-width: 1px; stroke-opacity: 0; fill: rgb(152, 122, 68);"/></svg>');
 			$("#relativeContainer .hair").css({'position':'absolute', 'top':'-28.5', 'left':'-1.5', 'z-index':'4'});
 			previousHair = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -822,7 +852,7 @@
 		}
 		function buttonHair34(){
 			relativeContainer.innerHTML = previousMouth;
-			$("#relativeContainer").append('<svg class="hair" width="76.89599609375" height="57.933349609375" viewBox="599.154 2061.31 76.896 57.9333" xmlns="http://www.w3.org/2000/svg"><path class="hair" id="path2478" style="fill: rgb(89, 63, 50); fill-opacity: 1; fill-rule: nonzero; stroke-opacity: 0; stroke: rgb(186, 218, 85);" d="M 676.05 2119.24 L 670.9 2061.533 L 666.816 2073.787 L 659.534 2061.707 L 653.977 2073.187 L 646.152 2061.307 L 639.392 2073.013 L 632.897 2061.533 L 626.933 2073.187 L 619.58 2061.88 L 613.413 2073.187 L 607.281 2061.973 L 599.154 2119.24 L 602.161 2119.24 C 602.417 2117.854 602.764 2116.507 603.181 2115.173 C 604.484 2111.52 614.637 2091.773 638.181 2109.12 C 638.181 2109.12 658.606 2094.067 668.821 2108.12 C 670.813 2111.52 672.257 2115.28 673.012 2119.24 L 676.05 2119.24"/><polygon class="hairStreaks" points="604.628 2098.077 608.369 2068.061 608.551 2068.152 614.39 2082.385 619.317 2069.247 624.973 2082.476 631.816 2069.247 638.567 2082.476 647.417 2068.335 647.052 2068.152 647.325 2069.156 655.171 2082.202 660.098 2065.598 668.309 2092.877 670.042 2071.072 671.228 2097.165 643.493 2090.687 632.91 2095.887 622.236 2090.505 622.236 2090.505" style="stroke: black; stroke-width: 1px; stroke-opacity: 0; fill: rgb(89, 63, 50);"/></svg>');
+			$("#relativeContainer").append('<svg class="hair" width="76.89599609375" height="57.933349609375" viewBox="599.154 2061.31 76.896 57.9333" xmlns="http://www.w3.org/2000/svg"><path class="hair" id="path2478" style="fill: rgb(89, 63, 50); fill-opacity: 1; fill-rule: nonzero; stroke-opacity: 0; stroke: rgb(186, 218, 85);" d="M 676.05 2119.24 L 670.9 2061.533 L 666.816 2073.787 L 659.534 2061.707 L 653.977 2073.187 L 646.152 2061.307 L 639.392 2073.013 L 632.897 2061.533 L 626.933 2073.187 L 619.58 2061.88 L 613.413 2073.187 L 607.281 2061.973 L 599.154 2119.24 L 602.161 2119.24 C 602.417 2117.854 602.764 2116.507 603.181 2115.173 C 604.484 2111.52 614.637 2091.773 638.181 2109.12 C 638.181 2109.12 658.606 2094.067 668.821 2108.12 C 670.813 2111.52 672.257 2115.28 673.012 2119.24 L 676.05 2119.24"/><polygon class="hairStreaks" points="604.628 2098.077 608.369 2068.061 608.551 2068.152 614.39 2082.385 619.317 2069.247 624.973 2082.476 631.816 2069.247 638.567 2082.476 647.417 2068.335 647.052 2068.152 647.325 2069.156 655.171 2082.202 660.098 2065.598 668.309 2092.877 670.042 2071.072 671.228 2097.165 643.493 2090.687 632.91 2095.887 622.236 2090.505 622.236 2090.505" style="stroke: none; stroke-width: 0px; stroke-opacity: 0; fill: rgb(89, 63, 50);"/></svg>');
 			$("#relativeContainer .hair").css({'position':'absolute', 'top':'-14.32', 'left':'4.4', 'z-index':'4'});
 			previousHair = relativeContainer.innerHTML;
 			$("#buttons").show();
