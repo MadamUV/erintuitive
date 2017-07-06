@@ -253,30 +253,73 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
 				avatarOptions.innerHTML = "Now for eye color!";
+				$("#relativeContainer .mouth").remove();
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color2">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
 				previousEyes = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "mouthStep");
 			}
-			/*else if(avatarOptions.getAttribute("class")=="hairStep"){
-				avatarOptions.innerHTML = "If your mouth selection contains a beard, moustache, or lipstick you may re-color it here.";
-				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color3" type="text" name="color3" value="#333399" onchange="makeMouthColor()"/></div>';
-				$('#color3').colorPicker();
+			else if(avatarOptions.getAttribute("class")=="hairStep"){
+				avatarOptions.innerHTML = "Mouth time.<br>You can change<br>beard color later.";
+				itemPreview.innerHTML = '<div id="mouthsContainer" style="position: absolute; top: 270px;">'+'<?php echo $mouth1; echo $mouth2; echo $mouth3; echo $mouth4; echo $mouth5; echo $mouth6; echo $mouth7; echo $mouth8; echo $mouth9; echo $mouth10; echo $mouth11; echo $mouth12; echo $mouth13; echo $mouth14; echo $mouth15; ?>'+'</div>';
+				itemPreview.style.padding = "0px";
+				var humanMouth = document.getElementsByClassName("mouth");
+				for (i=0; i<humanMouth.length; i++) {
+					humanMouth[i].style.marginTop = "-305px";
+				}
 				previousMouth = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "mouthStep2");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep2"){
-				
+				avatarOptions.innerHTML = "If your mouth selection contains a beard, moustache, or lipstick you may re-color it here.";
+				$("#relativeContainer .hair").remove();
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color3" type="text" name="color3" value="#333399" onchange="makeMouthColor()"/></div>';
+				$('#color3').colorPicker();
+				previousMouth = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "hairStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep3"){
-				avatarOptions.innerHTML = "Change hair color.";
+				avatarOptions.innerHTML = "Add some hair! Some hairs that appear cut off are actually longer.<br>At this point you may skip steps by clicking 'skip'.";
+				document.getElementById("buttons").innerHTML = '<div id="buttons"><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button><button id="skip">Skip</button></div>';
+				relativeContainer.style.marginTop = "25px";
+				itemPreview.innerHTML = '<div id="onTrack"></div>';
+				var track = document.getElementById("onTrack");
+				//track.style.marginTop = "-40px";
+				track.innerHTML += '<div id="hairs1">';
+				for(i=0; i<12; i++){
+					for(k=1; k<=3; k++){
+						var d = i*3+k;
+						var j = d.toString();
+						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:3px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+					}
+					if(d!=34 && d % 12 == 0){
+						track.innerHTML += '</div><br><div id="hairs'+d+'">';
+					}
+					else if(d!=34 && d % 3 == 0 && d % 12 != 0){
+						track.innerHTML += '<br>';
+					}
+					else if (d==34){
+						track.innerHTML += '</div>';
+					}
+				}
+				track.style.height = "460px";
+				track.style.overflow = "scroll";
+				avatarOptions.setAttribute("class", "hairStep2");
+			}
+			else if(avatarOptions.getAttribute("class")=="undiesStep1"){
+				avatarOptions.innerHTML = "Change hair color."; 
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color4">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
 				$('#color4').colorPicker();
 				previousHair = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "hairStep2");
-			}*/
-			
+				avatarOptions.setAttribute("class", "hairStep3");
+			}
+			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
+				avatarOptions.innerHTML = "Change underwear color.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color6">Color 1</label> <input id="color6" type="text" name="color6" value="#333399" onchange="makeUndiesColor()"/></div>';
+				$('#color6').colorPicker();
+				previousUndies = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "undiesStep1");
+			}
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
@@ -380,7 +423,7 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Randomize underwear pattern.";
-				itemPreview.style.overflow = "scroll";
+				itemPreview.innerHTML = '';
 				//goto remove scroll in back button
 			}
 		}
@@ -411,6 +454,8 @@
 			$("#relativeContainer .hairStreaks").attr('fill', updateHair);
 			$("#relativeContainer .hair").css({'fill': updateHair});
 			$("#relativeContainer .hairStreaks").css({'fill': updateHair});
+			$("#relativeContainer .hairBack").attr('fill', updateHair);
+			$("#relativeContainer .hairBack").css({'fill': updateHair})
 			previousHair = relativeContainer.innerHTML;
 		}
 		function makeHairStreakColor() {
@@ -438,6 +483,7 @@
 		}
 		function buttonMouth1(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth1").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -445,6 +491,7 @@
 		}
 		function buttonMouth2(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth2").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -452,6 +499,7 @@
 		}
 		function buttonMouth3(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth3").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -459,6 +507,7 @@
 		}
 		function buttonMouth4(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth4").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -466,6 +515,7 @@
 		}
 		function buttonMouth5(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth5").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -473,6 +523,7 @@
 		}
 		function buttonMouth6(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth6").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -480,6 +531,7 @@
 		}
 		function buttonMouth7(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth7").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -487,6 +539,7 @@
 		}
 		function buttonMouth8(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth8").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -494,6 +547,7 @@
 		}
 		function buttonMouth9(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth9").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -501,6 +555,7 @@
 		}
 		function buttonMouth10(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth10").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -508,6 +563,7 @@
 		}
 		function buttonMouth11(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth11").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -515,6 +571,7 @@
 		}
 		function buttonMouth12(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth12").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -522,6 +579,7 @@
 		}
 		function buttonMouth13(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth13").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -529,6 +587,7 @@
 		}
 		function buttonMouth14(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth14").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
@@ -536,6 +595,7 @@
 		}
 		function buttonMouth15(){
 			relativeContainer.innerHTML = previousEyes;
+			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append($("#mouth15").html());
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			previousMouth = relativeContainer.innerHTML;
