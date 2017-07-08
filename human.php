@@ -235,6 +235,7 @@
 				itemPreview.style.paddingTop = "30px";
 				relativeContainer.innerHTML = '';
 				updateSkin = $("#man .skin").attr("fill");
+				updateSkin = $("#man .skin").attr("fill");
 				avatarOptions.setAttribute("class", "init");
 			}
 			else if(avatarOptions.getAttribute("class")=="eyesStep"){
@@ -257,6 +258,7 @@
 				for (i=0; i<humanEyes.length; i++) {
 					humanEyes[i].style.marginTop = "-270px";
 				}
+				updateEyes = $("#relativeContainer .eyes").attr("fill");
 				avatarOptions.setAttribute("class", "eyesStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="mouthStep2"){
@@ -265,6 +267,7 @@
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color2">Color 1</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeEyeColor()"/></div>';
 				$('#color2').colorPicker();
 				previousEyes = relativeContainer.innerHTML;
+				updateEyes = $("#relativeContainer .eyes").attr("fill");
 				avatarOptions.setAttribute("class", "mouthStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep"){
@@ -276,6 +279,8 @@
 					humanMouth[i].style.marginTop = "-305px";
 				}
 				previousMouth = relativeContainer.innerHTML;
+				updateMouth = $("#relativeContainer .beard").attr("fill");
+				updateMouth = $("#relativeContainer .lips").attr("fill");
 				avatarOptions.setAttribute("class", "mouthStep2");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep2"){
@@ -284,6 +289,9 @@
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color3" type="text" name="color3" value="#333399" onchange="makeMouthColor()"/></div>';
 				$('#color3').colorPicker();
 				previousMouth = relativeContainer.innerHTML;
+				updateMouth = $("#relativeContainer .beard").attr("fill");
+				updateMouth = $("#relativeContainer .lips").attr("fill");
+				
 				avatarOptions.setAttribute("class", "hairStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep3"){
@@ -312,6 +320,7 @@
 				}
 				track.style.height = "460px";
 				track.style.overflow = "scroll";
+				updateHair = $("#relativeContainer .hair").attr("fill");
 				avatarOptions.setAttribute("class", "hairStep2");
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep1"){
@@ -319,14 +328,24 @@
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color4">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
 				$('#color4').colorPicker();
 				previousHair = relativeContainer.innerHTML;
+				updateHair = $("#relativeContainer .hair").attr("fill");
 				avatarOptions.setAttribute("class", "hairStep3");
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
+				avatarOptions.innerHTML = "Change hair streak color.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color5">Color 1</label> <input id="color5" type="text" name="color5" value="#333399" onchange="makeHairStreakColor()"/></div>';
+				$('#color5').colorPicker();
+				previousHairStreak = relativeContainer.innerHTML;
+				updateHairStreak = $("#relativeContainer .hairStreaks").attr("fill");
+				avatarOptions.setAttribute("class", "undiesStep1");
+			}
+			else if(avatarOptions.getAttribute("class")=="topsStep1"){
 				avatarOptions.innerHTML = "Change underwear color.";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color6">Color 1</label> <input id="color6" type="text" name="color6" value="#333399" onchange="makeUndiesColor()"/></div>';
 				$('#color6').colorPicker();
 				previousUndies = relativeContainer.innerHTML;
-				avatarOptions.setAttribute("class", "undiesStep1");
+				updateUndies = $("#relativeContainer .undies").attr("fill");
+				avatarOptions.setAttribute("class", "undiesStep2");
 			}
 		}
 		function nextOptions() {
@@ -406,6 +425,7 @@
 				/*itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color4" type="text" name="color4" value="#333399" onchange="makeHairColor()"/></div>';
 				$('#color4').colorPicker();*/
 				//previousMouth = relativeContainer.innerHTML;
+				previousHair = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "hairStep2");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep2"){
@@ -436,8 +456,7 @@
 				itemPreview.innerHTML = '<div style="padding:50px;"><p>Press the randomize button to change your underwear pattern.</p><div>';
 				//itemPreview.innerHTML = '<img src="svg/human/20140709blogstrip2.svg" width="107px" alt="diagonal stripe pattern"><img src="svg/human/autumn-field-001-52.svg" width="107px" alt="autumn floral pattern"><img src="svg/human/dunno3.svg" width="107px" alt="red blossom pattern"><img src="svg/human/Fall_Pattern2.svg" width="107px" alt="fall pattern"><img src="svg/human/Flowers_Pattern2.svg" width="107px" alt="floral pattern"><img src="svg/human/jbruce_butterfly_(papilio_turnus)_top_view2.svg" width="107px" alt="butterfly stamp"><img src="svg/human/molumen_christmas_tree_icon_22.svg" width="107px" alt="christmas pattern"><img src="svg/human/paisleySimple2.svg" width="107px" alt="swirly pattern"><img src="svg/human/rosros_Rounded_Star_0062.svg" width="107px" alt="rounded star pattern"><img src="svg/human/rwwgub_Art_Nouveau_Tile_Pattern2.svg" width="107px" alt="art nouveau pattern"><img src="svg/human/ryanlerch_red-black_stripe_(gradient)2.svg" width="107px" alt="diagonal stripes"><img src="svg/human/SquaresPattern.svg" width="107px" alt="diagonal square pattern"><img src="svg/human/Woodland_Camouflage.svg" width="107px" alt="camouflage pattern">';
 				$("#itemPreview img").css({'margin':'9px'});
-				//goto scale properties
-				//$("#relativeContainer").css({'-ms-transform':'scale(0.3, 0.3)', '-webkit-transform':'scale(0.3, 0.3)', 'transform': 'scale(0.3, 0.3)'});
+				previousUndies = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "topsStep1");
 			}
 		}
@@ -486,6 +505,7 @@
 		function randomizeUndies(){
 			var randUndies = Math.floor(Math.random()*(patterns.length));
 			insertDefs(randUndies);
+			previousUndies = relativeContainer.innerHTML;
 		}
 		function insertDefs(num){
 			var defsInside = '<pattern id="svgPatt1" patternUnits="userSpaceOnUse" width="100px" height="100px"><image width="100" height="100" xlink:href="svg/human/'+patterns[num]+'" alt="small oval pattern"></pattern>';
