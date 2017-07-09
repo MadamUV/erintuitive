@@ -105,6 +105,32 @@
 	<title>Erintuitive's Psychic Place</title>
 </head>
 <body>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId            : '817064305070781',
+		  autoLogAppEvents : true,
+		  xfbml            : true,
+		  version          : 'v2.9'
+		});
+		FB.AppEvents.logPageView();
+	  };
+	  (function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "//connect.facebook.net/en_US/sdk.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	   FB.getLoginStatus(function(response) {
+	   if (response.status === 'connected') {
+			console.log('Logged in.');
+		  }
+		  else {
+			FB.login();
+		  }
+		});
+	</script>
 	<table width="580px">
 	<td>
 		<tr>
@@ -424,7 +450,7 @@
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				itemPreview.innerHTML = 'Ready for the clothing step? Hit next.';
-				document.getElementById("buttons").innerHTML = '';
+   				
 				//goto remove scroll in back button
 			}
 		}

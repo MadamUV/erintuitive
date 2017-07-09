@@ -1,3 +1,29 @@
+<script>
+  window.fbAsyncInit = function() {
+	FB.init({
+	  appId            : '817064305070781',
+	  autoLogAppEvents : true,
+	  xfbml            : true,
+	  version          : 'v2.9'
+	});
+	FB.AppEvents.logPageView();
+  };
+  (function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   FB.getLoginStatus(function(response) {
+   if (response.status === 'connected') {
+		console.log('Logged in.');
+	  }
+	  else {
+		FB.login();
+	  }
+	});
+</script>
 <script src="js/jquery.js"></script>
 <span><font style="font-size: 23px;">Randomize the colors until it's perfect!</font><br>
 <button id='random' onclick="clicked()">Randomize</button>
