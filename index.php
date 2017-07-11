@@ -71,7 +71,7 @@
 			<img src="img/giphy.gif" alt="Erintuitive on Second Life">
 		</div>
 		<div id="intro">
-			<img width="200px" src="img/psychic_small.jpg" alt="psychic Erintuitive">
+			<img width="200px" src="img/psychic_small2.jpg" alt="psychic Erintuitive">
 		</div>
 		<span id="words">
 			<br>I am Erintuitive. I hope to surprise and entertain you
