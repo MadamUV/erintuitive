@@ -278,6 +278,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkAnt() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -290,6 +291,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkBee() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -302,6 +304,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkBat() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -314,6 +317,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkBear() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -326,6 +330,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkBird() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -338,6 +343,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkBlackDragon() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -350,6 +356,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkWaterDragon() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -362,6 +369,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkCat() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -374,6 +382,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkDaisy() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -386,6 +395,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkButterfly() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -398,6 +408,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkDeer() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -410,6 +421,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkDog() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -422,6 +434,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkWingFeathers() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -434,6 +447,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkFrog() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -446,6 +460,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkFox() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -458,6 +473,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkMoon() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -470,6 +486,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkMosquito() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -482,6 +499,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkRabbit() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -494,6 +512,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkRainbow() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -506,6 +525,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkSalamander() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -518,6 +538,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkSnake() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -529,6 +550,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		
 		///goto: replace </li><li with </li><input type radido animal name value blank<li>
@@ -542,6 +564,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkSquare() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -553,6 +576,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkSun() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -564,6 +588,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkTiger() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -575,6 +600,7 @@
 				});
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkTriangle() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -588,6 +614,7 @@
 				avatarOptions.innerHTML = "";
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function checkYinyang() {
 			var avatarOptions = document.getElementById("avatarOptions");
@@ -601,6 +628,7 @@
 				avatarOptions.innerHTML = "";
 				transferData();
 			}
+			$("#avatarOptions").hide();
 		}
 		function transferData(){    
             var index = $("img").length - 4;
