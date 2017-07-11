@@ -19,7 +19,8 @@
 		xfbml      : true,  // parse social plugins on this page
 		version    : 'v2.9' // use version 2.9
 		});
-		FB.getLoginStatus(function(response){
+		document.getElementById("wholeIntro").innerHTML = 'cheese';
+		/*FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
 				
 			}
@@ -29,7 +30,7 @@
 			else {
 				
 			}
-		});
+		});*/
   };
   // Load the SDK asynchronously
   (function(d, s, id) {
