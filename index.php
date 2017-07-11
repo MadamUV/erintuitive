@@ -10,58 +10,146 @@
 </head>
 <body>
 	<script>
-	  window.fbAsyncInit = function() {
-		FB.init({
-		  appId            : '817064305070781',
-		  autoLogAppEvents : true,
-		  xfbml            : true,
-		  version          : 'v2.9'
+             function statusChangeCallback(response) {
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      useAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '817064305070781',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  $("#login_button").click(function(){
+  	FB.login(function(response){
+    	statusChangeCallback(response);
+	});
+  });
+};
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  //for later
+ 
+  /*function performChat() {
+	$("#sentence_text").keyup(function(){
+		var theSentence = $(this).val();
+		//replacement
+		//use a for loop
+		var iconArray = [["/caution", '<img src="icons/caution.png" alt="caution">'], ["/heart", '<img src="icons/heart.png" alt="heart">'], ["/inside", '<img src="icons/inside.png" alt="inside">'], ["/music", '<img src="icons/musical_note.png" alt="music">'], ["/shamrock", '<img src="icons/shamrock.png" alt="shamrock">'], ["/redo", '<img src="icons/redo.png" alt="redo">'], ["/undo", '<img src="icons/undo.png" alt="undo">'], ["/star", '<img src="icons/star.png" alt="star">'], ["/phone", '<img src="phone/caution.png" alt="phone">'], ["/time", '<img src="icons/waiting.png" alt="time">'], ["/wider", '<img src="icons/wider.png" alt="wider">'], ["/taller", '<img src="icons/taller.png" alt="taller">'], ["/ice", '<img src="icons/Ice.png" alt="ice">'], ["/clouds", '<img src="icons/Overcast.png" alt="clouds">'], ["/rainbow", '<img src="icons/Rainbow.png" alt="rainbow">'], ["/sun", '<img src="icons/Sunny.png" alt="sun">'], ["/fire", '<img src="icons/fire.png" alt="fire">'], ["/afraid", '<img src="icons/afraid.png" alt="afraid">'], ["/happy", '<img src="icons/happy.png" alt="happy">'], ["/delighted", '<img src="icons/delighted.png" alt="delighted">'], ["/disgusted", '<img src="icons/disgusted.png" alt="disgusted">'], ["/angry", '<img src="icons/angry.png" alt="angry">'], ["/confused", '<img src="icons/confused.png" alt="confused">'], ["/bird", '<img src="icons/bird_contour.png" alt="bird">'], ["/bull", '<img src="icons/bull_contour.png" alt="bull">'], ["/cat", '<img src="icons/cat_contour.png" alt="cat">'], ["/cow", '<img src="icons/cow_contour.png" alt="cow">'], ["/duck", '<img src="icons/duck_contour.png" alt="duck">'], ["/elephant", '<img src="icons/elephant_contour.png" alt="elephant">'], ["/fish", '<img src="icons/fish_contour.png" alt="fish">'], ["/horse", '<img src="icons/horse_contour.png" alt="horse">'], ["/ladybug", '<img src="icons/ladybug_contour.png" alt="ladybug">'], ["/leopard", '<img src="icons/leopard_contour.png" alt="leopard">'], ["/lion", '<img src="icons/lion_contour.png" alt="lion">'], ["/zero", '<img src="icons/zero.png" alt="zero">'], ["/one", '<img src="icons/one.png" alt="one">'], ["/two", '<img src="icons/two.png" alt="two">'], ["/three ", '<img src="icons/three.png" alt="three">'], ["/four", '<img src="icons/four.png" alt="four">'], ["/five", '<img src="icons/five.png" alt="five">'], ["/six", '<img src="icons/six.png" alt="six">'], ["/seven", '<img src="icons/seven.png" alt="seven">'], ["/eight", '<img src="icons/eight.png" alt="eight">'], ["/nine", '<img src="icons/nine.png" alt="nine">'], ["/miserable", '<img src="icons/miserable.png" alt="miserable">'], ["/surprised", '<img src= "icons/surprised.png" alt="surprised">'], ["/outside", '<img src="icons/outside.png" alt="outside">'], ["/sad", '<img src="icons/sad.png" alt="sad">']]; //alter theSentence.
+		var i=0;
+		var theSentenceProcessed=theSentence;
+		for(i=0; i<iconArray.length; i++){
+			theSentenceProcessed = theSentenceProcessed.replace(iconArray[i][0], iconArray[i][1]);
+		}
+		$.post("php_post/new_bad_words_script.php", {my_sentence : theSentenceProcessed}, function(bads){
+			$("#sentence").html(bads);
 		});
-		FB.AppEvents.logPageView();
-	  };
-	  (function(d, s, id){
-		 var js, fjs = d.getElementsByTagName(s)[0];
-		 if (d.getElementById(id)) {return;}
-		 js = d.createElement(s); js.id = id;
-		 js.src = "//connect.facebook.net/en_US/sdk.js";
-		 fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	   FB.getLoginStatus(function(response) {
-	   if (response.status === 'connected') {
-			console.log('Logged in.');
-		  }
-		  else {
-			FB.login();
-		  }
 		});
+		$("#submitSentence").click(function(){
+			var sentence = $("#sentence").html();
+			$.post("php_post/comb.php", {comb : sentence, me_id : me_id}, function(combing){
+				$("#sentence").html(combing);
+			});
+		});
+  }*/
+
+  // on login success 
+  function useAPI() {
+    FB.api('/me', function(response) {
+            var me_id = response.id;
+	}
+  }
 	</script>
 	<!-- animal or human? -->
-	<table width="750px">
-		<tr>
-			<td width="10%">
-				<div id="avatarOptions" class="init">
-					Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
-				</div>
-			</td>
-			<td>
-				<div id="result" width="500px" class="glide">
-				Large Previews:<br>
-				<div class="glide__arrows">
-					<button class="glide__arrow prev" data-glide-dir="<">prev</button>
-					<button class="glide__arrow next" data-glide-dir=">">next</button>
-				</div>
-				<div class="glide__wrapper">
-					<ul class="glide__track" id="onTrack">
-					</ul>
-				</div>
-				<div class="glide__bullets"></div>
-				</div>
-			</td>
-			<td id="myChoice">
-				
-			</td>
-		</tr>
-	</table>
+	<div id="wholeIntro">
+		<div id="behind" style="position: absolute; z-index: 99;">
+			<img src="img/giphy.gif" alt="Erintuitive on Second Life">
+		</div>
+		<div id="intro">
+			<img width="200px" src="img/psychic_small.jpg" alt="psychic Erintuitive"></td><td>
+		</div>
+		<span id="words">
+			<br>I am Erintuitive. I hope to surprise and entertain you
+			<br>with my ability to read your personality
+			<br>from observing your avatar. Login to begin.
+			<button id="login_button">Login!</button>
+		</span>
+		<div style="position:absolute; z-index: 101; top: 150px;">
+			<img src="img/magiReading.jpg" width="220px" height="220px" alt="reading in gaiaonline.com">
+			<br>I'm on GaiaOnline too!
+		</div>
+		<img style="position:absolute; z-index: 101; top: 0px; left: 390px; margin-top: 0px; margin-left: 60px;" src="img/paper.jpg" style="margin-left: 140px;" alt="100 percent" width="270">
+		<table width="750px">
+			<tr>
+				<td width="10%">
+					<div id="avatarOptions" class="init">
+						Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
+					</div>
+				</td>
+				<td>
+					<div id="result" width="500px" class="glide">
+					Large Previews:<br>
+					<div class="glide__arrows">
+						<button class="glide__arrow prev" data-glide-dir="<">prev</button>
+						<button class="glide__arrow next" data-glide-dir=">">next</button>
+					</div>
+					<div class="glide__wrapper">
+						<ul class="glide__track" id="onTrack">
+						</ul>
+					</div>
+					<div class="glide__bullets"></div>
+					</div>
+				</td>
+				<td id="myChoice">
+					
+				</td>
+			</tr>
+		</table>
+	</div>
 	<div id="buttons">
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
@@ -69,6 +157,15 @@
 	<style>
 		body {
 			background-color: #FFBB22;
+		}
+		#intro {
+			position: absolute;
+			z-index: 100;
+		}
+		#words {
+			position: absolute;
+			top: 300px;
+			left: 250px;
 		}
 		#avatarOptions {
 			position: relative;
@@ -92,6 +189,7 @@
 		}
 	</style>
 	<script>
+		$("#buttons").hide();
 		var slider;
 		var slider_api;
 		function shuffle(array) {
