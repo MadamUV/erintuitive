@@ -97,33 +97,33 @@
 			<br>I'm on GaiaOnline too!
 		</div>
 		<img style="position:absolute; z-index: 101; top: 0px; left: 390px; margin-top: 0px; margin-left: 60px;" src="img/paper.jpg" style="margin-left: 140px;" alt="100 percent" width="270">
-		<table width="750px">
-			<tr>
-				<td width="10%">
-					<div id="avatarOptions" class="init">
-						Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
-					</div>
-				</td>
-				<td>
-					<div id="result" width="500px" class="glide">
-					Large Previews:<br>
-					<div class="glide__arrows">
-						<button class="glide__arrow prev" data-glide-dir="<">prev</button>
-						<button class="glide__arrow next" data-glide-dir=">">next</button>
-					</div>
-					<div class="glide__wrapper">
-						<ul class="glide__track" id="onTrack">
-						</ul>
-					</div>
-					<div class="glide__bullets"></div>
-					</div>
-				</td>
-				<td id="myChoice">
-					
-				</td>
-			</tr>
-		</table>
 	</div>
+	<table width="750px">
+		<tr>
+			<td width="10%">
+				<div id="avatarOptions" class="init">
+					Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
+				</div>
+			</td>
+			<td>
+				<div id="result" width="500px" class="glide">
+				Large Previews:<br>
+				<div class="glide__arrows">
+					<button class="glide__arrow prev" data-glide-dir="<">prev</button>
+					<button class="glide__arrow next" data-glide-dir=">">next</button>
+				</div>
+				<div class="glide__wrapper">
+					<ul class="glide__track" id="onTrack">
+					</ul>
+				</div>
+				<div class="glide__bullets"></div>
+				</div>
+			</td>
+			<td id="myChoice">
+				
+			</td>
+		</tr>
+	</table>
 	<div id="buttons">
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
