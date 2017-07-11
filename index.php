@@ -21,16 +21,29 @@
 		});
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				
+				$("#wholeIntro").hide();
 			}
 			else if (response.status === 'not_authorized'){
-				document.getElementById("wholeIntro").innerHTML = 'cheese';
+				
 			}
 			else {
 				
 			}
 		});
   };
+  function login(){
+	FB.login(function(response){
+		if (response.status === 'connected'){
+			$("#wholeIntro").hide();
+		}
+		else if (response.status === 'not_authorized'){
+			
+		}
+		else {
+			
+		}
+	});
+  }
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -77,7 +90,7 @@
 			<br>I am Erintuitive. I hope to surprise and entertain you
 			<br>with my ability to read your personality
 			<br>from observing your avatar. Login to begin.
-			<button id="login_button">Login!</button>
+			<button id="login_button" onclick="login();">Login!</button>
 		</span>
 		<div style="position:absolute; z-index: 101; top: 150px;">
 			<img src="img/magiReading.jpg" width="220px" height="220px" alt="reading in gaiaonline.com">
