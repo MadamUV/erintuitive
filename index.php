@@ -94,14 +94,13 @@
     	statusChangeCallback(response);
 	});
   });
-};
   // on login success 
   function useAPI() {
     FB.api('/me', function(response) {
             var me_id = response.id;
 			$("#buttons").show();
 			$("#wholeIntro").hide();
-	}
+	});
   }
 	</script>
 	<!-- animal or human? -->
