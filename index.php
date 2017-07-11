@@ -12,13 +12,25 @@
 	<script>
   //stuff that needs to be here
   window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '817064305070781',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.9' // use version 2.0
-  });
+		FB.init({
+		appId      : '817064305070781',
+		cookie     : true,  // enable cookies to allow the server to access 
+							// the session
+		xfbml      : true,  // parse social plugins on this page
+		version    : 'v2.9' // use version 2.9
+		});
+		FB.getLoginStatus(function(response){
+			if (response.status === 'connected'){
+				
+			}
+			else if (response === 'not_authorized'){
+				document.getElementById("avatarOptions").innerHTML = 'cheese';
+			}
+			else {
+				
+			}
+		});
+  };
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
