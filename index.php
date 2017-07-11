@@ -22,9 +22,10 @@
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
 				$("#wholeIntro").hide();
+				$("#buttons").show();
 			}
 			else if (response.status === 'not_authorized'){
-				
+				document.getElementById("itemPreview").innerHTML = "test";
 			}
 			else {
 				
