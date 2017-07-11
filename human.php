@@ -114,6 +114,17 @@
 		  version          : 'v2.9'
 		});
 		FB.AppEvents.logPageView();
+		FB.getLoginStatus(function(response){
+			if (response.status === 'connected'){
+				//me stuff goes here
+			}
+			else if (response.status === 'not_authorized'){
+				document.getElementById("itemPreview").innerHTML = "test";
+			}
+			else {
+				
+			}
+		});
 	  };
 	  (function(d, s, id){
 		 var js, fjs = d.getElementsByTagName(s)[0];
@@ -122,14 +133,6 @@
 		 js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
-	   FB.getLoginStatus(function(response) {
-	   if (response.status === 'connected') {
-			console.log('Logged in.');
-		  }
-		  else {
-			FB.login();
-		  }
-		});
 	</script>
 	<table width="580px">
 	<td>
