@@ -23,22 +23,38 @@
 			if (response.status === 'connected'){
 				$("#wholeIntro").hide();
 				$("#buttons").show();
+				$("#logout_button").show();
+				getMe();
 			}
 			else if (response.status === 'not_authorized'){
-				document.getElementById("itemPreview").innerHTML = "test";
+				$("#wholeIntro").show();
+				$("#buttons").hide();
+				$("#logout_button").hide();
 			}
 			else {
 				
 			}
 		});
-  };
+    };
+	function getMe() {
+		FB.api('/me', function(response) {
+			var me_id = response.id;
+			
+			//var me_firstname = response.first_name;
+		});
+	}
   function login(){
 	FB.login(function(response){
 		if (response.status === 'connected'){
 			$("#wholeIntro").hide();
+			$("#buttons").show();
+			$("#logout_button").show();
+			getMe();
 		}
 		else if (response.status === 'not_authorized'){
-			
+			$("#wholeIntro").show();
+			$("#buttons").hide();
+			$("#logout_button").hide();
 		}
 		else {
 			
@@ -92,6 +108,7 @@
 			<br>with my ability to read your personality
 			<br>from observing your avatar. Login to begin.
 			<button id="login_button" onclick="login();">Login!</button>
+			<button id="logout_button" onclick="logout();">Log out</button>
 		</span>
 		<div style="position:absolute; z-index: 101; top: 150px;">
 			<img src="img/magiReading.jpg" width="220px" height="220px" alt="reading in gaiaonline.com">
@@ -165,6 +182,7 @@
 	</style>
 	<script>
 		$("#buttons").hide();
+		$("#logout_button").hide();
 		////////facebook/////////
 		
 		function statusChangeCallback(response) {
