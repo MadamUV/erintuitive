@@ -39,7 +39,6 @@
 	function getMe() {
 		FB.api('/me', function(response) {
 			var me_id = response.id;
-			
 			//var me_firstname = response.first_name;
 		});
 	}

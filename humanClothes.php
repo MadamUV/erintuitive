@@ -52,7 +52,7 @@
 				
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
-				<? echo $_POST['result']; ?>
+				
 			</td>
 		</tr>
 	</table>
