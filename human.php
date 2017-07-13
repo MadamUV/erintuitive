@@ -462,7 +462,7 @@
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				itemPreview.innerHTML = 'Press the "Next" button to continue to the clothiing step.';
-   				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe();">Next</button>';
+   				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe()">Next</button>';
 				document.getElementById("result").innerHTML = document.getElementById("result").innerHTML.length.toString();
 			}
 		}
