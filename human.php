@@ -137,7 +137,7 @@
 			FB.api('/me', function(response) {
 				var me_id = response.id;
 				$("#theNext").click(function(){
-					$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status)(){
+					$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
 						window.location.replace("humanClothes.php");
 					});
 				});
