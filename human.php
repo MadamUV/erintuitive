@@ -116,16 +116,12 @@
 		FB.AppEvents.logPageView();
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				FB.api('/me', function(response2) {
-					var me_id = response2.id;
-					document.getElementById("theNext").onclick = function(){
-					document.getElementById("result").innerHTML = "cheese";
-					/*$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
-						window.location.replace("humanClothes.php");
-					});*/
-					};
-					//var me_firstname = response.first_name;
-				});
+				document.getElementById("result").innerHTML = response.id;
+				/*$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
+					window.location.replace("humanClothes.php");
+				});*/
+				//};
+				//var me_firstname = response.first_name;
 			}
 			else if (response.status === 'not_authorized'){
 				document.getElementById("itemPreview").innerHTML = "test";
