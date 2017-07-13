@@ -464,7 +464,7 @@
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				itemPreview.innerHTML = 'Ready for the clothing step? Hit next.';
-   				
+   				document.getElementById("buttons").innerHTML = '<button id="theNext">Next</button>';
 				//goto remove scroll in back button
 			}
 		}
