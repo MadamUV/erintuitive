@@ -1,6 +1,6 @@
 <?php
 
-$host = "http://fdb5.freehostingeu.com";
+$host = "fdb5.freehostingeu.com";
 $user = "1879270_erintuitive";
 $pass = "iluverintuitive1732";
 $db = "1879270_erintuitive";
