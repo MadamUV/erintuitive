@@ -1,4 +1,6 @@
 <?php
+include 'config.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,7 +54,16 @@
 				
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
-				
+				<? if(isset($_GET['getAvatar'])){ $avatarId = $_GET['getAvatar']; 
+					if($result = $sql = "SELECT * FROM humans WHERE me_id='".$avatarId."'"){
+						if($result->num_rows>0){
+							while ($row = $result->fetch_assoc()) {
+								$avatarCharacter = $row['avatar'];
+								echo $avatarCharacter;
+							}
+						}	
+					}
+				} ?>
 			</td>
 		</tr>
 	</table>
