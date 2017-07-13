@@ -138,7 +138,7 @@
 				var me_id = response.id;
 				var totalChar = document.getElementById("relativeContainer").innerHTML;
 				$.post("addHuman.php", {me_id : me_id, avatar: totalChar}, function(response, status){
-					window.location.replace("humanClothes.php?getAvatar="+me_id);
+					window.location.replace("humanClothes.php);
 				});
 			});
 		}
