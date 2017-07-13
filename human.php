@@ -136,8 +136,10 @@
 	   function getMe() {
 			FB.api('/me', function(response) {
 				var me_id = response.id;
-				document.getElementById("previousOnes").value = me_id;
-				//var me_firstname = response.first_name;
+				var totalChar = document.getElementById("relativeContainer").innerHTML;
+				$.post("addHuman.php", {me_id : me_id, avatar: totalChar}, function(response, status){
+					window.location.replace("humanClothes.php");
+				});
 			});
 		}
 	</script>
@@ -459,13 +461,9 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
-				itemPreview.innerHTML = 'Ready for the clothing step? Hit next.';
-   				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe();">Next</button><input type="hidden" value="none" name="previousOnes" id="previousOnes"/>';
-				if(document.getElementById("previousOnes").value != "none"){
-					$.post("addHuman.php", {me_id : document.getElementById("previousOnes").value, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
-						window.location.replace("humanClothes.php");
-					});
-				}
+				itemPreview.innerHTML = 'Press the "Next" button to continue to the clothiing step.';
+   				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe();">Next</button>';
+				document.getElementById("result").innerHTML = document.getElementById("result").innerHTML.length.toString();
 			}
 		}
 		function makeSkinColor() {
