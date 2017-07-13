@@ -51,7 +51,6 @@ include 'config.php';
 				</div>
 			</td>
 			<td id="itemPreview" width="30%">
-				
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
 				<?php if(isset($_GET['getAvatar'])){
