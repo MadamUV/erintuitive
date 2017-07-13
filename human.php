@@ -116,7 +116,16 @@
 		FB.AppEvents.logPageView();
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				getMe();
+				FB.api('/me', function(response2) {
+					var me_id = response2.id;
+					document.getElementById("theNext").onclick = function(){
+					document.getElementById("result").innerHTML = "cheese";
+					/*$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
+						window.location.replace("humanClothes.php");
+					});*/
+					};
+					//var me_firstname = response.first_name;
+				});
 			}
 			else if (response.status === 'not_authorized'){
 				document.getElementById("itemPreview").innerHTML = "test";
@@ -133,18 +142,6 @@
 		 js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
-	   function getMe() {
-			FB.api('/me', function(response) {
-				var me_id = response.id;
-				$("#theNext").click(function(){
-					document.getElementById("result").innerHTML = "cheese";
-					/*$.post("addHuman.php", {me_id : me_id, myPrevious: previous, myPreviousEyes: previousEyes, myPreviousMouth: previousMouth, myPreviousHair: previousHair, myPreviousHairStreak: previousHairStreak, myPreviousUndies: previousUndies}, function(response, status){
-						window.location.replace("humanClothes.php");
-					});*/
-				});
-				//var me_firstname = response.first_name;
-			});
-		}
 	</script>
 	<table width="580px">
 	<td>
