@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-if(isset($_POST['me_id']) && isset($_POST['myPrevious']) && isset($_POST['myPreviousEyes']) && isset($_POST['myPreviousHair']) && isset($_POST['myPreviousHairStreak']) && isset($_POST['myPreviousUndies'])) {
+if(isset($_POST['me_id']) && isset($_POST['myPrevious']) && isset($_POST['myPreviousEyes']) && isset($_POST['myPreviousMouth']) && isset($_POST['myPreviousHair']) && isset($_POST['myPreviousHairStreak']) && isset($_POST['myPreviousUndies'])) {
 	$me_id = $_POST['me_id'];
 	$previous = $_POST['myPrevious'];
 	$previousEyes = $_POST['myPreviousEyes'];
