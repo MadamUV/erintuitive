@@ -137,9 +137,7 @@
 			FB.api('/me', function(response) {
 				var me_id = response.id;
 				var totalChar = document.getElementById("relativeContainer").innerHTML;
-				$.post("addHuman.php", {me_id : me_id, avatar: totalChar}, function(response, status){
-					window.location.replace("humanClothes.php");
-				});
+				document.getElementById("result").innerHTML = '<form action="humanClothes.php" method="post"><input type="hidden" value="'+totalChar+'" name="getAvatar" id="getAvatar"/><input type="submit" name="submit" value="Submit"/></form>';
 			});
 		}
 	</script>
@@ -461,9 +459,8 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
-				itemPreview.innerHTML = 'Press the "Next" button to continue to the clothing step.';
-   				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe()">Next</button>';
-				//document.getElementById("result").innerHTML = document.getElementById("result").innerHTML.length.toString();
+				itemPreview.innerHTML = 'Press the "Next" button and then "Submit" to continue to the clothing step.<br><button id="theNext" onclick="getMe();">Next</button>';
+				$("#buttons").hide();
 			}
 		}
 		function makeSkinColor() {
