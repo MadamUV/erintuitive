@@ -53,15 +53,30 @@ include 'config.php';
 			<td id="itemPreview" width="30%">
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
-				<?php if(isset($_GET['getAvatar'])){
-					$avatarId = $_GET['getAvatar']; 
-					if($result = "SELECT * FROM humans WHERE me_id='".$avatarId."'"){
-						if($result->num_rows > 0){
-							while ($row = $result->fetch_assoc()) {
-								$avatarCharacter = $row['avatar'];
-								echo $avatarCharacter;
-							}
-						}	
+				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
+					$me_id = $_POST['me_id']; 
+					$avatar = $_POST['getAvatar'];
+					$host = "fdb5.freehostingeu.com";
+					$user = "1879270_erintuitive";
+					$pass = "iluverintuitive1732";
+					$db = "1879270_erintuitive";
+					$mysqli = mysqli_connect($host, $user, $pass, $db);
+					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
+						$row_count = $result->num_rows;
+						if ($row_count == 0){
+							$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
+							$mysqli->query($sql);
+						}
+						else {
+							$sql = "UPDATE `humans` SET `avatar`='".$me_id."' WHERE `me_id`='".$avatar."';";
+							$mysqli->query($sql);
+						}
+					}
+					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
+						if($result2->num_rows > 0){
+							$row = mysqli_fetch_row($result2);
+							echo urldecode($row['avatar']);
+						}
 					}
 				} ?>
 			</td>
