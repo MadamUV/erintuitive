@@ -137,7 +137,7 @@
 			FB.api('/me', function(response) {
 				var me_id = response.id;
 				var totalChar = document.getElementById("relativeContainer").innerHTML;
-				document.getElementById("result").innerHTML = '<form action="humanClothes.php" method="post"><input type="hidden" value="'+me_id+'" name="me_id" id="me_id"/><input type="hidden" value="'+escape(totalChar)+'" name="getAvatar" id="getAvatar"/><input type="submit" name="submit" value="Submit"/></form>';
+				document.getElementById("result").innerHTML = '<form action="humanClothes.php" method="post"><input type="hidden" value="'+me_id+'" name="me_id" id="me_id"/><input type="text" value="'+escape(totalChar)+'" name="getAvatar" id="getAvatar"/><input type="submit" name="submit" value="Submit"/></form>';
 			});
 		}
 	</script>
