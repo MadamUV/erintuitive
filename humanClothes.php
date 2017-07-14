@@ -75,7 +75,9 @@ include 'config.php';
 					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						if($result2->num_rows > 0){
 							$row = mysqli_fetch_row($result2);
-							echo urldecode($row['avatar']);
+							$rowed = $row['avatar'];
+							$rowed = str_replace('\"', '"', $rowed);
+							echo $rowed;
 						}
 					}
 				} ?>
