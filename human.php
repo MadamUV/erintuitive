@@ -459,8 +459,8 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
-				itemPreview.innerHTML = 'Press the "Next" button and then "Submit" to continue to the clothing step.<br><button id="theNext" onclick="getMe();">Next</button>';
-				$("#buttons").hide();
+				itemPreview.innerHTML = 'Press the "Next" button and then "Submit" to continue to the clothing step.';
+				document.getElementById("buttons").innerHTML = '<button id="theNext" onclick="getMe();">Next</button>';
 			}
 		}
 		function makeSkinColor() {
