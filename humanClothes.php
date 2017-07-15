@@ -58,17 +58,10 @@ include 'config.php';
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
 					echo urldecode($avatar);
-					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
-						$row_count = $result->num_rows;
-						if ($row_count == 0){
-							$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
-							$mysqli->query($sql);
-						}
-						else {
-							$sql = "UPDATE `humans` SET `avatar`='".$me_id."' WHERE `me_id`='".$avatar."';";
-							$mysqli->query($sql);
-						}
-					}
+					$sql = "DELETE FROM `humans` WHERE `me_id`='".$me_id."';";
+					$mysqli->query($sql);
+					$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
+					$mysqli->query($sql);
 					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						if($result2->num_rows > 0){
 							$row = mysqli_fetch_row($result2);
