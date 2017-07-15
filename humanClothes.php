@@ -60,7 +60,7 @@ include 'config.php';
 					$user = "1879270_erintuitive";
 					$pass = "iluverintuitive1732";
 					$db = "1879270_erintuitive";
-					$mysqli = new mysqli($host, $user, $pass, $db);
+					$mysqli = ($host, $user, $pass, $db);
 					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						$row_count = $result->num_rows;
 						if ($row_count == 0){
@@ -75,9 +75,7 @@ include 'config.php';
 					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						if($result2->num_rows > 0){
 							$row = mysqli_fetch_row($result2);
-							$rowed = $row['avatar'];
-							$rowed = str_replace('\"', '"', $rowed);
-							echo $rowed;
+							echo urldecode($row['avatar']);
 						}
 					}
 				} ?>
