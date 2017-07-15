@@ -136,7 +136,7 @@
 	   function getMe() {
 			FB.api('/me', function(response) {
 				var me_id = response.id;
-				var totalChar = document.getElementById("relativeContainer").innerHTML.replace('"', '\"');
+				var totalChar = document.getElementById("relativeContainer");
 				document.getElementById("result").innerHTML = '<form action="humanClothes.php" method="post"><input type="text" value="'+me_id+'" name="me_id" id="me_id"/><input type="text" value="'+totalChar.replace(/["']/g, '\\"')+'" name="getAvatar" id="getAvatar"/><input type="submit" name="submit" value="Submit"/></form>';
 			});
 		}
