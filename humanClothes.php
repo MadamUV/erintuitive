@@ -1,6 +1,10 @@
 <?php
 include 'config.php';
 
+if ($mysqli->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') '
+            . $mysqli->connect_error);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,7 +64,7 @@ include 'config.php';
 					echo urldecode($avatar);
 					$sql = "DELETE FROM `humans` WHERE `me_id`='".$me_id."';";
 					$mysqli->query($sql);
-					$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, 'cheese', 'cheese');";
+					$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
 					$mysqli->query($sql);
 					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						if($result2->num_rows > 0){
