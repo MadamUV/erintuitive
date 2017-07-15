@@ -53,15 +53,11 @@ include 'config.php';
 			<td id="itemPreview" width="30%">
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
+				<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
 					echo urldecode($avatar);
-					$host = "fdb5.freehostingeu.com";
-					$user = "1879270_erintuitive";
-					$pass = "iluverintuitive1732";
-					$db = "1879270_erintuitive";
-					$mysqli = new mysqli($host, $user, $pass, $db);
 					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						$row_count = $result->num_rows;
 						if ($row_count == 0){
@@ -76,10 +72,11 @@ include 'config.php';
 					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						if($result2->num_rows > 0){
 							$row = mysqli_fetch_row($result2);
-							echo urldecode($row['avatar']);
+							//echo urldecode($row['avatar']);
 						}
 					}
 				} ?>
+				</div>
 			</td>
 		</tr>
 	</table>
