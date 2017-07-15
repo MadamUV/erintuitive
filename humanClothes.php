@@ -1,10 +1,5 @@
 <?php
 include 'config.php';
-
-if ($mysqli->connect_error) {
-    die('Connect Error (' . $mysqli->connect_errno . ') '
-            . $mysqli->connect_error);
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,6 +57,7 @@ if ($mysqli->connect_error) {
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
 					echo urldecode($avatar);
+					print_r($mysqli);
 					$sql = "DELETE FROM `humans` WHERE `me_id`='".$me_id."';";
 					$mysqli->query($sql);
 					$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
