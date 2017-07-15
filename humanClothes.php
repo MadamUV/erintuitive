@@ -56,7 +56,7 @@ include 'config.php';
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
-					echo '<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px">'+urldecode($avatar)+'</div>';
+					echo '<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px">'.urldecode($avatar).'</div>';
 					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						$row_count = $result->num_rows;
 						if ($row_count == 0){
