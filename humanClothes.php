@@ -60,7 +60,7 @@ include 'config.php';
 					$user = "1879270_erintuitive";
 					$pass = "iluverintuitive1732";
 					$db = "1879270_erintuitive";
-					$mysqli = ($host, $user, $pass, $db);
+					$mysqli = new mysqli($host, $user, $pass, $db);
 					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						$row_count = $result->num_rows;
 						if ($row_count == 0){
