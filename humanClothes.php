@@ -56,6 +56,7 @@ include 'config.php';
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
+					echo urldecode($avatar);
 					$host = "fdb5.freehostingeu.com";
 					$user = "1879270_erintuitive";
 					$pass = "iluverintuitive1732";
