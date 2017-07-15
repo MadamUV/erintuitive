@@ -75,7 +75,6 @@ include 'config.php';
 						}
 					}
 				} ?>
-				</div>
 			</td>
 		</tr>
 	</table>
