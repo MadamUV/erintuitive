@@ -5,6 +5,6 @@ $user = "1879270_erintuitive";
 $pass = "iluverintuitive1732";
 $db = "1879270_erintuitive";
 
-$mysqli = mysqli_connect($host, $user, $pass, $db);
+$mysqli = new mysqli($host, $user, $pass, $db);
 
 ?>

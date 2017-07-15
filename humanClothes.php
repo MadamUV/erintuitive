@@ -51,25 +51,27 @@ include 'config.php';
 			</td>
 			<td id="itemPreview" width="30%">
 			</td>
-			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="350px" style="border-style: dashed; border-width: 6px;">
+			<td id="result" width="350px" style="border-style: dashed; border-width: 6px;">
 				<div id="relativeContainer" style="position: relative; margin-left: 80px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
 					echo urldecode($avatar);
-					print_r($mysqli);
-					$sql = "DELETE FROM `humans` WHERE `me_id`='".$me_id."';";
-					$mysqli->query($sql);
-					$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
-					$mysqli->query($sql);
-					if($result2 = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
-						if($result2->num_rows > 0){
-							$row = mysqli_fetch_row($result2);
-							//echo urldecode($row['avatar']);
-						}
-					}
+					//10155567524149846 my user id
 				} ?>
 				</div>
+				<script>
+					$.ajax({
+						url:"https://api.myjson.com/bins/vzecj",
+						type:"PUT",
+						data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
+						contentType:"application/json; charset=utf-8",
+						dataType:"json",
+						success: function(data, textStatus, jqXHR){
+							document.getElementById("avatarOptions").innerHTML = "success";
+						}
+					}); 
+				</script>
 			</td>
 		</tr>
 	</table>
