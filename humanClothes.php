@@ -52,7 +52,7 @@ include 'config.php';
 			</td>
 			<td id="itemPreview" width="30%">
 			</td>
-			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; padding: 100px; border-width: 6px;">
+			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; padding: 60px; border-width: 6px;">
 				<div id="relativeContainer" style="position: relative;" width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
