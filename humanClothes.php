@@ -53,11 +53,10 @@ include 'config.php';
 			<td id="itemPreview" width="30%">
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
-				<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
-					echo urldecode($avatar);
+					echo '<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px">'+urldecode($avatar)+'</div>';
 					if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
 						$row_count = $result->num_rows;
 						if ($row_count == 0){
