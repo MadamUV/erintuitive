@@ -15,7 +15,7 @@ include 'config.php';
 	<link rel="stylesheet" href="css/colorPicker.css" type="text/css" />
 	<title>Erintuitive's Psychic Place</title>
 </head>
-<body>
+<body style="background-color: #FFBB22;">
 	<script>
 	  window.fbAsyncInit = function() {
 		FB.init({
