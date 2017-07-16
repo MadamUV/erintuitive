@@ -74,14 +74,15 @@
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var pointer = -1;
+										var pointer = 0;
 										for (i=0; i<data.length; i++)
 										{
 											for(key in data[i]){
 												if(key==me_id){
 													pointer = i;
-													break 2;
+													break;
 												}
+												break;
 											}
 										}
 										var avatarJSON = data[pointer][me_id]['avatar'];
