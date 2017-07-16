@@ -82,7 +82,7 @@
 								}
 							});
 						}
-						/*else {
+						else {
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -98,7 +98,7 @@
 									});
 								}
 							});
-						}*/
+						}
 					});
 				</script>
 			</td>
