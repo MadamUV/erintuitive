@@ -62,8 +62,8 @@
 					var count2 = 0;
 					var countPresent = 0;
 					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
-						for(i=0; i<data3.person.length; i++){
-							if(data3['person'][i]['user_id']!=me_id){
+						for(i=0; i<data3['person'].length; i++){
+							if(data3['person'][i]['user_id'] != me_id){
 								count1 += 1;
 							}
 							else {
@@ -111,7 +111,7 @@
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data: data3,
+								data: d  ata3,
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
