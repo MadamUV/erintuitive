@@ -62,7 +62,7 @@
 					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 						for (var prop in data3){
 							if(prop != me_id){
-								count1 = 1;
+								count = 1;
 							}
 						}
 						if(count1 == 0){
@@ -85,7 +85,7 @@
 						else {
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
-								type:"POST",
+								type:"PUT",
 								data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
@@ -98,7 +98,7 @@
 									});
 								}
 							});
-						}
+						}*/
 					});
 				</script>
 			</td>
