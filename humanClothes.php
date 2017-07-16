@@ -1,6 +1,3 @@
-<?php
-include 'config.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,14 +58,14 @@ include 'config.php';
 				</div>
 				<script>
 					var me_id = "<? echo $me_id; ?>";
-					var count = 0;
-					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus, jqXHR) {
+					var count1 = 0;
+					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 						for (var prop in data3){
 							if(prop != me_id){
 								count = 1;
 							}
 						}
-						if(count == 0){
+						if(count1 == 0){
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -85,7 +82,7 @@ include 'config.php';
 								}
 							});
 						}
-						else {
+						/*else {
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -101,7 +98,7 @@ include 'config.php';
 									});
 								}
 							});
-						}
+						}*/
 					});
 				</script>
 			</td>
