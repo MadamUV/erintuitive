@@ -68,9 +68,8 @@ include 'config.php';
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
 							$.get(data.uri, function (data, textStatus, jqXHR) {
-								$.each(data, function(index, value){
-									document.getElementById("relativeContainer").innerHTML = value;
-								});
+								var json = JSON.stringify(data);
+								document.getElementById("relativeContainer").innerHTML = json;
 							});
 						}
 					}); 
