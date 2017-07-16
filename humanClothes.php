@@ -60,12 +60,12 @@
 					var me_id = "<? echo $me_id; ?>";
 					var count1 = 0;
 					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
-						for (var prop in data3){
+						/*for (var prop in data3){
 							if(prop != me_id){
 								count = 1;
 							}
 						}
-						if(count1 == 0){
+						if(count1 == 0){*/
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -81,7 +81,7 @@
 									});
 								}
 							});
-						}
+						/*}
 						else {
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
@@ -113,8 +113,8 @@
 										});
 									});
 								}
-							});*/
-						}
+							});
+						}*/
 					});
 				</script>
 			</td>
