@@ -111,7 +111,7 @@
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data: d  ata3,
+								data: data3,
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
