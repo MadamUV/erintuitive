@@ -74,7 +74,7 @@
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data[pointer][me_id]['avatar'];
+										var avatarJSON = data[pointer]['user_id']['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
 										});
@@ -91,7 +91,7 @@
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data[pointer][me_id]['avatar'];
+										var avatarJSON = data[pointer]['user_id']['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
 										});
