@@ -69,7 +69,7 @@ include 'config.php';
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
 							$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-								var avatarJSON = decode(data[me_id].avatar);
+								var avatarJSON = data[me_id]['avatar'];
 								document.getElementById("relativeContainer").innerHTML = avatarJSON;
 							});
 						}
