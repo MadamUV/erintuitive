@@ -60,6 +60,11 @@ include 'config.php';
 				} ?>
 				</div>
 				<script>
+					function decodeHtml(html) {
+						var txt = document.createElement("textarea");
+						txt.innerHTML = html;
+						return txt.value;
+					}
 					var me_id = "<? echo $me_id; ?>";
 					$.ajax({
 						url:"https://api.myjson.com/bins/vzecj",
@@ -69,7 +74,7 @@ include 'config.php';
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
 							$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-								var avatarJSON = data[me_id]['avatar'];
+								var avatarJSON = decodeHtml(data[me_id]['avatar']);
 								document.getElementById("relativeContainer").innerHTML = avatarJSON;
 							});
 						}
