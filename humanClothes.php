@@ -64,41 +64,27 @@
 							if(prop != me_id){
 								count = 1;
 							}
-						}
-						if(count1 == 0){*/
+						}*/
+						//if(count1 == 0){
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data:'{[{"user_id":"'+me_id+'", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
+								data:'{"person": ["user_id":""<? echo $me_id; ?>"", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1]}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data[0]['user_id']['avatar'];
+										var avatarJSON = data['person']['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
 										});
 									});
 								}
 							});
-						/*}
+						//}
+						/*
 						else {
-							$.ajax({
-								url:"https://api.myjson.com/bins/vzecj",
-								type:"PUT",
-								data:'{[{"user_id":"'+me_id+'", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
-								contentType:"application/json; charset=utf-8",
-								dataType:"json",
-								success: function(data, textStatus, jqXHR){
-									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data[pointer]['user_id']['avatar'];
-										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-											document.getElementById("relativeContainer").innerHTML = data2;
-										});
-									});
-								}
-							});
-							/*data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
+							data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
