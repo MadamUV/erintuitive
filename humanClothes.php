@@ -85,7 +85,7 @@
 						else {
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
-								type:"PUT",
+								type:"POST",
 								data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
@@ -98,7 +98,7 @@
 									});
 								}
 							});
-						}*/
+						}
 					});
 				</script>
 			</td>
