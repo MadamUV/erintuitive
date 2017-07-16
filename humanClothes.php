@@ -62,7 +62,7 @@
 					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 						for (var prop in data3){
 							if(prop != me_id){
-								count = 1;
+								count1 = 1;
 							}
 						}
 						if(count1 == 0){
