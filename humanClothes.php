@@ -69,7 +69,7 @@
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data:'{"person": ["user_id":""<? echo $me_id; ?>"", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1]}',
+								data:'{"person": [{"user_id":""<? echo $me_id; ?>"", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
