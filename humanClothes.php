@@ -69,22 +69,11 @@
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data:'{["<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
+								data:'{[{"user_id":"'+me_id+'", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var pointer = 0;
-										for (i=0; i<data.length; i++)
-										{
-											for(key in data[i]){
-												if(key==me_id){
-													pointer = i;
-													break;
-												}
-												break;
-											}
-										}
 										var avatarJSON = data[pointer][me_id]['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
@@ -94,7 +83,22 @@
 							});
 						}
 						else {
-							data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
+							$.ajax({
+								url:"https://api.myjson.com/bins/vzecj",
+								type:"PUT",
+								data:'{[{"user_id":"'+me_id+'", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
+								contentType:"application/json; charset=utf-8",
+								dataType:"json",
+								success: function(data, textStatus, jqXHR){
+									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+										var avatarJSON = data[pointer][me_id]['avatar'];
+										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
+											document.getElementById("relativeContainer").innerHTML = data2;
+										});
+									});
+								}
+							});
+							/*data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -109,7 +113,7 @@
 										});
 									});
 								}
-							});
+							});*/
 						}
 					});
 				</script>
