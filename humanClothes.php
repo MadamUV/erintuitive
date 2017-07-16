@@ -69,7 +69,7 @@
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
+								data:'{"<? echo $me_id; ?>":{["name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
@@ -83,10 +83,10 @@
 							});
 						}
 						else {
-							$.extend(data3, {"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
+							data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
-								type:"POST",
+								type:"PUT",
 								data: data3,
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
