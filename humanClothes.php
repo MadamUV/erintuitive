@@ -52,7 +52,7 @@ include 'config.php';
 			<td id="itemPreview" width="30%">
 			</td>
 			<td id="result" width="350px" style="border-style: dashed; border-width: 6px;">
-				<div id="relativeContainer" style="position: relative; margin-left: 80px; margin-top:50px; " width="86px" height="380px">
+				<div id="relativeContainer" style="position: relative; margin-left: 55px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
@@ -61,21 +61,48 @@ include 'config.php';
 				</div>
 				<script>
 					var me_id = "<? echo $me_id; ?>";
-					$.ajax({
-						url:"https://api.myjson.com/bins/vzecj",
-						type:"PUT",
-						data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
-						contentType:"application/json; charset=utf-8",
-						dataType:"json",
-						success: function(data, textStatus, jqXHR){
-							$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-								var avatarJSON = data[me_id]['avatar'];
-								$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-									document.getElementById("relativeContainer").innerHTML = data2;
-								});
+					var count = 0;
+					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus, jqXHR) {
+						for (var prop in data3){
+							if(prop != me_id){
+								count = 1;
+							}
+						}
+						if(count == 0){
+							$.ajax({
+								url:"https://api.myjson.com/bins/vzecj",
+								type:"PUT",
+								data:'{"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
+								contentType:"application/json; charset=utf-8",
+								dataType:"json",
+								success: function(data, textStatus, jqXHR){
+									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+										var avatarJSON = data[me_id]['avatar'];
+										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
+											document.getElementById("relativeContainer").innerHTML = data2;
+										});
+									});
+								}
 							});
 						}
-					}); 
+						else {
+							$.ajax({
+								url:"https://api.myjson.com/bins/vzecj",
+								type:"PUT",
+								data:'{'+data3+', "<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}}',
+								contentType:"application/json; charset=utf-8",
+								dataType:"json",
+								success: function(data, textStatus, jqXHR){
+									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+										var avatarJSON = data[me_id]['avatar'];
+										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
+											document.getElementById("relativeContainer").innerHTML = data2;
+										});
+									});
+								}
+							});
+						}
+					});
 				</script>
 			</td>
 		</tr>
