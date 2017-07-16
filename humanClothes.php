@@ -89,7 +89,7 @@
 							});
 						}
 						else if(count1 > 0 && count2 == 0){
-							data3.push({"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1});
+							data3.person.push({"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1});
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
