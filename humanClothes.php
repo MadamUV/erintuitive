@@ -56,7 +56,6 @@ include 'config.php';
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
-					echo urldecode($avatar);
 					//10155567524149846 my user id
 				} ?>
 				</div>
@@ -68,7 +67,9 @@ include 'config.php';
 						contentType:"application/json; charset=utf-8",
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
-							document.getElementById("avatarOptions").innerHTML = "success";
+							$.get(data.uri, function (data, textStatus, jqXHR) {
+							var json = urldecode(JSON.stringify(data.<? echo $me_id; ?>.avatar));
+							document.getElementById("relativeContainer").innerHTML = json;
 						}
 					}); 
 				</script>
@@ -122,6 +123,7 @@ include 'config.php';
 	</style>
 	<script>
 		$("#back").hide();
+		
 	</script>
 </body>
 </html>
