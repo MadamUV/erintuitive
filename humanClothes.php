@@ -60,12 +60,12 @@
 					var me_id = "<? echo $me_id; ?>";
 					var count1 = 0;
 					$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
-						/*for (var prop in data3){
-							if(prop != me_id){
-								count = 1;
+						for(i=0; i<data3.person.length; i++){
+							if(data3['person'][i]['user_id']==me_id){
+								count1 = i;
 							}
-						}*/
-						//if(count1 == 0){
+						}
+						if(count1 == 0){
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -74,14 +74,14 @@
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data['person']['avatar'];
+										var avatarJSON = data['person'][0]['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
 										});
 									});
 								}
 							});
-						//}
+						}
 						/*
 						else {
 							data3.push({"<? echo $me_id; ?>":{"name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}});
