@@ -67,7 +67,7 @@ include 'config.php';
 						contentType:"application/json; charset=utf-8",
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
-							$.get(data.uri, function (data, textStatus, jqXHR) {
+							$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
 								var json = JSON.stringify(data);
 								document.getElementById("relativeContainer").innerHTML = json;
 							});
