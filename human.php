@@ -309,6 +309,7 @@
 			else if(avatarOptions.getAttribute("class")=="hairStep2"){
 				avatarOptions.innerHTML = "If your mouth selection contains a beard, moustache, or lipstick you may re-color it here.";
 				$("#relativeContainer .hair").remove();
+				$("#relativeContainer .hairStreak").remove();
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color3" type="text" name="color3" value="#333399" onchange="makeMouthColor()"/></div>';
 				$('#color3').colorPicker();
 				previousMouth = relativeContainer.innerHTML;
