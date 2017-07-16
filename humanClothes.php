@@ -68,8 +68,12 @@ include 'config.php';
 						dataType:"json",
 						success: function(data, textStatus, jqXHR){
 							$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-								var json = JSON.stringify(data);
-								document.getElementById("relativeContainer").innerHTML = json;
+								$.each(data, function(index, value){
+									if(index == "<? echo $me_id; ?>"){
+										var json = decode(JSON.stringify(value.avatar));
+										document.getElementById("relativeContainer").innerHTML = json;
+									}
+								});
 							});
 						}
 					}); 
