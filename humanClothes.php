@@ -69,10 +69,7 @@ include 'config.php';
 						success: function(data, textStatus, jqXHR){
 							$.get(data.uri, function (data, textStatus, jqXHR) {
 								$.each(data, function(index, value){
-									if(index == "<? echo $me_id; ?>"){
-										var json = decode(JSON.stringify(value.avatar));
-										document.getElementById("relativeContainer").innerHTML = json;
-									}
+									document.getElementById("relativeContainer").innerHTML = value;
 								});
 							});
 						}
