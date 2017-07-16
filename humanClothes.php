@@ -70,7 +70,7 @@ include 'config.php';
 							$.get(data.uri, function (data, textStatus, jqXHR) {
 								$.each(data, function(index, value){
 									if(index == "<? echo $me_id; ?>"){
-										json = decode(JSON.stringify(value.avatar));
+										var json = decode(JSON.stringify(value.avatar));
 										document.getElementById("relativeContainer").innerHTML = json;
 									}
 								});
