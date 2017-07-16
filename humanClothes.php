@@ -70,6 +70,7 @@ include 'config.php';
 							$.get(data.uri, function (data, textStatus, jqXHR) {
 							var json = urldecode(JSON.stringify(data.<? echo $me_id; ?>.avatar));
 							document.getElementById("relativeContainer").innerHTML = json;
+							});
 						}
 					}); 
 				</script>
