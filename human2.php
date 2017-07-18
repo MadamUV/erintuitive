@@ -476,6 +476,12 @@
 			updateEyes = document.getElementById("color2").getAttribute("value");
 			$(".irises").attr("fill", updateEyes);
 			$(".irises").css({'fill': updateEyes});
+			var irises = document.getElementsByClassName("irises");
+			for (i=0; i<irises.length; i++){
+				irises[i].setAttribute("fill", updateEyes);
+				irises[i].style.fill = updateEyes;
+			}
+			
 			previousEyes = relativeContainer.innerHTML;
 		}
 		function makeMouthColor() {
