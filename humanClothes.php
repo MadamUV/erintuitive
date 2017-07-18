@@ -96,7 +96,7 @@
 								"pos_x":-1,
 								"pos_y":-1
 							};
-							data3['person'].push(pushThis);
+							//data3['person'].push(pushThis);
 							//var len = data3['person'].length;
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
