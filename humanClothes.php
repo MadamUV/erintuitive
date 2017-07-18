@@ -89,7 +89,7 @@
 							});
 						}
 						else if(count1 > 0 && count2 == 0){
-							$.get("https://api.myjson.com/bins/vzecj", function (wholeData, textStatus, jqXHR) {
+							/*$.get("https://api.myjson.com/bins/vzecj", function (wholeData, textStatus, jqXHR) {
 								wholeData = JSON.stringify(wholeData);
 								$.post("addHuman.php", {me_id: me_id, avatar: avatar, wholeData: wholeData}, function(dataFinal){
 									$.ajax({
@@ -114,7 +114,8 @@
 										}
 									});
 								});
-							});
+							});*/
+							document.getElementById("relativeContainer").innerHTML = "data5";
 						}
 						else if(count1 > 0 && count2 > 0){
 							data3['person'][countPresent]['avatar'] = "<? echo $avatar; ?>";
