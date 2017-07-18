@@ -159,7 +159,7 @@
 				</button>
 			</td>
 			<td id="result" ondrop="drop(event)" ondragover="allowDrop(event)" width="550px" style="border-style: dashed; border-width: 6px;">
-				<div id="relativeContainer" style="position:absolute; left:420px; top:50px;" width="86px" height="380px"></div>
+				<div id="relativeContainer" style="position:absolute; left:422px; top:50px;" width="86px" height="380px"></div>
 			</td>
 		</tr>
 	</table>
