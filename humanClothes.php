@@ -89,21 +89,31 @@
 							});
 						}
 						else if(count1 > 0 && count2 == 0){
-							data3.person.push({"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1});
-							$.ajax({
-								url:"https://api.myjson.com/bins/vzecj",
-								type:"PUT",
-								data: data3,
-								contentType:"application/json; charset=utf-8",
-								dataType:"json",
-								success: function(data, textStatus, jqXHR){
-									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data[data.length-1][me_id]['avatar'];
-										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-											document.getElementById("relativeContainer").innerHTML = data2;
-										});
+							$.get("https://api.myjson.com/bins/vzecj", function (wholeData, textStatus, jqXHR) {
+								wholeData = JSON.stringify(wholeData);
+								$.post("addHuman.php", {me_id: me_id, avatar: avatar, wholeData: wholeData}, function(dataFinal){
+									$.ajax({
+										url:"https://api.myjson.com/bins/vzecj",
+										type:"PUT",
+										data: dataFinal,
+										contentType:"application/json; charset=utf-8",
+										dataType:"json",
+										success: function(data, textStatus, jqXHR){
+											$.get("https://api.myjson.com/bins/vzecj", function (data4, textStatus4, jqXHR4) {
+												var pointer = 0;
+												for(i=0; i<data4.person.length; i++){
+													if(data4.person[i]['user_id']==me_id){
+														pointer = i;
+													}
+												}
+												var avatarJSON = data4.person[pointer]['avatar'];
+												$.post("convertAvatar.php", {convert: avatarJSON}, function(data5){
+													document.getElementById("relativeContainer").innerHTML = data5;
+												});
+											});
+										}
 									});
-								}
+								});
 							});
 						}
 						else if(count1 > 0 && count2 > 0){

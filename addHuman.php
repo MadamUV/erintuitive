@@ -1,22 +1,16 @@
 <?php
 
-include 'config.php';
-	//$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '1211212213213', '<div id='div'></div>');";
-	//$mysqli->query($sql);
 if(isset($_POST['me_id']) && isset($_POST['avatar'])) {
 	$me_id = $_POST['me_id'];
 	$avatar = $_POST['avatar'];
-	//get data 
-	if($result = $mysqli->query("SELECT * FROM `humans` WHERE `me_id`='". $me_id . "' LIMIT 1;")){
-		$row_count = $result->num_rows;
-		if ($row_count == 0){
-			$sql = "INSERT INTO `humans` (`id`, `me_id`, `avatar`) VALUES (NULL, '".$me_id."', '".$avatar."');";
-			$mysqli->query($sql);
-		}
-		else {
-			$sql = "UPDATE `humans` SET `avatar`='".$me_id."' WHERE `me_id`='".$avatar."';";
-			$mysqli->query($sql);
-		}
+	if(isset($_POST['wholeData'])){
+		$wholeData = $_POST['wholeData'];
+		$decoded = json_decode($wholeData);
+		$person = $decoded['person'];
+		$newJSON = '{"user_id":"'.$me_id.'", "name":"guest", "avatar":"'.$avatar.'", "pos_x":-1, "pos_y":-1}';
+		array_push($decoded, json_decode($newJSON));
+		$encoded = $decoded;
+		echo $encoded;
 	}
 }
 
