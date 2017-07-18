@@ -275,7 +275,7 @@
 			//animalDivs = shuffle(animalDivs);
 			//animalDivs = animalDivs.join("");
 			if(document.getElementById("notHuman").checked == false){
-				window.location.replace("human.php");
+				window.location.replace("human2.php");
 			}
 			else {
 				//insert animal section here
