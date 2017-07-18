@@ -390,11 +390,11 @@
 			else if(avatarOptions.getAttribute("class")=="mouthStep"){
 				$("#buttons").hide();
 				avatarOptions.innerHTML = "Mouth time.<br>You can change<br>beard color later.";
-				document.getElementById("itemPreview").innerHTML = '<div id="mouthsContainer" style="position: absolute; top: 370px; z-index:6;">'+'<?php echo $mouth1; echo $mouth2; echo $mouth3; echo $mouth4; echo $mouth5; echo $mouth6; echo $mouth7; echo $mouth8; echo $mouth9; echo $mouth10; echo $mouth11; echo $mouth12; echo $mouth13; echo $mouth14; echo $mouth15; ?>'+'</div>';
+				document.getElementById("itemPreview").innerHTML = '<div id="mouthsContainer" style="position: absolute; top: 270px; z-index:6;">'+'<?php echo $mouth1; echo $mouth2; echo $mouth3; echo $mouth4; echo $mouth5; echo $mouth6; echo $mouth7; echo $mouth8; echo $mouth9; echo $mouth10; echo $mouth11; echo $mouth12; echo $mouth13; echo $mouth14; echo $mouth15; ?>'+'</div>';
 				itemPreview.style.padding = "0px";
 				var humanMouth = document.getElementsByClassName("mouth");
 				for (i=0; i<humanMouth.length; i++) {
-					humanMouth[i].style = "margin-top: -855px;";
+					humanMouth[i].setAttribute("style", "margin-top: -505px;");
 				}
 				previousMouth = relativeContainer.innerHTML;
 				avatarOptions.setAttribute("class", "mouthStep2");
