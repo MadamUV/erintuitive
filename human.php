@@ -132,6 +132,7 @@
 		 js = d.createElement(s); js.id = id;
 		 js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
+		 //test
 	   }(document, 'script', 'facebook-jssdk'));
 	   function getMe() {
 			FB.api('/me', function(response) {
