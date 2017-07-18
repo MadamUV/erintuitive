@@ -106,27 +106,37 @@
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
-									document.getElementById("relativeContainer").innerHTML = "ok";
-								}
-							});
-						}
-						else if(count1 > 0 && count2 > 0){
-							data3['person'][countPresent]['avatar'] = "<? echo $avatar; ?>";
-							$.ajax({
-								url:"https://api.myjson.com/bins/vzecj",
-								type:"PUT",
-								data: data3,
-								contentType:"application/json; charset=utf-8",
-								dataType:"json",
-								success: function(data, textStatus, jqXHR){
 									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data['person'][0]['avatar'];
+										var avatarJSON = data['person'][len-1]['avatar'];
 										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 											document.getElementById("relativeContainer").innerHTML = data2;
 										});
 									});
 								}
 							});
+						}
+						else if(count1 > 0 && count2 > 0){
+							for(i=0; i<data3['person'].length; i++){
+								if(data3['person'][i]['user_id']==me_id){
+									data3['person'][i]['avatar']=="<? echo $avatar; ?>";
+									$.ajax({
+										url:"https://api.myjson.com/bins/vzecj",
+										type:"PUT",
+										data: JSON.stringify(data3),
+										contentType:"application/json; charset=utf-8",
+										dataType:"json",
+										success: function(data, textStatus, jqXHR){
+											$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+												var avatarJSON = data['person'][len-1]['avatar'];
+												$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
+													document.getElementById("relativeContainer").innerHTML = data2;
+												});
+											});
+										}
+									});
+								}
+							}
+							
 						}
 					});
 				</script>
