@@ -200,7 +200,7 @@
 		function backOptions() {
 			
 		}
-		function nextOptions() {
+		/*function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = 'Randomize underwear pattern.<br><button id="randomUndies" onclick="randomizeUndies()">Go<br>random</button>';
 				$("#buttons").css({'margin-left':'-30px'});
@@ -230,15 +230,13 @@
 			var defsInside = '<pattern id="svgPatt1" patternUnits="userSpaceOnUse" width="100px" height="100px"><image width="100" height="100" xlink:href="svg/human/'+patterns[num]+'" alt="small oval pattern"></pattern>';
 			//<image xlink:href=" /human/chevron-pattern-tile-256x256.jpg" x="0" y="0" width="100" height="100" />
 			$(".humanDefs").html(defsInside);
-			/*$(".humanDefs").find("*").attr("fill", randomColor()); //goto deepest
-			$(".humanDefs").find("*").css({"fill": randomColor()});*/
 			$(".undies").attr("fill", "url(#svgPatt1)");
 		}
 		function randomizeUndies(){
 			var randUndies = Math.floor(Math.random()*(patterns.length));
 			insertDefs(randUndies);
 			previousUndies = relativeContainer.innerHTML;
-		}
+		}*/
 	</script>
 </body>
 </html>
