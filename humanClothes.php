@@ -96,8 +96,8 @@
 								"pos_x":-1,
 								"pos_y":-1
 							};
-							data3.person.push(pushThis);
-							var len = data3.person.length;
+							data3['person'].push(pushThis);
+							//var len = data3['person'].length;
 							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
@@ -105,12 +105,7 @@
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
-									$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-										var avatarJSON = data['person'][len-1]['avatar'];
-										$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-											document.getElementById("relativeContainer").innerHTML = data2;
-										});
-									});
+									document.getElementById("relativeContainer").innerHTML = "ok";
 								}
 							});
 						}
