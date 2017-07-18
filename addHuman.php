@@ -5,11 +5,11 @@ if(isset($_POST['me_id']) && isset($_POST['avatar'])) {
 	$avatar = $_POST['avatar'];
 	if(isset($_POST['wholeData'])){
 		$wholeData = $_POST['wholeData'];
-		$decoded = json_decode($wholeData);
 		$person = $decoded['person'];
 		$newJSON = '{"user_id":"'.$me_id.'", "name":"guest", "avatar":"'.$avatar.'", "pos_x":-1, "pos_y":-1}';
 		array_push($decoded, json_decode($newJSON));
-		$encoded = $decoded;
+		$wholeData['person']=$decoded;
+		$encoded = json_encode($wholeData);
 		echo $encoded;
 	}
 }
