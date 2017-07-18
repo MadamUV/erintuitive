@@ -210,6 +210,18 @@
 	</style>
 	<script>
 		//https://apps.facebook.com/erintuitive
+		var countMe = 0;
+		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
+			for(i=0; i<data3['person'].length; i++){
+				if(data3['person'][i]['user_id'] == me_id){
+					countMe += 1;
+					break;
+				}
+			}
+			if(countMe > 0){
+				window.location.replace("humanClothes?leftOff=1");
+			}
+		});
 		function shuffle(array) {
 			var rand, index = -1,
 				length = array.length,
