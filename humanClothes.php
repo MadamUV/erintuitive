@@ -97,9 +97,8 @@
 								"pos_y":-1
 							};
 							data3['person'].push(pushThis);
-							//var len = data3['person'].length;
-							document.getElementById("relativeContainer").innerHTML = "ok";
-							/*$.ajax({
+							var len = data3['person'].length;
+							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
 								data: data3,
@@ -108,7 +107,7 @@
 								success: function(data, textStatus, jqXHR){
 									document.getElementById("relativeContainer").innerHTML = "ok";
 								}
-							});*/
+							});
 						}
 						else if(count1 > 0 && count2 > 0){
 							data3['person'][countPresent]['avatar'] = "<? echo $avatar; ?>";
