@@ -99,16 +99,16 @@
 							data3['person'].push(pushThis);
 							var len = data3['person'].length;
 							document.getElementById("relativeContainer").innerHTML = "ok";
-							/*$.ajax({
+							$.ajax({
 								url:"https://api.myjson.com/bins/vzecj",
 								type:"PUT",
-								data: data3,
+								data: JSON.stringify(data3),
 								contentType:"application/json; charset=utf-8",
 								dataType:"json",
 								success: function(data, textStatus, jqXHR){
 									document.getElementById("relativeContainer").innerHTML = "ok";
 								}
-							});*/
+							});
 						}
 						else if(count1 > 0 && count2 > 0){
 							data3['person'][countPresent]['avatar'] = "<? echo $avatar; ?>";
