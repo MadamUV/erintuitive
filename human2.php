@@ -490,6 +490,16 @@
 			$("#relativeContainer .beard").css({'fill':updateBeard});
 			$("#relativeContainer .lips").attr("fill", updateBeard);
 			$("#relativeContainer .lips").css({'fill':updateBeard});
+			var lips = document.getElementById("relativeContainer").getElementsByClassName("lips");
+			for (i=0; i<lips.length; i++){
+				lips[i].setAttribute("fill", updateBeard);
+				lips[i].style.fill = updateBeard;
+			}
+			var beard = document.getElementById("relativeContainer").getElementsByClassName("beard");
+			for (i=0; i<beard.length; i++){
+				beard[i].setAttribute("fill", updateBeard);
+				beard[i].style.fill = updateBeard;
+			}
 			previousMouth = relativeContainer.innerHTML;
 		}
 		function makeHairColor() {
