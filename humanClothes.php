@@ -127,13 +127,14 @@
 										dataType:"json",
 										success: function(data, textStatus, jqXHR){
 											$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
-												var avatarJSON = data['person'][len-1]['avatar'];
+												var avatarJSON = data['person'][i]['avatar'];
 												$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 													document.getElementById("relativeContainer").innerHTML = data2;
 												});
 											});
 										}
 									});
+									break;
 								}
 							}
 							
