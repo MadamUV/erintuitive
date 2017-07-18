@@ -147,7 +147,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="init">
-					Please choose your gender.
+					Please choose your gender. Avoid using Internet Explorer as not all features will work.
 				</div>
 			</td>
 			<td id="itemPreview" width="30%">
