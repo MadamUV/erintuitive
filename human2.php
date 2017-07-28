@@ -219,7 +219,7 @@
 				}
 			}
 			if(countMe > 0){
-				window.location.replace("humanClothes?leftOff=1");
+				window.location.replace("humanClothes.php");
 			}
 		});
 		function shuffle(array) {
@@ -329,8 +329,8 @@
 				avatarOptions.setAttribute("class", "hairStep");
 			}
 			else if(avatarOptions.getAttribute("class")=="hairStep3"){
-				avatarOptions.innerHTML = "Add some hair! Some hairs that appear cut off are actually longer.<br>At this point you may skip steps by clicking 'skip'.";
-				document.getElementById("buttons").innerHTML = '<div id="buttons"><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button><button id="skip">Skip</button></div>';
+				avatarOptions.innerHTML = "Add some hair! Some hairs that appear cut off are actually longer.<br>At this point you may skip steps.";
+				document.getElementById("buttons").innerHTML = '<div id="buttons"><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button></div>';
 				relativeContainer.style.marginTop = "25px";
 				itemPreview.innerHTML = '<div id="onTrack"></div>';
 				var track = document.getElementById("onTrack");
