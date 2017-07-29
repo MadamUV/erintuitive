@@ -195,31 +195,7 @@
 		var relativeContainer = document.getElementById("relativeContainer");
 		var itemPreview = document.getElementById("itemPreview");
 		var avatarOptions = document.getElementById("avatarOptions");
-		function getRandomColor() {
-		  var letters = '0123456789ABCDEF';
-		  var color = '#';
-		  for (var i = 0; i < 6; i++) {
-			color += letters[Math.floor(Math.random() * 16)];
-		  }
-		  return color;
-		}
-		/*var previous = relativeContainer.innerHTML;
-		var topIndex = Math.floor(Math.random()*16);
-		function backOptions() {
-			
-		}
-		function nextOptions() {
-			if(avatarOptions.getAttribute("class")=="tops"){
-				if($(".man")[0]){
-					
-				}
-				else if ($(".woman")[0]]{
-					//$("#relativeContainer").append(female_tops[topIndex]);
-					
-				}
-				avatarOptions.setAttribute("class", "tops2");
-			}
-		}*/
+		
 	</script>
 </body>
 </html>
