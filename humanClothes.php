@@ -49,12 +49,10 @@
 			<td id="itemPreview" width="17%">
 			</td>
 			<td>
-			</td>
-			<td>
-			</td>
-			<td>
+				<img src="img/leftArrow.gif"/>
 			</td>
 			<td id="result" width="400px" style="border-style: dashed; border-width: 6px;">
+				<img src="img/leftArrow.gif" onclick="lastClothing();"/>
 				<div id="relativeContainer" style="position: relative; margin-left: 55px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
@@ -147,11 +145,8 @@
 						}
 					});
 				</script>
+				<img src="img/rightArrow.gif" onclick="nextClothing();"/>
 			</td>
-			<div>
-			<div>
-			</div>
-			</div>
 		</tr>
 	</table>
 	<div id="buttons">
