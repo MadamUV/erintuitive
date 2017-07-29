@@ -46,18 +46,23 @@
 					
 				</div>
 			</td>
-			<td id="itemPreview" width="30%">
+			<td id="itemPreview" width="10%">
 			</td>
-			<td id="result" width="350px" style="border-style: dashed; border-width: 6px;">
-				<img src="img/leftArrow.gif" onclick="previousItem();"/>
+			<td>
+				<img src="img/leftArrow.gif" width="80px" onclick="previousItem();"/>
+			</td>
+			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
+				
 				<div id="relativeContainer" style="position: relative; margin-left: 55px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
 					//10155567524149846 my user id
 				} ?>
-				<img src="img/rightArrow.gif" onclick="nextItem();"/>
 				</div>
+			</td>
+			<td>
+				<img src="img/rightArrow.gif" width="80" onclick="nextItem();"/>
 			</td>
 		</tr>
 	</table>
