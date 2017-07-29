@@ -189,8 +189,5 @@
 			top: 360px;
 		}
 	</style>
-	<script>
-		
-	</script>
 </body>
 </html>
