@@ -194,6 +194,14 @@
 		var relativeContainer = document.getElementById("relativeContainer");
 		var itemPreview = document.getElementById("itemPreview");
 		var avatarOptions = document.getElementById("avatarOptions");
+		function getRandomColor() {
+		  var letters = '0123456789ABCDEF';
+		  var color = '#';
+		  for (var i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		  }
+		  return color;
+		}
 		function backOptions() {
 			
 		}
@@ -202,8 +210,8 @@
 				if($(".man")[0]){
 					itemPreview.innerHTML = "<img src='svg/human/humanClothes/shirt1.svg' width='40px'><img src='svg/human/humanClothes/shirt2.svg' width='40px'><img src='svg/human/humanClothes/shirt3.svg' width='40px'><img src='svg/human/humanClothes/shirt4.svg' width='40px'><img src='svg/human/humanClothes/shirt5.svg' width='40px'><img src='svg/human/humanClothes/shirt6.svg' width='40px'><img src='svg/human/humanClothes/shirt7.svg' width='40px'><img src='svg/human/humanClothes/shirt8.svg' width='40px'><img src='svg/human/humanClothes/shirt9.svg' width='40px'><img src='svg/human/humanClothes/shirt10.svg' width='40px'><img src='svg/human/humanClothes/shirt11.svg' width='40px'><img src='svg/human/humanClothes/shirt12.svg' width='40px'><img src='svg/human/humanClothes/shirt13.svg' width='40px'>";
 				}
-				else if ($(".woman")[0]){
-					avatarOptions.innerHTML = "<img src='svg/human/humanClothes/female_shirt1.svg' width='40px'><img src='svg/human/humanClothes/female_shirt2.svg' width='40px'><img src='svg/human/humanClothes/female_shirt3.svg' width='40px'><img src='svg/human/humanClothes/female_shirt4.svg' width='40px'><img src='svg/human/humanClothes/female_shirt5.svg' width='40px'><img src='svg/human/humanClothes/female_shirt6.svg' width='40px'><img src='svg/human/humanClothes/female_shirt7.svg' width='40px'><img src='svg/human/humanClothes/female_shirt8.svg' width='40px'><img src='svg/human/humanClothes/female_shirt9.svg' width='40px'><img src='svg/human/humanClothes/female_shirt10.svg' width='40px'><img src='svg/human/humanClothes/female_shirt11.svg' width='40px'><img src='svg/human/humanClothes/female_shirt12.svg' width='40px'><img src='svg/human/humanClothes/female_shirt13.svg' width='40px'><img src='svg/human/humanClothes/female_shirt14.svg' width='40px'><img src='svg/human/humanClothes/female_shirt15.svg' width='40px'><img src='svg/human/humanClothes/female_shirt16.svg' width='40px'>";
+				else if ($(".woman")[0]]{
+					itemPreview.innerHTML = "<img src='svg/human/humanClothes/female_shirt1.svg' width='40px'><img src='svg/human/humanClothes/female_shirt2.svg' width='40px'><img src='svg/human/humanClothes/female_shirt3.svg' width='40px'><img src='svg/human/humanClothes/female_shirt4.svg' width='40px'><img src='svg/human/humanClothes/female_shirt5.svg' width='40px'><img src='svg/human/humanClothes/female_shirt6.svg' width='40px'><img src='svg/human/humanClothes/female_shirt7.svg' width='40px'><img src='svg/human/humanClothes/female_shirt8.svg' width='40px'><img src='svg/human/humanClothes/female_shirt9.svg' width='40px'><img src='svg/human/humanClothes/female_shirt10.svg' width='40px'><img src='svg/human/humanClothes/female_shirt11.svg' width='40px'><img src='svg/human/humanClothes/female_shirt12.svg' width='40px'><img src='svg/human/humanClothes/female_shirt13.svg' width='40px'><img src='svg/human/humanClothes/female_shirt14.svg' width='40px'><img src='svg/human/humanClothes/female_shirt15.svg' width='40px'><img src='svg/human/humanClothes/female_shirt13.svg' width='40px'>";
 				}
 				avatarOptions.setAttribute("class", "tops2");
 			}
