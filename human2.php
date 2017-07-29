@@ -219,7 +219,7 @@
 				}
 			}
 			if(countMe > 0){
-				window.location.replace("humanClothes.php");
+				window.location.replace("humanClothes?leftOff=1");
 			}
 		});
 		function shuffle(array) {
