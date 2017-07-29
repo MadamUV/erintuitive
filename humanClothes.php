@@ -49,7 +49,10 @@
 			<td id="itemPreview" width="17%">
 			</td>
 			<td>
-				<img src="img/leftArrow.gif">
+			</td>
+			<td>
+			</td>
+			<td>
 			</td>
 			<td id="result" width="400px" style="border-style: dashed; border-width: 6px;">
 				<div id="relativeContainer" style="position: relative; margin-left: 55px; margin-top:50px; " width="86px" height="380px">
@@ -145,9 +148,10 @@
 					});
 				</script>
 			</td>
-			<td>
-				<img src="img/rightArrow.gif">
-			</td>
+			<div>
+			<div>
+			</div>
+			</div>
 		</tr>
 	</table>
 	<div id="buttons">
@@ -212,7 +216,21 @@
 		var previous = relativeContainer.innerHTML;
 		var topIndex = Math.floor(Math.random()*16);
 		var topCount = topIndex+1;
-		
+		function backOptions() {
+			
+		}
+		function nextOptions() {
+			if(avatarOptions.getAttribute("class")=="tops"){
+				if($(".man")[0]){
+					
+				}
+				else if ($(".woman")[0]]{
+					$("#relativeContainer").append(female_tops[topIndex]);
+					
+				}
+				avatarOptions.setAttribute("class", "tops2");
+			}
+		}
 	</script>
 </body>
 </html>
