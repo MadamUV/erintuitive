@@ -71,6 +71,17 @@
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
 	<script>
+		function shuffle(array) {
+			var rand, index = -1,
+				length = array.length,
+				result = Array(length);
+			while (++index < length) {
+				rand = Math.floor(Math.random() * (index + 1));
+				result[index] = result[rand];
+				result[rand] = array[index];
+			}
+			return result;
+		}
 		var num = 1;
 		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
@@ -165,9 +176,9 @@
 	}
 	var previous = '';
 	var previousTop = '';
-	$("button").hide();
+	$("#buttons").hide();
 	if(document.getElementById("relativeContainer").innerHTML != ''){
-		$("button").show();
+		$("#buttons").show();
 		document.getElementById("avatarOptions").innerHTML = "Press next and back buttons to move to the next steps. Press the arrow to cycle through the types of tops.";
 	}
 	var topIndex = Math.floor(Math.random()*16);
@@ -193,6 +204,7 @@
 			avatarOptions.setAttribute("class", "tops2");
 		}
 	}
+	var female_top1 = 0;
 	function nextOptions() {
 		if(avatarOptions.getAttribute("class")=="tops"){
 			$("#relativeContainer button").show();
@@ -221,7 +233,21 @@
 			avatarOptions.setAttribute("class", "tops4");
 		}
 		else if(avatarOptions.getAttribute("class")=="tops4"){
-			
+			if ($(".woman")[0]){
+				if(num==1){
+					var rand = 1;
+					while (rand == female_top1){
+						rand = Math.ceil(Math.random()*22);
+					}
+					previousTop = relativeContainer.innerHTML;
+					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'"/>');
+					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+					female_top1 = rand;
+				}
+			}
+			else if ($(".man")[0]){
+				
+			}
 		}
 	}
 	function makeTopColor(){
