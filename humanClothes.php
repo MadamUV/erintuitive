@@ -67,8 +67,7 @@
 		</tr>
 	</table>
 	<div id="buttons">
-		<button id="back" onclick="backOptions()">Back</button>
-		<button id="next" onclick="nextOptions()">Next</button>
+		
 	</div>
 	<script>
 		function shuffle(array) {
@@ -109,6 +108,7 @@
 							var avatarJSON = data['person'][0]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
+								document.getElementById("buttons").innerHTML = '<button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
 					}
@@ -136,6 +136,7 @@
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
+								document.getElementById("buttons").innerHTML = '<button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
 					}
@@ -156,6 +157,7 @@
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
+										document.getElementById("buttons").innerHTML = '<button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>';
 									});
 								});
 							}
@@ -176,9 +178,7 @@
 	}
 	var previous = '';
 	var previousTop = '';
-	$("#buttons").hide();
 	if(document.getElementById("relativeContainer").innerHTML != ''){
-		$("#buttons").show();
 		document.getElementById("avatarOptions").innerHTML = "Press next and back buttons to move to the next steps. Press the arrow to cycle through the types of tops.";
 	}
 	var topIndex = Math.floor(Math.random()*16);
