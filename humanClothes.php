@@ -233,6 +233,7 @@
 			avatarOptions.setAttribute("class", "tops4");
 		}
 		else if(avatarOptions.getAttribute("class")=="tops4"){
+			itemPreview.innerHTML = 'You can randomize the overlay of your chosen top! Click the randomize button to change your top decoration.<button id="randomizeTop" onclick="randomizeTop();">Randomize</button>';
 			if ($(".woman")[0]){
 				if(num==1){
 					var rand = 1;
@@ -243,11 +244,23 @@
 					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
 					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 					female_top1 = rand;
+					
 				}
 			}
 			else if ($(".man")[0]){
 				
 			}
+		}
+	}
+	function randomizeTop() {
+		if(num==1){
+			while (rand == female_top1){
+				rand = Math.ceil(Math.random()*22);
+			}
+			previousTop = relativeContainer.innerHTML;
+			$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
+			$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			female_top1 = rand;
 		}
 	}
 	function makeTopColor(){
