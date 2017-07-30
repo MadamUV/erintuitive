@@ -70,53 +70,6 @@
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
-	<style>
-		body {
-			background-color: #FFBB22;
-		}
-		#itemPreview button {
-			margin:0;
-			padding:0;
-			border:0;
-			background:transparent;
-		}
-		#avatarOptions {
-			position: relative;
-			float: left;
-		}
-		#buttons {
-			position: fixed;
-			top: 435px;
-			left: 40%;
-		}
-		#itemPreview {
-			vertical-align: text-top;
-			width: 50%;
-			padding: 4px;
-			border-width: 5px;
-			border-style: solid;
-			position: relative;
-			padding-left: 50px;
-			height: 420px;
-		}
-		#avatarOptions {
-			height: 450px;
-		}
-		.eyes {
-			position: relative;
-			margin-top: -310px;
-		}
-		#chooseSkin {
-			position: fixed;
-			top: 360px;
-		}
-		#relativeContainer button {
-			margin:0;
-			padding:0;
-			border:0;
-			background:transparent;
-		}
-	</style>
 	<script>
 		var num = 0;
 		var me_id = "<? echo $me_id; ?>";
@@ -211,12 +164,14 @@
 	  return color;
 	}
 	var previous = relativeContainer.innerHTML;
+	$("#relativeContainer button").hide();
 	var topIndex = Math.floor(Math.random()*16);
 	function backOptions() {
 		
 	}
 	function nextOptions() {
 		if(avatarOptions.getAttribute("class")=="tops"){
+			$("#relativeContainer button").show();
 			if($(".man")[0]){
 				
 			}
@@ -250,5 +205,52 @@
 		$("#relativeContainer .tops").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	</script>
+	<style>
+		body {
+			background-color: #FFBB22;
+		}
+		#itemPreview button {
+			margin:0;
+			padding:0;
+			border:0;
+			background:transparent;
+		}
+		#avatarOptions {
+			position: relative;
+			float: left;
+		}
+		#buttons {
+			position: fixed;
+			top: 435px;
+			left: 40%;
+		}
+		#itemPreview {
+			vertical-align: text-top;
+			width: 50%;
+			padding: 4px;
+			border-width: 5px;
+			border-style: solid;
+			position: relative;
+			padding-left: 50px;
+			height: 420px;
+		}
+		#avatarOptions {
+			height: 450px;
+		}
+		.eyes {
+			position: relative;
+			margin-top: -310px;
+		}
+		#chooseSkin {
+			position: fixed;
+			top: 360px;
+		}
+		#relativeContainer button {
+			margin:0;
+			padding:0;
+			border:0;
+			background:transparent;
+		}
+	</style>
 </body>
 </html>
