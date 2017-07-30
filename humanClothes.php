@@ -53,7 +53,7 @@
 			</td>
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
 				
-				<div id="relativeContainer" style="position: relative; margin-left: 55px; margin-top:50px; " width="86px" height="380px">
+				<div id="relativeContainer" style="position: relative; margin-left: 4px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
