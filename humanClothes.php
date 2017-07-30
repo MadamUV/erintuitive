@@ -212,7 +212,7 @@
 			avatarOptions.setAttribute("class", "tops2");
 		}
 	}
-	var female_top1 = 0;
+	var female_top1 = 1;
 	function nextOptions() {
 		if(avatarOptions.getAttribute("class")=="tops"){
 			$("#relativeContainer button").show();
@@ -245,10 +245,6 @@
 			$("#buttons").append('<button id="randomizeTop" onclick="randomizeTop()">Randomize</button>');
 			if ($(".woman")[0]){
 				if(num==1){
-					var rand = 1;
-					while (rand == female_top1){
-						rand = Math.ceil(Math.random()*22);
-					}
 					relativeContainer.innerHTML = previousTop;
 					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
 					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
