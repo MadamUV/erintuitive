@@ -215,7 +215,7 @@
 	function makeSleeveColor(){
 		updateSleeves = document.getElementById("color2").getAttribute("value");
 		$(".sleeves").attr("fill", updateSleeves);
-		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards
+		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards, fix water dragon
 	}
 	/*function previousTop(){
 		if(num==16){
