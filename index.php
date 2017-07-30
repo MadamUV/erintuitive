@@ -39,13 +39,6 @@
 	function getMe() {
 		FB.api('/me', function(response) {
 			var me_id = response.id;
-			$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
-				for(i=0; i<data3['person'].length; i++){
-					if(data3['person'][i]['user_id'] == me_id){
-						window.location.replace("humanClothes.php?id="+me_id);
-					}
-				}
-			});
 			//var me_firstname = response.first_name;
 		});
 	}

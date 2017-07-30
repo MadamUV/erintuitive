@@ -12,6 +12,32 @@
 	<title>Erintuitive's Psychic Place</title>
 </head>
 <body style="background-color: #FFBB22;">
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId            : '817064305070781',
+		  autoLogAppEvents : true,
+		  xfbml            : true,
+		  version          : 'v2.9'
+		});
+		FB.AppEvents.logPageView();
+	  };
+	  (function(d, s, id){
+		 var js, fjs = d.getElementsByTagName(s)[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement(s); js.id = id;
+		 js.src = "//connect.facebook.net/en_US/sdk.js";
+		 fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	   FB.getLoginStatus(function(response) {
+	   if (response.status === 'connected') {
+			//insert stuff here
+		  }
+		  else {
+			FB.login();
+		  }
+		});
+	</script>
 	<table width="580px">
 	<td>
 		<tr>
@@ -20,10 +46,10 @@
 					
 				</div>
 			</td>
-			<td id="itemPreview" width="14%">
+			<td id="itemPreview" width="10%">
 			</td>
 			<td>
-				<img src="img/leftArrow.gif" width="40px" onclick="previousItem();"/>
+				<img src="img/leftArrow.gif" width="80px" onclick="previousItem();"/>
 			</td>
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
 				
@@ -36,7 +62,7 @@
 				</div>
 			</td>
 			<td>
-				<img src="img/rightArrow.gif" width="40" onclick="nextItem();"/>
+				<img src="img/rightArrow.gif" width="80" onclick="nextItem();"/>
 			</td>
 		</tr>
 	</table>
@@ -45,7 +71,7 @@
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
 	<script>
-		var me_id = "<? echo $_GET['id']; ?>";
+		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
