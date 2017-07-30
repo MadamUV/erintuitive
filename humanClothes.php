@@ -180,6 +180,8 @@
 			avatarOptions.setAttribute("class", "tops3");
 		}
 		else if(avatarOptions.getAttribute("class")=="tops3"){
+			avatarOptions.innerHTML = "Back to the first step.";
+			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
 			if($(".man")[0]){
 				previous = relativeContainer.innerHTML;
 			}
