@@ -48,9 +48,9 @@
 			</td>
 			<td id="itemPreview" width="10%">
 			</td>
-			<td id="leftButtons">
+			<!-- <td id="leftButtons">
 				<button id="topButton1" onclick="previousTop();"><img src="img/leftArrow.gif" width="80px"/>Previous shirt<br>shape</button>
-			</td>
+			</td> -->
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
 				
 				<div id="relativeContainer" style="position: relative; margin-left: 4px; margin-top:50px; " width="86px" height="380px">
@@ -200,6 +200,7 @@
 	}
 	function makeTopColor(){
 		updateTop = document.getElementById("color1").getAttribute("value");
+		$("#svgEditorBackground").remove();
 		$(".shirt").children().attr("fill", updateTop);
 		$(".shirt").children().css({"fill":updateTop});
 		for (i=0; i<document.getElementsByClassName("sleeves").length; i++){
@@ -212,7 +213,7 @@
 		$(".sleeves").attr("fill", updateSleeves);
 		previousTop = relativeContainer.innerHTML; //21
 	}
-	function previousTop(){
+	/*function previousTop(){
 		if(num==16){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append('<svg class="shirt" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="red" style="stroke-width: 0px; stroke: none;" class="clothes" /> </defs> <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="clothes" /> <rect id="rect-1" x="-403.988" y="499.579" width="1300" height="550" style="fill: none; stroke: none;" class="clothes" /><polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="239.073 683.29 251.445 672.98 270.689 666.107 276.187 674.355 281.686 686.039 274.813 720.404 277.562 755.457 285.122 763.705 290.621 765.079 269.314 766.454 261.754 731.401 262.441 718.342 262.441 719.03 257.63 733.463 260.379 739.649 274.813 767.828 282.373 780.887 289.934 787.76 206.082 798.07 217.079 782.261 217.079 765.766 233.575 737.587 235.636 726.59 232.2 713.531 227.389 707.346 231.513 723.841 232.2 730.714 224.64 766.454 219.828 765.079 208.144 767.828 208.832 767.828 218.454 748.584 218.454 747.897 219.141 730.027 209.519 689.476 221.89 690.85" fill="red" class="clothes" /><polygon id="e5_polygon" style="stroke-width: 0px; stroke: none;" points="221.203 690.163 207.457 688.788 218.454 727.965 218.454 747.209 207.457 769.203 216.392 767.828 229.451 743.085 232.887 727.965" fill="lime" class="sleeves" /></svg>');
@@ -294,7 +295,7 @@
 			num=16;
 		}
 		$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-	}
+	}*/
 	function nextTop(){
 		if(num==1){
 			relativeContainer.innerHTML = previous;
