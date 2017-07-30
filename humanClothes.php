@@ -43,7 +43,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="tops">
-					
+					Please wait while your avatar loads.
 				</div>
 			</td>
 			<td id="itemPreview" width="10%">
@@ -165,7 +165,11 @@
 	}
 	var previous = '';
 	var previousTop = '';
-	$("#relativeContainer button").hide();
+	$("button").hide();
+	if(document.getElementById("relativeContainer").innerHTML != ''){
+		$("button").show();
+		document.getElementById("avatarOptions").innerHTML = "Press next and back buttons to move to the next steps. Press the arrow to cycle through the types of tops.";
+	}
 	var topIndex = Math.floor(Math.random()*16);
 	function backOptions() {
 		
@@ -211,7 +215,7 @@
 	function makeSleeveColor(){
 		updateSleeves = document.getElementById("color2").getAttribute("value");
 		$(".sleeves").attr("fill", updateSleeves);
-		previousTop = relativeContainer.innerHTML; //21
+		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards
 	}
 	/*function previousTop(){
 		if(num==16){
