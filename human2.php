@@ -147,7 +147,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="init">
-					Please choose your gender. Avoid using Internet Explorer as not all features will work. You create a new character each time you login, unless you <a href="humanClothes.php">click this link</a> to skip this step and use an existing avatar.
+					Please choose your gender. Avoid using Internet Explorer as not all features will work. You create a new character each time you login, but your achievements inworld stay the same.
 				</div>
 			</td>
 			<td id="itemPreview" width="30%">
