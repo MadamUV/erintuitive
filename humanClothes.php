@@ -383,7 +383,7 @@
 		if ($(".woman")[0]){
 			$("#relativeContainer .shirt").find("path, polygon").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
-		else if$(".man")[0]){
+		else if($(".man")[0]){
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
