@@ -240,7 +240,7 @@
 						rand = Math.ceil(Math.random()*22);
 					}
 					previousTop = relativeContainer.innerHTML;
-					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'"/>');
+					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
 					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 					female_top1 = rand;
 				}
