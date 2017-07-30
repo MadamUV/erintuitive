@@ -164,6 +164,7 @@
 	  return color;
 	}
 	var previous = '';
+	var previousTop = '';
 	$("#relativeContainer button").hide();
 	var topIndex = Math.floor(Math.random()*16);
 	function backOptions() {
@@ -182,6 +183,35 @@
 			}
 			avatarOptions.setAttribute("class", "tops2");
 		}
+		else if(avatarOptions.getAttribute("class")=="tops2"){
+			avatarOptions.innerHTML = "Change the color of your top.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div>';
+				$('#color1').colorPicker();
+				previousTop = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "tops3");
+		}
+		else if(avatarOptions.getAttribute("class")=="tops3"){
+			avatarOptions.innerHTML = "Change the color of the sleeves.";
+				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color2">Color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
+				$('#color2').colorPicker();
+				previousTop = relativeContainer.innerHTML;
+				avatarOptions.setAttribute("class", "tops4");
+		}
+	}
+	function makeTopColor(){
+		updateTop = document.getElementById("color1").getAttribute("value");
+		document.getElementsByClassName("shirt")[0].setAttribute("fill", updateTop);
+		for (i=0; i<document.getElementsByClassName("sleeves").length; i++){
+			document.getElementsByClassName("sleeves")[i].setAttribute("fill", updateTop);
+		}
+		previousTop = relativeContainer.innerHTML;
+	}
+	function makeSleeveColor(){
+		updateSleeves = document.getElementById("color2").getAttribute("value");
+		for (i=0; i<document.getElementsByClassName("sleeves").length; i++){
+			document.getElementsByClassName("sleeves")[i].setAttribute("fill", updateSleeves);
+		}
+		previousTop = relativeContainer.innerHTML;
 	}
 	function previousTop(){
 		if(num==16){
