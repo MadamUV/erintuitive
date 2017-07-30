@@ -38,7 +38,7 @@
 		  }
 		});
 	</script>
-	<table width="580px">
+	<table width="740px">
 	<td>
 		<tr>
 			<td width="10%">
