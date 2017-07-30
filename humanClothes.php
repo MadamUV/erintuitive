@@ -245,6 +245,9 @@
 			$("#buttons").append('<button id="randomizeTop" onclick="randomizeTop()">Randomize</button>');
 			if ($(".woman")[0]){
 				if(num==1){
+					while (rand == female_top1){
+						rand = Math.ceil(Math.random()*22);
+					}
 					relativeContainer.innerHTML = previousTop;
 					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
 					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
