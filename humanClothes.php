@@ -247,14 +247,14 @@
 			var imagesTops = "";
 			if ($(".woman")[0]){
 				if(num==1){
-					$("#itemPreview").append('<img width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+female_top1.toString()+'.svg">');
+					$("#itemPreview").append('<img class="shirtOverlay" width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top1.toString()+'.svg">');
 					female_top1++;
 					if(female_top1==22){
 						female_top1 = 1;
 					}
 				}
 				else if(num==2){
-					$("#itemPreview").append('<img width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+female_top1.toString()+'.svg">');
+					$("#itemPreview").append('<img class="shirtOverlay" width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top1.toString()+'.svg">');
 					female_top1++;
 					if(female_top1==16){
 						female_top1 = 1;
