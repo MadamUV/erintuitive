@@ -244,21 +244,10 @@
 			avatarOptions.innerHTML = "Select an overlay for your top.";
 			itemPreview.innerHTML = "Using the right arrow button, move through the choices for decoration of your outfit's top.";
 			relativeContainer.innerHTML = previousTop;
+			$("#topButton1").attr("onclick", "nextTopOverlay()");
 			if ($(".woman")[0]){
-				if(num==1){
-					$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
-					female_top++;
-					if(female_top==22){
-						female_top = 1;
-					}
-				}
-				else if(num==2){
-					$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
-					female_top++;
-					if(female_top==16){
-						female_top = 1;
-					}
-				}
+				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+				female_top++;
 				$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			}
 			else if ($(".man")[0]){
@@ -287,6 +276,51 @@
 		updateSleeves = document.getElementById("color2").getAttribute("value");
 		$(".sleeves").attr("fill", updateSleeves);
 		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards, fix water dragongit 
+	}
+	function nextTopOverlay() {
+		if(num==1){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==22){
+				female_top = 1;
+			}
+		}
+		else if(num==2){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==16){
+				female_top = 1;
+			}
+		}
+		else if(num==3){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==27){
+				female_top = 1;
+			}
+		}
+		else if(num==4){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==24){
+				female_top = 1;
+			}
+		}
+		else if(num==5){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==13){
+				female_top = 1;
+			}
+		}
+		else if(num==6){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==20){
+				female_top = 1;
+			}
+		}
+		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function nextTop(){
 		if(num==1){
