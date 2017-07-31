@@ -245,22 +245,57 @@
 			itemPreview.innerHTML = "";
 			var imagesTops = "";
 			if ($(".woman")[0]){
-				var booleanTop = true;
-				i=1;
-				while(booleanTop == true){
-					$.ajax({
-						url:'svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+i.toString()+'.svg',
-						type:'HEAD',
-						error: function()
-						{
-							booleanTop = false;
-						},
-						success: function()
-						{
-							$("#itemPreview").append('<img width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+i.toString()+'.svg">');
-						}
-					});
-					i++;
+				j=1;
+				if(num==1){
+					j=22;
+				}
+				else if(num==2){
+					j=16;
+				}
+				else if(num==3){
+					j=27;
+				}
+				else if(num==4){
+					j=24;
+				}
+				else if(num==5){
+					j=13;
+				}
+				else if(num==6){
+					j=20;
+				}
+				else if(num==7){
+					j=25;
+				}
+				else if(num==8){
+					j=22;
+				}
+				else if(num==9){
+					j=20;
+				}
+				else if(num==10){
+					j=20;
+				}
+				else if(num==11){
+					j=15;
+				}
+				else if(num==12){
+					j=15;
+				}
+				else if(num==13){
+					j=15;
+				}
+				else if(num==14){
+					j=15;
+				}
+				else if(num==15){
+					j=14;
+				}
+				else if(num==16){
+					j=3;
+				}
+				for(i=0; i<j; i++)			
+					$("#itemPreview").append('<img width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+i.toString()+'.svg">');
 				}
 			}
 			else if ($(".man")[0]){
