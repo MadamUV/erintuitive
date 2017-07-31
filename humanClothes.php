@@ -278,6 +278,7 @@
 		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards, fix water dragongit 
 	}
 	function nextTopOverlay() {
+		relativeContainer.innerHTML = previousTop;
 		if(num==1){
 			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
