@@ -178,6 +178,7 @@
 	}
 	var previous = '';
 	var previousTop = '';
+	var female_top = 1;
 	if(document.getElementById("relativeContainer").innerHTML != ''){
 		document.getElementById("avatarOptions").innerHTML = "Press next and back buttons to move to the next steps. Press the arrow to cycle through the types of tops.";
 	}
@@ -202,6 +203,8 @@
 		else if(avatarOptions.getAttribute("class")=="tops3"){
 			avatarOptions.innerHTML = "Back to the first step.";
 			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
+			num = 1;
+			female_top = 1;
 			if($(".man")[0]){
 				relativeContainer.innerHTML = previous;
 			}
@@ -213,7 +216,6 @@
 			avatarOptions.setAttribute("class", "tops2");
 		}
 	}
-	var female_top = 1;
 	function nextOptions() {
 		if(avatarOptions.getAttribute("class")=="tops"){
 			$("#relativeContainer button").show();
@@ -248,7 +250,6 @@
 			$("#topButton1").attr("onclick", "nextTopOverlay()");
 			if ($(".woman")[0]){
 				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
-				female_top++;
 				$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			}
 			else if ($(".man")[0]){
