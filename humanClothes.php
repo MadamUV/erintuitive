@@ -241,34 +241,32 @@
 			avatarOptions.setAttribute("class", "tops4");
 		}
 		else if(avatarOptions.getAttribute("class")=="tops4"){
-			itemPreview.innerHTML = 'You can randomize the overlay of your chosen top! Click the randomize button to change your top decoration.';
-			$("#buttons").append('<button id="randomizeTop" onclick="randomizeTop()">Randomize</button>');
+			avatarOptions.innerHTML = "Click an overlay for your top.";
+			itemPreview.innerHTML = "";
+			var imagesTops = "";
 			if ($(".woman")[0]){
-				if(num==1){
-					while (rand == female_top1){
-						rand = Math.ceil(Math.random()*22);
-					}
-					relativeContainer.innerHTML = previousTop;
-					$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
-					$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-					female_top1 = rand;
+				var booleanTop = true;
+				i=1;
+				while(booleanTop == true){
+					$.ajax({
+						url:'svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+i.toString()+'.svg',
+						type:'HEAD',
+						error: function()
+						{
+							booleanTop = false;
+						},
+						success: function()
+						{
+							$("#itemPreview").append('<img width="45px" src="svg/human/humanClothes/female_shirt'+num.toString()+'/stickers/female_shirt'+num.toString()+'_sticker'+i.toString()+'.svg">');
+						}
+					});
+					i++;
 				}
 			}
 			else if ($(".man")[0]){
 				
 			}
 			avatarOptions.setAttribute("class", "bottoms1");
-		}
-	}
-	function randomizeTop() {
-		if(num==1){
-			while (rand == female_top1){
-				rand = Math.ceil(Math.random()*22);
-			}
-			relativeContainer.innerHTML = previousTop;
-			$("#relativeContainer").append('<img class="female_shirt_overlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+rand.toString()+'.svg"/>');
-			$("#relativeContainer .female_shirt_overlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			female_top1 = rand;
 		}
 	}
 	function makeTopColor(){
