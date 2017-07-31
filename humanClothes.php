@@ -396,11 +396,11 @@
 		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function nextTop(){
-		if(n<16){
-			n++
+		if(num<16){
+			num++
 		}
 		else if(n==16){
-			n=1;
+			num=1;
 		}
 		if(num==1){
 			relativeContainer.innerHTML = previous;
