@@ -189,6 +189,7 @@
 			$('#color2').colorPicker();
 			document.getElementById("buttons").innerHTML = '<button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>';
 			previousTop = relativeContainer.innerHTML;
+			$("#topButton1").attr("onclick", "nextTop()");
 			avatarOptions.setAttribute("class", "tops4");
 		}
 		else if(avatarOptions.getAttribute("class")=="tops4"){
