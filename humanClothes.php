@@ -321,6 +321,76 @@
 				female_top = 1;
 			}
 		}
+		else if(num==7){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==25){
+				female_top = 1;
+			}
+		}
+		else if(num==8){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==22){
+				female_top = 1;
+			}
+		}
+		else if(num==9){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==20){
+				female_top = 1;
+			}
+		}
+		else if(num==10){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==20){
+				female_top = 1;
+			}
+		}
+		else if(num==11){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==15){
+				female_top = 1;
+			}
+		}
+		else if(num==12){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==15){
+				female_top = 1;
+			}
+		}
+		else if(num==13){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==15){
+				female_top = 1;
+			}
+		}
+		else if(num==14){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==15){
+				female_top = 1;
+			}
+		}
+		else if(num==15){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==14){
+				female_top = 1;
+			}
+		}
+		else if(num==16){
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			female_top++;
+			if(female_top==3){
+				female_top = 1;
+			}
+		}
 		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function nextTop(){
