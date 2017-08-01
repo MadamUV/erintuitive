@@ -399,7 +399,7 @@
 		if(num<16){
 			num++
 		}
-		else if(n==16){
+		else if(num==16){
 			num=1;
 		}
 		if(num==1){
