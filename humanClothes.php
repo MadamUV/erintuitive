@@ -81,7 +81,7 @@
 			}
 			return result;
 		}
-		var num = 1;
+		var num = 0;
 		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
