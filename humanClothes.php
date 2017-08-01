@@ -178,6 +178,8 @@
 	}
 	var previous = '';
 	var previousTop = '';
+	var updateTopColor = '';
+	var updateSleevesColor = '';
 	var female_top = 1;
 	if(document.getElementById("relativeContainer").innerHTML != ''){
 		document.getElementById("avatarOptions").innerHTML = "Press next and back buttons to move to the next steps. Press the arrow to cycle through the types of tops.";
@@ -202,16 +204,21 @@
 		}
 		else if(avatarOptions.getAttribute("class")=="tops3"){
 			avatarOptions.innerHTML = "Back to the first step.";
-			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
+			itemPreview.innerHTML = "Here is the item you started with but including your color choice. Click next to proceed.";
 			num = 1;
 			female_top = 1;
 			if($(".man")[0]){
 				relativeContainer.innerHTML = previous;
+				//insert more here
+				$(".shirt").children().attr("fill", updateTopColor);
+				$(".shirt").children().css({"fill":updateTopColor});
 			}
 			else if ($(".woman")[0]){
 				relativeContainer.innerHTML = previous;
 				$("#relativeContainer").append('<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes" /> </defs> <path d="M 219.13 783.615 C 222.463 777.523 239.555 745.442 233.907 737.92 C 228.258 730.398 212.084 703.513 211.008 673.349 C 209.926 643.185 277.459 693.922 281.117 693.926 C 284.784 693.931 258.992 736.045 261.28 738.984 C 263.572 741.925 262.749 737.857 265.04 751.978 C 267.337 766.099 266.946 763.322 266.977 766.097 C 267.008 768.872 279.799 770.012 278.184 780.825 C 264.275 792.601 277.565 817.622 258.637 806.541 C 239.706 795.46 258.609 810.393 219.13 783.615 Z" id="path-1" class="skin" style="stroke: none; stroke-width: 0px; fill: rgb(255, 0, 0);" transform="matrix(-0.999542, 0.030274, -0.030274, -0.999542, 514.654955, 1465.287216)" class="clothes" /></svg>');
 				$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+				$(".shirt").find("path, polygon").attr("fill", updateTop);
+				$(".shirt").find("path, polygon").css({"fill":updateTop});
 			}
 			avatarOptions.setAttribute("class", "tops2");
 		}
@@ -259,15 +266,15 @@
 		}
 	}
 	function makeTopColor(){
-		updateTop = document.getElementById("color1").getAttribute("value");
+		updateTopColor = document.getElementById("color1").getAttribute("value");
 		if ($(".woman")[0]){
 			
-			$(".shirt").find("path, polygon").attr("fill", updateTop);
-			$(".shirt").find("path, polygon").css({"fill":updateTop});
+			$(".shirt").find("path, polygon").attr("fill", updateTopColor);
+			$(".shirt").find("path, polygon").css({"fill":updateTopColor});
 		}
 		else if($(".man")[0]){
-			$(".shirt").children().attr("fill", updateTop);
-			$(".shirt").children().css({"fill":updateTop});
+			$(".shirt").children().attr("fill", updateTopColor);
+			$(".shirt").children().css({"fill":updateTopColor});
 		}
 		for (i=0; i<document.getElementsByClassName("sleeves").length; i++){
 			document.getElementsByClassName("sleeves")[i].setAttribute("fill", updateTop);
@@ -275,8 +282,8 @@
 		previousTop = relativeContainer.innerHTML;
 	}
 	function makeSleeveColor(){
-		updateSleeves = document.getElementById("color2").getAttribute("value");
-		$(".sleeves").attr("fill", updateSleeves);
+		updateSleevesColor = document.getElementById("color2").getAttribute("value");
+		$(".sleeves").attr("fill", updateSleevesColor);
 		previousTop = relativeContainer.innerHTML; //goto: #21 hair isn't positioned right. move breast upwards, fix water dragongit 
 	}
 	function nextTopOverlay() {
