@@ -81,7 +81,7 @@
 			}
 			return result;
 		}
-		var num = 1;
+		var num = 0;
 		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
@@ -203,7 +203,7 @@
 		else if(avatarOptions.getAttribute("class")=="tops3"){
 			avatarOptions.innerHTML = "Back to the first step.";
 			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
-			num = 1;
+			num = 0;
 			female_top = 1;
 			if($(".man")[0]){
 				relativeContainer.innerHTML = previous;
@@ -249,7 +249,7 @@
 			relativeContainer.innerHTML = previousTop;
 			$("#topButton1").attr("onclick", "nextTopOverlay()");
 			if ($(".woman")[0]){
-				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 				$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			}
 			else if ($(".man")[0]){
@@ -282,112 +282,112 @@
 	function nextTopOverlay() {
 		relativeContainer.innerHTML = previousTop;
 		if(num==1){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">'); 
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">'); 
 			female_top++;
 			if(female_top==22){
 				female_top = 1;
 			}
 		}
 		else if(num==2){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">'); 
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">'); 
 			female_top++;
 			if(female_top==16){
 				female_top = 1;
 			}
 		}
 		else if(num==3){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==27){
 				female_top = 1;
 			}
 		}
 		else if(num==4){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==24){
 				female_top = 1;
 			}
 		}
 		else if(num==5){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==13){
 				female_top = 1;
 			}
 		}
 		else if(num==6){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==20){
 				female_top = 1;
 			}
 		}
 		else if(num==7){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==25){
 				female_top = 1;
 			}
 		}
 		else if(num==8){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==22){
 				female_top = 1;
 			}
 		}
 		else if(num==9){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==20){
 				female_top = 1;
 			}
 		}
 		else if(num==10){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==20){
 				female_top = 1;
 			}
 		}
 		else if(num==11){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==15){
 				female_top = 1;
 			}
 		}
 		else if(num==12){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==15){
 				female_top = 1;
 			}
 		}
 		else if(num==13){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==15){
 				female_top = 1;
 			}
 		}
 		else if(num==14){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==15){
 				female_top = 1;
 			}
 		}
 		else if(num==15){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==14){
 				female_top = 1;
 			}
 		}
 		else if(num==16){
-			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+num.toString()+'_stickers/female_shirt'+num.toString()+'_sticker'+female_top.toString()+'.svg">');
+			$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(num+1).toString()+'_stickers/female_shirt'+(num+1).toString()+'_sticker'+female_top.toString()+'.svg">');
 			female_top++;
 			if(female_top==3){
 				female_top = 1;
@@ -416,11 +416,11 @@
 		}
 		else if(num==4){
 			relativeContainer.innerHTML = previous;
-			$("#relativeContainer").append('<svg class="shirt" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes" /> </defs> <path d="M231.51259393835142,657.8595841129164c12.2541186535191,-3.669447789489709,15.749501702100503,-3.1539934285680147,28.86681758008524,-0.6873545778818198c17.24114718975511,22.398490190909342,24.267617462317162,28.969019474366746,24.055673082761018,28.17955375378483c1.8499712763288017,6.770891684329968,-9.503539340620478,39.3768337497595,-8.247645636353923,32.30330704321182c-5.617158482017317,-0.20047452026381052,-12.913781502269671,6.275497954175989,-13.746124267578125,3.4365234375c-0.8323427653084536,-2.8389745166759894,0.03002471660397532,-15.197294576822515,1.3746337890625,-13.74609375c1.3446090724585247,1.4512008268225145,-1.6754182592098914,43.64363477218296,-4.811139312131559,30.928762952395346c-7.946857583320366,-0.3433778844769222,-31.146551370871606,2.4362293325948485,-26.80490643433066,-1.3745987613539228c0.9051188433990944,-5.185438531205591,2.9341932989911186,-14.56253202515802,2.7492244573997198,-17.869960089478923c-0.1849688415913988,-3.307428064320902,-6.442546484651217,-10.827097913395733,-6.185760498046875,-10.3095703125c0.25678598660434204,0.5175276008957326,5.392936811721768,13.790003487630202,2.061920166015625,15.1207275390625c-3.3310166457061428,1.3307240514322984,-10.727368421098163,0.16453993974334935,-13.746105425902897,0.6872961983673349c-2.3314317861762675,4.646587570394445,-8.114035596930364,-25.8371671686358,-7.560352093628353,-35.052591608523585c0.5536835033020395,-9.215424439887784,11.114256376385782,-10.76392356938436,21.99376459264829,-31.616001824583577Z" id="e4_area3" fill="red" style="stroke: none; stroke-width: 0px;" class="clothes" /></svg>');
+			$("#relativeContainer").append('<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes"/> </defs> <path d="M228.76336669921875,672.991455078125c4.324533905631284,-1.4112558776510014,11.51096896064226,0.22129187068173906,13.058807373046875,3.4365234375c2.31151087718564,2.5279263481900216,4.032802321963857,9.591366653129171,2.061920166015625,13.74615478515625c0.7783387185652941,-11.65323189642561,-6.386462290754537,-17.833338000890194,-15.1207275390625,-17.18267822265625Z" id="e39_area3" fill="black" style="stroke: none; stroke-width: 0px;" transform="matrix(0.846 0 0 0.874739 39.2094 87.7496)" class="clothes"/> <path d="M235.63641888550254,679.8645072644088c4.324533905631284,-1.4112558776510014,10.747296495861264,0.9085970893099784,13.058807373046875,3.4365234375c2.3115108771856403,2.5279263481900216,4.032802321963857,9.591366653129171,2.061920166015625,13.74615478515625c0.7783387185652941,-11.653231896425611,-6.386462290754537,-17.833338000890194,-15.1207275390625,-17.18267822265625Z" id="e9_area3" fill="black" style="stroke: none; stroke-width: 0px;" transform="matrix(-0.806664 0 0 0.847088 450.119 101.46)" class="clothes"/> <rect id="rect-1" x="-403.988" y="499.579" width="1300" height="550" style="fill: none; stroke: none;" class="clothes"/> <polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="239.76 656.485 228.076 661.983 215.017 677.104 209.519 686.726 218.454 734.15 218.454 732.089 229.451 741.711 228.076 727.277 226.701 708.72 232.2 721.092 234.949 732.776 221.89 755.457 212.955 771.952 211.581 787.76 278.249 791.884 270.002 765.079 256.943 738.274 257.63 727.277 263.129 710.782 262.441 732.089 265.191 743.085 274.126 734.838 280.311 699.098 283.748 688.101 283.06 681.228 259.692 657.86" fill="red" class="clothes"/></svg>');
 		}
 		else if(num==5){
 			relativeContainer.innerHTML = previous;
-			$("#relativeContainer").append('<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes"/> </defs> <path d="M228.76336669921875,672.991455078125c4.324533905631284,-1.4112558776510014,11.51096896064226,0.22129187068173906,13.058807373046875,3.4365234375c2.31151087718564,2.5279263481900216,4.032802321963857,9.591366653129171,2.061920166015625,13.74615478515625c0.7783387185652941,-11.65323189642561,-6.386462290754537,-17.833338000890194,-15.1207275390625,-17.18267822265625Z" id="e39_area3" fill="black" style="stroke: none; stroke-width: 0px;" transform="matrix(0.846 0 0 0.874739 39.2094 87.7496)" class="clothes"/> <path d="M235.63641888550254,679.8645072644088c4.324533905631284,-1.4112558776510014,10.747296495861264,0.9085970893099784,13.058807373046875,3.4365234375c2.3115108771856403,2.5279263481900216,4.032802321963857,9.591366653129171,2.061920166015625,13.74615478515625c0.7783387185652941,-11.653231896425611,-6.386462290754537,-17.833338000890194,-15.1207275390625,-17.18267822265625Z" id="e9_area3" fill="black" style="stroke: none; stroke-width: 0px;" transform="matrix(-0.806664 0 0 0.847088 450.119 101.46)" class="clothes"/> <rect id="rect-1" x="-403.988" y="499.579" width="1300" height="550" style="fill: none; stroke: none;" class="clothes"/> <polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="239.76 656.485 228.076 661.983 215.017 677.104 209.519 686.726 218.454 734.15 218.454 732.089 229.451 741.711 228.076 727.277 226.701 708.72 232.2 721.092 234.949 732.776 221.89 755.457 212.955 771.952 211.581 787.76 278.249 791.884 270.002 765.079 256.943 738.274 257.63 727.277 263.129 710.782 262.441 732.089 265.191 743.085 274.126 734.838 280.311 699.098 283.748 688.101 283.06 681.228 259.692 657.86" fill="red" class="clothes"/></svg>');
+			$("#relativeContainer").append('<svg class="shirt" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMax" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes" /> </defs> <path d="M231.51259393835142,657.8595841129164c12.2541186535191,-3.669447789489709,15.749501702100503,-3.1539934285680147,28.86681758008524,-0.6873545778818198c17.24114718975511,22.398490190909342,24.267617462317162,28.969019474366746,24.055673082761018,28.17955375378483c1.8499712763288017,6.770891684329968,-9.503539340620478,39.3768337497595,-8.247645636353923,32.30330704321182c-5.617158482017317,-0.20047452026381052,-12.913781502269671,6.275497954175989,-13.746124267578125,3.4365234375c-0.8323427653084536,-2.8389745166759894,0.03002471660397532,-15.197294576822515,1.3746337890625,-13.74609375c1.3446090724585247,1.4512008268225145,-1.6754182592098914,43.64363477218296,-4.811139312131559,30.928762952395346c-7.946857583320366,-0.3433778844769222,-31.146551370871606,2.4362293325948485,-26.80490643433066,-1.3745987613539228c0.9051188433990944,-5.185438531205591,2.9341932989911186,-14.56253202515802,2.7492244573997198,-17.869960089478923c-0.1849688415913988,-3.307428064320902,-6.442546484651217,-10.827097913395733,-6.185760498046875,-10.3095703125c0.25678598660434204,0.5175276008957326,5.392936811721768,13.790003487630202,2.061920166015625,15.1207275390625c-3.3310166457061428,1.3307240514322984,-10.727368421098163,0.16453993974334935,-13.746105425902897,0.6872961983673349c-2.3314317861762675,4.646587570394445,-8.114035596930364,-25.8371671686358,-7.560352093628353,-35.052591608523585c0.5536835033020395,-9.215424439887784,11.114256376385782,-10.76392356938436,21.99376459264829,-31.616001824583577Z" id="e4_area3" fill="red" style="stroke: none; stroke-width: 0px;" class="clothes" /></svg>');
 		}
 		else if(num==6){
 			relativeContainer.innerHTML = previous;
