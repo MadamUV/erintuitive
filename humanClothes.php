@@ -203,7 +203,7 @@
 		else if(avatarOptions.getAttribute("class")=="tops3"){
 			avatarOptions.innerHTML = "Back to the first step.";
 			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
-			num = 0;
+			num = 1;
 			female_top = 1;
 			if($(".man")[0]){
 				relativeContainer.innerHTML = previous;
