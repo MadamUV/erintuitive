@@ -81,7 +81,7 @@
 			}
 			return result;
 		}
-		var num = 0;
+		var num = 1;
 		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
@@ -203,7 +203,7 @@
 		else if(avatarOptions.getAttribute("class")=="tops3"){
 			avatarOptions.innerHTML = "Back to the first step.";
 			itemPreview.innerHTML = "Here is the item you started with. Click next to proceed.";
-			num = 0;
+			num = 1;
 			female_top = 1;
 			if($(".man")[0]){
 				relativeContainer.innerHTML = previous;
