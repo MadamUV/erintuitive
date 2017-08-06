@@ -247,7 +247,8 @@
 			relativeContainer.innerHTML = previousTop;
 			$("#topButton1").attr("onclick", "nextTopOverlay()");
 			if ($(".woman")[0]){
-				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt1_stickers/female_shirt1_sticker'+female_top.toString()+'.svg">');
+				var numberString = $(".shirt")[0].attr("id").substring(5);
+				$("#relativeContainer").append('<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+numberString+'_stickers/female_shirt'+numberString+'_sticker'+female_top.toString()+'.svg">');
 				$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			}
 			else if ($(".man")[0]){
