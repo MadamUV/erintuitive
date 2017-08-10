@@ -100,7 +100,6 @@
 			<img src="img/giphy.gif" alt="Erintuitive on Second Life">
 		</div>
 		<div id="intro">
-			<img width="200px" src="img/psychic_small2.jpg" alt="psychic Erintuitive">
 		</div>
 		<span id="words">
 			This is the example.
