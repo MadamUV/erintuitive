@@ -97,7 +97,6 @@
 	<!-- animal or human? -->
 	<div id="wholeIntro">
 		<div id="behind" style="position: absolute; z-index: 99;">
-			<img src="img/giphy.gif" alt="Erintuitive on Second Life">
 		</div>
 		<div id="intro">
 		</div>
