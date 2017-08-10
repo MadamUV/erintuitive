@@ -103,17 +103,12 @@
 			<img width="200px" src="img/psychic_small2.jpg" alt="psychic Erintuitive">
 		</div>
 		<span id="words">
-			<br>I am Erintuitive. I hope to surprise and entertain you
-			<br>with my ability to read your personality
-			<br>from observing your avatar. Login to begin.
-			<button id="login_button" onclick="login();">Login!</button>
-			<button id="logout_button" onclick="logout();">Log out</button>
+			This is the example.
 		</span>
 		<div style="position:absolute; z-index: 101; top: 150px;">
-			<img src="img/magiReading.jpg" width="220px" height="220px" alt="reading in gaiaonline.com">
-			<br>I'm on GaiaOnline too!
+			
 		</div>
-		<img style="position:absolute; z-index: 101; top: 0px; left: 390px; margin-top: 0px; margin-left: 60px;" src="img/paper.jpg" style="margin-left: 140px;" alt="100 percent" width="270">
+		
 	</div>
 	<table width="750px">
 		<tr>
