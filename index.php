@@ -101,7 +101,6 @@
 		<div id="intro">
 		</div>
 		<span id="words">
-			This is the example.
 		</span>
 		<div style="position:absolute; z-index: 101; top: 150px;">
 			
