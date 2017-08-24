@@ -68,6 +68,7 @@
 		
 	</div>
 	<script>
+		var previous = '';
 		function shuffle(array) {
 			var rand, index = -1,
 				length = array.length,
@@ -106,6 +107,7 @@
 							var avatarJSON = data['person'][0]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
+								previous = relativeContainer.innerHTML;
 								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeOutfit()">Randomize your outfit until it\'s perfect!</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
@@ -134,6 +136,7 @@
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
+								previous = relativeContainer.innerHTML;
 								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeOutfit()">Randomize your outfit until it\'s perfect!</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
@@ -155,6 +158,7 @@
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
+										previous = relativeContainer.innerHTML;
 										document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeOutfit()">Randomize your outfit until it\'s perfect!</button><button id="next" onclick="nextOptions()">Next</button>';
 									});
 								});
@@ -174,8 +178,6 @@
 		}
 		return color;
 	}
-	var previous = '';
-	var previousTop = '';
 	var shirtStuff = document.getElementById("shirtStuff");
 	var relativeContainer = document.getElementById("relativeContainer");
 	var itemPreview = document.getElementById("itemPreview");
@@ -206,10 +208,10 @@
 		var numbers = [22, 16, 27, 24, 13, 20, 25, 22, 20, 20, 15, 16, 15, 15, 14, 3];
 		for (k=0; k<16; k++){
 			for (i=1; i<=numbers[k]; i++){
-				femaleTopOverlays.push(femaleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(k+1).toString()+'_stickers/female_shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg');
+				femaleTops.push(femaleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(k+1).toString()+'_stickers/female_shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg');
 			}
 		}
-		return shuffle(femaleTopOverlays);
+		return shuffle(femaleTops);
 	}
 	</script>
 	<style>
