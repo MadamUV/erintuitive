@@ -191,7 +191,6 @@
 		var randColor = getRandomColor();
 		$(".sleeves").find("path, polygon").attr("fill", randColor);
 		$(".sleeves").find("path, polygon").css({"fill": randColor});
-		$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function randomizeTop() {
@@ -200,12 +199,14 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleTopOverlays()[0]);
 			colorTop();
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-4px', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			relativeContainer.innerHTML = previous;
 			//here
 			$("#relativeContainer").append(femaleTopOverlays()[0]);
 			colorTop();
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
 	function maleTopOverlays(){
