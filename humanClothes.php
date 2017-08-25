@@ -185,26 +185,31 @@
 	if(document.getElementById("relativeContainer").innerHTML != ''){
 		document.getElementById("avatarOptions").innerHTML = "Press Randomize until you find the perfect outfit for your avatar.";
 	}
+	function colorTop() {
+		$(".shirt").find("path, polygon").attr("fill", getRandomColor());
+		$(".shirt").find("path, polygon").css({"fill": getRandomColor()});
+		var randColor = getRandomColor();
+		$(".sleeves").find("path, polygon").attr("fill", randColor);
+		$(".sleeves").find("path, polygon").css({"fill": randColor});
+		$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+	}
 	function randomizeTop() {
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previous;
+			$("#relativeContainer").append(maleTopOverlays()[0]);
+			colorTop();
 		}
 		else if ($(".woman")[0]){
 			relativeContainer.innerHTML = previous;
 			//here
 			$("#relativeContainer").append(femaleTopOverlays()[0]);
-			$(".shirt").find("path, polygon").attr("fill", getRandomColor());
-			$(".shirt").find("path, polygon").css({"fill": getRandomColor()});
-			var randColor = getRandomColor();
-			$(".sleeves").find("path, polygon").attr("fill", randColor);
-			$(".sleeves").find("path, polygon").css({"fill": randColor});
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			colorTop();
 		}
 	}
 	function maleTopOverlays(){
-		var tops1 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/></defs><rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/><polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/><polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="238.386 653.06 204.02 670.242 205.48 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 277.133 780.469 269.745 778.75 290.621 778.837 289.676 672.819 259.005 654.434" fill="red" class="shirt"/></svg>';
+		var tops1 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/></defs><rect id="svgEditorBackground" x="202.71499633789062" y="584.431030273437                                                                                                                               5" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/><polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/><polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="238.386 653.06 204.02 670.242 205.48 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 277.133 780.469 269.745 778.75 290.621 778.837 289.676 672.819 259.005 654.434" fill="red" class="shirt"/></svg>';
 		var tops2 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/> </defs> <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/> <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/> <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="236.324 654.435 204.02 670.242 206.082 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 276.532 778.665 277.562 778.149 290.621 778.837 289.075 671.617 259.005 654.434 259.349 792.927 246.633 791.897 239.417 792.927" fill="red" class="shirt"/></svg>';
 		var tops3 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/> </defs> <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/> <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/> <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="230.138 657.184 204.02 670.242 204.879 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 277.133 778.063 277.562 778.149 290.621 778.837 289.676 671.016 264.503 657.871 266.909 693.268 246.633 791.897 227.732 692.58 234.004 656.582 242.338 665.259 234.455 703.341 245.817 742.11 259.928 705.274 251.863 663.144 260.981 655.379" fill="red" class="shirt"/> <polygon id="e3_polygon" style="stroke-width: 0px; stroke: none;" points="243.197 661.307 233.575 703.92 246.633 741.035 247.321 741.035 261.067 704.607 251.444 661.307" fill="lime" class="ties"/></svg>';
 		var tops4 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/> </defs> <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/> <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/> <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="238.386 653.06 204.02 670.242 199.896 735.536 212.955 734.849 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 272.751 734.161 281.686 736.223 291.308 736.224 288.473 671.617 259.005 654.434" fill="red" class="shirt" transform=""/></svg>';
