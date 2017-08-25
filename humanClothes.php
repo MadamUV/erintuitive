@@ -188,8 +188,6 @@
 	function colorTop() {
 		$(".shirt").find("path, polygon").attr("fill", getRandomColor());
 		$(".shirt").find("path, polygon").css({"fill": getRandomColor()});
-		$(".shirt").find("path, polygon").attr("z-index", "19");
-		$(".shirt").find("path, polygon").css({"z-index": "19"});
 		var randColor = getRandomColor();
 		$(".sleeves").find("path, polygon").attr("fill", randColor);
 		$(".sleeves").find("path, polygon").css({"fill": randColor});
@@ -199,16 +197,16 @@
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previous;
-			$("#top").html(maleTopOverlays()[0]);
+			$("#relativeContainer").append(maleTopOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'z-index':'1', 'top':'0', 'left':'-2px', 'margin-top':'0'});
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			relativeContainer.innerHTML = previous;
 			//here
-			$("#top").html(femaleTopOverlays()[0]);
+			$("#relativeContainer").append(femaleTopOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'z-index':'1', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
 	function maleTopOverlays(){
