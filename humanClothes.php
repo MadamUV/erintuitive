@@ -188,9 +188,13 @@
 	function colorTop() {
 		$(".shirt").find("path, polygon").attr("fill", getRandomColor());
 		$(".shirt").find("path, polygon").css({"fill": getRandomColor()});
+		$(".shirt").find("path, polygon").attr("z-index", "19");
+		$(".shirt").find("path, polygon").css({"z-index": "19"});
 		var randColor = getRandomColor();
 		$(".sleeves").find("path, polygon").attr("fill", randColor);
 		$(".sleeves").find("path, polygon").css({"fill": randColor});
+		$(".mouth").find("path, polygon").attr("z-index", "20");
+		$(".mouth").find("path, polygon").css({"z-index": "20"});
 		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function randomizeTop() {
