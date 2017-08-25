@@ -107,7 +107,7 @@
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
 								previous = relativeContainer.innerHTML;
-								document.getElementById("itemPreview").innerHTML = '<div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
+								document.getElementById("itemPreview").innerHTML = '<button id="randomTop" onclick="randomizeTop()">Randomize top</button><br><button id="randomTop" onclick="randomizeBottom()">Randomize bottom</button><br><div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
 								document.getElementById("buttons").innerHTML = '<button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
@@ -137,7 +137,7 @@
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
 								previous = relativeContainer.innerHTML;
-								document.getElementById("itemPreview").innerHTML = '<div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
+								document.getElementById("itemPreview").innerHTML = '<button id="randomTop" onclick="randomizeTop()">Randomize top</button><br><button id="randomTop" onclick="randomizeBottom()">Randomize bottom</button><br><div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
 								document.getElementById("buttons").innerHTML = '<button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
@@ -160,8 +160,8 @@
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
 										previous = relativeContainer.innerHTML;
-										document.getElementById("itemPreview").innerHTML = '<div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
-								   		document.getElementById("buttons").innerHTML = '<button id="next" onclick="nextOptions()">Next</button>';
+										document.getElementById("itemPreview").innerHTML = '<button id="randomTop" onclick="randomizeTop()">Randomize top</button><br><button id="randomTop" onclick="randomizeBottom()">Randomize bottom</button><br><div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br><div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>';
+										document.getElementById("buttons").innerHTML = '<button id="next" onclick="nextOptions()">Next</button>';
 									});
 								});
 							}
