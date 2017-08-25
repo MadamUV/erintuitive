@@ -199,7 +199,7 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleTopOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-4px', 'margin-top':'0'});
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			relativeContainer.innerHTML = previous;
