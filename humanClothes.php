@@ -237,12 +237,6 @@
 		body {
 			background-color: #FFBB22;
 		}
-		#itemPreview button {
-			margin:0;
-			padding:0;
-			border:0;
-			background:transparent;
-		}
 		#avatarOptions {
 			position: relative;
 			float: left;
