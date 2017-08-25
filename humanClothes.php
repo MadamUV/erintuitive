@@ -234,6 +234,7 @@
 				maleTops.push(maleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/shirt'+(k+1).toString()+'_stickers/shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
+		maleTops.push('');
 		return shuffle(maleTops);
 	}
 	function femaleTopOverlays(){
@@ -260,6 +261,7 @@
 				femaleTops.push(femaleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(k+1).toString()+'_stickers/female_shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
+		femaleTops.push('');
 		return shuffle(femaleTops);
 	}
 	</script>
