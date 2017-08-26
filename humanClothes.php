@@ -230,7 +230,6 @@
 			var shirt = $("#relativeContainer .shirt")[0];
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleBottomOverlays()[0]);
-			colorTop();
 			$("#relativeContainer .shirt").remove();
 			$("#relativeContainer .shirtOverlay").remove();
 			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
@@ -239,6 +238,7 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirtOverlay);
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			colorTop();
 		}
 		else if ($(".woman")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
@@ -246,7 +246,6 @@
 			relativeContainer.innerHTML = previous;
 			//here
 			$("#relativeContainer").append(femaleBottomOverlays()[0]);
-			colorTop();
 			$("#relativeContainer .shirt").remove();
 			$("#relativeContainer .shirtOverlay").remove();
 			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
@@ -255,6 +254,7 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirtOverlay);
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			colorTop();
 		}
 	}
 	function maleTopOverlays(){
