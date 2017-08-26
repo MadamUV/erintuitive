@@ -202,9 +202,14 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleTopOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 			$("#relativeContainer").append(pants);
 			$("#relativeContainer").append(pantsOverlay);
+			var mouth = $("#relativeContainer .mouth")[0];
+			$("#relativeContainer .mouth").remove();
+			$("#relativeContainer").append(mouth);
+			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
+			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			var pants = $("#relativeContainer .pants")[0];
@@ -214,8 +219,13 @@
 			$("#relativeContainer").append(femaleTopOverlays()[0]);
 			colorTop();
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(pants);
 			$("#relativeContainer").append(pantsOverlay);
+			var mouth = $("#relativeContainer .mouth")[0];
+			$("#relativeContainer .mouth").remove();
+			$("#relativeContainer").append(mouth);
+			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
 	function randomizeBottom() {
@@ -232,7 +242,6 @@
 			$("#relativeContainer").append(shirt);
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirtOverlay);
-			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			var mouth = $("#relativeContainer .mouth")[0];
 			$("#relativeContainer .mouth").remove();
