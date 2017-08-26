@@ -219,14 +219,16 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleBottomOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
+			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
+			$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			relativeContainer.innerHTML = previous;
 			//here
 			$("#relativeContainer").append(femaleBottomOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
 		}
 	}
 	function maleTopOverlays(){
