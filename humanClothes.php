@@ -353,7 +353,7 @@
 		}
 		#buttons {
 			position: fixed;
-			top: 435px;
+			top: 452px;
 			left: 40%;
 		}
 		#itemPreview {
