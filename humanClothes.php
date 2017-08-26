@@ -108,7 +108,7 @@
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
 								previous = relativeContainer.innerHTML;
-								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="next" onclick="nextOptions()">Next</button>';
+								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
 					}
@@ -137,7 +137,7 @@
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
 								previous = relativeContainer.innerHTML;
-								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="next" onclick="nextOptions()">Next</button>';
+								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 							});
 						});
 					}
@@ -159,7 +159,7 @@
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
 										previous = relativeContainer.innerHTML;
-										document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="next" onclick="nextOptions()">Next</button>';
+										document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 									});
 								});
 							}
@@ -213,6 +213,22 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
+	function randomizeBottom() {
+		$("#relativeContainer button").show();
+		if($(".man")[0]){
+			relativeContainer.innerHTML = previous;
+			$("#relativeContainer").append(maleBottomOverlays()[0]);
+			colorTop();
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'-2px', 'margin-top':'0'});
+		}
+		else if ($(".woman")[0]){
+			relativeContainer.innerHTML = previous;
+			//here
+			$("#relativeContainer").append(femaleBottomOverlays()[0]);
+			colorTop();
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		}
+	}
 	function maleTopOverlays(){
 		var tops1 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/></defs><rect id="svgEditorBackground" x="202.71499633789062" y="584.431030273437                                                                                                                               5" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/><polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/><polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="238.386 653.06 204.02 670.242 205.48 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 277.133 780.469 269.745 778.75 290.621 778.837 289.676 672.819 259.005 654.434" fill="red" class="shirt"/></svg>';
 		var tops2 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="shirt"/> </defs> <rect id="svgEditorBackground" x="202.71499633789062" y="584.4310302734375" width="86.59329986572266" height="115.80899810791016" style="fill: none; stroke: none;" class="shirt"/> <polygon id="e7_polygon" style="stroke: none; stroke-width: 0px;" points="254.828 683.96 247.215 684.916 244.518 727.947 245.893 727.947 247.955 690.833" fill="black" transform="matrix(-0.52 0 0 1.46972 403.612 -317.826)" class="shirt"/> <polygon id="e2_polygon" style="stroke-width: 0px; stroke: none;" points="236.324 654.435 204.02 670.242 206.082 779.524 210.206 778.149 215.017 686.737 208.832 792.583 278.937 793.957 274.126 684.676 276.532 778.665 277.562 778.149 290.621 778.837 289.075 671.617 259.005 654.434 259.349 792.927 246.633 791.897 239.417 792.927" fill="red" class="shirt"/></svg>';
@@ -236,6 +252,29 @@
 		}
 		maleTops.push('');
 		return shuffle(maleTops);
+	}
+	function maleBottomOverlays(){
+		var bottoms1 = '<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><path d="M 211.308 792.118 C 211.308 808.017 201.794 832.875 201.794 849.921 C 201.794 859.339 203.259 867.793 203.259 876.666 C 203.259 893.079 205.453 909.588 205.453 925.842 C 205.453 931.835 203.259 937.124 203.259 941.371 C 203.259 947.224 203.99 952.183 203.99 956.038 C 204.964 956.901 209.113 960.953 209.113 961.214 C 211.347 962.077 210.577 960.472 210.577 956.038 C 213.955 955.175 218.926 950.861 225.212 950.861 C 227.619 948.887 232.351 949.999 234.726 949.999 C 234.726 930.51 240.581 909.496 240.581 888.744 C 240.581 879.717 242.776 873 242.776 866.313 C 242.776 859.699 242.776 853.947 242.776 848.196 C 242.776 843.882 242.776 840.431 242.776 836.98 C 242.776 841.019 243.508 844.156 243.508 847.333 C 243.508 852.797 243.508 857.398 243.508 861.999 C 243.508 866.401 242.044 871.383 242.044 873.215 C 242.044 878.104 242.044 882.13 242.044 886.156 C 242.044 892.195 242.044 897.372 242.044 902.548 C 242.044 908.953 244.971 913.009 244.971 918.077 C 244.971 921.873 245.703 925.215 245.703 928.43 C 245.703 934.533 246.435 938.818 246.435 943.959 C 246.435 947.659 253.609 947.41 255.947 947.41 C 258.013 947.41 262.152 947.823 263.265 949.136 C 266.68 949.136 269.364 949.136 272.047 949.136 C 272.778 944.325 279.364 935.017 279.364 929.293 C 283.599 918.447 278.633 907.207 278.633 898.234 C 278.633 887.592 280.828 880.102 280.828 870.627 C 280.828 867.015 283.047 845.607 283.755 845.607 C 283.755 839.464 283.755 836.139 283.755 830.941 C 283.755 825.291 282.292 819.843 282.292 813.686 C 282.292 810.049 280.828 809.447 280.828 805.921 C 280.096 804.269 278.633 800.536 278.633 797.294 C 277.9 793.464 276.437 793.904 276.437 791.255 C 272.121 791.255 269.127 787.804 269.12 787.804 C 265.461 787.804 262.534 787.804 259.606 787.804 C 254.918 787.804 252.022 786.941 248.629 786.941 C 246.281 788.848 241.414 787.804 239.117 787.804 C 236.677 787.804 234.969 787.804 233.262 787.804 C 228.312 792.777 226.282 788.667 223.749 788.667 C 220.381 787.804 219.671 786.078 216.431 786.078 C 213.723 786.078 212.041 789.04 212.041 791.255 Z" style="stroke: black; fill: rgb(195, 255, 0);" class="clothes" /></svg>';
+		var bottoms2 = '<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><path d="M 211.308 791.108 C 211.308 804.347 201.794 825.047 201.794 839.242 C 201.794 847.084 203.259 854.124 203.259 861.513 C 203.259 875.181 205.453 888.928 205.453 902.463 C 205.453 907.454 203.259 911.858 203.259 915.395 C 203.259 920.269 203.99 924.398 203.99 927.608 C 204.964 928.327 208.25 933.426 208.25 933.644 C 210.484 934.362 210.577 931.301 210.577 927.608 C 213.955 926.89 218.926 923.297 225.212 923.297 C 227.619 921.654 232.351 922.579 234.726 922.579 C 234.726 906.35 240.581 888.852 240.581 871.571 C 240.581 864.054 242.776 858.46 242.776 852.892 C 242.776 847.384 242.776 842.594 242.776 837.805 C 242.776 834.213 242.776 831.339 242.776 828.466 C 242.776 831.829 243.508 834.441 243.508 837.087 C 243.508 841.637 243.508 845.468 243.508 849.3 C 243.508 852.965 242.044 857.114 242.044 858.639 C 242.044 862.711 242.044 866.063 242.044 869.416 C 242.044 874.445 242.044 878.756 242.044 883.066 C 242.044 888.399 244.971 891.777 244.971 895.997 C 244.971 899.158 245.703 901.941 245.703 904.618 C 245.703 909.701 246.435 913.269 246.435 917.55 C 246.435 920.631 253.609 920.424 255.947 920.424 C 258.013 920.424 262.152 920.767 263.265 921.861 C 266.68 921.861 277.991 924.449 280.674 924.449 C 281.405 920.443 279.364 910.104 279.364 905.337 C 283.599 896.305 278.633 886.945 278.633 879.473 C 278.633 870.612 280.828 864.374 280.828 856.484 C 280.828 853.477 283.047 835.649 283.755 835.649 C 283.755 830.534 283.755 827.765 283.755 823.437 C 283.755 818.732 282.292 814.195 282.292 809.068 C 282.292 806.039 280.828 805.538 280.828 802.602 C 280.096 801.226 278.633 798.118 278.633 795.418 C 277.9 792.229 276.437 792.595 276.437 790.389 C 272.121 790.389 269.127 787.515 269.12 787.515 C 265.461 787.515 262.534 787.515 259.606 787.515 C 254.918 787.515 252.022 786.797 248.629 786.797 C 246.281 788.385 241.414 787.515 239.117 787.515 C 236.677 787.515 234.969 787.515 233.262 787.515 C 228.312 791.656 226.282 788.234 223.749 788.234 C 220.381 787.515 219.671 786.078 216.431 786.078 C 213.723 786.078 212.041 788.545 212.041 790.389 L 211.308 791.108 Z" style="stroke: black; fill: rgb(195, 255, 0);" class="clothes" /></svg>';
+		var bottoms3 = '<svg class="pants" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><path d="M 211.01 790.335 C 211.314 791.026 210.936 797.952 209.792 797.952 C 207.557 800.491 208.631 798.08 207.354 801.911 C 206.902 803.267 204.941 822.324 202.479 822.324 C 202.479 831.989 203.83 844.862 202.479 854.312 C 202.043 857.369 203.547 861.014 202.175 863.758 C 196.573 863.148 208.486 863.77 214.056 864.367 C 222.131 865.232 228.407 864.671 236.296 864.671 C 240.257 863.096 240.866 862.263 240.866 861.015 C 239.179 857.336 240.866 849.131 240.866 845.173 C 240.866 843.345 240.866 841.822 240.866 840.299 C 240.866 839.122 241.071 836.033 241.78 836.033 C 242.439 836.338 242.819 836.947 243.913 836.947 C 246.047 835.118 245.741 841.473 245.741 842.127 C 245.741 845.627 247.266 856.139 245.131 858.273 C 245.131 859.656 244.827 860.571 244.827 861.929 C 244.827 863.623 252.6 864.062 254.271 864.062 C 264.701 864.062 274.975 861.625 285.041 861.625 C 286.09 861.625 288.828 862.234 287.479 862.234 C 287.174 860.439 287.949 850.133 288.697 846.392 C 288.748 846.138 288.604 839.676 288.393 838.776 C 286.524 830.794 287.174 827.586 287.174 820.801 C 287.174 818.843 287.479 817.043 287.479 815.621 C 287.479 812.325 285.346 808.162 285.346 806.482 C 285.346 804.123 282.909 802.585 282.909 800.389 C 282.604 798.57 281.995 797.208 281.995 795.819 C 280.598 794.117 280.446 794.296 278.644 794.296 C 277.935 793.991 278.034 791.443 278.034 790.944 C 277.387 789.992 277.73 786.358 277.73 785.156 C 277.73 782.566 262.849 783.937 259.755 783.937 C 251.491 783.937 239.345 783.196 231.422 785.46 C 225.01 787.292 217.698 790.03 211.314 790.03 C 211.01 789.505 209.912 789.726 211.01 789.726 L 211.01 790.335 Z" style="stroke: black; stroke-width: 0; fill: rgb(186, 218, 85);" class="clothes" /></svg>';
+		var maleBottoms = [bottoms1, bottoms2, bottoms3];
+		var numbers = [17, 12, 12];
+		for (k=0; k<3; k++){
+			for (i=1; i<=numbers[k]; i++){
+				maleBottoms.push(maleBottoms[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/pants'+(k+1).toString()+'_stickers/pants'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+			}
+		}
+		var maleSkirt1 = '<svg class="pants" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="212.268 789.833 204.708 818.7 204.708 864.062 228.076 863.375 239.76 863.375 250.07 862.688 261.067 862.688 287.872 862 287.184 817.326 284.435 800.143 280.999 793.957 276.187 792.583 278.249 782.96 241.822 784.335" fill="lime" class="clothes" /></svg>';
+		var maleSkirt2 = '<svg class="pants" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="212.268 789.833 204.708 818.7 209.519 957.536 230.138 960.285 253.506 958.911 268.627 958.224 289.933 955.474 287.872 862 287.184 817.326 284.435 800.143 280.999 793.957 276.187 792.583 278.249 782.96 241.822 784.335" fill="lime" class="clothes" /></svg>';
+		var maleBottom = [maleSkirt1, maleSkirt2];
+		numbers = [4, 4];
+		for (k=0; k<2; k++){
+			for (i=1; i<=numbers[k]; i++){
+				maleBottoms.push(maleBottom[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/skirt'+(k+1).toString()+'_stickers/skirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+			}
+		}
+		maleBottoms.push('');
+		return shuffle(maleBottoms);
 	}
 	function femaleTopOverlays(){
 		var tops1 = '<svg class="shirt" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;" class="clothes" /></defs><path d="M 219.13 783.615 C 222.463 777.523 239.555 745.442 233.907 737.92 C 228.258 730.398 212.084 703.513 211.008 673.349 C 209.926 643.185 277.459 693.922 281.117 693.926 C 284.784 693.931 258.992 736.045 261.28 738.984 C 263.572 741.925 262.749 737.857 265.04 751.978 C 267.337 766.099 266.946 763.322 266.977 766.097 C 267.008 768.872 279.799 770.012 278.184 780.825 C 264.275 792.601 277.565 817.622 258.637 806.541 C 239.706 795.46 258.609 810.393 219.13 783.615 Z" id="path-1" class="skin" style="stroke: none; stroke-width: 0px; fill: rgb(255, 0, 0);" transform="matrix(-0.999542, 0.030274, -0.030274, -0.999542, 514.654955, 1465.287216)" class="clothes" /></svg>';
