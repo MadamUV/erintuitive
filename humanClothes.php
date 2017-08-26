@@ -192,12 +192,7 @@
 		$(".sleeves").find("path, polygon").attr("fill", randColor);
 		$(".sleeves").find("path, polygon").css({"fill": randColor});
 		$(".pants").find("path, polygon").attr("fill", randColor);
-		$(".pants").find("path, polygon").css({"fill": randColor});
-		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-		var mouth = $("#relativeContainer .mouth")[0];
-		$("#relativeContainer .mouth").remove();
-		$("#relativeContainer").append(mouth);
-		$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
 	function randomizeTop() {
 		$("#relativeContainer button").show();
@@ -238,7 +233,11 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirtOverlay);
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			colorTop();
+			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			var mouth = $("#relativeContainer .mouth")[0];
+			$("#relativeContainer .mouth").remove();
+			$("#relativeContainer").append(mouth);
+			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 		else if ($(".woman")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
@@ -254,7 +253,10 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirtOverlay);
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			colorTop();
+			var mouth = $("#relativeContainer .mouth")[0];
+			$("#relativeContainer .mouth").remove();
+			$("#relativeContainer").append(mouth);
+			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
 	function maleTopOverlays(){
