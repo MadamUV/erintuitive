@@ -191,6 +191,8 @@
 		var randColor = getRandomColor();
 		$(".sleeves").find("path, polygon").attr("fill", randColor);
 		$(".sleeves").find("path, polygon").css({"fill": randColor});
+		$(".pants").find("path, polygon").attr("fill", randColor);
+		$(".pants").find("path, polygon").css({"fill": randColor});
 		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		var mouth = $("#relativeContainer .mouth")[0];
 		$("#relativeContainer .mouth").remove();
