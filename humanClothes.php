@@ -199,6 +199,15 @@
 		$("#relativeContainer").append(mouth);
 		$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
+	function pantsBehindShirt() {
+		var shirt = $("#relativeContainer .shirt")[0];
+		$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#relativeContainer").append(shirt);
+		$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#relativeContainer").append(shirtOverlay);
+		$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+	}
 	function randomizeTop() {
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
@@ -218,14 +227,11 @@
 	function randomizeBottom() {
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
-			var shirt = $("#relativeContainer .shirt")[0];
+			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleBottomOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer").append(shirt);
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			pantsBehindShirt();
 		}
 		else if ($(".woman")[0]){
 			var shirt = $("#relativeContainer .shirt")[0];
@@ -233,10 +239,7 @@
 			//here
 			$("#relativeContainer").append(femaleBottomOverlays()[0]);
 			colorTop();
-			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer").append(shirt);
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			pantsBehindShirt();
 		}
 	}
 	function maleTopOverlays(){
