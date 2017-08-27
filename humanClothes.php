@@ -224,12 +224,12 @@
 			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append(mouth);
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			if($(".thePants")[0]){
 				$("#relativeContainer .shirt").attr("viewBox", "202.715 584.407 86.5933 204");
 				$("#relativeContainer .shirtOverlay").attr("viewBox", "202.715 584.407 86.5933 204");
 			}
-			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 	}
 	function randomizeBottom() {
@@ -267,7 +267,6 @@
 			$("#relativeContainer .pants").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer .bottomOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer").append(shirt);
-			
 			$("#relativeContainer").append(shirtOverlay);
 			var mouth = $("#relativeContainer .mouth")[0];
 			$("#relativeContainer .mouth").remove();
