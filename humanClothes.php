@@ -227,8 +227,8 @@
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			if($(".thePants")[0]){
-				$("#relativeContainer .shirt").attr("viewBox", "202.715 788.407 86.5933 204");
-				$("#relativeContainer .shirtOverlay").attr("viewBox", "202.715 788.407 86.5933 204");
+				$("#relativeContainer .shirt").attr("viewBox", "202.715 648.407 86.5933 204");
+				$("#relativeContainer .shirtOverlay").attr("viewBox", "202.715 648.407 86.5933 204");
 			}
 		}
 	}
@@ -275,8 +275,8 @@
 			$(".pants").find("path, polygon").attr("fill", randColor);
 			$(".pants").find("path, polygon").css({"fill": randColor});
 			if($(".thePants")[0]){
-				$("#relativeContainer .shirt").attr("viewBox", "202.715 788.407 86.5933 204");
-				$("#relativeContainer .shirtOverlay").attr("viewBox", "202.715 788.407 86.5933 204");
+				$("#relativeContainer .shirt").attr("viewBox", "202.715 648.407 86.5933 204");
+				$("#relativeContainer .shirtOverlay").attr("viewBox", "202.715 648.407 86.5933 204");
 			}
 			$("#relativeContainer .shirt").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 			$("#relativeContainer .shirtOverlay").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
