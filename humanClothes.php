@@ -233,6 +233,7 @@
 		if($(".man")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
 			var shirt = $("#relativeContainer .shirt")[0];
+			var randColor = getRandomColor();
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append(maleBottomOverlays()[0]);
 			$("#relativeContainer .shirt").remove();
@@ -253,6 +254,7 @@
 		else if ($(".woman")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
 			var shirt = $("#relativeContainer .shirt")[0];
+			var randColor = getRandomColor();
 			relativeContainer.innerHTML = previous;
 			//here
 			$("#relativeContainer").append(femaleBottomOverlays()[0]);
