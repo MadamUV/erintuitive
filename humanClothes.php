@@ -247,6 +247,8 @@
 			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append(mouth);
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$(".pants").find("path, polygon").attr("fill", randColor);
+			$(".pants").find("path, polygon").css({"fill": randColor});
 		}
 		else if ($(".woman")[0]){
 			var shirtOverlay = $("#relativeContainer .shirtOverlay")[0];
@@ -266,6 +268,8 @@
 			$("#relativeContainer .mouth").remove();
 			$("#relativeContainer").append(mouth);
 			$("#relativeContainer .mouth").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$(".pants").find("path, polygon").attr("fill", randColor);
+			$(".pants").find("path, polygon").css({"fill": randColor});
 		}
 	}
 	function maleTopOverlays(){
