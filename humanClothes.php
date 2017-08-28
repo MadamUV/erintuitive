@@ -47,13 +47,14 @@
 				</div>
 			</td>
 			<td id="itemPreview" width="10%">
-				<div style="padding:50px;"><label for="color1">Top color</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeTopColor()"/></div><br>
-				<div style="padding:50px;"><label for="color2">Sleeve color</label> <input id="color2" type="text" name="color2" value="#333399" onchange="makeSleeveColor()"/></div>
+				This avatar will be the primary guide for interpretation of personality. You will be presented with 3 cards which<br>
+				each avatar sets face-up. These three cards will say three statements about oneself, two of which are false. Your<br>
+				job is to guess correctly and earn points for that round for your intuition! Public contests between two people are free.
 				
 			</td>
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
 				
-				<div id="relativeContainer" style="position: relative; margin-left: 4px; margin-top:50px; " width="86px" height="380px">
+				<div id="relativeContainer" style="position: relative; margin-left: 84px; margin-top:50px; " width="86px" height="380px">
 				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
 					$me_id = $_POST['me_id']; 
 					$avatar = $_POST['getAvatar'];
