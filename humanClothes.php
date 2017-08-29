@@ -42,7 +42,7 @@
 	<td>
 		<tr>
 			<td width="10%">
-				<div id="avatarOptions" class="tops">
+				<div id="avatarOptions" class="topsBottoms">
 					Please wait while your avatar loads.
 				</div>
 			</td>
