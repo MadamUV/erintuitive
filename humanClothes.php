@@ -204,6 +204,13 @@
 			$("#relativeContainer").append(femaleShoes()[0]);
 		}
 	}
+	function nextOptions(){
+		if(avatarOptions.getAttribute("class")=="topsBottoms"){
+			previousClothes = relativeContainer.innerHTML;
+			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="next" onclick="nextOptions()">Next</button>';');
+			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		}
+	}
 	function femaleShoes(){
 		var femaleShoes = [];
 		for (i=1; i<=16; i++){
