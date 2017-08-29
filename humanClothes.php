@@ -202,13 +202,21 @@
 		else if($(".woman")[0]){
 			relativeContainer.innerHTML = previousClothes;
 			$("#relativeContainer").append(femaleShoes()[0]);
+			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		}
+	}
+	function backOptions(){
+		if(avatarOptions.getAttribute("class")=="wings"){
+			relativeContainer.innerHTML = previous;
+			avatarOptions.setAttribute("class", "topsBottoms");
+			document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 		}
 	}
 	function nextOptions(){
 		if(avatarOptions.getAttribute("class")=="topsBottoms"){
 			previousClothes = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="next" onclick="nextOptions()">Next</button>');
-			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "wings");
 		}
 	}
 	function femaleShoes(){
