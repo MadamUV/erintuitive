@@ -47,7 +47,7 @@
 				</div>
 			</td>
 			<td id="itemPreview" width="10%">
-				This avatar will be the primary guide for interpretation of personality. You will be presented with 3 cards which<br>
+				This avatar will be the primary guide for interpretation of personality. Please wait while it loads. You will be presented with 3 cards which<br>
 				each avatar sets face-up. These three cards will say three statements about oneself, two of which are false. Your<br>
 				job is to guess correctly and earn points for that round for your intuition! Public contests between two people are free.
 				
