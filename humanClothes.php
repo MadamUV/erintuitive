@@ -195,6 +195,23 @@
 		$(".pants").find("path, polygon").attr("fill", randColor);
 		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
+	function randomizeShoes() {
+		if($(".man")[0]){
+			relativeContainer.innerHTML = previousClothes;
+		}
+		else if($(".woman")[0]){
+			relativeContainer.innerHTML = previousClothes;
+			$("#relativeContainer").append(femaleShoes()[0]);
+		}
+	}
+	function femaleShoes(){
+		var femaleShoes = [];
+		for (i=1; i<=16; i++){
+			femaleShoes.push('<img class="shoes" src="svg/human/humanClothes/female_shoes/female_shoes'+i.toString()+'.svg" alt="shoes">');
+		}
+		femaleShoes.push('');
+		return shuffle(femaleShoes);
+	}
 	function randomizeTop() {
 		$("#relativeContainer button").show();
 		if($(".man")[0]){
