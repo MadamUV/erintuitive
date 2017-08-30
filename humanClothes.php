@@ -198,6 +198,8 @@
 	function randomizeShoes() {
 		if($(".man")[0]){
 			relativeContainer.innerHTML = previousClothes;
+			$("#relativeContainer").append(maleShoes()[0]);
+			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 		}
 		else if($(".woman")[0]){
 			relativeContainer.innerHTML = previousClothes;
@@ -218,6 +220,14 @@
 			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "wings");
 		}
+	}
+	function maleShoes(){
+		var maleShoes = [];
+		for (i=1; i<=13; i++){
+			maleShoes.push('<img class="shoes" src="svg/human/humanClothes/shoes/shoes'+i.toString()+'.svg" alt="shoes">');
+		}
+		maleShoes.push('');
+		return shuffle(maleShoes);
 	}
 	function femaleShoes(){
 		var femaleShoes = [];
