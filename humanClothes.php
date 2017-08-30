@@ -260,7 +260,7 @@
 	function randomizeTail() {
 		relativeContainer.innerHTML = '';
 		$("#relativeContainer").append(tail()[0]);
-		$("#relativeContainer .tails").css({'position':'absolute', 'top':'0', 'left':'50px', 'margin-top':'0'});
+		$("#relativeContainer .tails").css({'position':'absolute', 'top':'0', 'left':'37px', 'margin-top':'0'});
 		$("#relativeContainer").append(previousShoes);
 		$(".tails").find("path, polygon").attr("fill", getRandomColor());
 	}
