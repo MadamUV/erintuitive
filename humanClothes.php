@@ -259,7 +259,7 @@
 		for(i=1; i<=8; i++){
 			accessories.push('<img class="accessories" src="svg/human/humanClothes/accessories/accessories'+i.toString()+'.svg" alt="accessories">');
 		}
-		return shuffle(wings);
+		return shuffle(accessories);
 	}
 	function wings(){
 		var wings = [''];
