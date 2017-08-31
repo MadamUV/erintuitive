@@ -266,12 +266,9 @@
 		return shuffle(femaleShoes);
 	}
 	function randomizeWings() {
-		var beforeWings = relativeContainer.innerHTML;
-		relativeContainer.innerHTML = '';
+		$(".wings").remove();
 		$("#relativeContainer").append(wings()[0]);
-		$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'-41px', 'z-index':'0', 'margin-top':'0'});
-		$("#relativeContainer").append(beforeWings);
-		$("#relativeContainer:not(.wings)").css({'position':'absolute', 'top':'0', 'left':'0', 'z-index':'1', 'margin-top':'0'});
+		$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'-41px', 'z-index':'-25', 'margin-top':'0'});
 		$(".wings").find("path, polygon").attr("fill", getRandomColor());
 	}
 	function randomizeTail() {
