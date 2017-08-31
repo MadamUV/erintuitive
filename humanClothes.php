@@ -257,9 +257,9 @@
 	function accessories(){
 		var accessories = [''];
 		for(i=1; i<=8; i++){
-			accessories.push('<img class="accessories" src="svg/human/humanClothes/accessories/accessory'+i.toString()+'.svg" alt="accessories">');
+			accessories.push('<img class="accessories" id="accessory'+i.toString()+'" src="svg/human/humanClothes/accessories/accessory'+i.toString()+'.svg" alt="accessories">');
 		}
-		return shuffle(accessories );
+		return shuffle(accessories);
 	}
 	function wings(){
 		var wings = [''];
@@ -287,12 +287,10 @@
 	function randomizeAccessories(){
 		$(".accessories").remove();
 		$("#relativeContainer").append(accessories()[0]);
-		if($(".accessories")[0].attr("src")=="svg/human/humanClothes/accessories/accessory6.svg" || $(".accessories")[0].attr("src")=="svg/human/humanClothes/accessories/accessory7.svg" || $(".accessories")[0].attr("src")=="svg/human/humanClothes/accessories/accessory8.svg"){
-			$("#relativeContainer .accessories").css({'position':'absolute', 'top':'0', 'left':'40px', 'margin-top':'0'});
-		}
-		else {
-			$("#relativeContainer .accessories").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-		}
+		$("#relativeContainer .accessories").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#accessory6").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
+		$("#accessory7").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
+		$("#accessory8").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
 	}
 	function randomizeWings() {
 		$(".wings").remove();
