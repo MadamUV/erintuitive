@@ -268,8 +268,7 @@
 	function randomizeWings() {
 		$(".wings").remove();
 		$("#relativeContainer").append(wings()[0]);
-		$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'-4px', 'z-index':'-18', 'margin-top':'0', '-ms-transform': 'scale(3)', '-webkit-transform': 'scale(3)', 'transform': 'scale(3)'});
-		$(".wings").find("path, polygon").attr("fill", getRandomColor());
+		$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'-2px', 'z-index':'-18', 'margin-top':'0', '-ms-transform': 'scale(3)', '-webkit-transform': 'scale(3)', 'transform': 'scale(3)'});
 	}
 	function randomizeTail() {
 		relativeContainer.innerHTML = '';
