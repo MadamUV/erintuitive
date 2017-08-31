@@ -117,7 +117,7 @@
 					}
 				});
 			}
-			else if(count1 > 0 && count2 == 0){
+	       		else if(count1 > 0 && count2 == 0){
 				var pushThis = {
 					"user_id": me_id,
 					"name":"guest",
@@ -247,6 +247,7 @@
 		for(i=1; i<=12; i++){
 			wings.push('<img class="wings" src="svg/human/humanClothes/wings/wings'+i.toString()+'.svg" alt="wings">');
 		}
+		return shuffle(wings);
 	}
 	function maleShoes(){
 		var maleShoes = [];
@@ -265,10 +266,11 @@
 		return shuffle(femaleShoes);
 	}
 	function randomizeWings() {
+		var beforeWings = relativeContainer.innerHTML;
 		relativeContainer.innerHTML = '';
 		$("#relativeContainer").append(wings()[0]);
 		$("#relativeContainer .wings").css({'position':'absolute', 'top':'0', 'left':'-41px', 'z-index':'0', 'margin-top':'0'});
-		$("#relativeContainer").append(previousShoes);
+		$("#relativeContainer").append(beforeWings);
 		$("#relativeContainer:not(.wings)").css({'position':'absolute', 'top':'0', 'left':'0', 'z-index':'1', 'margin-top':'0'});
 		$(".wings").find("path, polygon").attr("fill", getRandomColor());
 	}
