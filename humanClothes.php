@@ -257,9 +257,9 @@
 	function accessories(){
 		var accessories = [''];
 		for(i=1; i<=8; i++){
-			accessories.push('<img class="accessories" src="svg/human/humanClothes/accessories/accessories'+i.toString()+'.svg" alt="accessories">');
+			accessories.push('<img class="accessories" src="svg/human/humanClothes/accessories/accessory'+i.toString()+'.svg" alt="accessories">');
 		}
-		return shuffle(accessories);
+		return shuffle(accessories );
 	}
 	function wings(){
 		var wings = [''];
