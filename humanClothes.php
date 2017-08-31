@@ -21,6 +21,14 @@
 		  version          : 'v2.9'
 		});
 		FB.AppEvents.logPageView();
+		FB.getLoginStatus(function(response) {
+	   if (response.status === 'connected') {
+			//insert stuff here
+		  }
+		  else {
+			FB.login();
+		  }
+		});
 	  };
 	  (function(d, s, id){
 		 var js, fjs = d.getElementsByTagName(s)[0];
@@ -29,14 +37,6 @@
 		 js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
-	   FB.getLoginStatus(function(response) {
-	   if (response.status === 'connected') {
-			//insert stuff here
-		  }
-		  else {
-			FB.login();
-		  }
-		});
 	</script>
 	<table width="740px">
 	<td>
