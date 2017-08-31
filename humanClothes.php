@@ -21,7 +21,7 @@
 		  version          : 'v2.9'
 		});
 		FB.AppEvents.logPageView();
-		FB.getLoginStatus(function(response) {
+			   FB.getLoginStatus(function(response) {
 	   if (response.status === 'connected') {
 			//insert stuff here
 		  }
@@ -288,9 +288,9 @@
 		$(".accessories").remove();
 		$("#relativeContainer").append(accessories()[0]);
 		$("#relativeContainer .accessories").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-		$("#accessory6").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
-		$("#accessory7").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
-		$("#accessory8").css({'position':'absolute', 'top':'0', 'left':'40', 'margin-top':'0'});
+		$("#accessory6").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
+		$("#accessory7").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
+		$("#accessory8").css({'position':'absolute', 'top':'0', 'left':'25px', 'margin-top':'0'});
 	}
 	function randomizeWings() {
 		$(".wings").remove();
