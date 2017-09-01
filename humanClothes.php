@@ -68,7 +68,6 @@
 	<div id="buttons">
 		
 	</div>
-	<button id="skip" onclick="skipOption()">Skip, I made a human in this step.</button>
 	<script>
 		var previous = '';
 		var previousClothes = '';
@@ -91,7 +90,7 @@
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
-		$.get("http://jsonapi.eu3.biz/jsonErintuitive.json", function(data3){
+		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 			for(i=0; i<data3['person'].length; i++){
 				if(data3['person'][i]['user_id'] != me_id){
 					count1 += 1;
@@ -103,13 +102,13 @@
 			}
 			if(count1 == 0 && count2 > 0){
 				$.ajax({
-					url:"http://jsonapi.eu3.biz/psychic_site_index.php",
-					type:"POST",
-					data: {json : '{"person": [{"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}'},
+					url:"https://api.myjson.com/bins/vzecj",
+					type:"PUT",
+					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						$.get("http://www.jsonapi.eu3.biz/jsonErintuitive.json", function (data, textStatus, jqXHR) {
+						$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
 							var avatarJSON = data['person'][0]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
@@ -120,7 +119,7 @@
 					}
 				});
 			}
-       		else if(count1 > 0 && count2 == 0){
+	       		else if(count1 > 0 && count2 == 0){
 				var pushThis = {
 					"user_id": me_id,
 					"name":"guest",
@@ -132,13 +131,13 @@
 				var len = data3['person'].length;
 				document.getElementById("relativeContainer").innerHTML = "ok";
 				$.ajax({
-					url:"http://jsonapi.eu3.biz/psychic_site_index.php",
-					type:"POST",
-					data: {json: JSON.stringify(data3)},
+					url:"https://api.myjson.com/bins/vzecj",
+					type:"PUT",
+					data: JSON.stringify(data3),
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						$.get("http://www.jsonapi.eu3.biz/jsonErintuitive.json", function (data, textStatus, jqXHR) {
+						$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
@@ -154,13 +153,13 @@
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
 						$.ajax({
-							url:"http://jsonapi.eu3.biz/psychic_site_index.php",
+							url:"https://api.myjson.com/bins/vzecj",
 							type:"PUT",
-							data: {json: JSON.stringify(data3)},
+							data: JSON.stringify(data3),
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
 							success: function(data, textStatus, jqXHR){
-								$.get("http://www.jsonapi.eu3.biz/jsonErintuitive.json", function (data, textStatus, jqXHR) {
+								$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
