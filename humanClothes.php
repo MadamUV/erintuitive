@@ -68,6 +68,7 @@
 	<div id="buttons">
 		
 	</div>
+	<button id="skip" onclick="skipOption()">Skip, I made a human in this step.</button>
 	<script>
 		var previous = '';
 		var previousClothes = '';

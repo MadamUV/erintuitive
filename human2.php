@@ -167,6 +167,7 @@
 	<div id="buttons">
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
+		<button id="skip" onclick="skipOption()">Skip, I made a human in this step.</button>
 	</div>
 	<style>
 		body {
@@ -211,18 +212,20 @@
 	</style>
 	<script>
 		//https://apps.facebook.com/erintuitive
-		var countMe = 0;
-		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
-			for(i=0; i<data3['person'].length; i++){
-				if(data3['person'][i]['user_id'] == me_id){
-					countMe += 1;
-					break;
+		function skipOption() {
+			var countMe = 0;
+			$.get("http://jsonapi.eu3.biz/jsonErintuitive.json", function (data3, textStatus3, jqXHR3) {
+				for(i=0; i<data3['person'].length; i++){
+					if(data3['person'][i]['user_id'] == me_id){
+						countMe += 1;
+						break;
+					}
 				}
-			}
-			if(countMe > 0){
-				window.location.replace("humanClothes?leftOff=1");
-			}
-		});
+				if(countMe > 0){
+					window.location.replace("humanClothes.php");
+				}
+			});
+		}
 		function shuffle(array) {
 			var rand, index = -1,
 				length = array.length,
