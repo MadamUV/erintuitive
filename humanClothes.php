@@ -305,7 +305,7 @@
 	function randomizeGlasses(){
 		$(".glasses").remove();
 		$("#relativeContainer").append(glasses()[0]);
-		$("#relativeContainer .glasses").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
+		$("#relativeContainer .glasses").css({'position':'absolute', 'z-index':'40', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function randomizeAccessories(){
 		$(".accessories").remove();
