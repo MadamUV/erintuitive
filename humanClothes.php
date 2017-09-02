@@ -268,7 +268,7 @@
 	function glasses(){
 		var classes = [''];
 		for(i=1; i<=6; i++){
-			wings.push('<img class="glasses" src="svg/human/humanClothes/glasses/glasses'+i.toString()+'.svg" alt="glasses">');
+			glasses.push('<img class="glasses" src="svg/human/humanClothes/glasses/glasses'+i.toString()+'.svg" alt="glasses">');
 		}
 		return shuffle(glasses);
 	}
