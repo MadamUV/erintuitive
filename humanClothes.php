@@ -266,7 +266,7 @@
 		return shuffle(tails);
 	}
 	function glasses(){
-		var classes = [''];
+		var glasses = [''];
 		for(i=1; i<=6; i++){
 			glasses.push('<img class="glasses" src="svg/human/humanClothes/glasses/glasses'+i.toString()+'.svg" alt="glasses">');
 		}
