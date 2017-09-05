@@ -699,7 +699,7 @@
 		function buttonEyes1(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes1").html());
-			$("#relativeContainer .eyes1").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes1").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -715,7 +715,7 @@
 		function buttonEyes3(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes3").html());
-			$("#relativeContainer .eyes3").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes3").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -723,7 +723,7 @@
 		function buttonEyes4(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes4").html());
-			$("#relativeContainer .eyes4").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes4").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -731,7 +731,7 @@
 		function buttonEyes5(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes5").html());
-			$("#relativeContainer .eyes5").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes5").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -739,7 +739,7 @@
 		function buttonEyes6(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes6").html());
-			$("#relativeContainer .eyes6").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes6").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -747,7 +747,7 @@
 		function buttonEyes7(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes7").html());
-			$("#relativeContainer .eyes7").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes7").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -755,7 +755,7 @@
 		function buttonEyes8(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes8").html());
-			$("#relativeContainer .eyes8").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes8").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -763,7 +763,7 @@
 		function buttonEyes9(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes9").html());
-			$("#relativeContainer .eyes9").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes9").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -771,7 +771,7 @@
 		function buttonEyes10(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes10").html());
-			$("#relativeContainer .eyes10").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes10").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -779,7 +779,7 @@
 		function buttonEyes11(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes11").html());
-			$("#relativeContainer .eyes11").css({'position':'absolute', 'top':'0', 'left':'0'});
+			$("#relativeContainer .eyes11").css({'position':'absolute', 'top':'-2px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
