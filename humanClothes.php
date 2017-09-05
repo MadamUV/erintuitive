@@ -179,7 +179,11 @@
 		else if(avatarOptions.getAttribute("class")=="glasses"){
 			previousAccessories = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
-			avatarOptions.setAttribute("class", "glasses");
+			avatarOptions.setAttribute("class", "hairPieces");
+		}
+		else if(avatarOptions.getAttribute("class")=="hairPieces"){
+			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hair pieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "hairPieces");
 		}
 	}
 	function tail(){
@@ -222,6 +226,33 @@
 		}
 		femaleShoes.push('');
 		return shuffle(femaleShoes);
+	}
+	function maleHairPieces(){
+		var maleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg'];
+		for (k=1; k<=8; k++){
+			maleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
+		}
+		return shuffle(maleHairPieces);
+	}
+	function femaleHairPieces(){
+		var femaleHairPieces = ['']
+		for (k=1; k<=6; k++){
+			femaleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece'+k.toString()+'.svg">');
+		}
+		for (k=1; k<=8; k++){
+			femaleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
+		}
+		return shuffle(femaleHairPieces);
+	}
+	function randomizeHairPieces(){
+		$(".hairPieces").remove();
+		if($(".man")[0]){
+			$("#relativeContainer").append(maleHairPieces()[0]);
+		}
+		else if($(".woman")[0]){
+			$("#relativeContainer").append(femaleHairPieces()[0]);
+		}
+		$("#relativeContainer .hairPieces").css({'position':'absolute', 'z-index':'41', 'top':'-27px', 'left':'0', 'margin-top':'0'});
 	}
 	function randomizeGlasses(){
 		$(".glasses").remove();
