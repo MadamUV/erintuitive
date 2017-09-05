@@ -167,7 +167,6 @@
 	<div id="buttons">
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
-		<button id="skip" onclick="skipOption()">Skip, I made a human in this step.</button>
 	</div>
 	<style>
 		body {
@@ -214,7 +213,7 @@
 		//https://apps.facebook.com/erintuitive
 		function skipOption() {
 			var countMe = 0;
-			$.get("http://jsonapi.eu3.biz/jsonErintuitive.json", function (data3, textStatus3, jqXHR3) {
+			$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data3) {
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id'] == me_id){
 						countMe += 1;
@@ -222,7 +221,7 @@
 					}
 				}
 				if(countMe > 0){
-					window.location.replace("humanClothes.php");
+					//window.location.replace("humanClothes.php");
 				}
 			});
 		}

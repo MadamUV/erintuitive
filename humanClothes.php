@@ -91,7 +91,7 @@
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
-		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
+		$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data3) {
 			for(i=0; i<data3['person'].length; i++){
 				if(data3['person'][i]['user_id'] != me_id){
 					count1 += 1;
@@ -103,13 +103,13 @@
 			}
 			if(count1 == 0 && count2 > 0){
 				$.ajax({
-					url:"https://api.myjson.com/bins/vzecj",
-					type:"PUT",
+					url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
+					type:"POST",
 					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][0]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
@@ -132,13 +132,13 @@
 				var len = data3['person'].length;
 				document.getElementById("relativeContainer").innerHTML = "ok";
 				$.ajax({
-					url:"https://api.myjson.com/bins/vzecj",
-					type:"PUT",
+					url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
+					type:"POST",
 					data: JSON.stringify(data3),
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 								document.getElementById("relativeContainer").innerHTML = data2;
@@ -154,13 +154,13 @@
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
 						$.ajax({
-							url:"https://api.myjson.com/bins/vzecj",
-							type:"PUT",
+							url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
+							type:"POST",
 							data: JSON.stringify(data3),
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
 							success: function(data, textStatus, jqXHR){
-								$.get("https://api.myjson.com/bins/vzecj", function (data, textStatus, jqXHR) {
+								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data, textStatus, jqXHR) {
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
