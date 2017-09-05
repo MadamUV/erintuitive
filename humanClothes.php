@@ -87,13 +87,16 @@
 			return result;
 		}
 		var num = 0;
-		//var me_id = "<? echo $me_id; ?>";
+		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
-		var countPresent = 0;
-		$("#relativeContainer").append(window.localStorage.getItem("avatar"));
-		document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
-		
+		var countPresent = 0
+		//convert avatar var and place it in div
+		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatar")}, function(data2){
+			document.getElementById("relativeContainer").innerHTML = data2;
+			previous = relativeContainer.innerHTML;
+			document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
+		});
 	function getRandomColor() {
 		var letters = '0123456789ABCDEF';
 		var color = '#';
