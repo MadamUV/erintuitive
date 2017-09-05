@@ -102,7 +102,7 @@
 				}
 			}
 			if(count1 == 0 && count2 > 0){
-				$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", '{"person": [{"user_id"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}', function(data){
+				$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", '{"person": [{"user_id"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}', function(data){
 					$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 						var avatarJSON = data['person'][0]['avatar'];
 						$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
@@ -124,7 +124,7 @@
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
 				document.getElementById("relativeContainer").innerHTML = "ok";
-				$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
+				$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
 						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
@@ -140,7 +140,7 @@
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
-						$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
+						$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
 								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
