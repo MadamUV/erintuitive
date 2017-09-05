@@ -102,22 +102,15 @@
 				}
 			}
 			if(count1 == 0 && count2 > 0){
-				$.ajax({
-					url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
-					type:"POST",
-					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
-					contentType:"application/json; charset=utf-8",
-					dataType:"json",
-					success: function(data){
-						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
-							var avatarJSON = data['person'][0]['avatar'];
-							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-								document.getElementById("relativeContainer").innerHTML = data2;
-								previous = relativeContainer.innerHTML;
-								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
-							});
+				$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", '{"person": [{"user_id"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}', function(data){
+					$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
+						var avatarJSON = data['person'][0]['avatar'];
+						$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
+							document.getElementById("relativeContainer").innerHTML = data2;
+							previous = relativeContainer.innerHTML;
+							document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 						});
-					}
+					});
 				});
 			}
 	       		else if(count1 > 0 && count2 == 0){
@@ -131,13 +124,7 @@
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
 				document.getElementById("relativeContainer").innerHTML = "ok";
-				$.ajax({
-					url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
-					type:"POST",
-					data: JSON.stringify(data3),
-					contentType:"application/json; charset=utf-8",
-					dataType:"json",
-					success: function(data){
+				$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
 						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
@@ -153,13 +140,7 @@
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
-						$.ajax({
-							url:"//jsonbin.io/b/59ae22d61da63e05fbc64ebb",
-							type:"POST",
-							data: JSON.stringify(data3),
-							contentType:"application/json; charset=utf-8",
-							dataType:"json",
-							success: function(data){
+						$.post("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
 								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
