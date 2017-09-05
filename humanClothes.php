@@ -87,76 +87,13 @@
 			return result;
 		}
 		var num = 0;
-		var me_id = "<? echo $me_id; ?>";
+		//var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
-		$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data3) {
-			for(i=0; i<data3['person'].length; i++){
-				if(data3['person'][i]['user_id'] != me_id){
-					count1 += 1;
-				}
-				else {
-					count2 += 1;
-					countPresent = i;
-				}
-			}
-			if(count1 == 0 && count2 > 0){
-				$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", '{"person": [{"user_id"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}', function(data){
-					$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
-						var avatarJSON = data['person'][0]['avatar'];
-						$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-							document.getElementById("relativeContainer").innerHTML = data2;
-							previous = relativeContainer.innerHTML;
-							document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
-						});
-					});
-				});
-			}
-	       		else if(count1 > 0 && count2 == 0){
-				var pushThis = {
-					"user_id": me_id,
-					"name":"guest",
-					"avatar":"<? echo $avatar; ?>",
-					"pos_x":-1,
-					"pos_y":-1
-				};
-				data3['person'].push(pushThis);
-				var len = data3['person'].length;
-				document.getElementById("relativeContainer").innerHTML = "ok";
-				$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
-						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
-							var avatarJSON = data['person'][len-1]['avatar'];
-							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-								document.getElementById("relativeContainer").innerHTML = data2;
-								previous = relativeContainer.innerHTML;
-								document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
-							});
-						});
-					}
-				});
-			}
-			else if(count1 > 0 && count2 > 0){
-				for(i=0; i<data3['person'].length; i++){
-					if(data3['person'][i]['user_id']==me_id){
-						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
-						$.post("//jsonbin.io/b/update/59ae22d61da63e05fbc64ebb", JSON.stringify(data3), function(data){
-								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
-									var avatarJSON = data['person'][i]['avatar'];
-									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
-										document.getElementById("relativeContainer").innerHTML = data2;
-										previous = relativeContainer.innerHTML;
-										document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
-									});
-								});
-							}
-						});
-						break;
-					}
-				}
-				 
-			}
-		});
+		$("#relativeContainer").append(window.localStorage.getItem("avatar"));
+		document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
+		
 	function getRandomColor() {
 		var letters = '0123456789ABCDEF';
 		var color = '#';
