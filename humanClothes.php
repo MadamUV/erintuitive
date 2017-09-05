@@ -240,7 +240,7 @@
 			femaleHairPieces.push('<img id="femaleHairpiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece'+k.toString()+'.svg">');
 		}
 		for (k=1; k<=8; k++){
-			femaleHairPieces.push('<img id="neutralHairpiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
+			femaleHairPieces.push('<img id="neutralHairPiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
 		}
 		return shuffle(femaleHairPieces);
 	}
