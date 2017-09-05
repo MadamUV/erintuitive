@@ -108,7 +108,7 @@
 					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":"guest", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
-					success: function(data, textStatus, jqXHR){
+					success: function(data){
 						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][0]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
@@ -137,7 +137,7 @@
 					data: JSON.stringify(data3),
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
-					success: function(data, textStatus, jqXHR){
+					success: function(data){
 						$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 							var avatarJSON = data['person'][len-1]['avatar'];
 							$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
@@ -159,8 +159,8 @@
 							data: JSON.stringify(data3),
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
-							success: function(data, textStatus, jqXHR){
-								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data, textStatus, jqXHR) {
+							success: function(data){
+								$.get("//jsonbin.io/b/59ae22d61da63e05fbc64ebb", function (data) {
 									var avatarJSON = data['person'][i]['avatar'];
 									$.post("convertAvatar.php", {convert: avatarJSON}, function(data2){
 										document.getElementById("relativeContainer").innerHTML = data2;
