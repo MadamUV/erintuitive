@@ -237,10 +237,10 @@
 	function femaleHairPieces(){
 		var femaleHairPieces = ['']
 		for (k=1; k<=6; k++){
-			femaleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece'+k.toString()+'.svg">');
+			femaleHairPieces.push('<img id="femaleHairpiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece'+k.toString()+'.svg">');
 		}
 		for (k=1; k<=8; k++){
-			femaleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
+			femaleHairPieces.push('<img id="neutralHairpiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
 		}
 		return shuffle(femaleHairPieces);
 	}
@@ -253,6 +253,18 @@
 			$("#relativeContainer").append(femaleHairPieces()[0]);
 		}
 		$("#relativeContainer .hairPieces").css({'position':'absolute', 'z-index':'41', 'top':'-27px', 'left':'0', 'margin-top':'0'});
+		$("#femaleHairpiece6").css({'left':'-14px'});
+		$("#femaleHairpiece5").css({'top':'-18px'});
+		$("#femaleHairpiece4").css({'top':'-18px'});
+		$("#femaleHairpiece3").css({'top':'-18px'});
+		$("#femaleHairPiece2").css({'top':'0'});
+		$("#femaleHairPiece2").css({'top':'0'});
+		$("#neutralHairPiece7").css({'top':'-28px', 'left':'-20px'});
+		$("#neutralHairPiece6").css({'top':'-26px', 'left':'2px'});
+		$("#neutralHairPiece5").css({'top':'3px'});
+		$("#neutralHairPiece4").css({'top':'-7px', 'left':'-7px'});
+		$("#neutralHairPiece3").css({'top':'-28px'});
+		$("#neutralHairPiece1").css({'top':'-10px'});
 	}
 	function randomizeGlasses(){
 		$(".glasses").remove();
