@@ -707,7 +707,7 @@
 		function buttonEyes2(){
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes2").html());
-			$("#relativeContainer .eyes2").css({'position':'absolute', 'top':'-5px', 'left':'0'});
+			$("#relativeContainer .eyes2").css({'position':'absolute', 'top':'-7px', 'left':'0'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
