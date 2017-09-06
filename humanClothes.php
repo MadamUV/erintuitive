@@ -90,7 +90,7 @@
 		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
-		var countPresent = 0
+		var countPresent = 0;
 		//convert avatar var and place it in div
 		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatar")}, function(data2){
 			document.getElementById("relativeContainer").innerHTML = data2;
