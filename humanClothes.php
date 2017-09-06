@@ -228,19 +228,11 @@
 		return shuffle(femaleShoes);
 	}
 	function maleHairPieces(){
-		var maleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg'];
-		for (k=1; k<=8; k++){
-			maleHairPieces.push('<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
-		}
+		var maleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -10px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -28px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -7px; left: -7px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: 3px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -26px; left: 2px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -28px; left: -20px;"/>', /*only male hairpieces*/ '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg" style="position: absolute; z-index: 41; top: -8px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg" style="position: absolute; z-index: 41; top: 0; left: 0;"/>'];
 		return shuffle(maleHairPieces);
 	}
 	function femaleHairPieces(){
-		var femaleHairPieces = ['']
-		for (k=1; k<=6; k++){
-			femaleHairPieces.push('<img id="femaleHairpiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece'+k.toString()+'.svg">');
-		}
-		for (k=1; k<=8; k++){
-			femaleHairPieces.push('<img id="neutralHairPiece'+k.toString()+'" class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece'+k.toString()+'.svg">');
+		var femaleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece1.svg" style="position: absolute; z-index: 41; top: 0; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece2.svg" style="position: absolute; z-index: 41; top: 0; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece3.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece4.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece5.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece6.svg" style="position: absolute; z-index: 41; top: -27px; left: -14;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -10px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -28px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -7px; left: -7px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: 3px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -26px; left: 2px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -28px; left: -20px;"/>');
 		}
 		return shuffle(femaleHairPieces);
 	}
@@ -252,19 +244,10 @@
 		else if($(".woman")[0]){
 			$("#relativeContainer").append(femaleHairPieces()[0]);
 		}
-		$("#relativeContainer .hairPieces").css({'position':'absolute', 'z-index':'41', 'top':'-27px', 'left':'0', 'margin-top':'0'});
-		$("#femaleHairpiece6").css({'left':'-14px'});
-		$("#femaleHairpiece5").css({'top':'-18px'});
-		$("#femaleHairpiece4").css({'top':'-18px'});
-		$("#femaleHairpiece3").css({'top':'-18px'});
-		$("#femaleHairPiece2").css({'top':'0'});
-		$("#femaleHairPiece2").css({'top':'0'});
 		$("#neutralHairPiece7").css({'top':'-28px', 'left':'-20px'});
 		$("#neutralHairPiece6").css({'top':'-26px', 'left':'2px'});
 		$("#neutralHairPiece5").css({'top':'3px'});
-		$("#neutralHairPiece4").css({'top':'-7px', 'left':'-7px'});
-		$("#neutralHairPiece3").css({'top':'-28px'});
-		$("#neutralHairPiece1").css({'top':'-10px'});
+		$("#neutralHairPiece4").css({'top':'-7px', 'left':'-7px'});;
 	}
 	function randomizeGlasses(){
 		$(".glasses").remove();
