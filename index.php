@@ -6,7 +6,7 @@
 	<script src="js/glide.js"></script>
 	<link rel="stylesheet" href="css/glide.core.css">
     <link rel="stylesheet" href="css/glide.theme.css">
-	<title>Erintuitive's Psychic Place</title>
+	<title>Erintuitive's Avatar Demo</title>
 </head>
 <body>
 	<script>
