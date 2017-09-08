@@ -52,7 +52,6 @@
 		}
 		else if (response.status === 'not_authorized'){
 			$("#wholeIntro").show();
-			$("#buttons").hide();
 			$("#logout_button").hide();
 		}
 		else {
