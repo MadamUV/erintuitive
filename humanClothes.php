@@ -47,7 +47,7 @@
 				</div>
 			</td>
 			<td id="itemPreview" width="10%">
-				Avatar builder step
+				Avatar builder step. You can skip any step by pressing "Next".
 				
 			</td>
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
@@ -119,6 +119,11 @@
 		$(".pants").find("path, polygon").attr("fill", randColor);
 		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
+	function randomizeCapes() {
+		$("#relativeContainer .capes").remove();
+		$("#relativeContainer").append(cape()[0]);
+		$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0', 'z-index':'-42'});
+	}
 	function randomizeNecklaces() {
 		$("#relativeContainer .necklaces").remove();
 		$("#relativeContainer").append(necklace()[0]);
@@ -172,7 +177,12 @@
 			avatarOptions.setAttribute("class", "hairPieces");
 			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairPieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
-		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces, necklaces
+		else if(avatarOptions.getAttribute("class")=="capes"){
+			$(".necklaces").remove();
+			avatarOptions.setAttribute("class", "necklaces");
+			$("#buttons").html('<button id="randomizeNecklaces" onclick="randomizeNecklaces()">Randomize necklace</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+		}
+		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces, necklaces, capes
 		
 	}
 		function nextOptions(){
@@ -210,6 +220,17 @@
 			$("#buttons").html('<button id="randomizeNecklaces" onclick="randomizeNecklaces()">Randomize necklace</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "necklaces");
 		}
+		else if(avatarOptions.getAttribute("class")=="necklaces"){
+			$("#buttons").html('<button id="randomizeCapes" onclick="randomizeCapes()">Randomize cape</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "capes");
+		}
+	}
+	function cape(){
+		var capes = [''];
+		for(i=1; i<=4; i++){
+			capes.push('<img class="capes" src="svg/human/humanClothes/capes/cape'+i.toString()+'.svg" alt="cape">')
+		}
+		return shuffle(capes);
 	}
 	function necklace(){
 		var necklaces = [''];
