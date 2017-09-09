@@ -133,12 +133,12 @@
 	}
 	function backOptions(){
 		if(avatarOptions.getAttribute("class")=="shoes"){
-			relativeContainer.innerHTML = previous;
+			relativeContainer.innerHTML = previousClothes;
 			avatarOptions.setAttribute("class", "topsBottoms");
 			document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
 		}
 		else if(avatarOptions.getAttribute("class")=="tails"){
-			relativeContainer.innerHTML = previousClothes;
+			relativeContainer.innerHTML = previousShoes;
 			avatarOptions.setAttribute("class", "shoes");
 			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
