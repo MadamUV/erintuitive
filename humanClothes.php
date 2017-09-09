@@ -121,7 +121,7 @@
 	}
 	function randomizeNecklaces() {
 		$("#relativeContainer .necklaces").remove();
-		$("#relativeContainer").append(necklaces()[0]);
+		$("#relativeContainer").append(necklace()[0]);
 		$("#relativeContainer .necklaces").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
 	}
 	function randomizeShoes() {
