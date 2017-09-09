@@ -181,7 +181,12 @@
 		}
 		else if(avatarOptions.getAttribute("class")=="glasses"){
 			previousAccessories = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairpieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "hairPieces");
+		}
+		else if(avatarOptions.getAttribute("class")=="hairPieces"){
+			previousAccessories = relativeContainer.innerHTML;
+			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairPieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "capes");
 		}
 	}
