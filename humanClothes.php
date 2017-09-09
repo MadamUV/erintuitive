@@ -142,23 +142,26 @@
 			avatarOptions.setAttribute("class", "shoes");
 			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
+		else if(avatarOptions.getAttribute("class")=="wings"){
+			avatarOptions.setAttribute("class", "tails");
+			$("#buttons").html('<button id="randomizeTail" onclick="randomizeTail()">Randomize tail</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+		}
 		else if(avatarOptions.getAttribute("class")=="accessories"){
-			relativeContainer.innerHTML = previousTail;
 			avatarOptions.setAttribute("class", "wings");
 			$("#buttons").html('<button id="randomizeWings" onclick="randomizeWings()">Randomize wings</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="glasses"){
-			relativeContainer.innerHTML = previousWings;
 			avatarOptions.setAttribute("class", "accessories");
 			$("#buttons").html('<button id="randomizeAccessories" onclick="randomizeAccessories()">Randomize accessories</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="hairPieces"){
-			relativeContainer.innerHTML = previousTail;
 			avatarOptions.setAttribute("class", "glasses");
 			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
+		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces
+		
 	}
-	function nextOptions(){
+		function nextOptions(){
 		if(avatarOptions.getAttribute("class")=="topsBottoms"){
 			previousClothes = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
@@ -168,25 +171,29 @@
 			previousShoes = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeTail" onclick="randomizeTail()">Randomize tail</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "tails");
-		}
+		 
 		else if(avatarOptions.getAttribute("class")=="tails"){
 			previousTail = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeWings" onclick="randomizeWings()">Randomize wings</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "wings");
+		}
+		else if(avatarOptions.getAttribute("class")=="wings"){
+			previousTail = relativeContainer.innerHTML;
+			$("#buttons").html('<button id="randomizeAccessories" onclick="randomizeAccessories()">Randomize accessories</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "accessories");
 		}
 		else if(avatarOptions.getAttribute("class")=="accessories"){
-			previousWings = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeAccessories" onclick="randomizeAccessories()">Randomize accessories</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			previousAccessories = relativeContainer.innerHTML;
+			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "glasses");
 		}
 		else if(avatarOptions.getAttribute("class")=="glasses"){
 			previousAccessories = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairPieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "hairPieces");
 		}
 		else if(avatarOptions.getAttribute("class")=="hairPieces"){
-			previousAccessories = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairPieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			
 			avatarOptions.setAttribute("class", "capes");
 		}
 	}
