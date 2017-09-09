@@ -143,18 +143,22 @@
 			$("#buttons").html('<button id="randomizeShoes" onclick="randomizeShoes()">Randomize shoes</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="wings"){
+			$(".wings").remove();
 			avatarOptions.setAttribute("class", "tails");
 			$("#buttons").html('<button id="randomizeTail" onclick="randomizeTail()">Randomize tail</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="accessories"){
+			$(".accessories").remove();
 			avatarOptions.setAttribute("class", "wings");
 			$("#buttons").html('<button id="randomizeWings" onclick="randomizeWings()">Randomize wings</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="glasses"){
+			$(".glasses").remove();
 			avatarOptions.setAttribute("class", "accessories");
 			$("#buttons").html('<button id="randomizeAccessories" onclick="randomizeAccessories()">Randomize accessories</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="hairPieces"){
+			$(".hairPieces").remove();
 			avatarOptions.setAttribute("class", "glasses");
 			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
