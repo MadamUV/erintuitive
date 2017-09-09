@@ -181,8 +181,8 @@
 		}
 		else if(avatarOptions.getAttribute("class")=="glasses"){
 			previousAccessories = relativeContainer.innerHTML;
-			$("#buttons").html('<button id="randomizeGlasses" onclick="randomizeGlasses()">Randomize glasses</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
-			avatarOptions.setAttribute("class", "hairPieces");
+			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairpieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "capes");
 		}
 	}
 	function tail(){
