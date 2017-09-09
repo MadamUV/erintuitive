@@ -47,7 +47,7 @@
 				</div>
 			</td>
 			<td id="itemPreview" width="10%">
-				This is a demo.
+				Avatar builder step
 				
 			</td>
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
