@@ -171,7 +171,7 @@
 			previousShoes = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeTail" onclick="randomizeTail()">Randomize tail</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "tails");
-		 
+		}
 		else if(avatarOptions.getAttribute("class")=="tails"){
 			previousTail = relativeContainer.innerHTML;
 			$("#buttons").html('<button id="randomizeWings" onclick="randomizeWings()">Randomize wings</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
