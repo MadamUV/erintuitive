@@ -123,6 +123,9 @@
 		$("#relativeContainer .pets").remove();
 		$("#relativeContainer").append(pet()[0]);
 		$("#relativeContainer .pets").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0', 'z-index':'31'});
+		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/female_pet19.svg"){
+			$("#relativeContainer .pets").css({'-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+		}
 	}
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
