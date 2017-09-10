@@ -127,7 +127,7 @@
 			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
 		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet15.svg"){
-			$("#relativeContainer .pets").css({'top':'2'});
+			$("#relativeContainer .pets").css({'top':'5px'});
 		}
 	}
 	function randomizeCapes() {
