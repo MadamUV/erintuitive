@@ -165,8 +165,8 @@
 	<div id="buttons">
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
-		<button id="skip" onclick="skipOption()">Already done, skip</button>
 	</div>
+	<button id="skip" onclick="skipOption()">Already done, skip</button>
 	<style>
 		body {
 			background-color: #FFBB22;
@@ -185,6 +185,11 @@
 			position: fixed;
 			top: 435px;
 			left: 40%;
+		}
+		#skip {
+			position: fixed;
+			top: 435px;
+			left: 80%;
 		}
 		#itemPreview {
 			vertical-align: text-top;
