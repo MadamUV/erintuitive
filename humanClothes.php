@@ -122,9 +122,9 @@
 	function randomizePets() {
 		$("#relativeContainer .pets").remove();
 		$("#relativeContainer").append(pet()[0]);
-		$("#relativeContainer .pets").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0', 'z-index':'31'});
+		$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
 		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/female_pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet8.svg"){
-			$("#relativeContainer .pets").css({'top':'-52px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
+			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
 	}
 	function randomizeCapes() {
