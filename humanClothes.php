@@ -151,7 +151,7 @@
 			relativeContainer.innerHTML = previousClothes;
 			$("#relativeContainer").append(maleShoes()[0]);
 			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			if($(".shoes").getAttribute("src")=="svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes").getAttribute("src")=="svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes").getAttribute("src")=="svg/human/humanClothes/shoes/shoes13.svg"){
+			if($(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes").getAttribute("src")=="svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes").getAttribute("src")=="svg/human/humanClothes/shoes/shoes13.svg"){
 				$("#relativeContainer .shoes").css({'top':'6px'});
 			}
 		}
