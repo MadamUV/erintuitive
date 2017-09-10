@@ -126,7 +126,7 @@
 		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/female_pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet8.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
-		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet15.svg"){
+		if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet15.svg"){
 			$("#relativeContainer .pets").css({'top':'5px'});
 		}
 	}
