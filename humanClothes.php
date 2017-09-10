@@ -122,7 +122,7 @@
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
 		$("#relativeContainer").append(cape()[0]);
-		$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'89px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
+		$("#relativeContainer .capes").css({'position':'absolute', 'top':'0', 'left':'149px', 'margin-top':'0', 'z-index':'-42', '-webkit-transform':'scale(2.1)', '-ms-transform':'scale(2.1)', 'transform':'scale(2.1)'});
 	}
 	function randomizeNecklaces() {
 		$("#relativeContainer .necklaces").remove();
