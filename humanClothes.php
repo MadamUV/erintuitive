@@ -129,10 +129,10 @@
 		if($("#relativeContainer .pets")[0].attr("src")=="svg/human/humanClothes/pets/pet15.svg"){
 			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
-		else if($("#relativeContainer .pets")[0].attr("src")=="svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].attr("src")=="svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].attr("src")=="svg/human/humanClothes/pets/pet18.svg"){
+		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet18.svg"){
 			$("#relativeContainer .pets").css({'top':'-15px'});
 		}
-		else if($("#relativeContainer .pets")[0].attr("src")=="svg/human/humanClothes/pets/pet3.svg"){
+		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-9px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
 		}
 	}
@@ -151,7 +151,7 @@
 			relativeContainer.innerHTML = previousClothes;
 			$("#relativeContainer").append(maleShoes()[0]);
 			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			if($(".shoes")[0].attr("src")=="svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes")[0].attr("src")=="svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes")[0].attr("src")=="svg/human/humanClothes/shoes/shoes13.svg"){
+			if($(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes13.svg"){
 				$("#relativeContainer .shoes").css({'top':'6px'});
 			}
 		}
