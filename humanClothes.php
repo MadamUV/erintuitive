@@ -130,7 +130,7 @@
 			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
 		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet18.svg"){
-			$("#relativeContainer .pets").css({'top':'-15px'});
+			$("#relativeContainer .pets").css({'top':'-21px'});
 		}
 		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-9px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
