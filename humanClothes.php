@@ -119,6 +119,11 @@
 		$(".pants").find("path, polygon").attr("fill", randColor);
 		$(".pants").find("path, polygon").css({"fill": randColor});	
 	}
+	function randomizePets() {
+		$("#relativeContainer .pets").remove();
+		$("#relativeContainer").append(pet()[0]);
+		$("#relativeContainer .pets").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0', 'z-index':'31'});
+	}
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
 		$("#relativeContainer").append(cape()[0]);
@@ -182,7 +187,12 @@
 			avatarOptions.setAttribute("class", "necklaces");
 			$("#buttons").html('<button id="randomizeNecklaces" onclick="randomizeNecklaces()">Randomize necklace</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
-		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces, necklaces, capes
+		else if(avatarOptions.getAttribute("class")=="pets"){
+			$(".pets").remove();
+			avatarOptions.setAttribute("class", "capes");
+			$("#buttons").html('<button id="randomizeCapes" onclick="randomizeCapes()">Randomize cape</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+		}
+		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces, necklaces, capes, pets
 		
 	}
 		function nextOptions(){
@@ -224,6 +234,23 @@
 			$("#buttons").html('<button id="randomizeCapes" onclick="randomizeCapes()">Randomize cape</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 			avatarOptions.setAttribute("class", "capes");
 		}
+		else if(avatarOptions.getAttribute("class")=="capes"){
+			$("#buttons").html('<button id="randomizePets" onclick="randomizePets()">Randomize pet</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
+			avatarOptions.setAttribute("class", "pets");
+		}
+	}
+	function pet(){
+		var pets = [''];
+		for(i=1; i<=18; i++){
+			pets.push('<img class="pets" src="svg/human/humanClothes/pets/pet'+i.toString()+'.svg" alt="pet">');
+		}
+		if($(".woman")[0]){
+			pets.push('<img class="pets" src="svg/human/humanClothes/pets/female_pet19.svg" alt="pet">');
+		}
+		else if($(".woman")[0]){
+			pets.push('<img class="pets" src="svg/human/humanClothes/pets/pet19.svg" alt="pet">');
+		}
+		return shuffle(pets);
 	}
 	function cape(){
 		var capes = [''];
