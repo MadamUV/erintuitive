@@ -192,7 +192,7 @@
 			$("#buttons").html('<button id="randomizeHairPieces" onclick="randomizeHairPieces()">Randomize hairPieces</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
 		else if(avatarOptions.getAttribute("class")=="capes"){
-			$(".necklaces").remove();
+			$(".capes").remove();
 			avatarOptions.setAttribute("class", "necklaces");
 			$("#buttons").html('<button id="randomizeNecklaces" onclick="randomizeNecklaces()">Randomize necklace</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
