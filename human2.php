@@ -166,7 +166,7 @@
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
-	<button id="skip" onclick="skipOption()">Already done, skip</button>
+	<a href="humanClothes.php"><button>Already done, skip</button></a>
 	<style>
 		body {
 			background-color: #FFBB22;
