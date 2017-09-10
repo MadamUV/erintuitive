@@ -127,10 +127,10 @@
 			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
 		if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet15.svg"){
-			$("#relativeContainer .pets").css({'top':'5px'});
+			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
 		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet18.svg"){
-			$("#relativeContainer .pets").css({'top':'-3px'});
+			$("#relativeContainer .pets").css({'top':'-11px'});
 		}
 		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-9px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
