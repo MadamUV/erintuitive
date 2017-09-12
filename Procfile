@@ -1,0 +1,1 @@
+web: node ancient/server/ige.js -g .
