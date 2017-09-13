@@ -260,7 +260,8 @@
 			$("#itemPreview").append("success!");
 		});
 		//https://www.jasonbase.com/things/nMpo/edit*/
-		var theName = av;
+		var rand = Math.floor(Math.random()*1000).toString();
+		var theName = av+rand;
 		if (av == ""){
 			theName = "guest";
 		}
