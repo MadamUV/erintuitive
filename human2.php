@@ -137,7 +137,8 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	   function getMe() {
 			FB.api('/me', function(response) {
-				me_id = response.id;				
+				me_id = response.id;
+				window.localStorage.setItem("me_id", me_id);
 			});
 		}
 	</script>
@@ -472,7 +473,6 @@
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
-				window.localStorage.setItem("me_id", me_id);
 				window.location.replace("humanClothes.php");
 			}
 		function makeSkinColor() {
