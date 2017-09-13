@@ -283,7 +283,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+escape(document.getElementById("relativeContainer").innerHTML)+'", "pos_x":-1, "pos_y":-1}]}',
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'", "pos_x":-1, "pos_y":-1}]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -295,7 +295,7 @@
 				var pushThis = {
 					"user_id": me_id,
 					"name":av,
-					"avatar":escape(document.getElementById("relativeContainer").innerHTML),
+					"avatar":window.localStorage.getItem("avatar"),
 					"pos_x":-1,
 					"pos_y":-1
 				};
@@ -316,7 +316,7 @@
 			else if(count1 > 0 && count2 > 0){
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
-						data3['person'][i]['avatar'] = me_id;
+						data3['person'][i]['avatar'] = window.localStorage.getItem("avatar");
 						data3['person'][i]['name'] = av;
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
