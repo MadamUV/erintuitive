@@ -254,7 +254,7 @@
 			avatarOptions.setAttribute("class", "pets");
 		}
 		else if(avatarOptions.getAttribute("class")=="pets"){
-			$("#buttons").html('<a href="ancient/index.html">Go inworld!</a>');
+			$("#buttons").html('<a href="https://www.google.com/">Go inworld!</a>');
 		}
 	}
 	function pet(){
