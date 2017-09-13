@@ -287,7 +287,7 @@
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						
+						itemPreview.innerHTML = "Great!";
 					}
 				});
 			}
@@ -309,7 +309,7 @@
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						
+						itemPreview.innerHTML = "Great!";
 					}
 				});
 			}
@@ -325,7 +325,7 @@
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
 							success: function(data, textStatus, jqXHR){
-								
+								itemPreview.innerHTML = "Great!";
 							}
 						});
 						break;
