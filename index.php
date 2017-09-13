@@ -39,7 +39,7 @@
 	function getMe() {
 		FB.api('/me', function(response) {
 			var me_id = response.id;
-			//var me_firstname = response.first_name;
+			window.localStorage.setItem("me_id", me_id);
 		});
 	}
   function login(){
