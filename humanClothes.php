@@ -259,12 +259,86 @@
 		}
 	}
 	function postAvatarWithName(){
-		var av = $("#avatarName").html();
+		var av = document.getElementById("avatarName").innerHTML;
 		var avatar = window.localStorage.getItem("avatar");
-		var num = 0;
-		var me_id = "<? echo $me_id; ?>";
-		$.post("postAvatar.php", {name: av, me_id : me_id, avatar: avatar}, function(data){
+		var me_id2 = "<? echo $me_id; ?>";
+		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
 			$("#itemPreview").append("success!");
+		});
+		//https://www.jasonbase.com/things/nMpo/edit*/
+		var num = 0;
+		var count1 = 0;
+		var count2 = 0;
+		var countPresent = 0;
+		var msg = "Great! Now that you've completed this step, you don't have to return to this page,<br>unless you want to redo your avatar.<br>"
+		var theName = "";
+		if (av == ""){
+			theName = "guest";
+		}
+		$.get("https://api.myjson.com/bins/vzecj", function (data3) {
+			for(i=0; i<data3['person'].length; i++){
+				if(data3['person'][i]['user_id'] != me_id){
+					count1 += 1;
+				}
+				else {
+					count2 += 1;
+					countPresent = i;
+				}
+			}
+			if(count1 == 0 && count2 > 0){
+				$.ajax({
+					url:"https://api.myjson.com/bins/vzecj",
+					type:"POST",
+					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":'+theName+', "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						document.getElementById("itemPreview").innerHTML = msg;
+					}
+				});
+			}
+	       		else if(count1 > 0 && count2 == 0){
+				var pushThis = {
+					"user_id": me_id,
+					"name":theName,
+					"avatar":"<? echo $avatar; ?>",
+					"pos_x":-1,
+					"pos_y":-1
+				};
+				data3['person'].push(pushThis);
+				var len = data3['person'].length;
+				document.getElementById("relativeContainer").innerHTML = "ok";
+				$.ajax({
+					url:"https://api.myjson.com/bins/vzecj",
+					type:"POST",
+					data: JSON.stringify(data3),
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						document.getElementById("itemPreview").innerHTML = msg;
+					}
+				});
+			}
+			else if(count1 > 0 && count2 > 0){
+				for(i=0; i<data3['person'].length; i++){
+					if(data3['person'][i]['user_id']==me_id){
+						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
+						data3['person'][i]['name'] = theName;
+						$.ajax({
+							url:"https://api.myjson.com/bins/vzecj",
+							type:"POST",
+							data: JSON.stringify(data3),
+							contentType:"application/json; charset=utf-8",
+							dataType:"json",
+							success: function(data, textStatus, jqXHR){
+								document.getElementById("itemPreview").innerHTML = "";
+							}
+						});
+						break;
+					}
+				}
+				 
+			}
 		});
 	}
 	function pet(){
