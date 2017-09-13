@@ -472,9 +472,9 @@
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
+				window.localStorage.setItem("me_id", me_id);
 				window.location.replace("humanClothes.php");
 			}
-		}
 		function makeSkinColor() {
 			for (i=0; i<skins.length; i++){
 				updateSkin = document.getElementById("color1").getAttribute("value");

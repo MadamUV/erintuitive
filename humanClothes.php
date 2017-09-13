@@ -53,11 +53,6 @@
 			<td id="result" width="500px" style="border-style: dashed; border-width: 6px;">
 				
 				<div id="relativeContainer" style="position: relative; margin-left: 84px; margin-top:50px; " width="86px" height="380px">
-				<?php if(isset($_POST['getAvatar']) && isset($_POST['me_id'])){
-					$me_id = $_POST['me_id']; 
-					$avatar = $_POST['getAvatar'];
-					//10155567524149846 my user id
-				} ?>
 				<div id="shirtStuff"></div>
 				</div>
 			</td>
@@ -85,7 +80,7 @@
 			return result;
 		}
 		var num = 0;
-		var me_id = "<? echo $me_id; ?>";
+		var me_id = window.localStorage.getItem("me_id");
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
@@ -265,7 +260,7 @@
 			$("#itemPreview").append("success!");
 		});
 		//https://www.jasonbase.com/things/nMpo/edit*/
-		var theName = "";
+		var theName = av;
 		if (av == ""){
 			theName = "guest";
 		}
