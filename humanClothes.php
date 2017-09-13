@@ -270,7 +270,7 @@
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
-		var msg = "Great! Now that you've completed this step, you don't have to return to this page,<br>unless you want to redo your avatar.<br>"
+		var msg = "Great! Now that you've completed this step, you don't have to return to this page,<br>unless you want to redo your avatar.<br>";
 		var theName = "";
 		if (av == ""){
 			theName = "guest";
