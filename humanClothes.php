@@ -260,8 +260,7 @@
 	}
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
-		var avatar = window.localStorage.getItem("avatar");
-		var me_id = "<? echo $me_id; ?>";
+		var avatar = escape(document.getElementById("relativeContainer").innerHTML);
 		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
 			$("#itemPreview").append("success!");
 		});
@@ -271,7 +270,6 @@
 			theName = "guest";
 		}
 		var num = 0;
-		var me_id = "<? echo $me_id; ?>";
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
