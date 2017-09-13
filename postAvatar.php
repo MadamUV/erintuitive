@@ -9,11 +9,11 @@
 	   $sql = 'SELECT * FROM `humans` WHERE `me_id`="'.$me.'";';
 	   $result1 = mysqli_query($conn, $sql);
 	   if(mysqli_num_rows($result1)==0){
-		   $sql2 = 'INSERT INTO `humans`(`me_id`, `avatar`, `name`) VALUES ("'.$me_id.'","'.$avatar.'","'.$name.'");';
+		   $sql2 = "INSERT INTO `humans`(`id`, `me_id`, `avatar`, `name`) VALUES (NULL, '".$me_id."','".$avatar."','".$name."');";
 		   mysqli_query($conn, $sql2);
 	   }
 	   else {
-		   $sql2 = 'UPDATE `humans` SET `name`="'.$name.'" WHERE `me_id`="'.$me_id.'";';
+		   $sql2 = "UPDATE `humans` SET `name`='".$name."' WHERE `me_id`='".$me_id."';";
 		   mysqli_query($conn, $sql2);
 	   }
    }
