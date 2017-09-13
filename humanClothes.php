@@ -288,8 +288,8 @@
 			if(count1 == 0 && count2 > 0){
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
-					type:"POST",
-					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":'+theName+', "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
+					type:"PUT",
+					data:'{"person": [{"user_id":"<? echo $me_id; ?>", "name":"'+theName+'", "avatar":"<? echo $avatar; ?>", "pos_x":-1, "pos_y":-1}]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -310,7 +310,7 @@
 				document.getElementById("relativeContainer").innerHTML = "ok";
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
-					type:"POST",
+					type:"PUT",
 					data: JSON.stringify(data3),
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
@@ -326,7 +326,7 @@
 						data3['person'][i]['name'] = theName;
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
-							type:"POST",
+							type:"PUT",
 							data: JSON.stringify(data3),
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
