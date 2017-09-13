@@ -264,7 +264,7 @@
 		var num = 0;
 		var me_id = "<? echo $me_id; ?>";
 		$.post("postAvatar.php", {name: av, me_id : me_id, avatar: avatar}, function(data){
-			<?php echo "Success!"; ?>
+			itemPreview.innerHTML = 'success';
 		});
 	}
 	function pet(){
