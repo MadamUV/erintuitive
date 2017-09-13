@@ -254,28 +254,28 @@
 			avatarOptions.setAttribute("class", "pets");
 		}
 		else if(avatarOptions.getAttribute("class")=="pets"){
-			itemPreview.innerHTML = 'Name your character<br><textarea id="avatarName" rows="4" cols="50"></textarea>';
+			itemPreview.innerHTML = 'Name your character<br><input id="avatarName" name="avatarName" type="text"/>';
 			$("#buttons").html('<button onclick="postAvatarWithName()">Finish</button>');
 		}
 	}
 	function postAvatarWithName(){
-		var av = document.getElementById("avatarName").innerHTML;
+		var av = document.getElementById("avatarName").value;
 		var avatar = window.localStorage.getItem("avatar");
-		var me_id2 = "<? echo $me_id; ?>";
+		var me_id = "<? echo $me_id; ?>";
 		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
 			$("#itemPreview").append("success!");
 		});
 		//https://www.jasonbase.com/things/nMpo/edit*/
-		var num = 0;
-		var count1 = 0;
-		var count2 = 0;
-		var countPresent = 0;
-		var msg = "Great! Now that you've completed this step, you don't have to return to this page,<br>unless you want to redo your avatar.<br>";
 		var theName = "";
 		if (av == ""){
 			theName = "guest";
 		}
-		$.get("https://api.myjson.com/bins/vzecj", function (data3) {
+		var num = 0;
+		var me_id = "<? echo $me_id; ?>";
+		var count1 = 0;
+		var count2 = 0;
+		var countPresent = 0;
+		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 			for(i=0; i<data3['person'].length; i++){
 				if(data3['person'][i]['user_id'] != me_id){
 					count1 += 1;
@@ -293,14 +293,14 @@
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						document.getElementById("itemPreview").innerHTML = msg;
+						
 					}
 				});
 			}
-	       		else if(count1 > 0 && count2 == 0){
+			else if(count1 > 0 && count2 == 0){
 				var pushThis = {
 					"user_id": me_id,
-					"name":theName,
+					"name":av,
 					"avatar":"<? echo $avatar; ?>",
 					"pos_x":-1,
 					"pos_y":-1
@@ -315,15 +315,15 @@
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
-						document.getElementById("itemPreview").innerHTML = msg;
+						
 					}
 				});
 			}
 			else if(count1 > 0 && count2 > 0){
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
-						data3['person'][i]['avatar'] = "<? echo $avatar; ?>";
-						data3['person'][i]['name'] = theName;
+						data3['person'][i]['avatar'] = me_id;
+						data3['person'][i]['name'] = av;
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
 							type:"PUT",
@@ -331,13 +331,13 @@
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
 							success: function(data, textStatus, jqXHR){
-								document.getElementById("itemPreview").innerHTML = "";
+								
 							}
 						});
 						break;
 					}
 				}
-				 
+				
 			}
 		});
 	}
