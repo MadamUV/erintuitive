@@ -166,7 +166,8 @@
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
-	<a href="humanClothes.php"><button>Already done, skip</button></a>
+	<a href="humanClothes.php"><button>Already done, skip to clothing step</button></a>
+	<a href="spaceScene.php"><button>Clothing done, skip to 2d chatroom</button></a>
 	<style>
 		body {
 			background-color: #FFBB22;
