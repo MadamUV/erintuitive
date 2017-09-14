@@ -249,7 +249,7 @@
 			avatarOptions.setAttribute("class", "pets");
 		}
 		else if(avatarOptions.getAttribute("class")=="pets"){
-			itemPreview.innerHTML = 'Name your character<br><input id="avatarName" name="avatarName" type="text"/>';
+			itemPreview.innerHTML = 'Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/>';
 			$("#buttons").html('<button onclick="postAvatarWithName()">Finish</button>');
 		}
 	}
@@ -294,7 +294,7 @@
 			else if(count1 > 0 && count2 == 0){
 				var pushThis = {
 					"user_id": me_id,
-					"name":av,
+					"name":theName,
 					"avatar":window.localStorage.getItem("avatar"),
 					"pos_x":-1,
 					"pos_y":-1
@@ -317,7 +317,7 @@
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = window.localStorage.getItem("avatar");
-						data3['person'][i]['name'] = av;
+						data3['person'][i]['name'] = theName;
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
 							type:"PUT",
