@@ -159,7 +159,9 @@
 	function useAPI() {
 		FB.api('/me', function(response) {
 			var me_id = response.id;
-			
+			$.get("https://api.myjson.com/bins/vzecj", function(data, textStatus, jqXHR) {
+				
+			});
 		});
 	}
 	//$(".relativeContainer").append('<img class="blink" src="svg/human/humanBody/blink.svg" style="visibility: hidden;" alt="blinked eyes">');
