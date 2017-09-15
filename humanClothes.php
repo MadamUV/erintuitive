@@ -286,7 +286,18 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'", "pos_x":-1, "pos_y":-1}]}',
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'"]}',
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						itemPreview.innerHTML = "Great!";
+					}
+				});
+				//https://api.myjson.com/bins/14ovul
+				$.ajax({
+					url:"https://api.myjson.com/bins/14ovul",
+					type:"PUT",
+					data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -298,9 +309,7 @@
 				var pushThis = {
 					"user_id": me_id,
 					"name":theName,
-					"avatar":window.localStorage.getItem("avatar"),
-					"pos_x":-1,
-					"pos_y":-1
+					"avatar":window.localStorage.getItem("avatar")
 				};
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
@@ -309,6 +318,16 @@
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
 					data: JSON.stringify(data3),
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						itemPreview.innerHTML = "Great!";
+					}
+				});
+				$.ajax({
+					url:"https://api.myjson.com/bins/14ovul",
+					type:"PUT",
+					data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
