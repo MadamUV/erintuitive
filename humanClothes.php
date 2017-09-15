@@ -350,6 +350,16 @@
 								itemPreview.innerHTML = "Great!";
 							}
 						});
+						$.ajax({
+							url:"https://api.myjson.com/bins/14ovul",
+							type:"PUT",
+							data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+							contentType:"application/json; charset=utf-8",
+							dataType:"json",
+							success: function(data, textStatus, jqXHR){
+								itemPreview.innerHTML = "Great!";
+							}
+						});
 						break;
 					}
 				}
