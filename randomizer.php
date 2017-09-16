@@ -75,11 +75,11 @@ if(isset($_GET['image'])){
 <input type="hidden" name="num" value="<?php echo $num; ?>">
 <input type="hidden" name="image" value="<?php echo $img2; ?>">
 <input type="submit" id="buttons" value="Next image" name="submit">
+</form>
 <div id="completeButtons">
 	<br>Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/><br>
 	<button id="finish" onclick="postAvatarWithName()">Finish</button>
 </div>
-</form>
 </div>
 <style>
 	span {
