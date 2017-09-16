@@ -272,6 +272,7 @@
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
+		window.localStorage.setItem("avatar", avatar);
 		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 			for(i=0; i<data3['person'].length; i++){
 				if(data3['person'][i]['user_id'] != me_id){

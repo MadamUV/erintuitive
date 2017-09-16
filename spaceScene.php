@@ -123,9 +123,9 @@
 					if(data3['person'][i]['user_id']==me_id){						
 						var avatar = data3['person'][i]['avatar'];
 						var name = data3['person'][i]['name'];
-						$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatar")}, function(data2){
+						$.post("convertAvatar.php", {convert: avatar}, function(data2){
 							avatar = data2;
-							$("#people").append('<div id="'+me_id+'" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+avatar+'<br><img alt="cloud with name on it" src="svg/human/humanBody/cloud.svg"/><span style="position: relative; left: 78px;">'+name+'</span></div>');
+							$("#people").append('<div id="'+me_id+'" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<br><img alt="cloud with name on it" src="svg/human/humanBody/cloud.svg" style="position: relative; top: -50px; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);"/><span style="position: relative; top: 180px; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div>');
 							$("#saturn").hide();
 						});
 					}
