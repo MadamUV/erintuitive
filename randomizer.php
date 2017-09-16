@@ -34,9 +34,13 @@
 <script src="js/jquery.js"></script>
 <span><font style="font-size: 23px;">Randomize the colors until it's perfect!</font><br>
 <button id='random' onclick="clicked()">Randomize</button>
-<button id='random' onclick="reverting()">Don't like the result? Revert</button>
+<button id='reverting' onclick="reverting()">Don't like the result? Revert</button>
 <br><a href="index.php" alt="index page">Start over</a>
 </span>
+<div id="completeButtons">
+	<br>Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/><br>
+	<button id="finish" onclick="postAvatarWithName()">Finish</button>
+</div>
 <div id="animalObject" height="800" width="800">
 <?php
 if(isset($_GET['image'])){
@@ -76,10 +80,6 @@ if(isset($_GET['image'])){
 <input type="hidden" name="image" value="<?php echo $img2; ?>">
 <input type="submit" id="buttons" value="Next image" name="submit">
 </form>
-<div id="completeButtons">
-	<br>Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/><br>
-	<button id="finish" onclick="postAvatarWithName()">Finish</button>
-</div>
 </div>
 <style>
 	span {
