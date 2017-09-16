@@ -286,7 +286,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'", "pos_x":-1, "pos_y":-1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false}] }',
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'", "pos_x":-1, "pos_y":-1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false, "message": "", "msgBool": false}] }',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -304,7 +304,9 @@
 					"facingLeft": false,
 					"blink": false,
 					"spinningLeft": false,
-					"spinningRight": false
+					"spinningRight": false,
+					"msgBool": false,
+					"message": ""
 				};
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
@@ -332,6 +334,8 @@
 						data3['person'][i]['spinningLeft'] = false;
 						data3['person'][i]['spinningRight'] = false;
 						data3['person'][i]['blink'] = false;
+						data3['person'][i]['msgBool'] = false;
+						data3['person'][i]['message'] = "";
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
 							type:"PUT",
