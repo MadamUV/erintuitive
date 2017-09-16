@@ -103,7 +103,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="init">
-					Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal">
+					<!-- Is your character an animal or object?<input type="checkbox" id="notHuman" name="species" value="animal"> -->
 				</div>
 			</td>
 			<td>
@@ -164,6 +164,7 @@
 		}
 	</style>
 	<script>
+		window.location.replace("human2.php");
 		$("#buttons").hide();
 		$("#logout_button").hide();
 		////////facebook/////////
