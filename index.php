@@ -164,7 +164,6 @@
 		}
 	</style>
 	<script>
-		window.location.replace("human2.php");
 		$("#buttons").hide();
 		$("#logout_button").hide();
 		////////facebook/////////
@@ -212,9 +211,9 @@
 		  // on login success 
 		  function useAPI() {
 			FB.api('/me', function(response) {
-					var me_id = response.id;
-					$("#buttons").show();
-					$("#wholeIntro").hide();
+				var me_id = response.id;
+				$("#buttons").show();
+				window.location.replace("human2.php");
 			});
 		  }
 		
