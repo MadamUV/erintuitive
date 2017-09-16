@@ -215,12 +215,6 @@
 		}
 	</style>
 	<script>
-		//https://apps.facebook.com/erintuitive
-		function skipOption() {
-			if(window.localStorage.getItem("avatar") !== null){
-				window.location.replace("humanClothes.php");
-			}
-		}
 		function shuffle(array) {
 			var rand, index = -1,
 				length = array.length,
@@ -263,7 +257,6 @@
 		}
 		var previousOriginal = itemPreview.innerHTML;
 		var updateSkin = skinTone;
-		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
 				$("#buttons").hide();
