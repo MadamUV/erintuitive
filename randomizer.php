@@ -1,4 +1,5 @@
 <script>
+  var me_id = '';
   window.fbAsyncInit = function() {
 	FB.init({
 	  appId            : '817064305070781',
@@ -7,7 +8,21 @@
 	  version          : 'v2.9'
 	});
 	FB.AppEvents.logPageView();
+	FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+		console.log('Logged in.');
+		getMe();
+	  }
+	  else {
+		FB.login();
+	  }
+	});
   };
+  function getMe() {
+			FB.api('/me', function(response) {
+				me_id = response.id;				
+			});
+		}
   (function(d, s, id){
 	 var js, fjs = d.getElementsByTagName(s)[0];
 	 if (d.getElementById(id)) {return;}
@@ -15,14 +30,6 @@
 	 js.src = "//connect.facebook.net/en_US/sdk.js";
 	 fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-   FB.getLoginStatus(function(response) {
-   if (response.status === 'connected') {
-		console.log('Logged in.');
-	  }
-	  else {
-		FB.login();
-	  }
-	});
 </script>
 <script src="js/jquery.js"></script>
 <span><font style="font-size: 23px;">Randomize the colors until it's perfect!</font><br>
@@ -84,9 +91,10 @@ if(isset($_GET['image'])){
 <script>
 	$("#animalObject").children("svg").eq(0).width("440").height("440");
 	var revert = document.getElementById("animalObject").innerHTML;
+	
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
-		var avatar = escape(document.getElementById("relativeContainer").innerHTML);
+		var avatar = escape(document.getElementById("avatarObject").innerHTML);
 		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
 			$("#itemPreview").append("success!");
 		});
