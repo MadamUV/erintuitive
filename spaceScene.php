@@ -26,14 +26,14 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<table id="saturn" style="background-color: black; position: absolute; z-index:200; left: 20px;" cellpadding="100px">
+<!-- <table id="saturn" style="background-color: black; position: absolute; z-index:200; left: 20px;" cellpadding="100px">
 	<tr><td>
 		<img src="img/stars5.gif" alt="saturn"/>
 	</td></tr>
 	<tr><td>
 	<font color="white">Loading...</font>
 	</td></tr>
-</table>
+</table> -->
 <div id="content" style="position: absolute; z-index:199;">
 </div>
 <div id="people"></div>
@@ -124,7 +124,7 @@
 						var avatar = urldecode(data3['person'][i]['avatar']);
 						var name = data3['person'][i]['name'];
 						$("#people").append('<div id="'+me_id+'" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+avatar+'<br><img alt="cloud with name on it" src="svg/human/humanBody/cloud.svg"/><span style="position: relative; left: 78px;">'+name+'</span></div>');
-						$("#saturn").hide();
+						//$("").hide();
 					}
 				}
 			});
