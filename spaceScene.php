@@ -125,7 +125,7 @@
 						var name = data3['person'][i]['name'];
 						$.post("convertAvatar.php", {convert: avatar}, function(data2){
 							avatar = data2;
-							$("#people").append('<div class="wrapperPeople" id="'+me_id+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+me_id+'_sub" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img "position: absolute; top: 385px; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);" src="svg/human/humanBody/cloud.svg" style="position: absolute; top:160px;"/><span style="position: absolute; top: 390px; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							$("#people").append('<div class="wrapperPeople" id="'+me_id+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+me_id+'_sub" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img "position: absolute; top: 385px; -webkit-transform: scale(2.6); -ms-transform: scale(2.6); transform: scale(2.6);" src="svg/human/humanBody/cloud.svg" style="position: absolute; top: 180px;"/><span style="position: absolute; top: 390px; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
 							$("#saturn").hide();
 						});
 					}
