@@ -146,7 +146,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="init">
-					Please choose your gender. Avoid using Internet Explorer as not all features will work. You create a new character each time you login, but your achievements inworld stay the same.
+					Please make your character as customized as possible. I use it to interpret your personality in my intuitive readings.
 				</div>
 			</td>
 			<td id="itemPreview" width="30%">
