@@ -195,7 +195,7 @@
 		#space {
 			position: fixed;
 			top: 450px;
-			left: 270px;
+			left: 300px;
 		}
 		#itemPreview {
 			vertical-align: text-top;
@@ -266,6 +266,9 @@
 		$("#buttons").hide();
 		function skipSpace() {
 			window.location.replace("spaceScene.php");
+		}
+		function skipOption() {
+			window.location.replace("humanClothes.php");
 		}
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
