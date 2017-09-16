@@ -287,7 +287,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'"]}',
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'"]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -298,7 +298,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/14ovul",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+					data:'{"person": [{"user_id":"'+me_id+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -310,7 +310,7 @@
 				var pushThis = {
 					"user_id": me_id,
 					"name":theName,
-					"avatar":window.localStorage.getItem("avatar")
+					"avatar":avatar
 				};
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
@@ -328,7 +328,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/14ovul",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+					data:'{"person": [{"user_id":"'+me_id+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -339,22 +339,18 @@
 			else if(count1 > 0 && count2 > 0){
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){
-						data3['person'][i]['avatar'] = window.localStorage.getItem("avatar");
+						data3['person'][i]['avatar'] = avatar;
 						data3['person'][i]['name'] = theName;
+						data3['person'][i]['pos_x'] = -1;
+						data3['person'][i]['pos_y'] = -1;
+						data3['person'][i]['facingLeft'] = false;
+						data3['person'][i]['blink'] = false;
+						data3['person'][i]['spinningLeft'] = false;
+						data3['person'][i]['spinningRight'] = false;
 						$.ajax({
 							url:"https://api.myjson.com/bins/vzecj",
 							type:"PUT",
 							data: JSON.stringify(data3),
-							contentType:"application/json; charset=utf-8",
-							dataType:"json",
-							success: function(data, textStatus, jqXHR){
-								itemPreview.innerHTML = "Great!";
-							}
-						});
-						$.ajax({
-							url:"https://api.myjson.com/bins/14ovul",
-							type:"PUT",
-							data:'{"person": [{"user_id":"'+me_id+'", "posX": -1, "posY": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 							contentType:"application/json; charset=utf-8",
 							dataType:"json",
 							success: function(data, textStatus, jqXHR){
