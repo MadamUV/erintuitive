@@ -286,7 +286,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'", "pos_x":-1, "pos_y":-1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false, "message": "", "msgBool": false}] }',
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+window.localStorage.getItem("avatar")+'"}] }',
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -298,15 +298,7 @@
 				var pushThis = {
 					"user_id": me_id,
 					"name":theName,
-					"avatar":window.localStorage.getItem("avatar"),
-					"pos_x":-1,
-					"pos_y":-1,
-					"facingLeft": false,
-					"blink": false,
-					"spinningLeft": false,
-					"spinningRight": false,
-					"msgBool": false,
-					"message": ""
+					"avatar":window.localStorage.getItem("avatar")
 				};
 				data3['person'].push(pushThis);
 				var len = data3['person'].length;
@@ -327,6 +319,75 @@
 					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['avatar'] = window.localStorage.getItem("avatar");
 						data3['person'][i]['name'] = theName;
+						$.ajax({
+							url:"https://api.myjson.com/bins/vzecj",
+							type:"PUT",
+							data: JSON.stringify(data3),
+							contentType:"application/json; charset=utf-8",
+							dataType:"json",
+							success: function(data, textStatus, jqXHR){
+								itemPreview.innerHTML = "Great!";
+							}
+						});
+						break;
+					}
+				}
+			}
+		});
+		var countNew1 = 0;
+		var countNew2 = 0;
+		var countNewPresent = 0;
+		$.get("https://api.myjson.com/bins/14ovul", function (data3, textStatus3, jqXHR3) {
+			for(i=0; i<data3['person'].length; i++){
+				if(data3['person'][i]['user_id'] != me_id){
+					countNew1 += 1;
+				}
+				else {
+					countNew2 += 1;
+					countNewPresent = i;
+				}
+			}
+			if(countNew1 == 0 && countNew2 > 0){
+				$.ajax({
+					url:"https://api.myjson.com/bins/14ovul",
+					type:"PUT",
+					data:'{"person": [{"user_id":"'+me_id+'", "pos_x":-1, "pos_y":-1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false, "message": "", "msgBool": false}] }',
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						itemPreview.innerHTML = "Great!";
+					}
+				});
+			}
+			else if(countNew1 > 0 && countNew2 == 0){
+				var pushThis = {
+					"user_id": me_id,
+					"pos_x":-1,
+					"pos_y":-1,
+					"facingLeft": false,
+					"blink": false,
+					"spinningLeft": false,
+					"spinningRight": false,
+					"msgBool": false,
+					"message": ""
+				};
+				data3['person'].push(pushThis);
+				var len = data3['person'].length;
+				document.getElementById("relativeContainer").innerHTML = "ok";
+				$.ajax({
+					url:"https://api.myjson.com/bins/14ovul",
+					type:"PUT",
+					data: JSON.stringify(data3),
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						itemPreview.innerHTML = "Great!";
+					}
+				});
+			}
+			else if(countNew1 > 0 && countNew2 > 0){
+				for(i=0; i<data3['person'].length; i++){
+					if(data3['person'][i]['user_id']==me_id){
 						data3['person'][i]['pos_x'] = -1;
 						data3['person'][i]['pos_y'] = -1;
 						data3['person'][i]['facingLeft'] = false;
@@ -337,7 +398,7 @@
 						data3['person'][i]['msgBool'] = false;
 						data3['person'][i]['message'] = "";
 						$.ajax({
-							url:"https://api.myjson.com/bins/vzecj",
+							url:"https://api.myjson.com/bins/14ovul",
 							type:"PUT",
 							data: JSON.stringify(data3),
 							contentType:"application/json; charset=utf-8",
