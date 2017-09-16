@@ -117,7 +117,7 @@
 		FB.AppEvents.logPageView();
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				getMe();
+				
 			}
 			else if (response.status === 'not_authorized'){
 				document.getElementById("itemPreview").innerHTML = "test";
@@ -137,7 +137,7 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	   function getMe() {
 			FB.api('/me', function(response) {
-				me_id = response.id;
+				me_id = response.id;				
 			});
 		}
 	</script>
@@ -166,8 +166,7 @@
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
-	<a href="humanClothes.php"><button>Already done, skip to clothing step</button></a>
-	<a href="spaceScene.php"><button>Clothing done, skip to 2d chatroom</button></a>
+	<button id="skip" onclick="skipOption()">Already done, skip</button>
 	<style>
 		body {
 			background-color: #FFBB22;
@@ -215,6 +214,7 @@
 		}
 	</style>
 	<script>
+		//https://apps.facebook.com/erintuitive
 		function shuffle(array) {
 			var rand, index = -1,
 				length = array.length,
@@ -257,6 +257,7 @@
 		}
 		var previousOriginal = itemPreview.innerHTML;
 		var updateSkin = skinTone;
+		$("#buttons").hide();
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
 				$("#buttons").hide();
@@ -468,6 +469,7 @@
 				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
 				window.location.replace("humanClothes.php");
 			}
+		}
 		function makeSkinColor() {
 			for (i=0; i<skins.length; i++){
 				updateSkin = document.getElementById("color1").getAttribute("value");
