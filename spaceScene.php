@@ -77,9 +77,6 @@
 		0%    { -webkit-transform: rotate(0); }
 		100% { -webkit-transform: rotate(360deg); } 
 	}
-	body {
-		overflow: hidden;
-	}
 </style>
 <script>
 	var me_id = "";
