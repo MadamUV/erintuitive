@@ -251,6 +251,7 @@
 		else if(avatarOptions.getAttribute("class")=="pets"){
 			itemPreview.innerHTML = 'Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/>';
 			$("#buttons").html('<button onclick="postAvatarWithName()">Finish</button>');
+			$("#buttons").css({"left":"200px"});
 		}
 	}
 	function postAvatarWithName(){
