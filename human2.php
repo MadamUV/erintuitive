@@ -166,7 +166,8 @@
 		<button id="back" onclick="backOptions()">Back</button>
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
-	<button id="skip" onclick="skipOption()">Already done, skip</button>
+	<button id="skip" onclick="skipOption()">Skip to clothing</button>
+	<button id="space" onclick="skipSpace()">Skip and go inworld</button>
 	<style>
 		body {
 			background-color: #FFBB22;
@@ -183,13 +184,18 @@
 		}
 		#buttons {
 			position: fixed;
-			top: 435px;
+			top: 425px;
 			left: 40%;
 		}
 		#skip {
 			position: fixed;
-			top: 435px;
-			left: 80%;
+			top: 450px;
+			left: 29%;
+		}
+		#space {
+			position: fixed;
+			top: 450px;
+			left: 38%;
 		}
 		#itemPreview {
 			vertical-align: text-top;
@@ -258,6 +264,9 @@
 		var previousOriginal = itemPreview.innerHTML;
 		var updateSkin = skinTone;
 		$("#buttons").hide();
+		function skipSpace() {
+			window.location.replace("spaceScene.php");
+		}
 		function backOptions() {
 			if(avatarOptions.getAttribute("class")=="skinStep"){
 				$("#buttons").hide();
