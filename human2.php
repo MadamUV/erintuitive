@@ -190,12 +190,12 @@
 		#skip {
 			position: fixed;
 			top: 450px;
-			left: 29%;
+			left: 200px;
 		}
 		#space {
 			position: fixed;
 			top: 450px;
-			left: 38%;
+			left: 270px;
 		}
 		#itemPreview {
 			vertical-align: text-top;
