@@ -37,10 +37,6 @@
 <button id='reverting' onclick="reverting()">Don't like the result? Revert</button>
 <br><a href="index.php" alt="index page">Start over</a>
 </span>
-<div id="completeButtons">
-	<br>Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/><br>
-	<button id="finish" onclick="postAvatarWithName()">Finish</button>
-</div>
 <div id="animalObject" height="800" width="800">
 <?php
 if(isset($_GET['image'])){
@@ -75,6 +71,9 @@ if(isset($_GET['image'])){
 }
 ?>
 </div>
+Name your character<br><input id="avatarName" maxlength="12" name="avatarName" type="text"/><br>
+<button id="finish" onclick="postAvatarWithName()">Finish</button>
+<div id="itemPreview"></div>
 <form action="randomizer.php" method="get">
 <input type="hidden" name="num" value="<?php echo $num; ?>">
 <input type="hidden" name="image" value="<?php echo $img2; ?>">
@@ -82,7 +81,7 @@ if(isset($_GET['image'])){
 </form>
 </div>
 <style>
-	span {
+	span
 		align: center;
 		position: fixed;
 		top: 0;
