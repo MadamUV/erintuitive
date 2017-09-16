@@ -26,7 +26,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<table height="400px" id="saturn" style="background-color: black; position: absolute; z-index:200; left: 20px;" cellpadding="100px">
+<table id="saturn" style="background-color: black; position: absolute; z-index:200; left: 20px;" cellpadding="100px">
 	<tr><td>
 		<img src="img/stars5.gif" alt="saturn"/>
 	</td></tr>
