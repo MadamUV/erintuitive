@@ -478,6 +478,7 @@
 			}
 			else if(avatarOptions.getAttribute("class")=="undiesStep2"){
 				avatarOptions.innerHTML = "Next phase: clothing!";
+				window.localStorage.setItem("avatarNaked", escape(document.getElementById("relativeContainer").innerHTML));
 				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
 				window.location.replace("humanClothes.php");
 			}

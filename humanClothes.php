@@ -85,7 +85,7 @@
 		var count2 = 0;
 		var countPresent = 0;
 		//convert avatar var and place it in div
-		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatar")}, function(data2){
+		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatarNaked")}, function(data2){
 			document.getElementById("relativeContainer").innerHTML = data2;
 			previous = relativeContainer.innerHTML;
 			document.getElementById("buttons").innerHTML = '<button id="randomize" onclick="randomizeTop()">Randomize top</button><button id="randomize" onclick="randomizeBottom()">Randomize bottom</button><button id="next" onclick="nextOptions()">Next</button>';
