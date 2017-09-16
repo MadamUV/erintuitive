@@ -36,7 +36,7 @@
 </table>
 <div id="content" style="position: absolute; z-index:199;">
 </div>
-<div id="people"></div>
+<div id="people" style="position: absolute; z-index:201;"></div>
 <style>
 	.chair { 
 		animation:.6s rotateRight infinite linear;
