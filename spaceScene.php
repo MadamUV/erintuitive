@@ -36,6 +36,7 @@
 </table>
 <div id="content" style="position: absolute; z-index:199;">
 </div>
+<div id="people"></div>
 <style>
 	.chair { 
 		animation:.6s rotateRight infinite linear;
@@ -81,6 +82,7 @@
 	}
 </style>
 <script>
+	var me_id = "";
 	function statusChangeCallback(response) {
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
@@ -114,13 +116,14 @@
 			document.getElementById("content").innerHTML = window.localStorage.getItem("backgroundSpace");
 		}
 		FB.api('/me', function(response) {
-			var me_id = response.id;
+			me_id = response.id;
 			$.get("https://api.myjson.com/bins/vzecj", function(data3, textStatus, jqXHR) {
 				for(i=0; i<data3['person'].length; i++){
 					if(data3['person'][i]['user_id']==me_id){						
-						var avatar = data3['person'][i]['avatar'];
+						var avatar = urldecode(data3['person'][i]['avatar']);
 						var name = data3['person'][i]['name'];
-						
+						$("#people").append('<div id="'+me_id+'" class="person" style="position: absolute; top: 0; left: 0; -webkit-transform: scale(0.45); -ms-transform: scale(0.45); transform: scale(0.45);">'+avatar+'<br><img alt="cloud with name on it" src="svg/human/humanBody/cloud.svg"/><span style="position: relative; left: 78px;">'+name+'</span></div>');
+						$("#saturn").hide();
 					}
 				}
 			});

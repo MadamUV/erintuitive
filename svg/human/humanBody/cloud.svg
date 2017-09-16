@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="86" height="380" viewBox="202.71499633789062 584.406982421875 86.59329986572266 62" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs id="svgEditorDefs">
+    <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/>
+    <radialGradient id="gradient-16" gradientUnits="userSpaceOnUse" cx="57.737" cy="250.616" r="14.016" gradientTransform="matrix(0.999995, 0, -0.000001, 1, 0.000812, 0.001221)">
+      <stop offset="0" style="stop-color: rgba(255, 240, 79, 1)"/>
+      <stop offset="1" style="stop-color: rgba(232, 213, 0, 1)"/>
+    </radialGradient>
+    <radialGradient id="gradient-17" gradientUnits="userSpaceOnUse" cx="93.902" cy="261.402" r="8.025" gradientTransform="matrix(0.999993, -0.000004, 0, 0.999994, 0.001006, 0.000261)">
+      <stop offset="0" style="stop-color: rgba(255, 240, 79, 1)"/>
+      <stop offset="1" style="stop-color: rgba(232, 213, 0, 1)"/>
+    </radialGradient>
+    <radialGradient id="gradient-18" gradientUnits="userSpaceOnUse" cx="64.953" cy="89.249" r="32.933" gradientTransform="matrix(0.828724, 0.000001, -0.000001, 1.000004, 0.000049, -0.000221)">
+      <stop offset="0" style="stop-color: rgba(255, 240, 79, 1)"/>
+      <stop offset="1" style="stop-color: rgba(232, 213, 0, 1)"/>
+    </radialGradient>
+    <radialGradient id="gradient-19" gradientUnits="userSpaceOnUse" cx="248.862" cy="623.416" r="40.829" gradientTransform="matrix(0.999999, 0, 0, 1.0802, -3.126512, -60.149865)">
+      <stop offset="0" style="stop-color: rgba(255, 240, 79, 1)"/>
+      <stop offset="1" style="stop-color: rgba(232, 213, 0, 1)"/>
+    </radialGradient>
+  </defs>
+  <ellipse style="fill: url(#gradient-16);" transform="matrix(-0.090535, 0.995894, -0.995895, -0.090534, 473.392292, 586.395759)" cx="57.737" cy="250.616" rx="14.016" ry="14.016"/>
+  <ellipse style="fill: url(#gradient-17);" transform="matrix(0.316225, 0.94869, -0.948679, 0.316235, 485.087403, 458.342025)" cx="93.903" cy="261.4" rx="8.025" ry="8.025"/>
+  <ellipse style="fill: url(#gradient-18);" transform="matrix(-0.987809, 0.155672, -0.155672, -0.987808, 308.137367, 696.608484)" cx="53.828" cy="89.249" rx="27.292" ry="23.654"/>
+  <path d="M 237.657 601.28 C 226.625 601.28 226.871 605.417 226.871 614.987 C 226.502 615.673 219.591 609.829 216.72 612.931 C 213.141 616.797 201.399 629.279 205.934 634.176 C 208.308 636.742 223.064 642.147 223.064 636.233 C 224.333 636.814 234.723 636.233 236.388 636.233 C 242.43 636.233 267.404 628.615 272.553 634.176 C 274.192 635.947 278.215 642.453 285.243 634.862 C 285.77 634.292 286.812 622.85 286.512 622.525 C 278.762 614.154 284.372 613.616 273.822 613.616 C 272.586 613.616 276.902 602.536 271.285 597.808 C 261.433 589.516 251.801 585.317 238.292 599.909 L 237.657 601.28 Z" style="fill: url(#gradient-19);" transform="matrix(0.999408, -0.034391, 0.034391, 0.999408, -20.990699, 8.814697)"/>
+</svg>
