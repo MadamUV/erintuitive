@@ -292,6 +292,7 @@
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
 						itemPreview.innerHTML = "Great!";
+						window.location.replace("spaceScene.php");
 					}
 				});
 				//https://api.myjson.com/bins/14ovul
@@ -303,6 +304,7 @@
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
 						itemPreview.innerHTML = "Great!";
+						window.location.replace("spaceScene.php");
 					}
 				});
 			}
@@ -323,6 +325,7 @@
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
 						itemPreview.innerHTML = "Great!";
+						window.location.replace("spaceScene.php");
 					}
 				});
 				$.ajax({
