@@ -10,6 +10,7 @@
 </body>
 <script>
 	var animalObject = window.localStorage.getItem("animalObject");
+	var itemPreview = document.getElementById("itemPreview");
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
 		var avatar = escape(document.getElementById("relativeContainer").innerHTML);

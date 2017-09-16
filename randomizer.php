@@ -76,7 +76,7 @@ if(isset($_GET['image'])){
 <input type="hidden" name="image" value="<?php echo $img2; ?>">
 <input type="submit" id="buttons" value="Next image" name="submit">
 </form>
-<a href="nameAnimal.php">Ok, name my character</a>
+<a href="nameAnimal.php" style="position: fixed; top:440px; right: 700px;">Ok, name my character</a>
 </div>
 <style>
 	span
