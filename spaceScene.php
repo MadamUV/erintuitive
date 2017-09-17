@@ -131,7 +131,8 @@
 						});
 					}
 					else {
-						
+						var avatar = data3['person'][i]['avatar'];
+						var name = data3['person'][i]['name'];
 					}
 				}
 			});
