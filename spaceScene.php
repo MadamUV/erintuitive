@@ -130,12 +130,12 @@
 							$("#saturn").hide();
 						});
 					}
-					else {
+					/*else {
 						//other player avatar and name
 						//I'm setting their coordinates. 
 						var avatar = data3['person'][i]['avatar'];
 						var name = data3['person'][i]['name'];
-						/*$.post("convertAvatar.php", {convert: avatar}, function(data2){
+						$.post("convertAvatar.php", {convert: avatar}, function(data2){
 							avatar = data2;
 							//making the x variable and y
 							var x = data3['person'][i]['pos_x'];
@@ -149,8 +149,8 @@
 								//Now I'm going to make the blink activate.
 								//$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
 							}
-						});*/
-					}
+						});
+					}*/
 				}
 			});
 		});
