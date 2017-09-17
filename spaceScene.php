@@ -130,6 +130,27 @@
 							$("#saturn").hide();
 						});
 					}
+					else {
+						//other player avatar and name
+						//I'm setting their coordinates. 
+						var avatar = data3['person'][i]['avatar'];
+						var name = data3['person'][i]['name'];
+						$.post("convertAvatar.php", {convert: avatar}, function(data2){
+							avatar = data2;
+							//making the x variable and y
+							var x = data3['person'][i]['pos_x'];
+							var y = data3['person'][i]['pos_y'];
+							var player = data3['person'][i]['me_id'];
+							$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							otherPlayers += data3['person'][i]['me_id'];
+							//check if blink is active for this user
+							if (data3['person'][i]['blink']==true){
+								//I studied logic in college.
+								//Now I'm going to make the blink activate.
+								$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
+							}
+						}
+					}
 				}
 			});
 		});
@@ -140,7 +161,7 @@
 		}
 		else if(event.keyCode==40){
 			var down = setInterval(down(), 125);
-		}
+		
 		if(event.keyCode==39){
 			var right = setInterval(right(), 125);
 		}
