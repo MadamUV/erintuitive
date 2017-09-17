@@ -147,7 +147,7 @@
 							if (data3['person'][i]['blink']==true){
 								//I studied logic in college.
 								//Now I'm going to make the blink activate.
-								$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
+								//$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
 							}
 						}
 					}
