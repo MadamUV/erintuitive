@@ -39,7 +39,7 @@
 	function getMe() {
 		FB.api('/me', function(response) {
 			var me_id = response.id;
-			//var me_firstname = response.first_name;
+			window.localStorage.setItem("me_id", me_id);
 		});
 	}
   function login(){
@@ -99,93 +99,6 @@
 		Enjoy the scenery and build your own character! Erintuitive interprets your avatar's appearance and attempts to figure out your personality!<br>
 		<button id="loginButton" onclick="login()">Enter!</button>
 	</div>
-	<br><img alt="virtual psychic" src="img/giphy.gif"/><br>
-	<button id="loginButton">Login</button>
-	<style>
-		body {
-			background-color: #FFBB22;
-		}
-		#intro {
-			position: absolute;
-			z-index: 100;
-		}
-		#words {
-			position: absolute;
-			top: 300px;
-			left: 250px;
-		}
-		#avatarOptions {
-			position: relative;
-			float: left;
-		}
-		#buttons {
-			position: fixed;
-			top: 395px;
-			left: 600px;
-		}
-		#result {
-			vertical-align: text-top;
-			width: 300px;
-			padding-left: 5px;
-			border-width: 5px;
-			border-style: solid;
-		}
-		#avatarOptions {
-			overflow: scroll;
-			height: 450px;
-		}
-	</style>
-	<script>
-		$("#buttons").hide();
-		$("#logout_button").hide();
-		////////facebook/////////
-		
-		function statusChangeCallback(response) {
-			// The response object is returned with a status field that lets the
-			// app know the current login status of the person.
-			// Full docs on the response object can be found in the documentation
-			// for FB.getLoginStatus().
-			if (response.status === 'connected') {
-			  // Logged into your app and Facebook.
-			  useAPI();
-			} else if (response.status === 'not_authorized') {
-			  // The person is logged into Facebook, but not your app.
-			} else {
-			  // The person is not logged into Facebook, so we're not sure if
-			  // they are logged into this app or not.
-			}
-		  }
-
-		  // This function is called when someone finishes with the Login
-		  // Button.  See the onlogin handler attached to it in the sample
-		  // code below.
-		  function checkLoginState() {
-			FB.getLoginStatus(function(response) {
-			  statusChangeCallback(response);
-			});
-		  }
-
-		  // FB.getLoginStatus().  This function gets the state of the
-		  // person visiting this page and can return one of three states to
-		  // the callback you provide.  They can be:
-		  //
-		  // 1. Logged into your app ('connected')
-		  // 2. Logged into Facebook, but not your app ('not_authorized')
-		  // 3. Not logged into Facebook and can't tell if they are logged into
-		  //    your app or not.
-		  //
-		  // These three cases are handled in the callback function.
-		  $("#login_button").click(function(){
-			FB.login(function(response){
-				statusChangeCallback(response);
-			});
-		  });
-		  // on login success 
-		  function useAPI() {
-			window.location.replace("human2.php");
-		  }
-		
-		//////////////////
-	</script>
+	<div id="choose"></div>
 </body>
 </html>
