@@ -83,6 +83,7 @@
 </style>
 <script>
 	var me_id = "";
+	var otherPlayers = [];
 	function statusChangeCallback(response) {
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
@@ -116,7 +117,6 @@
 		else {
 			document.getElementById("content").innerHTML = window.localStorage.getItem("backgroundSpace");
 		}
-		var otherPlayers = [];
 		FB.api('/me', function(response) {
 			me_id = response.id;
 			$.get("https://api.myjson.com/bins/vzecj", function(data3, textStatus, jqXHR) {
@@ -152,7 +152,8 @@
 							//making the x variable and y
 							var x = data3['person'][i]['pos_x'];
 							var y = data3['person'][i]['pos_y'];
-							$("#people").append('<div class="wrapperPeople" id="'+data3['person'][i]['me_id']+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+data3['person'][i]['me_id']+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							var player = data3['person'][i]['me_id'];
+							$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
 							otherPlayers += data3['person'][i]['me_id'];
 							//check if blink is active for this user
 							if (data3['person'][i]['blink']==true){
@@ -163,7 +164,7 @@
 						}
 					}
 				}
-			}) ;
+			});
 		});
 		setInterval(updateChar, 500);
 	}
