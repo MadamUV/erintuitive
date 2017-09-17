@@ -83,6 +83,7 @@
 </style>
 <script>
 	var me_id = "";
+	var otherPlayers = [];
 	function statusChangeCallback(response) {
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
