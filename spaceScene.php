@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/glide.theme.css">
 	<title>Chatroom: Erintuitive Mystically Reveals your Personality!</title>
 </head>
-<body bgcolor="black" onkeyup="walk(event)">
+<body bgcolor="black">
 <script>
 	window.fbAsyncInit = function() {
     FB.init({
@@ -83,7 +83,6 @@
 </style>
 <script>
 	var me_id = "";
-	var otherPlayers = [];
 	function statusChangeCallback(response) {
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
@@ -124,81 +123,15 @@
 					if(data3['person'][i]['user_id']==me_id){						
 						var avatar = data3['person'][i]['avatar'];
 						var name = data3['person'][i]['name'];
-						//this is where I convert the avatar back into html format from text
 						$.post("convertAvatar.php", {convert: avatar}, function(data2){
 							avatar = data2;
 							$("#people").append('<div class="wrapperPeople" id="'+me_id+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+me_id+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
 							$("#saturn").hide();
-							//I'm going to let the JSON know the character is initialized
-							$.ajax({
-								//this is the interface for my data storage
-								url:"https://api.myjson.com/bins/vzecj",
-								type:"PUT",
-								data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": 0, "pos_y": 0, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
-								contentType:"application/json; charset=utf-8",
-								dataType:"json", 
-								success: function(data, textStatus, jqXHR){
-								}
-							});
 						});
-					}
-					else {
-						//other player avatar and name
-						//I'm setting their coordinates. 
-						var avatar = data3['person'][i]['avatar'];
-						var name = data3['person'][i]['name'];
-						$.post("convertAvatar.php", {convert: avatar}, function(data2){
-							avatar = data2;
-							//making the x variable and y
-							var x = data3['person'][i]['pos_x'];
-							var y = data3['person'][i]['pos_y'];
-							var player = data3['person'][i]['me_id'];
-							/*$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
-							otherPlayers += data3['person'][i]['me_id'];
-							//check if blink is active for this user
-							if (data3['person'][i]['blink']==true){
-								//I studied logic in college.
-								//Now I'm going to make the blink activate.
-								$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
-							}*/
-						}
 					}
 				}
 			});
 		});
-		setInterval(updateChar, 500);
-	}
-	function updateChar() {
-		//this is where I update the characters. the stuff above was for initializing.
-		$.get("https://api.myjson.com/bins/vzecj", function(data3, textStatus, jqXHR) {
-			
-		}
-	}
-	function walk(event) {
-		if(event.keyCode==38){
-			var up = setInterval(up(), 125);
-		}
-		else if(event.keyCode==40){
-			var down = setInterval(down(), 125);
-		}
-		if(event.keyCode==39){
-			var right = setInterval(right(), 125);
-		}
-		else if(event.keyCode==37){
-			var left = setInterval(left(), 125);
-		}
-	}
-	function up(){
-		
-	}
-	function down(){
-		
-	}
-	function left(){
-		
-	}
-	function up(){
-		
 	}
 	//$(".relativeContainer").append('<img class="blink" src="svg/human/humanBody/blink.svg" style="visibility: hidden;" alt="blinked eyes">');
 </script>
