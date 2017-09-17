@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/glide.theme.css">
 	<title>Chatroom: Erintuitive Mystically Reveals your Personality!</title>
 </head>
-<body bgcolor="black" onkeyup="walk(event)">
+<body bgcolor="black">
 <script>
 	window.fbAsyncInit = function() {
     FB.init({
