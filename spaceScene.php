@@ -138,13 +138,17 @@
 							//making the x variable and y
 							var x = data3['person'][i]['pos_x'];
 							var y = data3['person'][i]['pos_y'];
-							var player = data3['person'][i]['me_id'];
-							$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							if(x != -1 && y != -1){
+								var player = data3['person'][i]['me_id'];
+								$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+player+'_sub" class="person" style="position: absolute; top: '+
+								x+'; left: '+y+'; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							}
 						});
 					}
 				}
 			});
 		});
+		setInterval(updateChar(), 500);
 	}
 	function walk(event) {
 		if(event.keyCode==38){
