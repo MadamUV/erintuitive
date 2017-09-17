@@ -153,14 +153,14 @@
 							var x = data3['person'][i]['pos_x'];
 							var y = data3['person'][i]['pos_y'];
 							var player = data3['person'][i]['me_id'];
-							$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
+							/*$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative; left: '+x+'; top: '+y+';"><div id="'+player+'_sub" class="person" style="position: absolute; top: 0; left: 0; z-index: 203; -webkit-transform: scale(0.54); -ms-transform: scale(0.54); transform: scale(0.54);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></div></div>');
 							otherPlayers += data3['person'][i]['me_id'];
 							//check if blink is active for this user
 							if (data3['person'][i]['blink']==true){
 								//I studied logic in college.
 								//Now I'm going to make the blink activate.
 								$('#' + data3['person'][i]['me_id']).css({'visibility':'visible'}); //hmmmm wait
-							}
+							}*/
 						}
 					}
 				}
