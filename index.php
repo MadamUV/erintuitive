@@ -37,26 +37,8 @@
 		});
     };
 	function getMe() {
-		FB.api('/me', function(response) {
-			var me_id = response.id;
-			//var me_firstname = response.first_name;
-		});
+		window.location.replace("human2.php");
 	}
-  function login(){
-	FB.login(function(response){
-		if (response.status === 'connected'){
-			$("#wholeIntro").hide();
-			window.location.replace("human2.php");
-		}
-		else if (response.status === 'not_authorized'){
-			$("#wholeIntro").show();
-			$("#logout_button").hide();
-		}
-		else {
-			
-		}
-	});
-  }
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
