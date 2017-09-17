@@ -772,6 +772,8 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes8").html());
 			$("#relativeContainer .eyes8").css({'position':'absolute', 'top':'-2px', 'left':'0'});
+			$("#relativeContainer").append('<svg class="blink" "width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/> </defs> <ellipse class="skin" fill="rgb(216, 216, 216)" transform="matrix(-0.982024, 0.188758, 0.017235, -1.021619, 366.924626, 758.016324)" cx="108.375" cy="157.592" rx="24.608" ry="20.176"/> <ellipse class="skin" fill="rgb(216, 216, 216)" transform="matrix(-0.999858, -0.016865, 0.016867, -0.999857, 334.68122, 786.809774)" cx="110.085" cy="168.613" rx="24.997" ry="21.589"/> <rect x="51.392" y="88.191" width="21.572" height="5.076" style="fill: rgb(117, 117, 117);" transform="matrix(1, 0, 0, 0.999995, 165.915695, 529.842889)"/> <rect x="83.75" y="88.191" width="22.841" height="5.076" style="fill: rgb(117, 117, 117);" transform="matrix(1, 0, 0, 0.999995, 165.915675, 529.842889)"/></svg>');
+			$("#relativeContainer .blink").css({'position':'absolute', 'top':'2px', 'left':'0', 'z-index':'3'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
@@ -800,6 +802,8 @@
 			relativeContainer.innerHTML = previous;
 			$("#relativeContainer").append($("#buttonEyes11").html());
 			$("#relativeContainer .eyes11").css({'position':'absolute', 'top':'-2px', 'left':'0'});
+			$("#relativeContainer").append('<svg class="blink" "width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" class="skin" fill="black" style="stroke-width: 0px; stroke: none;"/> </defs> <ellipse class="skin" fill="rgb(216, 216, 216)" transform="matrix(-0.982024, 0.188758, 0.017235, -1.021619, 366.924626, 758.016324)" cx="108.375" cy="157.592" rx="24.608" ry="20.176"/> <ellipse class="skin" fill="rgb(216, 216, 216)" transform="matrix(-0.999858, -0.016865, 0.016867, -0.999857, 334.68122, 786.809774)" cx="110.085" cy="168.613" rx="24.997" ry="21.589"/> <rect x="51.392" y="88.191" width="21.572" height="5.076" style="fill: rgb(117, 117, 117);" transform="matrix(1, 0, 0, 0.999995, 165.915695, 529.842889)"/> <rect x="83.75" y="88.191" width="22.841" height="5.076" style="fill: rgb(117, 117, 117);" transform="matrix(1, 0, 0, 0.999995, 165.915675, 529.842889)"/></svg>');
+			$("#relativeContainer .blink").css({'position':'absolute', 'top':'2px', 'left':'0', 'z-index':'3'});
 			$("#relativeContainer .skin").css({'fill':updateSkin});
 			previousEyes = relativeContainer.innerHTML;
 			$("#buttons").show();
