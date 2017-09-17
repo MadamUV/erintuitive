@@ -133,6 +133,12 @@
 					else {
 						var avatar = data3['person'][i]['avatar'];
 						var name = data3['person'][i]['name'];
+						$.post("convertAvatar.php", {convert: avatar}, function(data2){
+							avatar = data2;
+							//making the x variable and y
+							var x = data3['person'][i]['pos_x'];
+							var y = data3['person'][i]['pos_y'];
+						});
 					}
 				}
 			});
