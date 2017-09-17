@@ -150,6 +150,12 @@
 		});
 		setInterval(updateChar(), 500);
 	}
+	function updateChar() {
+		//this is where I update the characters. the stuff above was for initializing.
+		$.get("https://api.myjson.com/bins/vzecj", function(data3, textStatus, jqXHR) {
+			
+		});
+	}
 	function walk(event) {
 		if(event.keyCode==38){
 			var up = setInterval(up(), 125);
