@@ -378,6 +378,7 @@
 		}
 		function nextOptions() {
 			if(avatarOptions.getAttribute("class")=="init"){
+				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
 				avatarOptions.innerHTML = "Choose skin color.";
 				itemPreview.innerHTML = '<div style="padding:50px;"><label for="color1">Color 1</label> <input id="color1" type="text" name="color1" value="#333399" onchange="makeSkinColor()"/></div>';
 				//white, antiquewhite, papayawhip, navajowhite, peachpuff, lightpink, pink, moccasin, beige, khaki, tan, salmon, peru, goldenrod, darksalmon, indianred, red, darkred, chocolate, brown, black, mediumslateblue, purple, lavender, blue, yellow, green, orange   -->
