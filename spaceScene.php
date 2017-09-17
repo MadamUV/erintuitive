@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/glide.theme.css">
 	<title>Chatroom: Erintuitive Mystically Reveals your Personality!</title>
 </head>
-<body bgcolor="black">
+<body bgcolor="black" onkeyup="walk(event)">
 <script>
 	window.fbAsyncInit = function() {
     FB.init({
@@ -133,7 +133,32 @@
 			});
 		});
 	}
-	//$(".relativeContainer").append('<img class="blink" src="svg/human/humanBody/blink.svg" style="visibility: hidden;" alt="blinked eyes">');
+	function walk(event) {
+		if(event.keyCode==38){
+			var up = setInterval(up(), 125);
+		}
+		else if(event.keyCode==40){
+			var down = setInterval(down(), 125);
+		}
+		if(event.keyCode==39){
+			var right = setInterval(right(), 125);
+		}
+		else if(event.keyCode==37){
+			var left = setInterval(left(), 125);
+		}
+	}
+	function up(){
+		
+	}
+	function down(){
+		
+	}
+	function left(){
+		
+	}
+	function up(){
+		
+	}
 </script>
 </body>
 </html>
