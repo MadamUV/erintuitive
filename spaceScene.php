@@ -31,7 +31,7 @@
 		<img src="img/stars5.gif" alt="saturn"/>
 	</td></tr>
 	<tr><td>
-	<font color="white">Loading...</font>
+	<font color="white" style="position: relative; top: -80px;">Loading...</font>
 	</td></tr>
 </table>
 <div id="content" style="position: absolute; z-index:199;">
