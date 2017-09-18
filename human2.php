@@ -137,7 +137,8 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	   function getMe() {
 			FB.api('/me', function(response) {
-				me_id = response.id;				
+				me_id = response.id;
+				window.localStorage.setItem("me_id", me_id);
 			});
 		}
 	</script>

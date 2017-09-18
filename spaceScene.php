@@ -121,7 +121,7 @@
 			me_id = response.id;
 			$.get("https://api.myjson.com/bins/vzecj", function(data3, textStatus, jqXHR) {
 				for(i=0; i<data3['person'].length; i++){
-					if(data3['person'][i]['user_id']==me_id){						
+					if(data3['person'][i]['user_id'] == me_id){						
 						var avatar = data3['person'][i]['avatar'];
 						var name = data3['person'][i]['name'];
 						$.post("convertAvatar.php", {convert: avatar}, function(data2){
