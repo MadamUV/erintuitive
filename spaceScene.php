@@ -136,8 +136,8 @@
 						$.post("convertAvatar.php", {convert: avatar}, function(data2){
 							avatar = data2;
 							//making the x variable and y
-							var x = data3['person'][i]['pos_x'];
-							var y = data3['person'][i]['pos_y'];
+							var x = data2['person'][i]['pos_x'];
+							var y = data2['person'][i]['pos_y'];
 							if(x != -1 && y != -1){
 								var player = data3['person'][i]['me_id'];
 								$("#people").append('<div class="wrapperPeople" id="'+player+'" style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1); position: relative;"><div id="'+player+'_sub" class="person" style="position: absolute; top: '+

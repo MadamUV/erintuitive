@@ -296,18 +296,6 @@
 						window.location.replace("spaceScene.php");
 					}
 				});
-				//https://api.myjson.com/bins/14ovul
-				$.ajax({
-					url:"https://api.myjson.com/bins/14ovul",
-					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
-					contentType:"application/json; charset=utf-8",
-					dataType:"json",
-					success: function(data, textStatus, jqXHR){
-						itemPreview.innerHTML = "Great!";
-						window.location.replace("spaceScene.php");
-					}
-				});
 			}
 			else if(count1 > 0 && count2 == 0){
 				var pushThis = {
