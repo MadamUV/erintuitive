@@ -481,6 +481,7 @@
 				avatarOptions.innerHTML = "Next phase: clothing!";
 				window.localStorage.setItem("avatarNaked", escape(document.getElementById("relativeContainer").innerHTML));
 				window.localStorage.setItem("avatar", escape(document.getElementById("relativeContainer").innerHTML));
+				window.localStorage.setItem("me_id", me_id);
 				window.location.replace("humanClothes.php");
 			}
 		}
