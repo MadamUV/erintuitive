@@ -54,7 +54,22 @@
 		
 	</div>
 	<script>
-		var me_id = localStorage.getItem("me_id");
+		var me_id = '';
+		FB.getLoginStatus(function(response){
+			if (response.status === 'connected'){
+				getMe();
+			}
+			else if (response.status === 'not_authorized'){
+			}
+			else {
+				
+			}
+		});
+		function getMe() {
+			FB.api('/me', function(response) {
+				me_id = response.id;
+			});
+		}
 		var previous = '';
 		var previousClothes = '';
 		var previousShoes = '';
