@@ -76,18 +76,6 @@
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
-		//convert avatar var and place it in div
-	/*function getLogin() {
-		FB.getLoginStatus(function(response) {
-	   if (response.status === 'connected') {
-			//me_id = response.id;
-		  }
-		  else {
-			FB.login();
-		  }
-		});
-	}*/
-	getLogin();
 		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatarNaked")}, function(data2){
 			document.getElementById("relativeContainer").innerHTML = data2;
 			previous = relativeContainer.innerHTML;
