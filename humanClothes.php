@@ -21,14 +21,6 @@
 		  version          : 'v2.9'
 		});
 		FB.AppEvents.logPageView();
-			   FB.getLoginStatus(function(response) {
-	   if (response.status === 'connected') {
-			//insert stuff here
-		  }
-		  else {
-			FB.login();
-		  }
-		});
 	  };
 	  (function(d, s, id){
 		 var js, fjs = d.getElementsByTagName(s)[0];
@@ -62,6 +54,7 @@
 		
 	</div>
 	<script>
+		var me_id = '';
 		var previous = '';
 		var previousClothes = '';
 		var previousShoes = '';
@@ -80,11 +73,21 @@
 			return result;
 		}
 		var num = 0;
-		var me_id = window.localStorage.getItem("me_id");
 		var count1 = 0;
 		var count2 = 0;
 		var countPresent = 0;
 		//convert avatar var and place it in div
+	function getLogin() {
+		FB.getLoginStatus(function(response) {
+	   if (response.status === 'connected') {
+			me_id = response.id;
+		  }
+		  else {
+			FB.login();
+		  }
+		});
+	}
+	getLogin();
 		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatarNaked")}, function(data2){
 			document.getElementById("relativeContainer").innerHTML = data2;
 			previous = relativeContainer.innerHTML;
