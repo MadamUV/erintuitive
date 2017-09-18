@@ -13,7 +13,13 @@
 </head>
 <body style="background-color: #FFBB22;">
 	<script>
-	  window.fbAsyncInit = function() {
+	var me_id = '';
+	function getMe() {
+		FB.api('/me', function(response) {
+			me_id = response.id;
+		});
+	}
+	window.fbAsyncInit = function() {
 		FB.init({
 		  appId            : '817064305070781',
 		  autoLogAppEvents : true,
@@ -21,6 +27,16 @@
 		  version          : 'v2.9'
 		});
 		FB.AppEvents.logPageView();
+		FB.getLoginStatus(function(response){
+			if (response.status === 'connected'){
+				getMe();
+			}
+			else if (response.status === 'not_authorized'){
+			}
+			else {
+				
+			}
+		});
 	  };
 	  (function(d, s, id){
 		 var js, fjs = d.getElementsByTagName(s)[0];
@@ -54,22 +70,7 @@
 		
 	</div>
 	<script>
-		var me_id = '';
-		FB.getLoginStatus(function(response){
-			if (response.status === 'connected'){
-				getMe();
-			}
-			else if (response.status === 'not_authorized'){
-			}
-			else {
-				
-			}
-		});
-		function getMe() {
-			FB.api('/me', function(response) {
-				me_id = response.id;
-			});
-		}
+		
 		var previous = '';
 		var previousClothes = '';
 		var previousShoes = '';
