@@ -54,7 +54,7 @@
 		
 	</div>
 	<script>
-		var me_id = '';
+		var me_id = localStorage.getItem("me_id");
 		var previous = '';
 		var previousClothes = '';
 		var previousShoes = '';
@@ -77,16 +77,16 @@
 		var count2 = 0;
 		var countPresent = 0;
 		//convert avatar var and place it in div
-	function getLogin() {
+	/*function getLogin() {
 		FB.getLoginStatus(function(response) {
 	   if (response.status === 'connected') {
-			me_id = response.id;
+			//me_id = response.id;
 		  }
 		  else {
 			FB.login();
 		  }
 		});
-	}
+	}*/
 	getLogin();
 		$.post("convertAvatar.php", {convert: window.localStorage.getItem("avatarNaked")}, function(data2){
 			document.getElementById("relativeContainer").innerHTML = data2;

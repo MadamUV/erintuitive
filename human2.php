@@ -117,7 +117,7 @@
 		FB.AppEvents.logPageView();
 		FB.getLoginStatus(function(response){
 			if (response.status === 'connected'){
-				
+				getMe();
 			}
 			else if (response.status === 'not_authorized'){
 				document.getElementById("itemPreview").innerHTML = "test";
