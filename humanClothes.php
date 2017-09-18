@@ -326,7 +326,7 @@
 			}
 			else if(count1 > 0 && count2 > 0){
 				for(i=0; i<data3['person'].length; i++){
-					if(data3['person'][i]['user_id']==me_id){
+					if(data3['person'][i]['user_id'] == me_id){
 						data3['person'][i]['avatar'] = avatar;
 						data3['person'][i]['name'] = theName;
 						data3['person'][i]['pos_x'] = -1;
