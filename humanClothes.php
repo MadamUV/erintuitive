@@ -282,6 +282,19 @@
 		var countPresent = 0;
 		window.localStorage.setItem("avatar", avatar);
 		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
+			if(data3['person'].length == 0){
+				$.ajax({
+					url:"https://api.myjson.com/bins/vzecj",
+					type:"PUT",
+					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					success: function(data, textStatus, jqXHR){
+						itemPreview.innerHTML = "Great!";
+						window.location.replace("spaceScene.php");
+					}
+				});
+			}
 			for(i=0; i<data3['person'].length; i++){
 				if(data3['person'][i]['user_id'] != me_id){
 					count1 += 1;
