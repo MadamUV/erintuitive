@@ -281,12 +281,13 @@
 		var count2 = 0;
 		var countPresent = 0;
 		window.localStorage.setItem("avatar", avatar);
+		$.post("http://www.jsonapi.eu3.biz/test.php", {var: count1});
 		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 			if(data3['person'].length == 0){
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+					data: {json : '{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}'},
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -308,7 +309,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
+					data: {json:'{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}'},
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
@@ -335,7 +336,7 @@
 				$.ajax({
 					url:"https://api.myjson.com/bins/vzecj",
 					type:"PUT",
-					data: JSON.stringify(data3),
+					data: {json: JSON.stringify(data3)},
 					contentType:"application/json; charset=utf-8",
 					dataType:"json",
 					success: function(data, textStatus, jqXHR){
