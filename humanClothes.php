@@ -281,7 +281,7 @@
 		var count2 = 0;
 		var countPresent = 0;
 		window.localStorage.setItem("avatar", avatar);
-		$.post("http://www.jsonapi.eu3.biz/test.php", {var: count1});
+		$.post("http://www.jsonapi.eu3.biz/test.php", {var1: count1});
 		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
 			if(data3['person'].length == 0){
 				$.ajax({
