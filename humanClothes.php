@@ -281,11 +281,14 @@
 		var count2 = 0;
 		var countPresent = 0;
 		window.localStorage.setItem("avatar", avatar);
+		////jsonbin.io/b/59c42edabbab4566375b747c
+		//POST (RAW) /b/:id
+		//POST (RAW) /b/update/:id
 		$.post("http://www.jsonapi.eu3.biz/test.php", {var1: count1});
-		$.get("https://api.myjson.com/bins/vzecj", function (data3, textStatus3, jqXHR3) {
+		$.get("https://jsonbin.io/b/59c42edabbab4566375b747c", function (data3, textStatus3, jqXHR3) {
 			if(data3['person'].length == 0){
 				$.ajax({
-					url:"https://api.myjson.com/bins/vzecj",
+					url:"https://jsonbin.io/b/update/59c42edabbab4566375b747c",
 					type:"PUT",
 					data: '{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
@@ -307,7 +310,7 @@
 			}
 			if(count1 == 0 && count2 > 0){
 				$.ajax({
-					url:"https://api.myjson.com/bins/vzecj",
+					url:"https://jsonbin.io/b/update/59c42edabbab4566375b747c",
 					type:"PUT",
 					data: '{"person": [{"user_id":"'+me_id+'", "name":"'+theName+'", "avatar":"'+avatar+'", "pos_x": -1, "pos_y": -1, "facingLeft": false, "blink": false, "spinningLeft": false, "spinningRight": false]}',
 					contentType:"application/json; charset=utf-8",
