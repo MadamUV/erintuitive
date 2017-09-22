@@ -263,9 +263,12 @@
 	}
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
-		var avatar = escape(document.getElementById("relativeContainer").innerHTML);
+		var avatar = document.getElementById("relativeContainer").innerHTML;
+		var sprite = '<table style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><tr><td style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</td><td>'+avatar+'</td><td>'+avatar+'</td><td class="blinkEye">'+avatar+'</td></tr><tr><td style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</td><td>'+avatar+'</td><td>'+avatar+'</td><td class="blinkEye">'+avatar+'</td></tr><tr><td>'+avatar+'</td><td>'+avatar+'</td><td>'+avatar+'</td><td class="blinkEye">'+avatar+'</td></tr><tr><td>'+avatar+'</td><td>'+avatar+'</td><td>'+avatar+'</td><td class="blinkEye">'+avatar+'</td></tr></table>';
+		document.getElementById("relativeContainer").innerHTML = sprite;
+		avatar = escape(document.getElementById("relativeContainer").innerHTML);
 		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
-			$("#itemPreview").append("success!");
+		$("#itemPreview").append("success!");
 		});
 		//https://www.jasonbase.com/things/nMpo/edit*/
 		var rand = Math.floor(Math.random()*1000).toString();
