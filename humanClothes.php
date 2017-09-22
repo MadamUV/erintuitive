@@ -264,8 +264,8 @@
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
 		var avatar = document.getElementById("relativeContainer").innerHTML;
-		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px'});
-		var sprite = '<div style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div style="position: relative; float: left; padding: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; padding: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; padding: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div class="blinking" style="position: relative; float: left; padding: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div></div>';
+		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
+		var sprite = '<div style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div style="position: relative; float: left; margin: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; margin: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; margin: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div class="blinking" style="position: relative; float: left; margin: 20px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div></div>';
 		document.getElementById("relativeContainer").innerHTML = sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
 		avatar = escape(avatar);
