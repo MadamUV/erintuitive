@@ -264,8 +264,9 @@
 	function postAvatarWithName(){
 		var av = document.getElementById("avatarName").value;
 		var avatar = document.getElementById("relativeContainer").innerHTML;
+		$("#relativeContainer").css({'margin':'5px'});
 		var sprite = '<div style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div style="position: relative; float: left; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div class="blinking" style="position: relative; float: left; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div></div>';
-		$(".blinking").children().css({'visibility':'visible'});
+		$(".blinking .blink").css({'visibility':'visible'});
 		document.getElementById("relativeContainer").innerHTML = sprite;
 		avatar = escape(document.getElementById("relativeContainer").innerHTML);
 		/*$.post("postAvatar.php", {name: av, me_id : me_id2, avatar: avatar}, function(data){
