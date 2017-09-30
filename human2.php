@@ -346,7 +346,7 @@
 					for(k=1; k<=3; k++){
 						var d = i*3+k;
 						var j = d.toString();
-						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:3px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:3px;" src="https://erintuitive.herokuapp.com/svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
 					}
 					if(d!=34 && d % 12 == 0){
 						track.innerHTML += '</div><br><div id="hairs'+d+'">';
@@ -438,7 +438,7 @@
 					for(k=1; k<=3; k++){
 						var d = i*3+k;
 						var j = d.toString();
-						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:3px;" src="svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
+						track.innerHTML += '<button id="hair'+j+'" onclick="buttonHair'+j+'()"><img style="margin:3px;" src="https://erintuitive.herokuapp.com/svg/human/humanBody/hair_kit/hair'+j+'.svg" width="80" alt="hair'+j+'"></button>';
 					}
 					if(d!=34 && d % 12 == 0){
 						track.innerHTML += '</div><br><div id="hairs'+d+'">';
