@@ -275,13 +275,23 @@
 		var nameSpan2 = '<span style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1);"><img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></span>';
 		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div class="blinking" style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div><div class="blinking" style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div></div>';
 		var allButtons = '<br><div id="buttons"><button id="saveSpriteSheet" onclick="spriteSheet()">Save sprite sheet image</button></div><div id="img-out"></div>';
-		document.body.innerHTML = '<canvas style="border:2px solid black;" id="canvas" width="600" height="400"></canvas>'+sprite+allButtons;
+		document.body.innerHTML = '<canvas style="border:2px solid black;" id="canvas" width="600" height="400"></canvas>'+sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
 		//add sprite div to canvas
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
+		var myData = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><foreignObject width="100%" height="100%">'+sprite+'</foreignObject></svg>';
+		var DOMURL = window.URL || window.webkitURL || window;
+		var img = new Image();
+		var svg = new Blob([myData], {type: 'image/svg+xml'});
+		var url = DOMURL.createObjectURL(svg);
+		img.onload = function() {
+			ctx.drawImage(img, 0, 0);
+			DOMURL.revokeObjectURL(url);
+		};
+		img.src = url;
 		//remove sprite div
-		//$(".sprite").remove();
+		$(".sprite").remove();
 		//avatar = escape(avatar);
 		/*
 		var rand = Math.floor(Math.random()*1000).toString();
