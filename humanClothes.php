@@ -301,12 +301,12 @@
 		var nameSpan2 = '<span style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1);"><img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></span>';
 		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div class="blinking" style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div><div class="blinking" style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div></div>';
 		var allButtons = '<br><div id="buttons"><button id="saveSpriteSheet" onclick="spriteSheet()">Save sprite sheet image</button></div><div id="img-out"></div>';
-		document.body.innerHTML = '<canvas style="border:2px solid black;" id="canvas" width="600" height="400"></canvas>'+sprite;
+		document.body.innerHTML = '<canvas style="border:2px solid black;" id="canvas" width="600" height="500"></canvas>'+sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
 		//add sprite div to canvas
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
-		render_html_to_canvas(sprite, ctx, 0, 0, 600, 400);
+		render_html_to_canvas(sprite, ctx, 0, 0, 600, 500);
 		//remove sprite div
 		$(".sprite").remove();
 		//avatar = escape(avatar);
