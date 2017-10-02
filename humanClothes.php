@@ -388,9 +388,8 @@
 		});*/
 	}
 	function spriteSheet(){
-		html2canvas($("sprite"), {
+		html2canvas($("#sprite"), {
 			onrendered: function(canvas) {
-				theCanvas = canvas;
 				document.body.appendChild(canvas);
 				Canvas2Image.saveAsPNG(canvas);
 				$("#img-out").append(canvas);
