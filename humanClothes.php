@@ -267,6 +267,32 @@
 			$("#buttons").css({"left":"200px"});
 		}
 	}
+	function render_html_to_canvas(html, ctx, x, y, width, height) {
+		var data = "data:image/svg+xml;charset=utf-8,"+'<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'">' +
+							'<foreignObject width="100%" height="100%">' +
+							html_to_xml(html)+
+							'</foreignObject>' +
+							'</svg>';
+
+		var img = new Image();
+		img.onload = function () {
+			ctx.drawImage(img, x, y);
+		}
+		img.src = data;
+	}
+	function html_to_xml(html) {
+		var doc = document.implementation.createHTMLDocument('');
+		doc.write(html);
+
+		// You must manually set the xmlns if you intend to immediately serialize     
+		// the HTML document to a string as opposed to appending it to a
+		// <foreignObject> in the DOM
+		doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
+
+		// Get well-formed markup
+		html = (new XMLSerializer).serializeToString(doc.body);
+		return html;
+	}
 	function postAvatarWithName(){
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
@@ -280,16 +306,7 @@
 		//add sprite div to canvas
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
-		var myData = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><foreignObject width="100%" height="100%">'+sprite+'</foreignObject></svg>';
-		var DOMURL = window.URL || window.webkitURL || window;
-		var img = new Image();
-		var svg = new Blob([myData], {type: 'image/svg+xml'});
-		var url = DOMURL.createObjectURL(svg);
-		img.onload = function() {
-			ctx.drawImage(img, 0, 0);
-			DOMURL.revokeObjectURL(url);
-		};
-		img.src = url;
+		render_html_to_canvas(sprite, ctx, 0, 0, 600, 400);
 		//remove sprite div
 		$(".sprite").remove();
 		//avatar = escape(avatar);
