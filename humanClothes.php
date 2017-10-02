@@ -689,13 +689,7 @@
 		#buttons {
 			position: fixed;
 			top: 464px;
-			left: 40%;
-		}
-		#backOptions {
-			left: 10%;
-		}
-		#nextOptions {
-			left: 85%;
+			left: 75%;
 		}
 		#itemPreview {
 			vertical-align: text-top;
