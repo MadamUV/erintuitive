@@ -207,11 +207,11 @@
 			avatarOptions.setAttribute("class", "necklaces");
 			$("#buttons").html('<button id="randomizeNecklaces" onclick="randomizeNecklaces()">Randomize necklace</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
 		}
-		/*else if(avatarOptions.getAttribute("class")=="pets"){
+		else if(avatarOptions.getAttribute("class")=="pets"){
 			$(".pets").remove();
 			avatarOptions.setAttribute("class", "capes");
 			$("#buttons").html('<button id="randomizeCapes" onclick="randomizeCapes()">Randomize cape</button><button id="back" onclick="backOptions()">Back</button><button id="next" onclick="nextOptions()">Next</button>');
-		}*/
+		}
 		//topsBottoms, shoes, tail, wings, accessories, glasses, hairPieces, necklaces, capes, pets
 		
 	}
