@@ -691,6 +691,12 @@
 			top: 464px;
 			left: 40%;
 		}
+		#back {
+			left: 10%;
+		}
+		#next {
+			left: 85%;
+		}
 		#itemPreview {
 			vertical-align: text-top;
 			width: 50%;
@@ -718,6 +724,7 @@
 			border:0;
 			background:transparent;
 		}
+		
 	</style>
 </body>
 </html>
