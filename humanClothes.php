@@ -689,7 +689,7 @@
 		#buttons {
 			position: fixed;
 			top: 464px;
-			left: 75%;
+			left: 15%;
 		}
 		#itemPreview {
 			vertical-align: text-top;
