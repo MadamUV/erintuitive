@@ -691,10 +691,10 @@
 			top: 464px;
 			left: 40%;
 		}
-		#back {
+		#backOptions {
 			left: 10%;
 		}
-		#next {
+		#nextOptions {
 			left: 85%;
 		}
 		#itemPreview {
