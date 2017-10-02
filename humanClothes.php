@@ -268,7 +268,7 @@
 		var av = document.getElementById("avatarName").value;
 		var avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
-		var sprite = '<div id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div class="blinking" style="position: relative; float: left; margin: 90px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; margin: 90px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; margin: 90px;">'+avatar+'</div><div class="blinking" style="position: relative; float: left; margin: 90px;">'+avatar+'</div></div>';
+		var sprite = '<div id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div class="blinking" style="position: relative; float: left; margin: 90px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><div style="position: relative; float: left; margin: 90px; -ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div><br><div style="position: relative; float: left; margin: 90px;">'+avatar+'</div><div class="blinking" style="position: relative; float: left; margin: 90px;">'+avatar+'</div></div>';
 		document.body.innerHTML = sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
 		avatar = escape(avatar);
