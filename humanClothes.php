@@ -73,7 +73,10 @@
 		
 	</div>
 	<script>
-		
+		//avatar vars global
+		var name = '';
+		var avatar = '';
+		//previous vars
 		var previous = '';
 		var previousClothes = '';
 		var previousShoes = '';
@@ -265,15 +268,15 @@
 		}
 	}
 	function postAvatarWithName(){
-		var name = document.getElementById("avatarName").value;
-		var avatar = document.getElementById("relativeContainer").innerHTML;
+		name = document.getElementById("avatarName").value;
+		avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
 		var nameSpan = '<span style="-webkit-transform: scale(-1, 1); -ms-transform: scale(-1, 1); transform: scale(-1, 1);"><img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></span>';
 		var nameSpan2 = '<span style="-webkit-transform: scale(1, 1); -ms-transform: scale(1, 1); transform: scale(1, 1);"><img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><span style="position: absolute; top: 397px; z-index: 204; -webkit-transform: scale(2); -ms-transform: scale(2); transform: scale(2);">'+name+'</span></span>';
 		var sprite = '<div id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);"><div class="blinking" style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;"><div style="-ms-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); transform: scale(-1, 1);">'+avatar+'</div>'+nameSpan2+'</div><div style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div><div class="blinking" style="position: relative; float: left; margin: 90px;">'+avatar+nameSpan2+'</div></div>';
-		document.body.innerHTML = sprite;
+		document.body.innerHTML = sprite+'<br><div id="buttons"><button id="saveSpriteSheet" onclick="spriteSheet()">Save sprite sheet image</button></div><div id="img-out"></div>';
 		$(".blinking .blink").css({'visibility':'visible'});
-		avatar = escape(avatar);
+		//avatar = escape(avatar);
 		/*
 		var rand = Math.floor(Math.random()*1000).toString();
 		var theName = av+rand;
@@ -383,6 +386,16 @@
 				
 			}
 		});*/
+	}
+	function spriteSheet(){
+		html2canvas($("sprite"), {
+			onrendered: function(canvas) {
+				theCanvas = canvas;
+				document.body.appendChild(canvas);
+				Canvas2Image.saveAsPNG(canvas);
+				$("#img-out").append(canvas);
+			}
+		});
 	}
 	function pet(){
 		var pets = [''];
