@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="js/html2canvas.js"></script>
+	<script src="js/canvas2image.js"></script>
+	<script src="js/base64.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/touch_punch.js"></script>
@@ -13,6 +16,7 @@
 </head>
 <body style="background-color: #FFBB22;">
 	<script>
+	//http://jsfiddle.net/8ypxW/3/
 	var me_id = '';
 	function getMe() {
 		FB.api('/me', function(response) {
@@ -125,16 +129,16 @@
 		$("#relativeContainer .pets").remove();
 		$("#relativeContainer").append(pet()[0]);
 		$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
-		if($("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/female_pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet8.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="svg/human/humanClothes/pets/pet3.svg"){
+		if($("#relativeContainer .pets")[0].getAttribute("src")!=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/female_pet19.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet8.svg" && $("#relativeContainer .pets")[0].getAttribute("src")!=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
-		if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet15.svg"){
+		if($("#relativeContainer .pets")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet15.svg"){
 			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
-		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet18.svg"){
+		else if($("#relativeContainer .pets")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet16.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet17.svg" || $("#relativeContainer .pets")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet18.svg"){
 			$("#relativeContainer .pets").css({'top':'-25px'});
 		}
-		else if($("#relativeContainer .pets")[0].getAttribute("src")=="svg/human/humanClothes/pets/pet3.svg"){
+		else if($("#relativeContainer .pets")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet3.svg"){
 			$("#relativeContainer .pets").css({'top':'-15px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
 		}
 	}
@@ -153,7 +157,7 @@
 			relativeContainer.innerHTML = previousClothes;
 			$("#relativeContainer").append(maleShoes()[0]);
 			$("#relativeContainer .shoes").css({'position':'absolute', 'top':'0', 'left':'0', 'margin-top':'0'});
-			if($(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes")[0].getAttribute("src")=="svg/human/humanClothes/shoes/shoes13.svg"){
+			if($(".shoes")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/shoes/shoes11.svg" || $(".shoes")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/shoes/shoes12.svg" || $(".shoes")[0].getAttribute("src")=="https://erintuitive.heroku.com/svg/human/humanClothes/shoes/shoes13.svg"){
 				$("#relativeContainer .shoes").css({'top':'6px'});
 			}
 		}
@@ -382,27 +386,27 @@
 	function pet(){
 		var pets = [''];
 		for(i=1; i<=18; i++){
-			pets.push('<img class="pets" src="svg/human/humanClothes/pets/pet'+i.toString()+'.svg" alt="pet">');
+			pets.push('<img class="pets" src="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet'+i.toString()+'.svg" alt="pet">');
 		}
 		if($(".woman")[0]){
-			pets.push('<img class="pets" src="svg/human/humanClothes/pets/female_pet19.svg" alt="pet">');
+			pets.push('<img class="pets" src="https://erintuitive.heroku.com/svg/human/humanClothes/pets/female_pet19.svg" alt="pet">');
 		}
 		else if($(".woman")[0]){
-			pets.push('<img class="pets" src="svg/human/humanClothes/pets/pet19.svg" alt="pet">');
+			pets.push('<img class="pets" src="https://erintuitive.heroku.com/svg/human/humanClothes/pets/pet19.svg" alt="pet">');
 		}
 		return shuffle(pets);
 	}
 	function cape(){
 		var capes = [''];
 		for(i=1; i<=4; i++){
-			capes.push('<img class="capes" src="svg/human/humanClothes/capes/cape'+i.toString()+'.svg" alt="cape">')
+			capes.push('<img class="capes" src="https://erintuitive.heroku.com/svg/human/humanClothes/capes/cape'+i.toString()+'.svg" alt="cape">')
 		}
 		return shuffle(capes);
 	}
 	function necklace(){
 		var necklaces = [''];
 		for(i=1; i<=6; i++){
-			necklaces.push('<img class="necklaces" src="svg/human/humanClothes/necklaces/necklace'+i.toString()+'.svg" alt="necklace">');
+			necklaces.push('<img class="necklaces" src="https://erintuitive.heroku.com/svg/human/humanClothes/necklaces/necklace'+i.toString()+'.svg" alt="necklace">');
 		}
 		return shuffle(necklaces);
 	}
@@ -413,28 +417,28 @@
 	function glasses(){
 		var glasses = [''];
 		for(i=1; i<=6; i++){
-			glasses.push('<img class="glasses" src="svg/human/humanClothes/glasses/glasses'+i.toString()+'.svg" alt="glasses">');
+			glasses.push('<img class="glasses" src="https://erintuitive.heroku.com/svg/human/humanClothes/glasses/glasses'+i.toString()+'.svg" alt="glasses">');
 		}
 		return shuffle(glasses);
 	}
 	function accessories(){
 		var accessories = [''];
 		for(i=1; i<=8; i++){
-			accessories.push('<img class="accessories" id="accessory'+i.toString()+'" src="svg/human/humanClothes/accessories/accessory'+i.toString()+'.svg" alt="accessories">');
+			accessories.push('<img class="accessories" id="accessory'+i.toString()+'" src="https://erintuitive.heroku.com/svg/human/humanClothes/accessories/accessory'+i.toString()+'.svg" alt="accessories">');
 		}
 		return shuffle(accessories);
 	}
 	function wings(){
 		var wings = [''];
 		for(i=1; i<=12; i++){
-			wings.push('<img class="wings" src="svg/human/humanClothes/wings/wings'+i.toString()+'.svg" alt="wings">');
+			wings.push('<img class="wings" src="https://erintuitive.heroku.com/svg/human/humanClothes/wings/wings'+i.toString()+'.svg" alt="wings">');
 		}
 		return shuffle(wings);
 	}
 	function maleShoes(){
 		var maleShoes = [];
 		for (i=1; i<=13; i++){
-			maleShoes.push('<img class="shoes" src="svg/human/humanClothes/shoes/shoes'+i.toString()+'.svg" alt="shoes">');
+			maleShoes.push('<img class="shoes" src="https://erintuitive.heroku.com/svg/human/humanClothes/shoes/shoes'+i.toString()+'.svg" alt="shoes">');
 		}
 		maleShoes.push('');
 		return shuffle(maleShoes);
@@ -442,17 +446,17 @@
 	function femaleShoes(){
 		var femaleShoes = [];
 		for (i=1; i<=16; i++){
-			femaleShoes.push('<img class="shoes" src="svg/human/humanClothes/female_shoes/female_shoes'+i.toString()+'.svg" alt="shoes">');
+			femaleShoes.push('<img class="shoes" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_shoes/female_shoes'+i.toString()+'.svg" alt="shoes">');
 		}
 		femaleShoes.push('');
 		return shuffle(femaleShoes);
 	}
 	function maleHairPieces(){
-		var maleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -40px; left: -7px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', /*only male hairpieces*/ '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>'];
+		var maleHairPieces = ['', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -40px; left: -7px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', /*only male hairpieces*/ '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/maleHairPiece1.svg" style="position: absolute; z-index: 41; top: -30px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/male_hairPieces/maleHairPiece2.svg" style="position: absolute; z-index: 41; top: -18px; left: 0;"/>'];
 		return shuffle(maleHairPieces);
 	}
 	function femaleHairPieces(){
-		var femaleHairPieces = ['', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece1.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece2.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece3.svg" style="position: absolute; z-index: 41; top: 15px; left: 0px; -ms-transform: scale(1.18, 1.3); -webkit-transform: scale(1.18, 1.3); transform: scale(1.18, 1.3);"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/female_hairPiece6.svg" style="position: absolute; z-index: 41; top: -27px; left: -22px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -37px; left: -7px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>', '<img class="hairPieces" src="svg/human/humanClothes/female_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>'];
+		var femaleHairPieces = ['', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/female_hairPiece1.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/female_hairPiece2.svg" style="position: absolute; z-index: 41; top: -14px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/female_hairPiece3.svg" style="position: absolute; z-index: 41; top: 15px; left: 0px; -ms-transform: scale(1.18, 1.3); -webkit-transform: scale(1.18, 1.3); transform: scale(1.18, 1.3);"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/female_hairPiece6.svg" style="position: absolute; z-index: 41; top: -27px; left: -22px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece1.svg" style="position: absolute; z-index: 41; top: -40px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece2.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece3.svg" style="position: absolute; z-index: 41; top: -78px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece4.svg" style="position: absolute; z-index: 41; top: -37px; left: -7px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece5.svg" style="position: absolute; z-index: 41; top: -15px; left: 0;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece6.svg" style="position: absolute; z-index: 41; top: -60px; left: 2px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece7.svg" style="position: absolute; z-index: 41; top: -67px; left: -9px;"/>', '<img class="hairPieces" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_hairPieces/neutralHairPiece8.svg" style="position: absolute; z-index: 41; top: -27px; left: 0;"/>'];
 		return shuffle(femaleHairPieces);
 	}
 	function randomizeHairPieces(){
@@ -593,7 +597,7 @@
 		var numbers = [12, 12, 12, 12, 6, 12, 12, 12, 12, 12, 12, 12, 12];
 		for (k=0; k<13; k++){
 			for (i=1; i<=numbers[k]; i++){
-				maleTops.push(maleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/shirt'+(k+1).toString()+'_stickers/shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				maleTops.push(maleTops[k]+'<img class="shirtOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/shirt'+(k+1).toString()+'_stickers/shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		maleTops.push('');
@@ -607,7 +611,7 @@
 		var numbers = [17, 12, 12];
 		for (k=0; k<3; k++){
 			for (i=1; i<=numbers[k]; i++){
-				maleBottoms.push(maleBottoms[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/pants'+(k+1).toString()+'_stickers/pants'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				maleBottoms.push(maleBottoms[k]+'<img class="bottomOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/pants'+(k+1).toString()+'_stickers/pants'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		var maleSkirt1 = '<svg class="pants" xmlns="http://www.w3.org/2000/svg" width="86" height="380" viewBox="202.715 584.407 86.5933 380.048" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="svgEditorDefs"><path id="svgEditorClosePathDefs" fill="moccasin" style="stroke-width: 0px; stroke: none; fill-opacity: 1;" class="clothes" /></defs><polygon id="e1_polygon" style="stroke-width: 0px; stroke: none;" points="212.268 789.833 204.708 818.7 204.708 864.062 228.076 863.375 239.76 863.375 250.07 862.688 261.067 862.688 287.872 862 287.184 817.326 284.435 800.143 280.999 793.957 276.187 792.583 278.249 782.96 241.822 784.335" fill="lime" class="clothes" /></svg>';
@@ -616,7 +620,7 @@
 		numbers = [4, 4];
 		for (k=0; k<2; k++){
 			for (i=1; i<=numbers[k]; i++){
-				maleBottoms.push(maleBottom[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/skirt'+(k+1).toString()+'_stickers/skirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				maleBottoms.push(maleBottom[k]+'<img class="bottomOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/skirt'+(k+1).toString()+'_stickers/skirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		maleBottoms.push('');
@@ -632,7 +636,7 @@
 		var numbers = [25, 29, 12, 6, 9];
 		for (k=0; k<5; k++){
 			for (i=1; i<=numbers[k]; i++){
-				femaleBottoms.push(femaleBottoms[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/female_pants'+(k+1).toString()+'_stickers/female_pants'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				femaleBottoms.push(femaleBottoms[k]+'<img class="bottomOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_pants'+(k+1).toString()+'_stickers/female_pants'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		var femaleSkirt1 = '<svg class="pants" width="86" height="380" viewBox="202.71499633789062 584.406982421875 86.58999633789062 380.0480041503906" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"> <defs id="svgEditorDefs"> <path id="svgEditorClosePathDefs" class="lines" fill="black" style="stroke-width: 0px; stroke: none;"/> </defs> <path d="M 223.018 756.348 C 218.577 758.667 221.796 762.012 219.846 763.962 C 213.582 770.226 214.135 783.972 214.135 792.513 C 214.135 797.478 204.056 825.578 207.156 828.678 C 210.681 832.203 218.4 834.212 221.749 837.561 C 225.973 841.785 224.573 850.536 227.459 853.423 C 228.051 854.014 239.196 854.217 247.763 847.713 C 248.825 846.907 269.245 844.451 269.969 845.175 C 270.937 846.143 283.933 827.415 289.003 832.485 C 289.792 833.274 288.369 826.386 288.369 822.968 C 288.369 817.445 288.003 810.547 285.196 807.741 C 278.618 801.162 280.774 783.65 274.41 777.286 C 272.668 775.544 276.314 769.038 276.314 769.038 C 276.314 769.038 269.335 762.816 264.894 755.714" style="stroke: rgb(0, 0, 0); fill: rgb(216, 216, 216);"/></svg>';
@@ -641,7 +645,7 @@
 		numbers = [10, 10];
 		for (k=0; k<2; k++){
 			for (i=1; i<=numbers[k]; i++){
-				femaleBottoms.push(femaleBottom[k]+'<img class="bottomOverlay" src="svg/human/humanClothes/female_skirt'+(k+1).toString()+'_stickers/female_skirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				femaleBottoms.push(femaleBottom[k]+'<img class="bottomOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_skirt'+(k+1).toString()+'_stickers/female_skirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		femaleBottoms.push('');
@@ -668,7 +672,7 @@
 		var numbers = [22, 16, 27, 24, 13, 20, 25, 22, 20, 20, 15, 16, 15, 15, 14, 3];
 		for (k=0; k<16; k++){
 			for (i=1; i<=numbers[k]; i++){
-				femaleTops.push(femaleTops[k]+'<img class="shirtOverlay" src="svg/human/humanClothes/female_shirt'+(k+1).toString()+'_stickers/female_shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
+				femaleTops.push(femaleTops[k]+'<img class="shirtOverlay" src="https://erintuitive.heroku.com/svg/human/humanClothes/female_shirt'+(k+1).toString()+'_stickers/female_shirt'+(k+1).toString()+'_sticker'+i.toString()+'.svg">');
 			}
 		}
 		femaleTops.push('');
