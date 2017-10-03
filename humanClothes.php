@@ -465,7 +465,7 @@
 			pets.push('<img class="pets" src="svg/human/humanClothes/pets/pet'+i.toString()+'.svg" alt="pet">');
 		}*/
 		if($(".woman")[0]){
-			pets.push(female_pet19');
+			pets.push(female_pet19);
 		}
 		else if($(".man")[0]){
 			pets.push(pet19);
