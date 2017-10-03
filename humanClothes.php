@@ -309,14 +309,14 @@
 			var mySrc = imgs[i].getAttribute("src");
 			var element = imgs[i].parentNode;
 			element.removeChild(imgs[i]);
-			element.innerHTML = element.innerHTML + '<svg style="'+myStyle+'" width="'+myStyle.width+'" height="'+myStyle.height+'"><image xlink:href="'+mySrc+'" src="'+mySrc+'" width="'+myStyle.width+'" height="'+myStyle.height+'"></svg>';
+			element.innerHTML = element.innerHTML + '<svg style="'+myStyle+'" width="'+myStyle.width+'" height="'+myStyle.height+'"><image xlink:href="'+mySrc+'" src="'+mySrc+'" width="'+myStyle.width+'" height="'+myStyle.height+'"/></svg>';
 		}
 		//add sprite div to canvas
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		render_html_to_canvas(sprite, ctx, 0, 0, 600, 500);
 		//remove sprite div
-		$(".sprite").remove();
+		//$(".sprite").remove();
 		//avatar = escape(avatar);
 		/*
 		var rand = Math.floor(Math.random()*1000).toString();
