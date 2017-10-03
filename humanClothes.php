@@ -303,6 +303,14 @@
 		var allButtons = '<br><div id="buttons"><button id="saveSpriteSheet" onclick="spriteSheet()">Save sprite sheet image</button></div><div id="img-out"></div>';
 		document.body.innerHTML = '<canvas style="border:2px solid black;" id="canvas" width="600" height="500"></canvas>'+sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
+		var imgs = document.getElementsByTagName("img");
+		for (var i=0; i<imgs.length; i++){
+			var myStyle = imgs[i].style;
+			var mySrc = imgs[i].getAttribute("src");
+			var element = imgs[i].parentNode;
+			element.removeChild(imgs[i]);
+			element.innerHTML = element.innerHTML + '<svg style="'+myStyle+'" width="'+myStyle.width+'" height="'+myStyle.height+'"><image xlink:href="'+mySrc+'" src="'+mySrc+'" width="'+myStyle.width+'" height="'+myStyle.height+'"></svg>';
+		}
 		//add sprite div to canvas
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
