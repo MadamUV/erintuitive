@@ -131,18 +131,18 @@
 		$("#relativeContainer .pets").remove();
 		$("#relativeContainer").append(pet()[0]);
 		$("#relativeContainer .pets").css({'position':'absolute', 'top':'-6px', 'left':'8px', 'margin-top':'0', 'z-index':'31'});
-		/*if((!$("#pet19")) && (!$("#female_pet19")) && (!$("#pet8")) && (!$("#pet3"))){
+		if($("#pet19").length == 0 && $("#female_pet19").length == 0  && $("#pet8").length == 0  && $("#pet3").length == 0 ){
 			$("#relativeContainer .pets").css({'top':'-72px', '-webkit-transform':'scale(2.4)', '-ms-transform':'scale(2.4)', 'transform':'scale(2.4)'});
 		}
-		if($("#pet15")){
+		if($("#pet15").length > 0){
 			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
-		else if(($("#pet16") || $("#pet17") || $("#pet18")){
+		else if(($("#pet16").length > 0 || $("#pet17").length > 0 || $("#pet18").length > 0){
 			$("#relativeContainer .pets").css({'top':'-25px'});
 		}
-		else if($("#pet3")){
+		else if($("#pet3").length > 0){
 			$("#relativeContainer .pets").css({'top':'-15px', '-webkit-transform':'scale(1.2)', '-ms-transform':'scale(1.2)', 'transform':'scale(1.2)'});
-		}*/
+		}
 	}
 	function randomizeCapes() {
 		$("#relativeContainer .capes").remove();
