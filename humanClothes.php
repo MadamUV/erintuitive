@@ -137,7 +137,7 @@
 		if($("#pet15").length > 0){
 			$("#relativeContainer .pets").css({'top':'-5px'});
 		}
-		else if(($("#pet16").length > 0 || $("#pet17").length > 0 || $("#pet18").length > 0){
+		else if($("#pet16").length > 0 || $("#pet17").length > 0 || $("#pet18").length > 0){
 			$("#relativeContainer .pets").css({'top':'-25px'});
 		}
 		else if($("#pet3").length > 0){
