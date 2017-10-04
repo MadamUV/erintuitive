@@ -49,7 +49,7 @@
 		 fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
-	<iframe id="youtubeVids" style="position: fixed; top: 0; left: 0;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLSsWZPHpbaIMwdcbi9ezl10wdeAKrog2P?controls=0" frameborder="0" allowfullscreen></iframe>
+	<iframe id="youtubeVids" style="position: fixed; top: 20px; left: 100px;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLSsWZPHpbaIMwdcbi9ezl10wdeAKrog2P?controls=0" frameborder="0" allowfullscreen></iframe>
 	<div style="position: fixed; top: 330px; left: 0;" id="circles">Loading<img src="svg/circles.svg" alt="circles" /></div>
 	<table width="740px">
 	<td>
