@@ -143,7 +143,7 @@
 		}
 	</script>
 	<audio loop>
-		<source src="audio/Chipmunks2.mp3" type="audio/mp3">
+		<source src="audio/Chipmunks2.mp3" type="audio/mpeg">
 	</audio>
 	<table width="580px">
 	<td>
