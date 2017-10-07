@@ -297,7 +297,7 @@
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
-		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><br>'+name+'</div>';
+		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/></div><br>'+name;
 		document.body.innerHTML = sprite;
 		$(".blinking .blink").css({'visibility':'visible'});
 		/*var imgs = document.getElementsByTagName("img");
