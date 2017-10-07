@@ -299,8 +299,8 @@
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
-		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" src="svg/human/humanBody/cloud.svg"/><br><font size="100px">'+name+'</font></div>';
-		document.body.innerHTML = sprite+'<div id="chatting"><div id="page-wrap"><h2>Avatar Chat</h2><p id="name-area"></p><div id="chat-wrap"><div id="chat-area"></div></div><form id="send-message-area"><p>Your message: </p><textarea id="sendie" maxlength = "100"></textarea></form></div></div>';
+		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202; -ms-transform: scale(2); -webkit-transform: scale(2); transform: scale(2)" src="svg/human/humanBody/cloud.svg"/><br><font size="100px">'+name+'</font></div>';
+		document.body.innerHTML = sprite+'<div id="chatting"><div id="page-wrap"><h2>Avatar Chat</h2><p id="name-area"></p><div id="chat-wrap"><div id="chat-area"></div></div><form id="send-message-area"><p>Your message: </p><textarea id="sendie" cols="20" rows="20" maxlength = "100"></textarea></form></div></div>';
         // default name is 'Guest'
     	if (!name || name === ' ') {
     	   name = "Guest";	

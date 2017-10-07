@@ -21,7 +21,7 @@ function getStateOfChat(){
 		 instanse = true;
 		 $.ajax({
 			   type: "POST",
-			   url: "process.php",
+			   url: "../php_post/process.php",
 			   data: {  
 			   			'function': 'getState',
 						'file': file
