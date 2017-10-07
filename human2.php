@@ -142,6 +142,9 @@
 			});
 		}
 	</script>
+	<audio loop>
+		<source src="audio/Chipmunks2.mp3" type="audio/mp3">
+	</audio>
 	<table width="580px">
 	<td>
 		<tr>
