@@ -300,7 +300,7 @@
 		avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
 		//<img style="position: absolute; top: 38px; left: -40px; z-index: 202; -ms-transform: scale(2); -webkit-transform: scale(2); transform: scale(2)" src="svg/human/humanBody/cloud.svg"/>
-		var sprite = '<div class="sprite" id="sprite" style="position: relative; float: left; margin: 25px;">'+avatar+'<br><font size="100px">'+name+'</font></div>';
+		var sprite = '<div class="sprite" id="sprite" style="position: relative; float: left; margin: 25px; margin-left: 75px;">'+avatar+'<br><font size="100px">'+name+'</font></div>';
 		document.body.innerHTML = sprite+'<div id="chatting" style="position: relative; float: left; margin-left: 70px;"><div id="page-wrap"><h2>Avatar Chat</h2><p id="name-area"></p><div id="chat-wrap"><div id="chat-area"></div></div><form id="send-message-area"><p>Your message: </p><textarea id="sendie" cols="20" rows="20" maxlength = "100"></textarea></form></div></div>';
         // default name is 'Guest'
     	if (!name || name === ' ') {
