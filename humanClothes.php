@@ -325,7 +325,7 @@
 			 //all keys including return.  
 			 if (key >= 33) {
 			   
-				 var maxLength = $(this).attr("maxlength");  
+				 var maxLength = $(this).attr("maxlength");
 				 var length = this.value.length;  
 				 
 				 // don't allow new content if length is maxed out
@@ -358,6 +358,8 @@
 				
 			  }
 		 });
+		 
+		setInterval(chat.update(), 1000)
 		//$(".blinking .blink").css({'visibility':'visible'});
 		/*var imgs = document.getElementsByTagName("img");
 		for (var i=0; i<imgs.length; i++){
