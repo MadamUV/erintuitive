@@ -9,6 +9,7 @@
 	<script src="js/touch_punch.js"></script>
 	<script src="js/glide.js"></script>
 	<script src="js/jquery.colorPicker.js"></script>
+	<script src="js/chat.js"></script>
 	<link rel="stylesheet" href="css/glide.core.css">
     <link rel="stylesheet" href="css/glide.theme.css">
 	<link rel="stylesheet" href="css/colorPicker.css" type="text/css" />
@@ -298,18 +299,65 @@
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
 		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
-		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.4); -webkit-transform: scale(0.4); transform: scale(0.4);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><br><font size="100px">'+name+'</font></div>';
-		document.body.innerHTML = sprite;
-		setInterval(function(){ 
-			blinkCount += 1;
-			if(blinkCount==0){
-				$(".blink").css({'visibility':'hidden'});
-			}
-			if(blinkCount==14){
-				$(".blink").css({'visibility':'visible'});
-				blinkCount = 0;
-			}
-		});
+		var sprite = '<div class="sprite" id="sprite" style="-ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9);">'+avatar+'<img style="position: absolute; top: 38px; left: -40px; z-index: 202;" width="200%" src="svg/human/humanBody/cloud.svg"/><br><font size="100px">'+name+'</font></div>';
+		document.body.innerHTML = sprite+'<div id="chatting"><div id="page-wrap"><h2>Avatar Chat</h2><p id="name-area"></p><div id="chat-wrap"><div id="chat-area"></div></div><form id="send-message-area"><p>Your message: </p><textarea id="sendie" maxlength = "100"></textarea></form></div></div>';
+        // default name is 'Guest'
+    	if (!name || name === ' ') {
+    	   name = "Guest";	
+    	}
+    	
+    	// strip tags
+    	name = name.replace(/(<([^>]+)>)/ig,"");
+    	
+    	// display name on page
+    	$("#name-area").html("You are: <span>" + name + "</span>");
+    	
+    	// kick off chat
+        var chat =  new Chat();
+		chat.getState(); 
+		 
+		 // watch textarea for key presses
+		 $("#sendie").keydown(function(event) {  
+		 
+			 var key = event.which;  
+	   
+			 //all keys including return.  
+			 if (key >= 33) {
+			   
+				 var maxLength = $(this).attr("maxlength");  
+				 var length = this.value.length;  
+				 
+				 // don't allow new content if length is maxed out
+				 if (length >= maxLength) {  
+					 event.preventDefault();  
+				 }  
+			  }  
+																																																		});
+		 // watch textarea for release of key press
+		 $('#sendie').keyup(function(e) {	
+							 
+			  if (e.keyCode == 13) { 
+			  
+				var text = $(this).val();
+				var maxLength = $(this).attr("maxlength");  
+				var length = text.length; 
+				 
+				// send 
+				if (length <= maxLength + 1) { 
+				 
+					chat.send(text, name, escape(sprite));	
+					$(this).val("");
+					
+				} else {
+				
+					$(this).val(text.substring(0, maxLength));
+					
+				}	
+				
+				
+			  }
+		 });
+		//$(".blinking .blink").css({'visibility':'visible'});
 		/*var imgs = document.getElementsByTagName("img");
 		for (var i=0; i<imgs.length; i++){
 			var myStyle = imgs[i].style;
@@ -780,7 +828,21 @@
 			border:0;
 			background:transparent;
 		}
-		
+	    <!-- chat styles -->
+		#chatting                            { font: 12px "Lucida Grande", Sans-Serif; background: url(img/bg.png); }
+		h2                              { color: #fa9f00; font: 30px Helvetica, Sans-Serif; margin: 0 0 10px 0; }
+		#page-wrap                      { width: 500px; margin: 30px auto; position: relative; }
+
+		#chat-wrap                      { border: 1px solid #eee; margin: 0 0 15px 0; }
+		#chat-area                      { height: 300px; overflow: auto; border: 1px solid #666; padding: 20px; background: white; }
+		#chat-area span                 { color: white; background: #333; padding: 4px 8px; -moz-border-radius: 5px; -webkit-border-radius: 8px; margin: 0 5px 0 0; }
+		#chat-area p                    { padding: 8px 0; border-bottom: 1px solid #ccc; }
+
+		#name-area                      { position: absolute; top: 12px; right: 0; color: white; font: bold 12px "Lucida Grande", Sans-Serif; text-align: right; }   
+		#name-area span                 { color: #fa9f00; }
+
+		#send-message-area p            { float: left; color: white; padding-top: 27px; font-size: 14px; }
+		#sendie                         { border: 3px solid #999; width: 360px; padding: 10px; font: 12px "Lucida Grande", Sans-Serif; float: right; }
 	</style>
 </body>
 </html>
