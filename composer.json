@@ -3,6 +3,7 @@
     "description": "This is an application for people to chat and make avatars for the psychic intuitive Erintuitive to read personalities from observing the avatars.",
     "type": "project",
     "require": {
+		"php": "^7.0",
         "ext-ftp": "^7.0"
     },
     "authors": [
