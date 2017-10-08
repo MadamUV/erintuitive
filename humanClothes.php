@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="css/glide.core.css">
     <link rel="stylesheet" href="css/glide.theme.css">
 	<link rel="stylesheet" href="css/colorPicker.css" type="text/css" />
+	<!-- pubnub -->
+	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
 	<title>Erintuitive's Psychic Place</title>
 </head>
 <body style="background-color: #FFBB22;">
@@ -297,10 +299,18 @@
 	function postAvatarWithName(){
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
-		$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
+		document.getElementById("itemPreview").innerHTML = "Great! Now take a screenshot of this avatar, draw a picture on paper, and email me them as attachments to erin.margot.masterson@gmail.com along with a real or made-up name."; 
+		/*$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
 		$("table").remove();
 		document.getElementById("aftermath").innerHTML = '<audio loop><source src="audio/Chipmunks2.mp3" type="audio/mpeg"></audio><canvas style="border:2px solid black;" id="canvas1" width="600" height="500"></canvas>';
-		$(".blinking .blink").css({'visibility':'visible'});
+		//pubnub init
+		var PUBNUB_mine = PUBNUB.init({
+			publish_key: 'pub-c-a495ff0a-174c-4c53-8ecc-156ece178e0c',
+			subscribe_key: 'sub-c-b18ceac4-a61e-11e7-88d7-aa3d3dcf7b8c',
+			ssl: true
+		  });*/
+		//$(".blinking .blink").css({'visibility':'visible'});
+		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//avatar = escape(avatar);
 		/*
 		var rand = Math.floor(Math.random()*1000).toString();
