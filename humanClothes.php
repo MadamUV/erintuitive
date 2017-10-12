@@ -299,7 +299,7 @@
 	function postAvatarWithName(){
 		name = document.getElementById("avatarName").value;
 		avatar = document.getElementById("relativeContainer").innerHTML;
-		document.getElementById("itemPreview").innerHTML = "Great! Now take a screenshot of this avatar, draw a picture on paper, and email me them as attachments to erin.margot.masterson@gmail.com along with a real or made-up name."; 
+		document.getElementById("itemPreview").innerHTML = "Great! You now have completed the avatar-making process. Send a screenshot to your friends to share!";//"Great! Now take a screenshot of this avatar, draw a picture on paper, and email me them as attachments to erin.margot.masterson@gmail.com along with a real or made-up name."; 
 		/*$("#relativeContainer").css({'margin':'0px', 'margin-left':'0px', 'width':'400px'});
 		$("table").remove();
 		document.getElementById("aftermath").innerHTML = '<audio loop><source src="audio/Chipmunks2.mp3" type="audio/mpeg"></audio><canvas style="border:2px solid black;" id="canvas1" width="600" height="500"></canvas>';

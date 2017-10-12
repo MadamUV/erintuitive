@@ -141,6 +141,7 @@
 				window.localStorage.setItem("me_id", me_id);
 			});
 		}
+		//Please make your character as customized as possible. I use it to interpret your personality in my intuitive readings.
 	</script>
 	<audio loop>
 		<source src="audio/Chipmunks2.mp3" type="audio/mpeg">
@@ -150,7 +151,7 @@
 		<tr>
 			<td width="10%">
 				<div id="avatarOptions" class="init">
-					Please make your character as customized as possible. I use it to interpret your personality in my intuitive readings.
+					Here you can create an avatar!
 				</div>
 			</td>
 			<td id="itemPreview" width="30%">
@@ -171,7 +172,7 @@
 		<button id="next" onclick="nextOptions()">Next</button>
 	</div>
 	<button id="skip" onclick="skipOption()">Skip to clothing</button>
-	<button id="space" onclick="skipSpace()">Skip and go inworld</button>
+	<!-- <button id="space" onclick="skipSpace()">Skip and go inworld</button> -->
 	<style>
 		body {
 			background-color: #FFBB22;

@@ -74,12 +74,13 @@
   }*/
 	</script>
 	<!-- animal or human? -->
-	<div id="wholeIntro">
+	<!-- <div id="wholeIntro">
 		Erintuitive is a personality reader. She reads personality instead of minds! Feel free to chat and try to guess things about each other yourself!<br>
 		Enjoy the scenery and build your own character! Erintuitive interprets your avatar's appearance and attempts to figure out your personality!<br>
 		<button id="loginButton" onclick="login()">Enter!</button>
 	</div>
-	<br><img alt="virtual psychic" src="img/giphy.gif"/><br>
+	<br><img alt="virtual psychic" src="img/giphy.gif"/><br> -->
+	Welcome to Erintuitive's avatar maker demo! Login to continue.
 	<style>
 		body {
 			background-color: #CC22DC;
