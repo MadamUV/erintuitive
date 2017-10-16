@@ -19,5 +19,10 @@
   ],
   "author": "Erin M Masterson",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/masterer/psychic_site#readme"
+  "homepage": "https://bitbucket.org/masterer/psychic_site#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "urldecode": "^1.0.1"
+  },
+  "devDependencies": {}
 }
